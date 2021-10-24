@@ -4,7 +4,7 @@
   "description": "Personal website of Serra Alexander",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss build css/style.css -o public/styles.css"
+    "build-css": "tailwindcss build css/style.css -o public/css/styles.css"
   },
   "author": "Erikwski",
   "license": "ISC",
