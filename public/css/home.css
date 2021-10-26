@@ -36,7 +36,6 @@ nav {
   top: 1rem;
   left: calc(50% - 70px);
 }
-
 .icon_menu.menu_active {
   color: #d33a2e;
 }
@@ -48,8 +47,55 @@ nav {
   .alex_logo.invisible {
     display: none;
   }
+  .icon_menu span {
+    opacity: 0;
+    position: absolute;
+    bottom: -1rem;
+    width: 100%;
+  }
+  .icon_menu.menu_active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon_menu.menu_active span {
+    opacity: 1;
+    bottom: 0;
+  }
+  .icon_menu {
+    transition: 1s;
+  }
+  #nav_div_cont {
+    min-height: 48px;
+  }
+  #nav_div_cont ul {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  #nav_div_cont ul:first-child {
+    right: auto;
+    left: 0;
+  }
+  #nav_div_cont ul li a {
+    width: 50%;
+    height: 24px;
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;
+  }
+  #nav_div_cont ul li:first-child a {
+    right: auto;
+    left: 0;
+  }
 }
 @media screen and (min-width: 641px) {
+  .icon_menu svg {
+    display: none;
+  }
   #alex_logo_header {
     left: calc(50% - 80px);
   }

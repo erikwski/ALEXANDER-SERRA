@@ -25,7 +25,6 @@ document.addEventListener("scroll", function (e) {
     contattami_top =
       document.getElementById("contattami").getBoundingClientRect().top +
       document.getElementById("contattami").getBoundingClientRect().height / 2;
-  console.log(aboutme_top, service_top, review_top, contattami_top);
   //CALCOLO IN QUALE DIV SIAMO
   let active_el = document.getElementsByClassName("menu_active") || [];
   let new_active = null;
