@@ -10,3 +10,36 @@ var el_loghi_alex = document.querySelectorAll(".alex_logo, .fake_alex_logo");
 el_loghi_alex.forEach((el) => {
   el.innerHTML = logo_alex;
 });
+let html = document.documentElement;
+let page_height = html.clientHeight;
+document.addEventListener("scroll", function (e) {
+  var aboutme_top =
+      document.getElementById("about_me").getBoundingClientRect().top +
+      document.getElementById("about_me").getBoundingClientRect().height / 2,
+    service_top =
+      document.getElementById("servizi").getBoundingClientRect().top +
+      document.getElementById("servizi").getBoundingClientRect().height / 2,
+    review_top =
+      document.getElementById("review").getBoundingClientRect().top +
+      document.getElementById("review").getBoundingClientRect().height / 2,
+    contattami_top =
+      document.getElementById("contattami").getBoundingClientRect().top +
+      document.getElementById("contattami").getBoundingClientRect().height / 2;
+  console.log(aboutme_top, service_top, review_top, contattami_top);
+  //CALCOLO IN QUALE DIV SIAMO
+  let active_el = document.getElementsByClassName("menu_active") || [];
+  let new_active = null;
+  if (active_el.length) active_el[0].classList.remove("menu_active");
+  if (aboutme_top > page_height) {
+    new_active = document.querySelectorAll("[href='#home']");
+  } else if (service_top > page_height) {
+    new_active = document.querySelectorAll("[href='#about_me']");
+  } else if (review_top > page_height) {
+    new_active = document.querySelectorAll("[href='#servizi']");
+  } else if (contattami_top > page_height) {
+    new_active = document.querySelectorAll("[href='#review']");
+  } else {
+    new_active = document.querySelectorAll("[href='#contattami']");
+  }
+  if (new_active) new_active[0].classList.add("menu_active");
+});

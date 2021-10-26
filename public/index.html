@@ -17,27 +17,46 @@
   <body>
     
     <nav>
-      <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="px-4 py-4">
         <div class="relative flex items-center justify-around lg:justify-center lg:space-x-16">
           <ul class="flex items-center space-x-8 lg:flex">
-            <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">I miei studi</a></li>
-            <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">I miei servizi</a></li>
+            <li>
+              <a href="#about_me" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                <span>I miei studi</span>
+              </a>
+            </li>
+            <li>
+              <a href="#servizi" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                <span>I miei servizi</span>
+              </a>
+            </li>
           </ul>
-          <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
+          <a href="#home" class="inline-flex items-center">
             <div class="alex_logo" id="alex_logo_header"></div>
-            <div class="invisible alex_logo hidden"></div>
+            <div class="invisible alex_logo"></div>
           </a>
           <ul class="flex items-center space-x-8 lg:flex">
             <li>
-              <a href="/" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Recensioni</a>
+              <a href="#review" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                <span>Recensioni</span>
+              </a>
             </li>
             <li>
-              <a href="/" aria-label="Sign in" title="Sign in" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Contattami</a>
+              <a href="#contattami" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                <span>Contattami</span>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    <div id="container">
+      <section id="home" class="bg-red-100"></section>
+      <section id="about_me" class="bg-red-200"></section>
+      <section id="servizi" class="bg-red-300"></section>
+      <section id="review" class="bg-red-400"></section>
+      <section id="contattami"></section>
+    </div>
 
     <script src="js/home.js" type="text/javascript"></script>
   </body>
