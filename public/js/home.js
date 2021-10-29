@@ -28,7 +28,6 @@ document.addEventListener("scroll", function (e) {
   //CALCOLO IN QUALE DIV SIAMO
   let active_el = document.getElementsByClassName("menu_active") || [];
   let new_active = null;
-  if (active_el.length) active_el[0].classList.remove("menu_active");
   if (aboutme_top > page_height) {
     new_active = document.querySelectorAll("[href='#home']");
   } else if (service_top > page_height) {
@@ -40,5 +39,8 @@ document.addEventListener("scroll", function (e) {
   } else {
     new_active = document.querySelectorAll("[href='#contattami']");
   }
-  if (new_active) new_active[0].classList.add("menu_active");
+  if (active_el[0] != new_active[0]) {
+    if (active_el.length) active_el[0].classList.remove("menu_active");
+    if (new_active) new_active[0].classList.add("menu_active");
+  }
 });

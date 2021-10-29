@@ -12,23 +12,20 @@
     <meta name="author" content="erikwski" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/home.css" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    
-    <nav>
+    <div id="fake_cover_header"></div>
+    <nav class="animate__animated animate__bounce">
       <div class="px-4 py-4 nopadding_mobile">
         <div id="nav_div_cont" class="relative flex items-center justify-around lg:justify-center lg:space-x-16">
-          <ul class="flex items-center lg:flex">
+          <ul class="flex items-center lg:flex lg:w-1\/3">
             <li class="custom_li_mobile relative h-full w-full">
               <a href="#about_me" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                 <span>About me</span>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                    <polygon points="0 0 24 0 24 24 0 28"></polygon>
                     <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
                     <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
                   </g>
@@ -82,11 +79,47 @@
         </div>
       </div>
     </nav>
-    <div id="container">
-      <section id="home" class="bg-red-100"></section>
-      <section id="about_me" class="bg-red-200"></section>
-      <section id="servizi" class="bg-red-300"></section>
-      <section id="review" class="bg-red-400"></section>
+    <div id="container" class="animate__animated animate__bounce">
+      <section id="home">
+        
+        <div class="relative flex flex-col-reverse py-16-only-small lg:pt-0 lg:flex-col lg:pb-0">
+  <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+    <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+      <path d="M50 0H100L50 100H0L50 0Z"></path>
+    </svg>
+    <img
+      class="object-cover w-full h-56 rounded shadow-lg lg:shadow-none md:h-96 lg:h-full rounded-xl"
+      src="img/home.jpg"
+      alt=""
+    />
+  </div>
+  <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+    <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+      <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bc_primary_dark text-white">
+        Personal running coach
+      </p>
+      <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+        Ciao sono <span class="c_primary font_size_120perc">Alex</span>
+      </h2>
+      <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+        Due righe di introduzione per invitare l'utente a clickare il pulsante qua sotto e continuare a navigare
+      </p>
+      <div class="flex items-center">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bc_primary"
+        >
+          Get started
+        </a>
+        <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+      </section>
+      <section id="about_me"></section>
+      <section id="servizi"></section>
+      <section id="review"></section>
       <section id="contattami"></section>
     </div>
 
