@@ -16,12 +16,12 @@
   </head>
   <body>
     <div id="fake_cover_header"></div>
-    <nav class="animate__animated animate__bounce">
+    <nav>
       <div class="px-4 py-4 nopadding_mobile">
         <div id="nav_div_cont" class="relative flex items-center justify-around lg:justify-center lg:space-x-16">
           <ul class="flex items-center lg:flex lg:w-1\/3">
             <li class="custom_li_mobile relative h-full w-full">
-              <a href="#about_me" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+              <a href="#about_me" class="icon_menu fast_animation font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                 <span>About me</span>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -33,7 +33,7 @@
               </a>
             </li>
             <li class="custom_li_mobile relative h-full w-full">
-              <a href="#servizi" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+              <a href="#servizi" class="icon_menu fast_animation font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                 <span>Servizi</span>
                 <svg class="cprimary_polygon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -53,7 +53,7 @@
           </a>
           <ul class="custom_ul_mobile flex items-center lg:flex text-center">
             <li class="custom_li_mobile relative h-full w-full">
-              <a href="#review" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+              <a href="#review" class="icon_menu fast_animation font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                 <span class="left_mobile">Recensioni</span>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -64,7 +64,7 @@
               </a>
             </li>
             <li class="custom_li_mobile relative h-full w-full">
-              <a href="#contattami" class="icon_menu font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+              <a href="#contattami" class="icon_menu fast_animation font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                 <span class="left_mobile">Contattami</span>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -79,46 +79,376 @@
         </div>
       </div>
     </nav>
-    <div id="container" class="animate__animated animate__bounce">
+    <div id="container">
       <section id="home">
         
         <div class="relative flex flex-col-reverse py-16-only-small lg:pt-0 lg:flex-col lg:pb-0">
-  <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-    <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
-      <path d="M50 0H100L50 100H0L50 0Z"></path>
-    </svg>
-    <img
-      class="object-cover w-full h-56 rounded shadow-lg lg:shadow-none md:h-96 lg:h-full rounded-xl"
-      src="img/home.jpg"
-      alt=""
-    />
-  </div>
-  <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-    <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-      <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bc_primary_dark text-white">
-        Personal running coach
-      </p>
-      <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-        Ciao sono <span class="c_primary font_size_120perc">Alex</span>
-      </h2>
-      <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-        Due righe di introduzione per invitare l'utente a clickare il pulsante qua sotto e continuare a navigare
-      </p>
-      <div class="flex items-center">
-        <a
-          href="/"
-          class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none bc_primary"
-        >
-          Get started
-        </a>
-        <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Learn more</a>
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+            <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+              <path d="M50 0H100L50 100H0L50 0Z"></path>
+            </svg>
+            <img
+              class="object-cover w-full h-56 rounded shadow-lg lg:shadow-none md:h-96 lg:h-full rounded-xl"
+              src="img/home.jpg"
+              alt=""
+            />
+          </div>
+          <div class="relative md:max-w-3xl flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+              <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bc_primary_dark text-white">
+                Personal running coach
+              </p>
+              <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                Ciao sono <span class="c_primary font_size_120perc">Alex</span>
+              </h2>
+              <p class="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+                Sono un running coach e mi occupo di allenare tutte le tipologie di runner: dal principiante al professionista
+              </p>
+              <div class="flex items-center justify-center lg:justify-start">
+                <a
+                  href="#about_me"
+                  class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded bc_primary"
+                >
+                  Dimmi di più...
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <section id="about_me"></section>
-      <section id="servizi"></section>
+      <section id="about_me" class="relative trans_1s fast_animation">
+        <div id="edit_padding_bottom" class="trans_1s px-4 pt-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+          <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+            Il mio percorso
+          </h1>
+          <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
+          </div>
+          <div class="grid gap-6 row-gap-10 lg:grid-cols-2">
+            <div class="lg:py-6 lg:pr-16">
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex items-center justify-center w-10 h-10 bc_border_primary_dark rounded-full">
+                      <svg class="w-4 text-gray-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                        <polyline stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="w-px h-full bc_primary_dark"></div>
+                </div>
+                <div class="pt-1 pb-8">
+                  <p class="mb-2 text-lg font-bold c_primary">Perchè la corsa?</p>
+                  <p class="text-gray-700">
+                    Qui pensavo di inserire 2/3 righe sulla carriera nell'atletica che ha fatto nascere la passione per la corsa
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex items-center justify-center w-10 h-10 bc_border_primary_dark rounded-full">
+                      <svg class="w-4 text-gray-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                        <polyline stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="w-px h-full bc_primary_dark"></div>
+                </div>
+                <div class="pt-1 pb-8">
+                  <p class="mb-2 text-lg font-bold c_primary">I miei studi</p>
+                  <p class="text-gray-700">
+                    <ul>
+                      <li>
+                        Nel <b>2013</b> ho conseguito la laurea in <b class="c_primary">Tecniche di radiologia</b> presso l'università di Modena
+                      </li>
+                      <li>
+                        Nel <b>2016</b> sono diventato <b class="c_primary">allenatore FIDAL</b>(Federazione italiana atletica leggera)
+                      </li>
+                      <li>
+                        Nel <b>2018</b> ho conseguito la laurea in <b class="c_primary">scienze motorie</b> presso l'università di Bologna
+                      </li>
+                      <li>
+                        Nel <b>2021</b> ho conseguito la laurea magistrale in <b class="c_primary">Scienze e Tecniche per l'Attività Motoria preventiva e adattata</b> presso l'università di Parma
+                      </li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex items-center justify-center w-10 h-10 bc_border_primary_dark rounded-full">
+                      <svg class="w-4 text-gray-600" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                        <polyline stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="w-px h-full bc_primary_dark"></div>
+                </div>
+                <div class="pt-1 pb-8">
+                  <p class="mb-2 text-lg font-bold c_primary">I miei obiettivi</p>
+                  <p class="text-gray-700">
+                    If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product.
+                  </p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex items-center justify-center w-10 h-10 bc_border_primary_dark rounded-full">
+                      <svg class="w-6 text-gray-600" stroke="currentColor" viewBox="0 0 24 24">
+                        <polyline style="fill: none;" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-shrink w-full">
+                  <a
+                    href="#!" 
+                    id="see_more_obiettivi"
+                    class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bc_primary"
+                  >
+                    Le mie statistiche
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <img
+                class="inset-0 object-cover object-bottom w-full rounded shadow-lg h-96 lg:absolute lg:h-full"
+                src="img/second.jpeg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div id="fixed_hide_stat" class="fast_animation p-4 pt-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-5 lg:py-6 lg:py-8">
+          <div class="grid row-gap-8 sm:grid-cols-3">
+            <div class="text-center">
+              <h6 id="stat1" class="text-5xl font-bold c_primary">0</h6>
+              <p class="font-bold">Anni di esperienza</p>
+            </div>
+            <div class="text-center">
+              <h6 id="stat2" class="text-5xl font-bold c_primary">0</h6>
+              <p class="font-bold">Runners seguiti</p>
+            </div>
+            <div class="text-center">
+              <h6 id="stat3" class="text-5xl font-bold c_primary">0</h6>
+              <p class="font-bold">Atleti seguiti</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="servizi">
+        <div class="trans_1s px-4 pt-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+          <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+            I miei servizi
+          </h1>
+          <div class="w-full mb-4">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
+          </div>
+          <div class="flex justify-around items-center flex-col lg:flex-row pt-4">
+          
+            
+            <div class="rounded-lg shadow-lg overflow-hidden mb-4 large_max-w-33 max-height-price">
+                <div class="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                    <div class="flex justify-center">
+                        <span class="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
+                          Standard mensile
+                        </span>
+                    </div>
+                    <div class="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white c_primary">
+                        <span class="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            Da
+                        </span>
+                        50€
+                        <span class="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            /mese
+                        </span>
+                    </div>
+                </div>
+                <div class="px-6 pt-6 pb-8 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">
+                  <ul>
+                      <li class="mt-4 flex items-start">
+                        <div class="flex-shrink-0">
+                          <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                          </svg>
+                        </div>
+                        <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                          <b class="c_primary">1</b> INCONTRO DELLA DURATA DI 1 ORA  (LIVE o ON-LINE TRAMITE VIDEOCHIAMATA)
+                        </p>
+                      </li>
+                      <li class="mt-4 flex items-start">
+                          <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                              </path>
+                            </svg>
+                          </div>
+                          <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                            <b class="c_primary">1</b> PROGRAMMAZIONE RUNNING PERSONALIZZATA DI 4 SETTIMANE
+                          </p>
+                      </li>
+                      <li class="mt-4 flex items-start">
+                          <div class="flex-shrink-0">
+                              <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                                  </path>
+                              </svg>
+                          </div>
+                          <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                            <b class="c_primary">4</b> SETTIMANE DI FEEDBACK SETTIMANALI SU WHATSAPP
+                          </p>
+                      </li>
+                  </ul>
+                  <div class="mt-6 rounded-md shadow">
+                      <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
+                        Inizia il tuo percorso
+                      </a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="relative rounded-lg shadow-lg overflow-hidden mb-4 large_max-w-33 max-height-price raccomandato">
+                <p id="raccomended_by"class="py-2 text-sm text-center text-white uppercase bc_primary_dark">Consigliato dai miei atleti:</p>
+                <div class="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                    <div class="flex justify-center">
+                        <span class="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
+                          Quadrimestrale
+                        </span>
+                    </div>
+                    <div class="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white c_primary_dark">
+                        <span class="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            Da
+                        </span>
+                        40€
+                        <span class="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            /mese
+                        </span>
+                    </div>
+                </div>
+                <div class="px-6 pt-6 pb-8 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">
+                    <ul>
+                        <li class="mt-4 flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 c_primary_dark" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                              <b class="c_primary_dark">4</b> INCONTRI DELLA DURATA DI 1 ORA (LIVE o ON-LINE TRAMITE VIDEOCHIAMATA )
+                            </p>
+                        </li>
+                        <li class="mt-4 flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 c_primary_dark" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                              <b class="c_primary_dark">4</b> PROGRAMMAZIONE RUNNING PERSONALIZZATE DI 4 SETTIMANE L'UNA
+                            </p>
+                        </li>
+                        <li class="mt-4 flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 c_primary_dark" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                              <b class="c_primary_dark">16</b> SETTIMANE DI FEEDBACK SETTIMANALI SU WHATSAPP
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="mt-6 rounded-md shadow">
+                        <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary_dark">
+                          Migliora i tuoi tempi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-lg shadow-lg overflow-hidden mb-4 large_max-w-33 max-height-price">
+                <div class="px-6 py-8 bg-white dark:bg-gray-800 sm:p-10 sm:pb-6">
+                    <div class="flex justify-center">
+                        <span class="inline-flex px-4 py-1 dark:text-white rounded-full text-sm leading-5 font-semibold tracking-wide uppercase">
+                          Personalizzato
+                        </span>
+                    </div>
+                    <div class="mt-4 flex justify-center text-6xl leading-none font-extrabold dark:text-white">
+                        <span class="ml-1 mr-3 text-xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            Da
+                        </span>
+                        ???
+                        <span class="ml-1 pt-8 text-2xl leading-8 font-medium text-gray-500 dark:text-gray-400">
+                            /mese
+                        </span>
+                    </div>
+                </div>
+                <div class="px-6 pt-6 pb-8 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">
+                    <ul>
+                      <li class="mt-4 flex items-start">
+                        <div class="flex-shrink-0">
+                          <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                          </svg>
+                        </div>
+                        <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                          Per programmazioni che richiedono servizi extra rispetto a quelli <b class="c_primary_dark">STANDARD</b> puoi contattarmi privatamente ai miei <b class="c_primary">contatti:</b>
+                        </p>
+                      </li>
+
+                      <li class="mt-4 flex items-start">
+                            <div class="flex-shrink-0">
+                              <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                  <rect x="0" y="0" width="24" height="24"/>
+                                  <path class="fill_c_primary" d="M13.0799676,14.7839934 L15.2839934,12.5799676 C15.8927139,11.9712471 16.0436229,11.0413042 15.6586342,10.2713269 L15.5337539,10.0215663 C15.1487653,9.25158901 15.2996742,8.3216461 15.9083948,7.71292558 L18.6411989,4.98012149 C18.836461,4.78485934 19.1530435,4.78485934 19.3483056,4.98012149 C19.3863063,5.01812215 19.4179321,5.06200062 19.4419658,5.11006808 L20.5459415,7.31801948 C21.3904962,9.0071287 21.0594452,11.0471565 19.7240871,12.3825146 L13.7252616,18.3813401 C12.2717221,19.8348796 10.1217008,20.3424308 8.17157288,19.6923882 L5.75709327,18.8875616 C5.49512161,18.8002377 5.35354162,18.5170777 5.4408655,18.2551061 C5.46541191,18.1814669 5.50676633,18.114554 5.56165376,18.0596666 L8.21292558,15.4083948 C8.8216461,14.7996742 9.75158901,14.6487653 10.5215663,15.0337539 L10.7713269,15.1586342 C11.5413042,15.5436229 12.4712471,15.3927139 13.0799676,14.7839934 Z" fill="#000000"/>
+                                  <path class="fill_c_primary" d="M14.1480759,6.00715131 L13.9566988,7.99797396 C12.4781389,7.8558405 11.0097207,8.36895892 9.93933983,9.43933983 C8.8724631,10.5062166 8.35911588,11.9685602 8.49664195,13.4426352 L6.50528978,13.6284215 C6.31304559,11.5678496 7.03283934,9.51741319 8.52512627,8.02512627 C10.0223249,6.52792766 12.0812426,5.80846733 14.1480759,6.00715131 Z M14.4980938,2.02230302 L14.313049,4.01372424 C11.6618299,3.76737046 9.03000738,4.69181803 7.1109127,6.6109127 C5.19447112,8.52735429 4.26985715,11.1545872 4.51274152,13.802405 L2.52110319,13.985098 C2.22450978,10.7517681 3.35562581,7.53777247 5.69669914,5.19669914 C8.04101739,2.85238089 11.2606138,1.72147333 14.4980938,2.02230302 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                                </g>
+                              </svg>
+                            </div>
+                            <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                              Telefono: <a href="tel:3206349783" class="c_primary font-bold">3206349783</a>
+                            </p>
+                        </li>
+                        <li class="mt-4 flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 c_primary" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path class="fill_c_primary" d="M5,9 L19,9 C20.1045695,9 21,9.8954305 21,11 L21,20 C21,21.1045695 20.1045695,22 19,22 L5,22 C3.8954305,22 3,21.1045695 3,20 L3,11 C3,9.8954305 3.8954305,9 5,9 Z M18.1444251,10.8396467 L12,14.1481833 L5.85557487,10.8396467 C5.4908718,10.6432681 5.03602525,10.7797221 4.83964668,11.1444251 C4.6432681,11.5091282 4.77972206,11.9639747 5.14442513,12.1603533 L11.6444251,15.6603533 C11.8664074,15.7798822 12.1335926,15.7798822 12.3555749,15.6603533 L18.8555749,12.1603533 C19.2202779,11.9639747 19.3567319,11.5091282 19.1603533,11.1444251 C18.9639747,10.7797221 18.5091282,10.6432681 18.1444251,10.8396467 Z" fill="#000000"/>
+                                    <path class="fill_c_primary" d="M11.1288761,0.733697713 L11.1288761,2.69017121 L9.12120481,2.69017121 C8.84506244,2.69017121 8.62120481,2.91402884 8.62120481,3.19017121 L8.62120481,4.21346991 C8.62120481,4.48961229 8.84506244,4.71346991 9.12120481,4.71346991 L11.1288761,4.71346991 L11.1288761,6.66994341 C11.1288761,6.94608579 11.3527337,7.16994341 11.6288761,7.16994341 C11.7471877,7.16994341 11.8616664,7.12798964 11.951961,7.05154023 L15.4576222,4.08341738 C15.6683723,3.90498251 15.6945689,3.58948575 15.5161341,3.37873564 C15.4982803,3.35764848 15.4787093,3.33807751 15.4576222,3.32022374 L11.951961,0.352100892 C11.7412109,0.173666017 11.4257142,0.199862688 11.2472793,0.410612793 C11.1708299,0.500907473 11.1288761,0.615386087 11.1288761,0.733697713 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(11.959697, 3.661508) rotate(-90.000000) translate(-11.959697, -3.661508) "/>
+                                  </g>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+                              Mail: <a href="mailto:alerunner91@gmail.com" class="c_primary font-bold">alerunner91@gmail.com</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="mt-6 rounded-md shadow">
+                        <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
+                          Diventa un professionista
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+          SEZIONE DEL: SE NON SEI CONVINTO--> DUE PULSANTI: PRENOTA INCONTRO CONOSCIUTIVO E VISUALIZZA RECENSIONI
+        </div>
+      </section>
       <section id="review"></section>
       <section id="contattami"></section>
     </div>

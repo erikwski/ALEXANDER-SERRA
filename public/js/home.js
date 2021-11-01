@@ -44,3 +44,37 @@ document.addEventListener("scroll", function (e) {
     if (new_active) new_active[0].classList.add("menu_active");
   }
 });
+function setIntervalStats(el, max) {
+  var interval = setInterval(function () {
+    el.innerHTML = (Number(el.innerHTML) + max / 25).toFixed(0);
+    if (Number(el.innerHTML) >= max) {
+      el.innerHTML = max;
+      clearInterval(interval);
+    }
+  }, 30);
+}
+let btn_show_stats = document.getElementById("see_more_obiettivi");
+let aboutme = document.getElementById("about_me");
+let about_me_height = aboutme.offsetHeight;
+btn_show_stats.addEventListener("click", () => {
+  let stats = document.getElementById("fixed_hide_stat");
+  let stats_height = stats.offsetHeight;
+  let edit_p = document.getElementById("edit_padding_bottom");
+  if (stats.classList.contains("show_fixed")) {
+    stats.classList.remove("show_fixed");
+    aboutme.style.height = about_me_height + "px";
+    document.getElementById("stat1").innerHTML = 0;
+    document.getElementById("stat2").innerHTML = 0;
+    document.getElementById("stat3").innerHTML = 0;
+    edit_p.style.paddingBottom = "";
+    aboutme.style.paddingBottom = "";
+  } else {
+    stats.classList.add("show_fixed");
+    let new_height = Number(about_me_height) + stats_height;
+    aboutme.style.height = new_height + "px";
+    edit_p.style.paddingBottom = "1rem";
+    setIntervalStats(document.getElementById("stat1"), 14);
+    setIntervalStats(document.getElementById("stat2"), 84);
+    setIntervalStats(document.getElementById("stat3"), 280);
+  }
+});
