@@ -12,7 +12,36 @@
     <meta name="author" content="erikwski" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <style>
 
+      .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        min-height: 800px;
+      }
+      .swiper img{
+        border-radius: 2rem;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <div id="fake_cover_header"></div>
@@ -226,7 +255,7 @@
             </div>
           </div>
         </div>
-        <div id="fixed_hide_stat" class="fast_animation p-4 pt-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-5 lg:py-6 lg:py-8">
+        <div id="fixed_hide_stat" class="fast_animation p-4 pt-6 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-5 lg:pt-10">
           <div class="grid row-gap-8 sm:grid-cols-3">
             <div class="text-center">
               <h6 id="stat1" class="text-5xl font-bold c_primary">0</h6>
@@ -333,7 +362,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="px-6 pt-6 pb-8 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">
+                <div class="px-6 pt-6 pb-8 lg:pb-6 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">
                     <ul>
                         <li class="mt-4 flex items-start">
                             <div class="flex-shrink-0">
@@ -369,7 +398,7 @@
                             </p>
                         </li>
                     </ul>
-                    <div class="mt-6 rounded-md shadow">
+                    <div class="mt-6 lg:mt-10 rounded-md shadow">
                         <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary_dark">
                           Migliora i tuoi tempi
                         </a>
@@ -438,7 +467,7 @@
                         </li>
                     </ul>
                     <div class="mt-6 rounded-md shadow">
-                        <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
+                        <a href="#" class="truncate flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
                           Diventa un professionista
                         </a>
                     </div>
@@ -446,11 +475,257 @@
             </div>
             
           </div>
-          SEZIONE DEL: SE NON SEI CONVINTO--> DUE PULSANTI: PRENOTA INCONTRO CONOSCIUTIVO E VISUALIZZA RECENSIONI
+          
+          <div class="bg-white rounded-xl shadow-lg " id="nonseiancorasicuro">
+            <div class="px-4 pb-16 pt-8 mt-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+              <h2 class="text-3xl font-extrabold sm:text-4xl text-center">
+                <span class="flex items-center justify-center">
+                  <img src="img/dubbio.png" width="32" height="32">
+                  <img class="mr-4" src="img/dubbio.png" width="32" height="32">
+                  Non sei ancora sicuro 
+                  <img class="ml-4" src="img/dubbio.png" width="32" height="32">
+                  <img src="img/dubbio.png" width="32" height="32">
+                </span>
+              </h2>
+              <span class="block text-gray-400 text-center font-extrabold">
+                Eccoti alcune alternative:
+              </span>
+
+              <div class="grid gap-8 row-gap-12 lg:grid-cols-2">
+                <div class="max-w-md sm:mx-auto sm:text-center">
+                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:h-24 text-6xl sm:mt-0 mt-4" style="width:100%;">
+                    <img src="img/star_emoji.png" width="64" height="64">
+                  </div>
+                  <h6 class="mb-3 text-xl font-bold leading-5">Le recensioni dei miei atleti</h6>
+                  <p class="mb-3 text-sm text-gray-900">
+                    Testo per convincere che le recensioni degli atleti sono estremamente importanti bla bla bla blab blab abblbalblbalab
+                  </p>
+                  <div class="flex-shrink w-full">
+                  <a href="#review" id="see_more_obiettivi" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bc_primary">
+                    Visualizza recensioni
+                  </a>
+                </div>
+                </div>
+                <div class="max-w-md sm:mx-auto sm:text-center">
+                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:h-24 text-6xl" style="width:100%;">
+                    <img src="img/calendar_emoji.png" width="64" height="64">
+                  </div>
+                  <h6 class="mb-3 text-xl font-bold leading-5">Prenota un incontro conoscitivo gratuito</h6>
+                  <p class="mb-3 text-sm text-gray-900">
+                    15 minuti dove possiamo parlare dei tuoi obiettivi e di tutti i tuoi dubbi sul tuo percorso bla balb ablablabbalbalblb
+                  </p>
+                  <div class="flex-shrink w-full">
+                  <a href="window.openhttps://calendly.com/alerun/15min" target="_blank" id="see_more_obiettivi" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bc_primary">
+                    Visualizza disponibilità
+                  </a>
+                </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </section>
-      <section id="review"></section>
-      <section id="contattami"></section>
+      <section id="review" class="text-gray-600 body-font">
+        <div class="container px-5 py-6 mx-auto">
+          <h1 class="w-full text-5xl font-bold leading-tight text-center text-gray-800">
+            Cosa dicono di me
+          </h1>
+          <div class="w-full">
+            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
+          </div>
+          
+          <!--<div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div><div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/screen.jpeg" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>-->
+        <div class="container_review antialiased mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-4 mt-4">
+          <div class="grid grid-cols-1 gap-2 lg:grid-cols-4 lg:gap-10">
+
+            <div class="lg:col-span-2 bc_primary_dark text-white p-8 rounded-lg relative text-left review_card">
+              <span class="fake_icon_message">
+                <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                  <path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                  <path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                </svg>
+              </span>
+              <img src="img/quotation.svg" class="absolute top-0 w-40 z-0 fill_c_primary opacity-40 right-4" alt="">
+              <div class="flex relative">
+                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="img/persona.jpg" alt="Person" />
+                <div class="flex flex-col justify-center">
+                  <p class="text-lg font-bold z-5">Ferrari Erik</p>
+                  <p class="text-sm font-bold opacity-70 z-5">Runner</p>
+                </div>
+              </div>
+              <p class="relative z-5 text-xl mt-4 font-bold leading-tight">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+              <p class="text-sm mt-4 opacity-70">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>
+
+            <div class="bc_primary text-white p-8 rounded-lg relative text-left review_card">
+              <span class="fake_icon_message">
+                <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                  <path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                  <path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                </svg>
+              </span>
+              <img src="img/quotation.svg" class="absolute top-0 w-40 z-0 fill_c_primary opacity-40 right-4" alt="">
+              <div class="flex relative">
+                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="img/persona.jpg" alt="Person" />
+                <div class="flex flex-col justify-center">
+                  <p class="text-lg font-bold z-5">Ferrari Erik</p>
+                  <p class="text-sm font-bold opacity-70 z-5">Runner</p>
+                </div>
+              </div>
+              <p class="relative z-5 text-xl mt-4 font-bold leading-tight">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+              <p class="text-sm mt-4 opacity-70">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla  bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>
+
+            <div class="lg:row-span-2 bc_colore_pista text-white p-8 rounded-lg relative text-left review_card">
+              <span class="fake_icon_message">
+                <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                  <path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                  <path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                </svg>
+              </span>
+              <img src="img/quotation.svg" class="absolute top-0 w-40 z-0 fill_c_primary opacity-40 right-4" alt="">
+              <div class="flex relative">
+                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="img/persona.jpg" alt="Person" />
+                <div class="flex flex-col justify-center">
+                  <p class="text-lg font-bold z-5">Ferrari Erik</p>
+                  <p class="text-sm font-bold opacity-70 z-5">Runner</p>
+                </div>
+              </div>
+              <p class="relative z-5 text-xl mt-4 font-bold leading-tight">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+              <p class="text-sm mt-4 opacity-70">
+                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla blabla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>
+
+            <div class="bc_primary text-white p-8 rounded-lg relative text-left review_card">
+              <span class="fake_icon_message">
+                <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                  <path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                  <path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                </svg>
+              </span>
+              <img src="img/quotation.svg" class="absolute top-0 w-40 z-0 fill_c_primary opacity-40 right-4" alt="">
+              <div class="flex relative">
+                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="img/persona.jpg" alt="Person" />
+                <div class="flex flex-col justify-center">
+                  <p class="text-lg font-bold z-5">Ferrari Erik</p>
+                  <p class="text-sm font-bold opacity-70 z-5">Runner</p>
+                </div>
+              </div>
+              <p class="relative z-5 text-xl mt-4 font-bold leading-tight">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+              <p class="text-sm mt-4 opacity-70">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>
+
+            <div class="lg:col-span-2 bc_primary_dark text-white p-8 rounded-lg relative text-left review_card">
+              <span class="fake_icon_message">
+                <svg viewBox="0 0 8 13" width="8" height="13" class="">
+                  <path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path>
+                  <path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path>
+                </svg>
+              </span>
+              <img src="img/quotation.svg" class="absolute top-0 w-40 z-0 fill_c_primary opacity-40 right-4" alt="">
+              <div class="flex relative">
+                <img class="object-cover w-20 h-20 mr-4 rounded-full shadow" src="img/persona.jpg" alt="Person" />
+                <div class="flex flex-col justify-center">
+                  <p class="text-lg font-bold z-5">Ferrari Erik</p>
+                  <p class="text-sm font-bold opacity-70 z-5">Runner</p>
+                </div>
+              </div>
+              <p class="relative z-5 text-xl mt-4 font-bold leading-tight">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+              <p class="text-sm mt-4 opacity-70">
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>  
+
+          </div>
+        </div>
+
+      </section>
+      <section id="contattami" class="relative px-5 py-6">
+
+        <h1 class="w-full text-5xl font-bold leading-tight text-center text-gray-800">
+          I MIEI SOCIAL
+        </h1>
+        <div class="w-full">
+          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
+        </div>
+
+        <ul id="lista_iconee" class="hidden">
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span> - Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <span> - Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-google-plus" aria-hidden="true"></i>
+              <span> - Google</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <span> - Instagram</span>
+            </a>
+          </li>
+        </ul>
+
+      </section>
     </div>
 
     <script src="js/home.js" type="text/javascript"></script>

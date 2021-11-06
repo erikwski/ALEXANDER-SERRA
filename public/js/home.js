@@ -63,11 +63,13 @@ btn_show_stats.addEventListener("click", () => {
   if (stats.classList.contains("show_fixed")) {
     stats.classList.remove("show_fixed");
     aboutme.style.height = about_me_height + "px";
-    document.getElementById("stat1").innerHTML = 0;
-    document.getElementById("stat2").innerHTML = 0;
-    document.getElementById("stat3").innerHTML = 0;
     edit_p.style.paddingBottom = "";
     aboutme.style.paddingBottom = "";
+    setTimeout(() => {
+      document.getElementById("stat2").innerHTML = 0;
+      document.getElementById("stat3").innerHTML = 0;
+      document.getElementById("stat1").innerHTML = 0;
+    }, 500);
   } else {
     stats.classList.add("show_fixed");
     let new_height = Number(about_me_height) + stats_height;
@@ -78,3 +80,20 @@ btn_show_stats.addEventListener("click", () => {
     setIntervalStats(document.getElementById("stat3"), 280);
   }
 });
+
+// var swiper = new Swiper(".mySwiper", {
+//   effect: "coverflow",
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: "auto",
+//   coverflowEffect: {
+//     rotate: 50,
+//     stretch: 0,
+//     depth: 100,
+//     modifier: 1,
+//     slideShadows: true,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//   },
+// });
