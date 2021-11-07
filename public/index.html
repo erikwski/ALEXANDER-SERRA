@@ -12,36 +12,8 @@
     <meta name="author" content="erikwski" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/home.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/color.css" />
     
-    <style>
-
-      .swiper {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        min-height: 800px;
-      }
-      .swiper img{
-        border-radius: 2rem;
-      }
-
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-      }
-    </style>
   </head>
   <body>
     <div id="fake_cover_header"></div>
@@ -337,7 +309,7 @@
                       </li>
                   </ul>
                   <div class="mt-6 rounded-md shadow">
-                      <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
+                      <a href="/checkout.html?service=gold" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
                         Inizia il tuo percorso
                       </a>
                   </div>
@@ -399,7 +371,7 @@
                         </li>
                     </ul>
                     <div class="mt-6 lg:mt-10 rounded-md shadow">
-                        <a href="#" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary_dark">
+                        <a href="/checkout.html?service=diamond" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary_dark">
                           Migliora i tuoi tempi
                         </a>
                     </div>
@@ -467,7 +439,7 @@
                         </li>
                     </ul>
                     <div class="mt-6 rounded-md shadow">
-                        <a href="#" class="truncate flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary">
+                        <a href="/checkout.html?service=platinum" class="truncate flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bc_primary modal-open">
                           Diventa un professionista
                         </a>
                     </div>
@@ -493,7 +465,7 @@
 
               <div class="grid gap-8 row-gap-12 lg:grid-cols-2">
                 <div class="max-w-md sm:mx-auto sm:text-center">
-                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:h-24 text-6xl sm:mt-0 mt-4" style="width:100%;">
+                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full sm:h-24 text-6xl sm:mt-0 mt-4" style="width:100%;">
                     <img src="img/star_emoji.png" width="64" height="64">
                   </div>
                   <h6 class="mb-3 text-xl font-bold leading-5">Le recensioni dei miei atleti</h6>
@@ -507,7 +479,7 @@
                 </div>
                 </div>
                 <div class="max-w-md sm:mx-auto sm:text-center">
-                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:h-24 text-6xl" style="width:100%;">
+                  <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full sm:h-24 text-6xl" style="width:100%;">
                     <img src="img/calendar_emoji.png" width="64" height="64">
                   </div>
                   <h6 class="mb-3 text-xl font-bold leading-5">Prenota un incontro conoscitivo gratuito</h6>
@@ -535,38 +507,6 @@
             <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
           </div>
           
-          <!--<div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div><div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="img/screen.jpeg" />
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>-->
         <div class="container_review antialiased mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-4 mt-4">
           <div class="grid grid-cols-1 gap-2 lg:grid-cols-4 lg:gap-10">
 
@@ -690,7 +630,7 @@
 
       </section>
       <section id="contattami" class="relative px-5 py-6">
-
+        
         <h1 class="w-full text-5xl font-bold leading-tight text-center text-gray-800">
           I MIEI SOCIAL
         </h1>
@@ -698,7 +638,7 @@
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t bc_primary_dark"></div>
         </div>
 
-        <ul id="lista_iconee" class="hidden">
+        <ul id="lista_icone" class="hidden">
           <li>
             <a href="#">
               <i class="fa fa-facebook" aria-hidden="true"></i>

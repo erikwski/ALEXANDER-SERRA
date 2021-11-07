@@ -2,7 +2,7 @@
   "name": "running-coach-website",
   "version": "1.0.0",
   "description": "Personal website of Serra Alexander",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build-css": "tailwindcss build css/style.css -o public/css/styles.css"
   },

@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+:root {
+  --primary: #38b6ff;
+  --primary_dark: #9f1b11;
+  --light_color: #f4e9de;
+  --background: #e8f7ff;
+  --colore_pista: #d33a2e;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.c_primary {
+  color: var(--primary);
+}
+.c_primary_dark {
+  color: var(--primary_dark);
+}
+.bc_primary {
+  background-color: var(--primary);
+}
+.bc_primary_dark {
+  background-color: var(--primary_dark);
+}
+.fill_c_primary {
+  fill: var(--primary);
+}
+.bc_border_primary_dark {
+  border: 1px solid var(--primary_dark);
+}
+.bc_colore_pista {
+  background: var(--colore_pista);
+}
+.bc_border_primary_dark svg line,
+.bc_border_primary_dark svg polyline {
+  color: var(--primary);
+  fill: var(--primary);
+}
