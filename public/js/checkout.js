@@ -15,7 +15,7 @@ let paypal_inizialize = {
     color: "blue",
     label: "pay",
     fundingicons: true,
-    layout: "horizontal",
+    // layout: "horizontal",
   },
   // Set up the transaction
   createOrder: function (data, actions) {
@@ -56,7 +56,15 @@ let paypal_inizialize = {
     });
   },
 };
-debugger;
+
 paypal.Buttons(paypal_inizialize).render("#paypal-button-gold");
 paypal.Buttons(paypal_inizialize).render("#paypal-button-diamond");
 paypal.Buttons(paypal_inizialize).render("#paypal-button-platinum");
+
+setTimeout(() => {
+  let iframe_paypal = document.getElementsByClassName("component-frame");
+  for (let i = 0; i < iframe_paypal.length; i++) {
+    debugger;
+    console.log(iframe_paypal[i].contentDocument.body.style);
+  }
+}, 2000);
