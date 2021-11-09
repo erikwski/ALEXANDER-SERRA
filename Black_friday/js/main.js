@@ -158,4 +158,43 @@
       });
     });
   }
+
+  $("#send_mail").click(() => {
+    $.post("https://formspree.io/f/mnqlkegw", {
+      nome: $("#name").val(),
+      contatto_utente: $("#email").val(),
+      servizio_interessato:
+        $("#service").val() === "" ? "Non specificato" : $("#service").val(),
+      messaggio: $("#message").val(),
+    })
+      .done((j) => {
+        $(".alert").addClass("active");
+        $("#name").val("");
+        $("#email").val("");
+        $("#service").val("");
+        $("#message").val("");
+        setTimeout(() => {
+          $(".closebtn").click();
+        }, 3000);
+      })
+      .fail((j) => {
+        $(".alert").addClass("active");
+        $("#name").val("");
+        $("#email").val("");
+        $("#service").val("");
+        $("#message").val("");
+        setTimeout(() => {
+          $(".closebtn").click();
+        }, 3000);
+      });
+  });
+
+  $(".closebtn").click(() => $(".alert").removeClass("active"));
+
+  $(".links li").click(function () {
+    $(".links li").removeClass("active");
+    $(this).addClass("active");
+    $(".tab_menu").hide();
+    $($(this).find("a").data("id")).show();
+  });
 })(jQuery);
