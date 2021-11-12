@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,7 @@
 						<h1>OFFERTE COACHING<br />
 						<span style="color: black;">BLACK <span style="color: #38b6ff;">FRIDAY</span></span></h1>
 						<p>
-							Visualizza le offerte per i miei due nuovissimi pacchetti <a href="#!">GOLD</a> e <a href="#!">DIAMOND</a>
+							Visualizza le offerte per i miei due nuovissimi pacchetti <a href="#!" class="link_to_offer" data-id="#gold">GOLD</a> e <a href="#!" class="link_to_offer" data-id="#diamond">DIAMOND</a>
 						</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly"></a></li>
@@ -61,9 +61,23 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul class="links">
-								<li class="active"><a href="#!" data-id="#main">Offerte</a></li>
-								<li><a href="#!" data-id="#gold">Gold</a></li>
-								<li><a href="#!" data-id="#diamond">Diamond</a></li>
+								<li class="active">
+									<a href="#!" data-id="#main">
+										Offerte
+									</a>
+								</li>
+								<li>
+									<a href="#!" data-id="#gold" style="display: flex; align-items: center; justify-content: center;">
+										<img src="img/crown.png" width="32" height="32" style="margin-right: 1rem;margin-bottom: 8px;">
+										<span class="hide_on_mobile">Gold</span> 
+									</a>
+								</li>
+								<li>
+									<a href="#!" data-id="#diamond" style="display: flex; align-items: center; justify-content: center;">
+										<img src="img/diamante.png" width="32" height="32" style="margin-right: 1rem;">
+										<span class="hide_on_mobile">Diamond</span> 
+									</a>
+								</li>
 							</ul>
 						</nav>
 	
@@ -74,15 +88,70 @@
 								<article class="post featured">
 									<header class="major">
 										<span class="date">19 Novembre 2021</span>
-										<h2><a href="#">
-											PACCHETTI DISPONIBILI
+										<h2>
+											<a href="#!">
+												PACCHETTI DISPONIBILI
+											</a>
 										</h2>
-										<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-										facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-										amet nullam sed etiam veroeros.</p>
-									</header>
-									<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-									
+										
+										<div id="price_container">
+											
+											<div class="price_card">
+												<img src="img/crown.png" width="32" height="32">
+												<img src="img/crown.png" width="32" height="32">
+												<h6>GOLD</h6>
+												<h1 class="price_tag">
+													<span class="wrong_price">
+														<span style="position: relative;">
+															<span class="wrong_price_cross"></span>
+															60€
+														</span>
+													</span>
+													<span class="right_price">45€</span>
+												</h1>
+												<b>Il pacchetto contiene:</b>
+												<ul style="list-style: none; padding-left: 0;margin: 0;">
+													<li><b>1</b> scheda</li>
+													<li><b>1</b> mese di durata</li>
+													<li><b>2</b> bonus <span style="color: #d5ac21;">black friday</span></li>
+													<li style="margin: 2rem 0 1rem;">
+														<a href="#!" class="btn_price_card" data-id="#gold">Acquista il pacchetto</a>
+													</li>
+													<li>
+														<label class="trigger_click_on_btn_price_card" style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
+													</li>	
+												</ul>
+											</div>
+
+											<div class="price_card">
+												<img src="img/diamante.png" width="32" height="32">
+												<img src="img/diamante.png" width="32" height="32">
+												<h6>DIAMOND</h6>
+												<h1 class="price_tag">
+													<span class="wrong_price">
+														<span style="position: relative;">
+															<span class="wrong_price_cross"></span>
+															289€
+														</span>
+													</span>
+													<span class="right_price">189€</span>
+												</h1>
+												<b>Il pacchetto contiene:</b>
+												<ul style="list-style: none; padding-left: 0;margin: 0;">
+													<li><b>4</b> schede</li>
+													<li><b>4</b> mesi di durata</li>
+													<li><b>4</b> bonus <span style="color: rgb(56 182 255);">black friday</span></li>
+													<li style="margin: 2rem 0 1rem;">
+														<a href="#!" class="btn_price_card" data-id="#diamond" style="background-color: #38b6ff;">Acquista il pacchetto</a>
+													</li>
+													<li>
+														<label class="trigger_click_on_btn_price_card"style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+									</header>									
 								</article>
 	
 						</div>
@@ -94,14 +163,14 @@
 								<article class="post featured">
 									<header class="major">
 										<span class="date">19 Novembre 2021</span>
-										<h2><a href="#">
+										<h2><a href="#!">
 											 DISPONIBILI
+											</a>
 										</h2>
 										<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
 										facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
 										amet nullam sed etiam veroeros.</p>
 									</header>
-									<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
 									
 								</article>
 	
@@ -114,17 +183,15 @@
 								<article class="post featured">
 									<header class="major">
 										<span class="date">19 Novembre 2021</span>
-										<h2><a href="#">
+										<h2><a href="#!">
 											PACCHETTI
+											</a>
 										</h2>
 										<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
 										facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
 										amet nullam sed etiam veroeros.</p>
-									</header>
-									<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-									
+									</header>									
 								</article>
-	
 						</div>
 
 				</div>
@@ -199,7 +266,7 @@
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>Developer by: <a href="https://www.instagram.com/codewski/">Codewski</a></li></li></ul>
+						<ul><li>Developed by: <a href="https://www.instagram.com/codewski/">Codewski</a></li></li></ul>
 					</div>
 
 			</div>

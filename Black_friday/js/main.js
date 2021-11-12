@@ -133,10 +133,12 @@
         top: "25vh",
         bottom: "-50vh",
         enter: function () {
-          $intro.addClass("hidden");
+          if ($("#nav li.active a").data("id") === "#main")
+            $intro.addClass("hidden");
         },
         leave: function () {
-          $intro.removeClass("hidden");
+          if ($("#nav li.active a").data("id") === "#main")
+            $intro.removeClass("hidden");
         },
       });
     });
@@ -150,10 +152,12 @@
         top: "15vh",
         bottom: "-15vh",
         enter: function () {
-          $intro.addClass("hidden");
+          if ($("#nav li.active a").data("id") === "#main")
+            $intro.addClass("hidden");
         },
         leave: function () {
-          $intro.removeClass("hidden");
+          if ($("#nav li.active a").data("id") === "#main")
+            $intro.removeClass("hidden");
         },
       });
     });
@@ -196,5 +200,33 @@
     $(this).addClass("active");
     $(".tab_menu").hide();
     $($(this).find("a").data("id")).show();
+    if ($(this).find("a").data("id") === "#main") {
+      $("#intro").removeClass("hidden_tab");
+      $("html").scrollTop($("#nav").offset().top - 200);
+    } else {
+      $("#intro").addClass("hidden");
+      $("#intro").addClass("hidden_tab");
+      $("html").scrollTop(0);
+    }
+  });
+
+  $(".trigger_click_on_btn_price_card").click(function () {
+    $(this).parents("ul").find(".btn_price_card").click();
+  });
+  $(".btn_price_card, .link_to_offer").click(function () {
+    $(".links li").removeClass("active");
+    $(`.links li a[data-id="${$(this).data("id")}"]`)
+      .parent()
+      .addClass("active");
+    $(".tab_menu").hide();
+    $($(this).data("id")).show();
+    if ($(this).data("id") === "#main") {
+      $("#intro").removeClass("hidden_tab");
+      $("html").scrollTop($("#nav").offset().top - 200);
+    } else {
+      $("#intro").addClass("hidden");
+      $("#intro").addClass("hidden_tab");
+      $("html").scrollTop(0);
+    }
   });
 })(jQuery);
