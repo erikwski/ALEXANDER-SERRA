@@ -155,3 +155,9 @@ body::-webkit-scrollbar-thumb:hover {
     bottom: -8rem;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .alert {
+    bottom: -10rem;
+  }
+}
