@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
+		<!-- ALEXRUNNINGCOACH.IT/.COM -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -12,40 +13,22 @@
         <meta name="author" content="erikwski" />
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/sweetalert.css" />
     </head>
     <body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
-
 				<!-- Intro -->
-					<div id="intro">
-						<a href="#" class="badge">
-							<svg viewBox="0 0 210 210">
-								<g stroke="none" fill="none">
-									<path d="M22,104.5 C22,58.9365081 58.9365081,22 104.5,22 C150.063492,22 187,58.9365081 187,104.5" id="top"></path>
-									<path d="M22,104.5 C22,150.063492 58.9365081,187 104.5,187 C150.063492,187 187,150.063492 187,104.5" id="bottom"></path>
-								</g>
-										<circle cx="105" cy="105" r="62" stroke="currentColor" stroke-width="1" fill="none" />
-								<text width="200" font-size="20" fill="currentColor">
-									<textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle" xlink:href="#top">
-										Special offers
-									</textPath>
-								</text>
-								<text width="200" font-size="20" fill="currentColor">
-									<textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle" xlink:href="#bottom">
-										only today
-									</textPath>
-								</text>
-							</svg>
-							<span>Black Friday</span>
-						</a>
+				<div id="intro">
+					<!-- COUNTDOWN VALIDITA -->
+						<img src="img/logo.png" width="128" height="128" style="">
 						<h1>
-							BONUS<span style="color: rgb(0, 0, 0);"> BLACK FRIDAY</span><br />
+							OFFERTA<span style="color: rgb(0, 0, 0);"> BLACK FRIDAY</span><br />
 							<span style="color: #38b6ff;">COACHING PER IL RUNNING</span>
 						</h1>
 						<p>
-							Visualizza le offerte per i miei due nuovissimi pacchetti <a href="#!" class="link_to_offer" data-id="#gold">GOLD</a> e <a href="#!" class="link_to_offer" data-id="#diamond">DIAMOND</a>
+							Scopri le offerte per i miei nuovi <b>Coaching</b> <a href="#!" class="link_to_offer" data-id="#gold" style="font-weight: 900;">GOLD</a> e <a href="#!" class="link_to_offer" data-id="#diamond" style="font-weight: 900;">DIAMOND</a>
 						</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly"></a></li>
@@ -65,7 +48,7 @@
 							<ul class="links">
 								<li class="active">
 									<a href="#!" data-id="#main">
-										Offerte
+										I coaching
 									</a>
 								</li>
 								<li>
@@ -92,7 +75,7 @@
 										<span class="date">26 Novembre 2021</span>
 										<h2>
 											<a href="#!">
-												PACCHETTI DISPONIBILI
+												COGLI L'OCCASIONE ORA
 											</a>
 										</h2>
 										
@@ -100,9 +83,8 @@
 											
 											<div class="price_card">
 												<img src="img/crown.png" width="32" height="32">
-												<img src="img/crown.png" width="32" height="32">
-												<span class="absolute_badge">SOLO NUOVI CLIENTI</span>
-												<h6>GOLD</h6>
+												<!-- <span class="absolute_badge">VALIDO SOLO PER NUOVI CLIENTI</span> -->
+												<h6>GOLD MENSILE</h6>
 												<h1 class="price_tag">
 													<span class="wrong_price">
 														<span style="position: relative;">
@@ -112,15 +94,16 @@
 													</span>
 													<span class="right_price">45€</span>
 												</h1>
-												<b>Il pacchetto contiene:</b>
-												<ul style="list-style: none; padding-left: 0;margin: 0;">
-													<li><b>1</b> scheda</li>
-													<li><b>1</b> mese di durata</li>
-													<li><b style="color: #d5ac21;" class="bonus_bf">2 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
-													<li style="margin: 2rem 0 1rem;">
+												Il Coaching di <b>1 mese</b> comprende:
+												<ul style="list-style: unset; margin: 10px 0 0; text-align: start;">
+													<li><b>1 incontro</b> di 45 minuti</li>
+													<li><b>1 programmazione personalizzata</b> di 4 settimane</li>
+													<li><b>4 settimane</b> di <i>feedback</i></li>
+													<li style="margin: 2rem 0 1rem;text-align: center; list-style: none;"><b style="color: #d5ac21;" class="bonus_bf">+1 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
+													<li style="margin: 2rem 0 1rem;text-align: center; list-style: none;">
 														<a href="#!" class="btn_price_card" data-id="#gold">Acquista il pacchetto</a>
 													</li>
-													<li>
+													<li style="text-align: center; list-style: none;">
 														<label class="trigger_click_on_btn_price_card" style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
 													</li>	
 												</ul>
@@ -128,8 +111,7 @@
 
 											<div class="price_card">
 												<img src="img/diamante.png" width="32" height="32">
-												<img src="img/diamante.png" width="32" height="32">
-												<h6>DIAMOND</h6>
+												<h6>DIAMOND QUADRIMESTRALE</h6>
 												<h1 class="price_tag">
 													<span class="wrong_price">
 														<span style="position: relative;">
@@ -138,23 +120,35 @@
 														</span>
 													</span>
 													<span class="right_price">197€</span>
+													<label style="color: rgb(116, 116, 116);">49,25€/mese</label>
+													<!-- <span style="position: relative;">
+														<span class="wrong_price_cross"></span>
+														72€/mese
+													</span> -->
 												</h1>
-												<b>Il pacchetto contiene:</b>
-												<ul style="list-style: none; padding-left: 0;margin: 0;">
-													<li><b>4</b> schede</li>
-													<li><b>4</b> mesi di durata</li>
-													<li><b style="color: #38b6ff;" class="bonus_bf">4 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
-													<li style="margin: 2rem 0 1rem;">
+												Il Coaching di <b>4 mesi</b> comprende:
+												<ul style="list-style: unset; margin: 10px 0 0; text-align: start;">
+													<li><b>4 incontri</b> di 60 minuti</li>
+													<li><b>4 programmazioni personalizzate</b> di 4 settimane</li>
+													<li><b>16 settimane</b> di <i>feedback</i></li>
+													<li><b>Analisi</b> <i>tecnica di corsa</i></li>
+													<li><b>4 programmazioni stretching</b> personalizzate</li>
+													<li style="text-align: center; list-style: none;"><b style="color: #38b6ff;" class="bonus_bf">+3 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
+													<li style="margin: 2rem 0 1rem;text-align: center; list-style: none;">
 														<a href="#!" class="btn_price_card" data-id="#diamond" style="background-color: #38b6ff;">Acquista il pacchetto</a>
 													</li>
-													<li>
+													<li style="text-align: center; list-style: none;">
 														<label class="trigger_click_on_btn_price_card"style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
 													</li>
 												</ul>
 											</div>
 
 										</div>
-									</header>									
+									</header>		
+		
+									<h2>
+										sezione dicono di me
+									</h2>				
 								</article>
 	
 						</div>
@@ -166,7 +160,7 @@
 								<article class="post featured">
 									<header class="major">
 										<span class="date">26 Novembre 2021</span>
-										<h2><a href="#!" class="hover_gold">
+										<h2 style="margin-bottom: 0;"><a href="#!" class="hover_gold">
 											 PACCHETTO GOLD
 											</a>
 										</h2>
@@ -199,7 +193,20 @@
 											</tr>
 										</tbody>
 									</table>
-									<p style="text-align: center;">+ 2 ESCLUSIVI BONUS</p>
+									<p style="text-align: center;">+ 1 BONUS ESCLUSIVO</p>
+								
+									<div class="bonus_container">
+										<!-- LEZIONE YOGA -->
+										<div class="card_bonus">
+											<div>
+												<b>LEZIONE DI YOGA</b>
+												<span>Una lezione di yoga con un professionista del settore dalla durata di 1 ora</span>
+											</div>
+											<img src="img/yoga.jpg" alt="">
+										</div>
+									</div>
+									<label style="color: darkgray;">Il primo incontro dovrà essere fissato entro il 31/01/2022</label>
+									<div id="gold_paypal_button" ></div>
 								</article>
 	
 						</div>
@@ -245,7 +252,7 @@
 										</tbody>
 									</table>
 									
-									<p style="text-align: center;">+ 4 ESCLUSIVI BONUS</p>
+									<p style="text-align: center;">+ 3 ESCLUSIVI BONUS</p>
 
 									<div class="bonus_container">
 										<!-- LEZIONE YOGA -->
@@ -256,31 +263,28 @@
 											</div>
 											<img src="img/yoga.jpg" alt="">
 										</div>
-										<!-- Q&A SERALE IN DIRETTA -->
+
+										<!-- LEZIONE DI MOBILITA' (only Diamond) -->
 										<div class="card_bonus">
 											<div>
-												<b>Q&A SERALE IN DIRETTA</b>
-												<span>Una live con me dove risponderò a tutti i vostri dubbi/curiosità sulla corsa</span>
+												<span style="background-color: #38b6ff; padding: 2px 1rem;color: #fff;font-weight: 600; font-size:60%; border-radius: 1rem;">ONLY DIAMOND</span>
+												<b>LEZIONE DI MOBILITA'</b>
+												<span>Una lezione di mobilità con un professionista del settore dalla durata di 1 ora</span>
 											</div>
-											<img src="img/corsa.jpeg" alt="">
+											<img src="img/stretching.jpg" alt="">
 										</div>
 										<!-- Q&A CON UNA NUTRIZIONISTA (only Diamond) -->
 										<div class="card_bonus">
 											<div>
-												<b>LEZIONE DI YOGA</b>
-												<span>Una lezione di yoga con un professionista del settore dalla durata di 1 ora</span>
+												<span style="background-color: #38b6ff; padding: 2px 1rem;color: #fff;font-weight: 600; font-size:60%; border-radius: 1rem;">ONLY DIAMOND</span>
+												<b>Q&A CON UNA NUTRIZIONISTA</b>
+												<span>Una live con una me e una nutrizionista esperta pronta a rispondere ad ogni vostra domanda</span>
 											</div>
-											<img src="img/diamante.png" alt="">
-										</div>
-										<!-- LEZIONE DI MOBILITA' (only Diamond) -->
-										<div class="card_bonus">
-											<div>
-												<b>LEZIONE DI YOGA</b>
-												<span>Una lezione di yoga con un professionista del settore dalla durata di 1 ora</span>
-											</div>
-											<img src="img/diamante.png" alt="">
+											<img src="img/nutrizionista.jpg" alt="">
 										</div>
 									</div>
+
+								<div id="diamond_paypal_button" style="margin-top: 2rem;"></div>
 								</article>
 						</div>
 
@@ -356,17 +360,14 @@
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>Developed by: <a href="https://www.instagram.com/codewski/">Codewski</a></li></li></ul>
+						<ul><li>Developed by: <a href="https://www.instagram.com/erikwski/">Erikwksi</a></li></li></ul>
 					</div>
 
 			</div>
 
-			<div class="alert">
-				<span class="closebtn">&times;</span>
-				Mail inviata correttamente, ti ricontatterò il prima possibile
-			</div>
-
 		<!-- Scripts -->
+		<script src="js/sweetalert.js"></script>
+		<script src="https://www.paypal.com/sdk/js?client-id=AZsbigN-3EBzMarC2OYORjlySx15km-5gvxQ2dTdQPh5viVmRPMgSXZwWvkIy4YEYBVUfuSMhuhasG0z&currency=EUR"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.scrollex.min.js"></script>
         <script src="js/jquery.scrolly.min.js"></script>

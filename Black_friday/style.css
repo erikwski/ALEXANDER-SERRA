@@ -126,6 +126,11 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 0 1rem;
   transition: 1s;
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.alert.payment {
+  background-color: #0bc329;
 }
 
 .alert.active {
@@ -150,14 +155,32 @@ body::-webkit-scrollbar-thumb:hover {
 .closebtn:hover {
   color: black;
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 1000px) and (min-width: 621px) {
   .alert {
-    bottom: -8rem;
+    bottom: -14rem;
   }
 }
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 620px) {
   .alert {
-    bottom: -10rem;
+    bottom: -14rem;
   }
+  .alert.alert.payment {
+    bottom: -16rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #intro h1 {
+    margin-top: 10rem !important;
+  }
+}
+.swal2-confirm {
+  background: #0fc736 !important;
+  color: #fff !important;
+  padding: 0 2rem !important;
+}
+.swal2-confirm:hover {
+  color: #fff !important;
+}
+.swal2-popup {
+  min-width: 50%;
 }

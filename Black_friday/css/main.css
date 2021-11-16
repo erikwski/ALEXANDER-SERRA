@@ -3357,10 +3357,10 @@ table.alt tbody tr td {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #212931;
-  background-image: url("../img/fake_img.jpg"),
+  background-color: #003e95;
+  /* background-image: url("../img/fake_img.jpg"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../img/bg.jpg");
+    url("../img/bg.jpg"); */
   background-size: auto, auto, 100% auto;
   background-position: center, center, top center;
   background-repeat: repeat, no-repeat, no-repeat;
@@ -4082,6 +4082,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   width: calc(100% - 4rem);
   max-width: 72rem;
   z-index: 2;
+  margin-top: 1rem;
 }
 
 #footer input,
@@ -5032,7 +5033,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background: #000;
   font-family: "Source Sans Pro";
 }
-.absolute_badge {
+/* .absolute_badge {
   position: absolute;
   top: -16px;
   font-size: 16px;
@@ -5046,7 +5047,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   align-items: center;
   color: #fff;
   font-family: "Source Sans Pro";
-}
+} */
 .hover_gold:hover {
   color: #d5ac21 !important;
 }

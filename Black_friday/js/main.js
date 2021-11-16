@@ -172,24 +172,32 @@
       messaggio: $("#message").val(),
     })
       .done((j) => {
-        $(".alert").addClass("active");
-        $("#name").val("");
-        $("#email").val("");
-        $("#service").val("");
-        $("#message").val("");
-        setTimeout(() => {
-          $(".closebtn").click();
-        }, 3000);
+        Swal.fire({
+          icon: "success",
+          title:
+            "Mail inviata correttamente, ti ricontatterò il prima possibile",
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+        }).then(() => {
+          $("#name").val("");
+          $("#email").val("");
+          $("#service").val("");
+          $("#message").val("");
+        });
       })
       .fail((j) => {
-        $(".alert").addClass("active");
-        $("#name").val("");
-        $("#email").val("");
-        $("#service").val("");
-        $("#message").val("");
-        setTimeout(() => {
-          $(".closebtn").click();
-        }, 3000);
+        Swal.fire({
+          icon: "success",
+          title:
+            "Mail inviata correttamente, ti ricontatterò il prima possibile",
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+        }).then(() => {
+          $("#name").val("");
+          $("#email").val("");
+          $("#service").val("");
+          $("#message").val("");
+        });
       });
   });
 
@@ -207,6 +215,7 @@
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
+      adaptCardHeight();
     }
   });
 
@@ -227,6 +236,77 @@
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
+      adaptCardHeight();
     }
   });
+
+  function adaptCardHeight() {
+    let min_height = 0;
+    $(".card_bonus").each(function () {
+      let height = Number($(this).css("height").replace("px", ""));
+      if (height > min_height) min_height = height;
+    });
+    $(".card_bonus").css("min-height", min_height + "px");
+    $();
+  }
+
+  paypal.FUNDING.SOFORT = "disallowed";
+  paypal.FUNDING.MYBANK = "disallowed";
+  let paypal_inizialize = {
+    style: {
+      size: "responsive",
+      size: "large",
+      shape: "pill",
+      color: "blue",
+      label: "pay",
+      fundingicons: true,
+      layout: "horizontal",
+    },
+    // Set up the transaction
+    createOrder: function (data, actions) {
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: "0.01",
+            },
+          },
+        ],
+      });
+    },
+
+    // Finalize the transaction
+    onApprove: function (data, actions) {
+      return actions.order.capture().then(function (orderData) {
+        Swal.fire({
+          icon: "success",
+          title:
+            "Pagamento inviato correttamente, contattami per prenotare il primo appuntamento",
+          showConfirmButton: true,
+          confirmButtonText: "Visualizza i miei contatti",
+        }).then(() => {
+          $([document.documentElement, document.body]).animate(
+            {
+              scrollTop: $("#footer").offset().top,
+            },
+            1000
+          );
+        });
+      });
+    },
+  };
+
+  paypal.Buttons(paypal_inizialize).render("#gold_paypal_button");
+  (paypal_inizialize.createOrder = function (data, actions) {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            value: "197",
+          },
+        },
+      ],
+    });
+  }),
+    paypal.Buttons(paypal_inizialize).render("#diamond_paypal_button");
 })(jQuery);
