@@ -169,8 +169,20 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 @media screen and (max-width: 500px) {
-  #intro h1 {
-    margin-top: 10rem !important;
+  #intro #first_logo {
+    margin-top: 8rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  #intro #first_logo {
+    margin-top: 12rem !important;
+  }
+  .links li {
+    margin: 0 !important;
+    width: 33.3333333%;
+  }
+  .links li:first-child a {
+    padding: 0 1rem !important;
   }
 }
 .swal2-confirm {
@@ -183,4 +195,110 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .swal2-popup {
   min-width: 50%;
+}
+#footer_vero {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+}
+#footer_vero section {
+  width: 50%;
+}
+@media screen and (max-width: 700px) {
+  #footer_vero section {
+    width: 100%;
+  }
+}
+#gold_paypal_button,
+#diamond_paypal_button,
+.desc_offert {
+  margin-top: 1rem;
+}
+.visualizza_dati_bonifico {
+  padding: 1rem 4rem;
+  background: #0783ef;
+  color: #fff;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+}
+.dati_bonifico {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.visualizza_dati_bonifico:hover,
+.visualizza_dati_bonifico:active,
+.visualizza_dati_bonifico:focus {
+  color: #fff !important;
+}
+.visualizza_offerta {
+  padding: 0.5rem 2rem;
+  background: #0783ef;
+  color: #fff;
+  border-radius: 1rem;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+}
+.visualizza_offerta:hover,
+.visualizza_offerta:active,
+.visualizza_offerta:focus {
+  color: #fff !important;
+}
+#first_logo {
+  margin-top: 4rem;
+}
+.review_list {
+  display: flex;
+  flex-direction: column;
+}
+.review {
+  padding: 1rem;
+  width: 80%;
+  margin-left: 20%;
+  margin-bottom: 1rem;
+  border: 1px solid gainsboro;
+  border-radius: 1rem;
+  position: relative;
+}
+.review span {
+  font-family: "Source Sans Pro";
+  font-size: 24px;
+}
+.review label {
+  font-family: "Merriweather", Georgia, serif;
+  color: rgb(92, 92, 92);
+  font-size: 12px;
+  font-style: italic;
+}
+.review img {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+}
+.review:first-child,
+.review:last-child {
+  margin-right: 20%;
+  margin-left: auto;
+}
+.review:first-child img,
+.review:last-child img {
+  left: -16px;
+  right: auto;
+}
+@media screen and (max-width: 1099px) {
+  #first_logo {
+    margin-top: 6rem;
+  }
+}
+@media screen and (max-width: 736px) {
+  #first_logo {
+    margin-top: 8rem !important;
+  }
+}
+@media screen and (max-width: 736px) {
+  .review span {
+    font-size: 19px;
+  }
 }

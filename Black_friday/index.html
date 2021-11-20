@@ -6,26 +6,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>
-        Serra Alexander - Offerte black friday
+        	Serra Alexander - Offerte black friday
         </title>
         <meta name="description" content="Serra Alexander - Offerte black friday" />
         <meta name="keywords" content="" />
+		<link rel="icon" type="image/png" href="img/logo.png">
+		<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="img/logo.png">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
         <meta name="author" content="erikwski" />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/sweetalert.css" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/sweetalert.css">
     </head>
     <body class="is-preload">
-
 		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		<div id="wrapper" class="fade-in">
+				<div class="timer_container">
+					<h1 id="headline">L'offerta sarà attiva fra:</h1>
+					<div id="countdown">
+						<div class="cont_time">
+							<span id="days"></span>
+							<label>Giorni</label>
+						</div>
+						<div class="cont_time">
+							<span id="hours"></span>
+							<label>Ore</label>
+						</div>
+						<div class="cont_time">
+							<span id="minutes"></span>
+							<label>Minuti</label>
+						</div>
+						<div class="cont_time">
+							<span id="seconds"></span>
+							<label>Secondi</label>
+						</div>
+					</div>
+					<a href="#!" class="visualizza_offerta">Visualizza offerte</a>
+				</div>
 				<!-- Intro -->
 				<div id="intro">
 					<!-- COUNTDOWN VALIDITA -->
-						<img src="img/logo.png" width="128" height="128" style="">
+						<img id="first_logo" src="img/logo.png" width="128" height="128" style="border-radius: 1rem;">
 						<h1>
 							OFFERTA<span style="color: rgb(0, 0, 0);"> BLACK FRIDAY</span><br />
-							<span style="color: #38b6ff;">COACHING PER IL RUNNING</span>
+							<span style="color: #fff;">COACHING PER IL RUNNING</span>
 						</h1>
 						<p>
 							Scopri le offerte per i miei nuovi <b>Coaching</b> <a href="#!" class="link_to_offer" data-id="#gold" style="font-weight: 900;">GOLD</a> e <a href="#!" class="link_to_offer" data-id="#diamond" style="font-weight: 900;">DIAMOND</a>
@@ -75,7 +101,7 @@
 										<span class="date">26 Novembre 2021</span>
 										<h2>
 											<a href="#!">
-												COGLI L'OCCASIONE ORA
+												APPROFITTANE SUBITO !!
 											</a>
 										</h2>
 										
@@ -98,13 +124,13 @@
 												<ul style="list-style: unset; margin: 10px 0 0; text-align: start;">
 													<li><b>1 incontro</b> di 45 minuti</li>
 													<li><b>1 programmazione personalizzata</b> di 4 settimane</li>
-													<li><b>4 settimane</b> di <i>feedback</i></li>
-													<li style="margin: 2rem 0 1rem;text-align: center; list-style: none;"><b style="color: #d5ac21;" class="bonus_bf">+1 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
+													<li><b>4 settimane</b> di feedback <i>(1 x settimana)</i></li>
+													<li class="margin_top_4_desktop" style="margin: 2rem 0 1rem;text-align: center; list-style: none;"><b style="color: #d5ac21;" class="bonus_bf">+1 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
 													<li style="margin: 2rem 0 1rem;text-align: center; list-style: none;">
-														<a href="#!" class="btn_price_card" data-id="#gold">Acquista il pacchetto</a>
+														<a href="#!" data-id="#gold" class="btn_price_card">Acquista il pacchetto</a>
 													</li>
 													<li style="text-align: center; list-style: none;">
-														<label class="trigger_click_on_btn_price_card" style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
+														<label class="trigger_click_on_btn_price_card" data-id="#gold" style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
 													</li>	
 												</ul>
 											</div>
@@ -113,24 +139,25 @@
 												<img src="img/diamante.png" width="32" height="32">
 												<h6>DIAMOND QUADRIMESTRALE</h6>
 												<h1 class="price_tag">
-													<span class="wrong_price">
+													<span class="wrong_price_diamond">
 														<span style="position: relative;">
-															<span class="wrong_price_cross"></span>
+															<span class="wrong_price_cross_diamond"></span>
 															297€
 														</span>
+														<label style="position: relative; color: rgb(116, 116, 116);">
+															74.25€/mese
+														</label>
 													</span>
-													<span class="right_price">197€</span>
-													<label style="color: rgb(116, 116, 116);">49,25€/mese</label>
-													<!-- <span style="position: relative;">
-														<span class="wrong_price_cross"></span>
-														72€/mese
-													</span> -->
+													<span class="right_price margin_right_10_mobile">197€</span>
+													<label class="margin_right_10_mobile" style="color: rgb(116, 116, 116); position: relative;">
+														49,25€/mese
+													</label>
 												</h1>
 												Il Coaching di <b>4 mesi</b> comprende:
 												<ul style="list-style: unset; margin: 10px 0 0; text-align: start;">
 													<li><b>4 incontri</b> di 60 minuti</li>
 													<li><b>4 programmazioni personalizzate</b> di 4 settimane</li>
-													<li><b>16 settimane</b> di <i>feedback</i></li>
+													<li><b>16 settimane</b> di feedback <i>(3 x settimana)</i></li>
 													<li><b>Analisi</b> <i>tecnica di corsa</i></li>
 													<li><b>4 programmazioni stretching</b> personalizzate</li>
 													<li style="text-align: center; list-style: none;"><b style="color: #38b6ff;" class="bonus_bf">+3 BONUS <span style="color:#000 !important;">BLACK FRIDAY</span></b></li>
@@ -138,17 +165,39 @@
 														<a href="#!" class="btn_price_card" data-id="#diamond" style="background-color: #38b6ff;">Acquista il pacchetto</a>
 													</li>
 													<li style="text-align: center; list-style: none;">
-														<label class="trigger_click_on_btn_price_card"style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
+														<label class="trigger_click_on_btn_price_card" data-id="#diamond" style="text-decoration: underline; color: rgb(92, 92, 92);cursor:pointer;">Visualizza dettagli</label>
 													</li>
 												</ul>
 											</div>
 
 										</div>
 									</header>		
-		
-									<h2>
-										sezione dicono di me
-									</h2>				
+									<label style="color: #929292;">N.B. Una persona può acquistare solo una delle due offerte, <span style="color: black;">NON ENTRAMBE</span></label>
+									<hr>
+									<h2 style="font-size: 3rem;">ALCUNE RECENSIONI DEI MIEI ATLETI</h2>
+									<div class="review_list">
+										<div class="review">
+											<img src="img/star.png" alt="" width="32" height="32">
+											<span>MARTINA, ALERUNNER</span>
+											<label>
+												Alexander è la persona giusta a cui affidarsi per scoprire il mondo del Running. Con grande cura, professionalità e tanta passione, tira fuori sempre il meglio dai suoi atleti.
+											</label>
+										</div>
+										<div class="review">
+											<img src="img/star.png" alt="" width="32" height="32">
+											<span>ANDREA, ALERUNNER</span>
+											<label>
+												Alexander propone allenamenti vari e stimolanti per raggiungere con curiosità ed entusiasmo ogni nuovo obiettivo.
+											</label>
+										</div>
+										<div class="review">
+											<img src="img/star.png" alt="" width="32" height="32">
+											<span>ERIKA, ALERUNNER</span>
+											<label>
+												Alexander è un coach a 360°. Ti insegna ad andare sempre un pò più in là e a tagliare i fili dei tuoi tuoi limiti. Che siano essi fisici o mentali.
+											</label>
+										</div>
+									</div>			
 								</article>
 	
 						</div>
@@ -178,22 +227,30 @@
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Schede di allenamento:</b></td>
-												<td>1 scheda</td>
+												<td><b>Incontro di 45 minuti:</b></td>
+												<td>
+													Se inizi a CORRERE DA ZERO ti guiderò passo passo nel tuo percorso.
+													Se CORRI GIA' analizzerò le modalità con cui ti sei allenato sino ad ora (allenamenti, abitudini, metodi utilizzati ...).
+												</td>
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Incontro di 1 ora:</b></td>
-												<td>1 incontro</td>
+												<td><b>1 Programmazione running personalizzata</b></td>
+												<td>Successivamente all'incontro (entro 7 giorni lavorativi) elaboro la tua "TABELLA" di allenamento. </td>
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Settimane di feedback settimanali:</b></td>
-												<td>4 settimane</td>
+												<td><b>Feedback ogni settimana:</b></td>
+												<td>1 feedback</td>
+											</tr>
+											<tr>
+												<td class="checked"><div></div></td>
+												<td><b>Costo del pacchetto</b></td>
+												<td>45€</td>
 											</tr>
 										</tbody>
 									</table>
-									<p style="text-align: center;">+ 1 BONUS ESCLUSIVO</p>
+									<p style="text-align: center;" id="shit_to_gold">+ 1 BONUS ESCLUSIVO</p>
 								
 									<div class="bonus_container">
 										<!-- LEZIONE YOGA -->
@@ -202,11 +259,39 @@
 												<b>LEZIONE DI YOGA</b>
 												<span>Una lezione di yoga con un professionista del settore dalla durata di 1 ora</span>
 											</div>
-											<img src="img/yoga.jpg" alt="">
+											<img src="img/yoga.jpg" height="300" alt="">
 										</div>
 									</div>
-									<label style="color: darkgray;">Il primo incontro dovrà essere fissato entro il 31/01/2022</label>
-									<div id="gold_paypal_button" ></div>
+									<div class="show_if_not_valid">
+										<h2 class="desc_offert">
+											L'OFFERTA NON E' ANCORA ACQUISTABILE
+										</h2>
+									</div>
+									<div class="hide_if_scaduta" style="display: none;">
+										<h2 class="desc_offert" style="color: red;">
+											L'OFFERTA NON E' PIU' ACQUISTABILE
+										</h2>
+									</div>
+									<div class="hide_if_not_valid" style="display: none;">
+										<h2 class="desc_offert">
+											ACQUISTA ORA IL PACCHETTO E RISPARMIA IL <span style="color:#d5ac21; font-size: 125%;">25%</span>
+										</h2>
+										<div id="gold_paypal_button" ></div>
+										<label style="color: #929292;"> Oppure acquista l'offerta tramite bonifico bancario</label>
+										<a href="#!" class="visualizza_dati_bonifico">ISTRUZIONI BONIFICO</a>
+										<div class="dati_bonifico" style="display: none;">
+											<b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+											<span><i>Intestatario:</i> SERRA ALEXANDER</span>
+											<span><i>Iban:</i> IT32K0567617295IB0000668343</span>
+											<span><i>Causale:</i> COACHING PER IL RUNNING</span>
+											<span><i>Costo:</i> 45€</span>
+											<span>
+												<i>
+													Una volta effettuato BONIFICO INVIA COPIA ad <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a> oppure telefonicamente al <a href="tel:3206349783">3206349783</a>.
+												</i>
+											</span>
+										</div>
+									</div>
 								</article>
 	
 						</div>
@@ -236,23 +321,39 @@
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Schede di allenamento:</b></td>
-												<td>4 schede</td>
+												<td><b>4 Incontri da 60 minuti:</b></td>
+												<td>
+													Se inizi a CORRERE DA ZERO ti guiderò passo passo nel tuo percorso.
+													Se CORRI GIA' analizzerò le modalità con cui ti sei allenato sino ad ora (allenamenti, abitudini, metodi utilizzati ...).
+												</td>
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Incontro di 1 ora:</b></td>
-												<td>4 incontri</td>
+												<td><b>Analisi della tecnica di corsa:</b></td>
+												<td>Studieremo (dal vivo o  tramite materiale video) la tua postura durante la corsa individuando gli elementi che incidono sulla fluidità del movimento.</td>
 											</tr>
 											<tr>
 												<td class="checked"><div></div></td>
-												<td><b>Settimane di feedback settimanali:</b></td>
-												<td>16 settimane</td>
+												<td><b>4 Programmazioni running personalizzate</b></td>
+												<td>Successivamente all'incontro (entro <b>5</b> giorni lavorativi) elaboro la tua "TABELLA" di allenamento. </td>
+											</tr>
+											<tr>
+												<td class="checked"><div></div></td>
+												<td><b>1 programmazione stretching personalizzata</b></td>
+												<td>
+													Successivamente all'incontro (entro 5 giorni lavorativi) elaboro la tua "TABELLA" di stretching. 
+													Il programma sarà interamente strutturato sulle tue esigenze di allungamento muscolare.
+												</td>
+											</tr>
+											<tr>
+												<td class="checked"><div></div></td>
+												<td><b>Feedback ogni settimana:</b></td>
+												<td>3 feedback</td>
 											</tr>
 										</tbody>
 									</table>
 									
-									<p style="text-align: center;">+ 3 ESCLUSIVI BONUS</p>
+									<p style="text-align: center;" id="shit_to_diamond">+ 3 ESCLUSIVI BONUS</p>
 
 									<div class="bonus_container">
 										<!-- LEZIONE YOGA -->
@@ -261,9 +362,10 @@
 												<b>LEZIONE DI YOGA</b>
 												<span>Una lezione di yoga con un professionista del settore dalla durata di 1 ora</span>
 											</div>
-											<img src="img/yoga.jpg" alt="">
+											<img src="img/yoga.jpg" height="300" alt="">
 										</div>
-
+									</div>
+									<div class="bonus_container">
 										<!-- LEZIONE DI MOBILITA' (only Diamond) -->
 										<div class="card_bonus">
 											<div>
@@ -283,16 +385,45 @@
 											<img src="img/nutrizionista.jpg" alt="">
 										</div>
 									</div>
-
-								<div id="diamond_paypal_button" style="margin-top: 2rem;"></div>
-								</article>
+								
+								<div class="show_if_not_valid">
+									<h2 class="desc_offert">
+										L'OFFERTA NON E' ANCORA ACQUISTABILE
+									</h2>
+								</div>
+								<div class="hide_if_scaduta" style="display: none;">
+									<h2 class="desc_offert" style="color: red;">
+										L'OFFERTA NON E' PIU' ACQUISTABILE
+									</h2>
+								</div>
+								<div class="hide_if_not_valid" style="display: none;">
+									<h2 class="desc_offert">
+										ACQUISTA ORA IL PACCHETTO E RISPARMIA IL <span style="color:#38b6ff; font-size: 125%;">33%</span>
+									</h2>
+									<div id="diamond_paypal_button" style="margin-top: 2rem;"></div>
+									<label style="color: #929292;"> Oppure acquista l'offerta tramite bonifico bancario</label>
+									<a href="#!" class="visualizza_dati_bonifico">ISTRUZIONI BONIFICO</a>
+									<div class="dati_bonifico" style="display: none;">
+										<b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+										<span><i>Intestatario:</i> SERRA ALEXANDER</span>
+										<span><i>Iban:</i> IT32K0567617295IB0000668343</span>
+										<span><i>Causale:</i> COACHING PER IL RUNNING</span>
+										<span><i>Costo:</i> 197€</span>
+										<span>
+											<i>
+												Una volta effettuato BONIFICO INVIA COPIA ad <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a> oppure telefonicamente al <a href="tel:3206349783">3206349783</a>.
+											</i>
+										</span>
+									</div>
+								</div>
+							</article>
 						</div>
 
 				</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
+						<!--<section>
 							<div class="form">
 								<div class="fields">
 									<div class="field">
@@ -320,9 +451,9 @@
 									<li><input id="send_mail" type="submit" value="Send Message" /></li>
 								</ul>
 							</div>
-						</section>
-						<section class="split contact">
-							<section class="alt">
+						</section>-->
+						<section class="split contact" id="footer_vero">
+							<section class="alt" style="align-items: center; border-right: 1px solid #d5d5d5;">
 								<h3>Indirizzo</h3>
 								<p>Via F. Savioli 9A<br />
 								Riolo, MO 41013</p>
@@ -331,7 +462,7 @@
 								<h3>Telefono</h3>
 								<p><a href="tel:3206349783">3206349783</a></p>
 							</section>
-							<section>
+							<section style="border-right: 1px solid #d5d5d5;">
 								<h3>Email</h3>
 								<p><a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a></p>
 							</section>

@@ -163,43 +163,43 @@
     });
   }
 
-  $("#send_mail").click(() => {
-    $.post("https://formspree.io/f/mnqlkegw", {
-      nome: $("#name").val(),
-      contatto_utente: $("#email").val(),
-      servizio_interessato:
-        $("#service").val() === "" ? "Non specificato" : $("#service").val(),
-      messaggio: $("#message").val(),
-    })
-      .done((j) => {
-        Swal.fire({
-          icon: "success",
-          title:
-            "Mail inviata correttamente, ti ricontatterò il prima possibile",
-          showConfirmButton: true,
-          confirmButtonText: "OK",
-        }).then(() => {
-          $("#name").val("");
-          $("#email").val("");
-          $("#service").val("");
-          $("#message").val("");
-        });
-      })
-      .fail((j) => {
-        Swal.fire({
-          icon: "success",
-          title:
-            "Mail inviata correttamente, ti ricontatterò il prima possibile",
-          showConfirmButton: true,
-          confirmButtonText: "OK",
-        }).then(() => {
-          $("#name").val("");
-          $("#email").val("");
-          $("#service").val("");
-          $("#message").val("");
-        });
-      });
-  });
+  // $("#send_mail").click(() => {
+  //   $.post("https://formspree.io/f/mnqlkegw", {
+  //     nome: $("#name").val(),
+  //     contatto_utente: $("#email").val(),
+  //     servizio_interessato:
+  //       $("#service").val() === "" ? "Non specificato" : $("#service").val(),
+  //     messaggio: $("#message").val(),
+  //   })
+  //     .done((j) => {
+  //       Swal.fire({
+  //         icon: "success",
+  //         title:
+  //           "Mail inviata correttamente, ti ricontatterò il prima possibile",
+  //         showConfirmButton: true,
+  //         confirmButtonText: "OK",
+  //       }).then(() => {
+  //         $("#name").val("");
+  //         $("#email").val("");
+  //         $("#service").val("");
+  //         $("#message").val("");
+  //       });
+  //     })
+  //     .fail((j) => {
+  //       Swal.fire({
+  //         icon: "success",
+  //         title:
+  //           "Mail inviata correttamente, ti ricontatterò il prima possibile",
+  //         showConfirmButton: true,
+  //         confirmButtonText: "OK",
+  //       }).then(() => {
+  //         $("#name").val("");
+  //         $("#email").val("");
+  //         $("#service").val("");
+  //         $("#message").val("");
+  //       });
+  //     });
+  // });
 
   $(".closebtn").click(() => $(".alert").removeClass("active"));
 
@@ -211,7 +211,9 @@
     if ($(this).find("a").data("id") === "#main") {
       $("#intro").removeClass("hidden_tab");
       $("html").scrollTop($("#nav").offset().top - 200);
+      $(".timer_container").show();
     } else {
+      $(".timer_container").hide();
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
@@ -219,10 +221,7 @@
     }
   });
 
-  $(".trigger_click_on_btn_price_card").click(function () {
-    $(this).parents("ul").find(".btn_price_card").click();
-  });
-  $(".btn_price_card, .link_to_offer").click(function () {
+  $(".btn_price_card").click(function () {
     $(".links li").removeClass("active");
     $(`.links li a[data-id="${$(this).data("id")}"]`)
       .parent()
@@ -232,12 +231,58 @@
     if ($(this).data("id") === "#main") {
       $("#intro").removeClass("hidden_tab");
       $("html").scrollTop($("#nav").offset().top - 200);
+      $(".timer_container").show();
     } else {
+      $(".timer_container").hide();
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
       adaptCardHeight();
     }
+    let shift_to =
+      $(this).data("id") === "#gold" ? "shit_to_gold" : "shit_to_diamond";
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $("#" + shift_to).offset().top,
+      },
+      1000
+    );
+  });
+  $(".visualizza_dati_bonifico").click(function () {
+    $(this).parents(".tab_menu").find(".dati_bonifico").toggle(1000);
+  });
+  $(".trigger_click_on_btn_price_card, .link_to_offer").click(function () {
+    $(".links li").removeClass("active");
+    $(`.links li a[data-id="${$(this).data("id")}"]`)
+      .parent()
+      .addClass("active");
+    $(".tab_menu").hide();
+    $($(this).data("id")).show();
+    if ($(this).data("id") === "#main") {
+      $("#intro").removeClass("hidden_tab");
+      $("html").scrollTop($("#nav").offset().top - 200);
+      $(".timer_container").show();
+    } else {
+      $(".timer_container").hide();
+      $("#intro").addClass("hidden");
+      $("#intro").addClass("hidden_tab");
+      $("html").scrollTop(0);
+      adaptCardHeight();
+    }
+  });
+
+  $(".visualizza_offerta").click(() => {
+    $(".links li").removeClass("active").first().addClass("active");
+    $(".tab_menu").hide();
+    $("#main").show();
+    $("#intro").removeClass("hidden_tab");
+    $(".timer_container").show();
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $("#main").offset().top - 100,
+      },
+      1000
+    );
   });
 
   function adaptCardHeight() {
@@ -268,7 +313,7 @@
         purchase_units: [
           {
             amount: {
-              value: "0.01",
+              value: "45",
             },
           },
         ],
@@ -309,4 +354,69 @@
     });
   }),
     paypal.Buttons(paypal_inizialize).render("#diamond_paypal_button");
+
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  const countDown = new Date("11/26/2021").getTime(),
+    countDown2 = new Date("11/27/2021").getTime(),
+    x = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown - now;
+
+      (document.getElementById("days").innerText = Math.floor(distance / day)),
+        (document.getElementById("hours").innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        (document.getElementById("minutes").innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        (document.getElementById("seconds").innerText = Math.floor(
+          (distance % minute) / second
+        ));
+      //do something later when date is reached
+      if (distance < 0) {
+        //l'offerta è attualmente valida
+        $(".show_if_not_valid").hide();
+        $(".hide_if_not_valid").show();
+        clearInterval(x);
+        $("#headline").html("L'offerta scade fra:");
+        y = setInterval(function () {
+          const now2 = new Date().getTime(),
+            distance2 = countDown2 - now2;
+
+          (document.getElementById("days").innerText = Math.floor(
+            distance2 / day
+          )),
+            (document.getElementById("hours").innerText = Math.floor(
+              (distance2 % day) / hour
+            )),
+            (document.getElementById("minutes").innerText = Math.floor(
+              (distance2 % hour) / minute
+            )),
+            (document.getElementById("seconds").innerText = Math.floor(
+              (distance2 % minute) / second
+            ));
+
+          //do something later when date is reached
+          console.log(distance2);
+          if (distance2 < 0) {
+            //OFFERTA SCADUTA
+            clearInterval(y);
+            $("#headline").html("L'offerta è scaduta");
+            $("#countdown, .visualizza_offerta").remove();
+            $(".hide_if_not_valid").hide();
+            $(".hide_if_scaduta").show();
+            $(".timer_container").css({
+              padding: "0.5rem",
+              position: "fixed",
+            });
+          }
+          //seconds
+        }, 0);
+      }
+      //seconds
+    }, 0);
 })(jQuery);
