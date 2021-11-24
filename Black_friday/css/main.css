@@ -4882,7 +4882,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   );
   width: 120%;
 }
-.wrong_price_cross_diamond {
+span .wrong_price_cross_diamond {
   z-index: 1;
   position: absolute;
   width: 103%;
@@ -4898,7 +4898,22 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
     transparent 100%
   );
 }
-#price_container .price_card:first-child .wrong_price_cross {
+.wrong_price_cross_diamond2 {
+  z-index: 1;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 0%;
+  right: 0;
+  background-image: repeating-linear-gradient(
+    163deg,
+    transparent 0%,
+    #ff000000 47%,
+    #38b6ff 50%,
+    transparent 53%,
+    transparent 100%
+  );
 }
 .right_price {
   color: rgb(56 182 255);
@@ -5058,6 +5073,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   .wrong_price_diamond {
     top: 1.5rem !important;
   }
+  .links li:first-child a {
+    padding: 0 1rem !important;
+  }
 }
 .black_friday_span {
   font-size: 2rem;
@@ -5094,15 +5112,24 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   justify-content: space-around;
   flex-wrap: wrap;
   flex-flow: row wrap;
+  flex-direction: column;
 }
 .card_bonus {
-  width: 45%;
+  width: 95%;
   margin: 0 2.5% 1rem;
   border: 1px solid gainsboro;
   border-radius: 1rem;
   display: flex;
   align-items: stretch;
   flex-grow: 1;
+}
+@media screen and (min-width: 1700px) {
+  .bonus_container {
+    flex-direction: row;
+  }
+  .card_bonus {
+    width: 45%;
+  }
 }
 .card_bonus div {
   padding: 1rem;
@@ -5119,13 +5146,38 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   background-size: cover;
   max-width: 100%;
   max-height: 100%;
-  width: 50%;
   border-radius: 1rem;
 }
 @media screen and (max-width: 1000px) {
   .card_bonus {
     width: 90%;
     margin: 0 5% 1rem;
+  }
+  .column_until_1000 {
+    flex-direction: column;
+  }
+  .column_until_1000 a {
+    max-width: 100% !important;
+    width: auto;
+  }
+  .column_until_1000 a:first-child {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (min-width: 1001px) {
+  .hide_after_1000 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .card_bonus {
+    flex-direction: column;
+    min-height: auto !important;
+  }
+  .card_bonus img,
+  .card_bonus div {
+    width: 300px;
+    align-self: center;
   }
 }
 .timer_container {

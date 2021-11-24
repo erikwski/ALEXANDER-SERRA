@@ -181,9 +181,6 @@ body::-webkit-scrollbar-thumb:hover {
     margin: 0 !important;
     width: 33.3333333%;
   }
-  .links li:first-child a {
-    padding: 0 1rem !important;
-  }
 }
 .swal2-confirm {
   background: #0fc736 !important;
@@ -203,6 +200,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 #footer_vero section {
   width: 50%;
+}
+#footer_vero section:last-child {
+  width: 100%;
 }
 @media screen and (max-width: 700px) {
   #footer_vero section {
@@ -301,4 +301,12 @@ body::-webkit-scrollbar-thumb:hover {
   .review span {
     font-size: 19px;
   }
+}
+@media screen and (min-width: 701px) {
+  .bonus_card img {
+    width: 300px !important;
+  }
+}
+.card_bonus {
+  justify-content: space-between;
 }
