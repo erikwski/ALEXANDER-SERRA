@@ -5,202 +5,6 @@
 */
 
 (function ($) {
-  var $window = $(window),
-    $body = $("body"),
-    $wrapper = $("#wrapper"),
-    $header = $("#header"),
-    $nav = $("#nav"),
-    $main = $("#main"),
-    $navPanelToggle,
-    $navPanel,
-    $navPanelInner;
-
-  // Breakpoints.
-  breakpoints({
-    default: ["1681px", null],
-    xlarge: ["1281px", "1680px"],
-    large: ["981px", "1280px"],
-    medium: ["737px", "980px"],
-    small: ["481px", "736px"],
-    xsmall: ["361px", "480px"],
-    xxsmall: [null, "360px"],
-  });
-
-  /**
-   * Applies parallax scrolling to an element's background image.
-   * @return {jQuery} jQuery object.
-   */
-  $.fn._parallax = function (intensity) {
-    var $window = $(window),
-      $this = $(this);
-
-    if (this.length == 0 || intensity === 0) return $this;
-
-    if (this.length > 1) {
-      for (var i = 0; i < this.length; i++) $(this[i])._parallax(intensity);
-
-      return $this;
-    }
-
-    if (!intensity) intensity = 0.25;
-
-    $this.each(function () {
-      var $t = $(this),
-        $bg = $('<div class="bg"></div>').appendTo($t),
-        on,
-        off;
-
-      on = function () {
-        $bg.removeClass("fixed").css("transform", "matrix(1,0,0,1,0,0)");
-
-        $window.on("scroll._parallax", function () {
-          var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
-
-          $bg.css("transform", "matrix(1,0,0,1,0," + pos * intensity + ")");
-        });
-      };
-
-      off = function () {
-        $bg.addClass("fixed").css("transform", "none");
-
-        $window.off("scroll._parallax");
-      };
-
-      // Disable parallax on ..
-      if (
-        browser.name == "ie" || // IE
-        browser.name == "edge" || // Edge
-        window.devicePixelRatio > 1 || // Retina/HiDPI (= poor performance)
-        browser.mobile
-      )
-        // Mobile devices
-        off();
-      // Enable everywhere else.
-      else {
-        breakpoints.on(">large", on);
-        breakpoints.on("<=large", off);
-      }
-    });
-
-    $window
-      .off("load._parallax resize._parallax")
-      .on("load._parallax resize._parallax", function () {
-        $window.trigger("scroll");
-      });
-
-    return $(this);
-  };
-
-  // Play initial animations on page load.
-  $window.on("load", function () {
-    window.setTimeout(function () {
-      $body.removeClass("is-preload");
-    }, 100);
-  });
-
-  // Scrolly.
-  $(".scrolly").scrolly();
-
-  // Background.
-  $wrapper._parallax(0.925);
-
-  // Hack: Disable transitions on WP.
-  if (browser.os == "wp" && browser.osVersion < 10)
-    $navPanel.css("transition", "none");
-
-  // Intro.
-  var $intro = $("#intro");
-
-  if ($intro.length > 0) {
-    // Hack: Fix flex min-height on IE.
-    if (browser.name == "ie") {
-      $window
-        .on("resize.ie-intro-fix", function () {
-          var h = $intro.height();
-
-          if (h > $window.height()) $intro.css("height", "auto");
-          else $intro.css("height", h);
-        })
-        .trigger("resize.ie-intro-fix");
-    }
-
-    // Hide intro on scroll (> small).
-    breakpoints.on(">small", function () {
-      $main.unscrollex();
-
-      $main.scrollex({
-        mode: "bottom",
-        top: "25vh",
-        bottom: "-50vh",
-        enter: function () {
-          if ($("#nav li.active a").data("id") === "#main")
-            $intro.addClass("hidden");
-        },
-        leave: function () {
-          if ($("#nav li.active a").data("id") === "#main")
-            $intro.removeClass("hidden");
-        },
-      });
-    });
-
-    // Hide intro on scroll (<= small).
-    breakpoints.on("<=small", function () {
-      $main.unscrollex();
-
-      $main.scrollex({
-        mode: "middle",
-        top: "15vh",
-        bottom: "-15vh",
-        enter: function () {
-          if ($("#nav li.active a").data("id") === "#main")
-            $intro.addClass("hidden");
-        },
-        leave: function () {
-          if ($("#nav li.active a").data("id") === "#main")
-            $intro.removeClass("hidden");
-        },
-      });
-    });
-  }
-
-  // $("#send_mail").click(() => {
-  //   $.post("https://formspree.io/f/mnqlkegw", {
-  //     nome: $("#name").val(),
-  //     contatto_utente: $("#email").val(),
-  //     servizio_interessato:
-  //       $("#service").val() === "" ? "Non specificato" : $("#service").val(),
-  //     messaggio: $("#message").val(),
-  //   })
-  //     .done((j) => {
-  //       Swal.fire({
-  //         icon: "success",
-  //         title:
-  //           "Mail inviata correttamente, ti ricontatterò il prima possibile",
-  //         showConfirmButton: true,
-  //         confirmButtonText: "OK",
-  //       }).then(() => {
-  //         $("#name").val("");
-  //         $("#email").val("");
-  //         $("#service").val("");
-  //         $("#message").val("");
-  //       });
-  //     })
-  //     .fail((j) => {
-  //       Swal.fire({
-  //         icon: "success",
-  //         title:
-  //           "Mail inviata correttamente, ti ricontatterò il prima possibile",
-  //         showConfirmButton: true,
-  //         confirmButtonText: "OK",
-  //       }).then(() => {
-  //         $("#name").val("");
-  //         $("#email").val("");
-  //         $("#service").val("");
-  //         $("#message").val("");
-  //       });
-  //     });
-  // });
-
   $(".closebtn").click(() => $(".alert").removeClass("active"));
 
   $(".links li").click(function () {
@@ -217,7 +21,6 @@
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
-      adaptCardHeight();
     }
   });
 
@@ -237,13 +40,11 @@
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
-      adaptCardHeight();
     }
-    let shift_to =
-      $(this).data("id") === "#gold" ? "shit_to_gold" : "shit_to_diamond";
+    let shift_to = $(this).data("id");
     $([document.documentElement, document.body]).animate(
       {
-        scrollTop: $("#" + shift_to).offset().top,
+        scrollTop: $(shift_to + " .div_pagamento_pp").offset().top,
       },
       1000
     );
@@ -267,7 +68,6 @@
       $("#intro").addClass("hidden");
       $("#intro").addClass("hidden_tab");
       $("html").scrollTop(0);
-      adaptCardHeight();
     }
   });
 
@@ -285,16 +85,6 @@
     );
   });
 
-  function adaptCardHeight() {
-    let min_height = 0;
-    $(".card_bonus").each(function () {
-      let height = Number($(this).css("height").replace("px", ""));
-      if (height > min_height) min_height = height;
-    });
-    $(".card_bonus").css("min-height", min_height + "px");
-    $();
-  }
-
   paypal.FUNDING.SOFORT = "disallowed";
   paypal.FUNDING.MYBANK = "disallowed";
   let paypal_inizialize = {
@@ -304,6 +94,7 @@
       shape: "pill",
       color: "blue",
       label: "pay",
+      tagline: false,
       fundingicons: true,
       layout: "horizontal",
     },
@@ -313,7 +104,7 @@
         purchase_units: [
           {
             amount: {
-              value: "45",
+              value: "60",
             },
           },
         ],
@@ -341,8 +132,9 @@
     },
   };
 
-  paypal.Buttons(paypal_inizialize).render("#gold_paypal_button");
-  (paypal_inizialize.createOrder = function (data, actions) {
+  paypal.Buttons(paypal_inizialize).render("#gold_mensile");
+  //GOLD QUADRIMESTRALE
+  paypal_inizialize.createOrder = function (data, actions) {
     return actions.order.create({
       purchase_units: [
         {
@@ -352,71 +144,71 @@
         },
       ],
     });
-  }),
-    paypal.Buttons(paypal_inizialize).render("#diamond_paypal_button");
-
-  const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-
-  const countDown = new Date("11/26/2021").getTime(),
-    countDown2 = new Date("11/27/2021").getTime(),
-    x = setInterval(function () {
-      const now = new Date().getTime(),
-        distance = countDown - now;
-
-      (document.getElementById("days").innerText = Math.floor(distance / day)),
-        (document.getElementById("hours").innerText = Math.floor(
-          (distance % day) / hour
-        )),
-        (document.getElementById("minutes").innerText = Math.floor(
-          (distance % hour) / minute
-        )),
-        (document.getElementById("seconds").innerText = Math.floor(
-          (distance % minute) / second
-        ));
-      //do something later when date is reached
-      if (distance < 0) {
-        //l'offerta è attualmente valida
-        $(".show_if_not_valid").hide();
-        $(".hide_if_not_valid").show();
-        clearInterval(x);
-        $("#headline").html("L'offerta scade fra:");
-        y = setInterval(function () {
-          const now2 = new Date().getTime(),
-            distance2 = countDown2 - now2;
-
-          (document.getElementById("days").innerText = Math.floor(
-            distance2 / day
-          )),
-            (document.getElementById("hours").innerText = Math.floor(
-              (distance2 % day) / hour
-            )),
-            (document.getElementById("minutes").innerText = Math.floor(
-              (distance2 % hour) / minute
-            )),
-            (document.getElementById("seconds").innerText = Math.floor(
-              (distance2 % minute) / second
-            ));
-
-          //do something later when date is reached
-          console.log(distance2);
-          if (distance2 < 0) {
-            //OFFERTA SCADUTA
-            clearInterval(y);
-            $("#headline").html("L'offerta è scaduta");
-            $("#countdown, .visualizza_offerta").remove();
-            $(".hide_if_not_valid").hide();
-            $(".hide_if_scaduta").show();
-            $(".timer_container").css({
-              padding: "0.5rem",
-              position: "fixed",
-            });
-          }
-          //seconds
-        }, 0);
-      }
-      //seconds
-    }, 0);
+  };
+  paypal.Buttons(paypal_inizialize).render("#gold_quadrimestrale");
+  // DIAMOND MENSILE
+  paypal_inizialize.createOrder = function (data, actions) {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            value: "90",
+          },
+        },
+      ],
+    });
+  };
+  paypal.Buttons(paypal_inizialize).render("#diamond_mensile");
+  // DIAMOND QUADRIMENSTRALE
+  paypal_inizialize.createOrder = function (data, actions) {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            value: "297",
+          },
+        },
+      ],
+    });
+  };
+  paypal.Buttons(paypal_inizialize).render("#diamond_quadrimestrale");
+  // SUPER DIAMOND MENSILE
+  paypal_inizialize.createOrder = function (data, actions) {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            value: "120",
+          },
+        },
+      ],
+    });
+  };
+  paypal.Buttons(paypal_inizialize).render("#super_diamond_mensile");
+  // SUPER DIAMOND QUADRIMESTRALE
+  paypal_inizialize.createOrder = function (data, actions) {
+    return actions.order.create({
+      purchase_units: [
+        {
+          amount: {
+            value: "397",
+          },
+        },
+      ],
+    });
+  };
+  paypal.Buttons(paypal_inizialize).render("#super_diamond_quadrimestrale");
 })(jQuery);
+let initial_animation = document.getElementsByClassName("initial_load");
+for (let index = 0; index < initial_animation.length; index++) {
+  index === 0
+    ? initial_animation[index].classList.add(
+        "animate__animated",
+        "animate__jackInTheBox"
+      )
+    : initial_animation[index].classList.add(
+        "animate__animated",
+        "animate__zoomIn"
+      );
+  initial_animation[index].classList.remove("hide_load");
+}
