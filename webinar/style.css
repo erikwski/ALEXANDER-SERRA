@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap");
+
+body {
+  background: rgb(56, 182, 255);
+  background: linear-gradient(270deg, rgb(34 104 144) 0%, rgb(126 103 23) 100%);
+  font-family: "Fredoka", sans-serif;
+}
+.logo {
+  width: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 200px;
+  background-size: cover;
+}
+.visualizza_dati_bonifico {
+  padding: 1rem 4rem;
+  text-align: center;
+  background: #0783ef;
+  color: #fff;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: 0.5s;
+}
+.visualizza_dati_bonifico:hover {
+  background: #0763b4;
+}
+.swal2-confirm {
+  background: #28d94a !important;
+}
+.swal2-deny {
+  background: #1491e3 !important;
+}
+body {
+  scrollbar-width: thin;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body::-webkit-scrollbar:hover {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: gainsboro;
+}
+body::-webkit-scrollbar-thumb {
+  background: #4a99d9;
+  animation: background 1s;
+  border-radius: 8px;
+  border: 1px solid gainsboro;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #3099d6;
+}
