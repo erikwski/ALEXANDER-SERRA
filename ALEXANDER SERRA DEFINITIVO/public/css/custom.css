@@ -1,0 +1,185 @@
+@font-face {
+  /* MONTSERRAT 900*/
+  font-family: montserrat;
+  font-weight: normal;
+  src: url(fonts/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+  /* WORKSANS 300*/
+  font-family: worksans;
+  font-weight: normal;
+  src: url(fonts/WorkSans-Medium.ttf);
+}
+:root {
+  --primary: #2293ca;
+  --secondary: #f07f00;
+  --background: #001633;
+}
+html {
+  overflow-x: hidden;
+  background: #001633;
+}
+html,
+body {
+  overflow-y: hidden;
+}
+html.loaded,
+html.loaded body {
+  overflow-y: auto;
+}
+html.loaded #loader,
+html.loaded #loader img {
+  transform: translateX(100%);
+}
+body {
+  scrollbar-width: thin;
+  background: var(--background);
+}
+#background {
+  background: url("../img/background.png") !important;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.3;
+  min-height: 100vh;
+  background-position: right;
+  background-repeat: repeat;
+  z-index: -1;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body::-webkit-scrollbar:hover {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #d7d7d7;
+  width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+.bc_primary {
+  background: var(--primary);
+}
+.c_primary {
+  color: var(--primary);
+}
+.bc_secondary {
+  background: var(--secondary);
+}
+.c_secondary {
+  color: var(--secondary);
+}
+#loader {
+  background: var(--background);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.7s;
+}
+/* animazione mobile */
+@media screen and (max-width: 1000px) {
+  #logo_man {
+    position: absolute;
+    top: calc(50% - 150px);
+    left: -300px;
+    height: 300px;
+    width: 300px;
+  }
+  #logo_text {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: -300px;
+    height: 100px;
+    width: 300px;
+  }
+}
+/* ANIMAZIONE DESKTOP */
+@media screen and (min-width: 1001px) {
+  #logo_man {
+    position: absolute;
+    top: calc(50% - 225px);
+    left: -450px;
+    height: 450px;
+    width: 450px;
+    transition: left 1s;
+  }
+  #logo_text {
+    position: absolute;
+    top: calc(50% - 80px);
+    left: -450px;
+    height: 150px;
+    width: 450px;
+    transition: left 1s;
+  }
+  #loader.runner_on_center #logo_man {
+    animation: runner_on_center 1.5s ease-in-out both;
+  }
+  #loader.text_on_center #logo_text {
+    animation: text_on_center 1s ease-in-out both;
+  }
+  #loader.logo_out #logo_text {
+    animation: logo_out_text 1s ease-in-out both;
+  }
+  #loader.logo_out #logo_man {
+    animation: logo_out_logo 1s ease-in-out 0.4s both;
+  }
+  @keyframes runner_on_center {
+    0% {
+      transform: translateX(0) rotate(0);
+      left: -450px;
+    }
+    40% {
+      transform: translateX(150px) rotate(15deg);
+      left: -450px;
+    }
+    60% {
+      transform: translateX(100px) rotate(-20deg);
+      left: -450px;
+    }
+    100% {
+      transform: translateX(-200px) rotate(0);
+      left: calc(50% - 225px);
+    }
+  }
+  @keyframes text_on_center {
+    0% {
+      transform: rotate(0deg);
+      left: -450px;
+    }
+    75% {
+      transform: rotate(15deg);
+      left: calc(50% + 80px);
+    }
+    100% {
+      transform: rotate(0);
+      left: calc(50% - 60px);
+    }
+  }
+  @keyframes logo_out_text {
+    0% {
+      left: calc(50% - 60px);
+    }
+    100% {
+      left: calc(100%);
+    }
+  }
+  @keyframes logo_out_logo {
+    0% {
+      transform: translateX(-200px) rotate(0);
+      left: calc(50% - 225px);
+    }
+    100% {
+      transform: translateX(0) rotate(15deg);
+      left: calc(100%);
+    }
+  }
+}
