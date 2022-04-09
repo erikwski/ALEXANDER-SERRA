@@ -79,6 +79,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 /* animazione mobile */
 @media screen and (max-width: 1000px) {
+  #loader {
+    transition-delay: 0.2s;
+  }
   #logo_man {
     position: absolute;
     top: calc(30% - 150px);
