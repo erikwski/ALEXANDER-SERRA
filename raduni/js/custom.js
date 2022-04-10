@@ -74,6 +74,35 @@ $(function () {
     });
   });
 
+  $(".visualizza_dati_bonifico").click(() => {
+    $("#dati_bonifico").toggle(500);
+    $("body,html").animate(
+      {
+        scrollTop: $("#dati_bonifico").offset().top - window.innerHeight / 2,
+      },
+      1000
+    );
+  });
+
+  $(".cameras_text").click(function (e) {
+    e.stopPropagation();
+    $("body,html").animate(
+      {
+        scrollTop: $("#come_partecipare").offset().top,
+      },
+      1000
+    );
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
   /* Toggle sidebar
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 

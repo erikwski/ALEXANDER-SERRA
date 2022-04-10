@@ -220,7 +220,7 @@ button {
 }
 
 .read_more:hover {
-  background: #7f85f7;
+  background: #2093ca;
   color: #fff;
   transition: ease-in all 0.5s;
 }
@@ -325,11 +325,11 @@ ul.email li {
 }
 
 .sidepanel a:hover {
-  color: #7b80ee;
+  color: #2093ca;
 }
 
 .sidepanel a.active {
-  color: #7b80ee;
+  color: #2093ca;
 }
 
 .sidepanel .closebtn {
@@ -366,9 +366,30 @@ ul.email li {
 .banner_main {
   padding: 0 3rem 150px;
 }
+@media screen and (max-width: 767px) {
+  .margin_tablet {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+  }
+  .list_style {
+    padding-left: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .margin_tablet {
+    margin: 0 1.5rem;
+    width: calc(50% - 3rem);
+  }
+}
 @media screen and (max-width: 800px) {
   .banner_main {
     padding: 0 1rem 150px;
+  }
+  .column_mobile {
+    flex-direction: column;
+  }
+  .column_mobile .margin_tablet:first-child {
+    margin-bottom: 2rem !important;
   }
 }
 @media screen and (max-width: 500px) {
@@ -376,7 +397,10 @@ ul.email li {
     padding: 0 5px 150px;
   }
 }
-
+.list_style,
+.list_style li {
+  list-style: square;
+}
 .container-max {
   max-width: 1500px;
   width: 100%;
@@ -385,7 +409,12 @@ ul.email li {
   display: block;
   clear: both;
 }
-
+.visualizza_dati_bonifico {
+  transition: 0.8s all;
+}
+.visualizza_dati_bonifico:hover {
+  background: #3385ab !important;
+}
 .relative {
   position: inherit;
   bottom: 0;
@@ -476,6 +505,10 @@ ul.email li {
   height: 100%;
   border-radius: 80px;
 }
+.about_img figure.right_shadow::before {
+  right: -4rem;
+  left: auto;
+}
 
 .about_img figure img {
   z-index: 9999;
@@ -512,7 +545,7 @@ ul.email li {
   text-align: center;
   margin-top: 30px;
   background: #f7f7f7;
-  padding: 90px 0 60px 0;
+  padding: 40px 0 60px 0;
   border-radius: 80px;
   transition: ease-in all 0.5s;
 }
@@ -520,7 +553,7 @@ ul.email li {
   margin: 0;
 }
 .cameras_text p {
-  color: #7f85f7;
+  color: rgb(32 147 202 / 82%);
   font-weight: 500;
   padding-top: 44px;
   line-height: 20px;
@@ -548,24 +581,24 @@ ul.email li {
   line-height: 38px;
   transition: ease-in all 0.5s;
 }
-#ho_bg:hover.cameras_text {
-  background: #7f85f7;
+.cameras_text:hover {
+  background: rgb(32 147 202 / 82%);
   transition: ease-in all 0.5s;
   cursor: pointer;
 }
-#ho_bg:hover.cameras_text p {
+.cameras_text:hover p {
   color: #fff;
   transition: ease-in all 0.5s;
 }
-#ho_bg:hover.cameras_text p span {
+.cameras_text:hover p span {
   color: #fff;
   transition: ease-in all 0.5s;
 }
-#ho_bg:hover.cameras_text h3 {
+.cameras_text:hover h3 {
   color: #fff;
   transition: ease-in all 0.5s;
 }
-#ho_bg:hover.cameras_text .read_more {
+.cameras_text:hover .read_more {
   background: #fff;
   color: #000;
   transition: ease-in all 0.5s;
@@ -586,9 +619,8 @@ ul.email li {
 }
 
 .choose_bg {
-  background: #7f85f7;
-  padding-top: 75px;
-  padding-bottom: 308px;
+  background: rgb(32 147 202 / 82%);
+  padding: 100px;
 }
 .choose .titlepage {
   padding-bottom: 20px;
@@ -599,6 +631,9 @@ ul.email li {
 
 .comp {
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .comp h3 {
@@ -615,6 +650,7 @@ ul.email li {
   line-height: 25px;
   color: #fff;
   font-weight: normal;
+  text-align: center;
 }
 
 .container-with {
@@ -692,7 +728,7 @@ ul.email li {
   position: absolute;
   content: "";
   left: 0;
-  background: #7b80ee;
+  background: #2093ca;
   width: 13px;
   height: 13px;
   border-radius: 30px;
@@ -738,7 +774,7 @@ ul.social_icon li a {
 }
 
 ul.social_icon li a:hover {
-  background: #7b80ee;
+  background: #2093ca;
   color: #fff;
   transform: rotate(360deg);
   transition: ease-in all 0.7s;
@@ -759,7 +795,7 @@ ul.social_icon li a:hover {
 .subs_btn {
   max-width: 144px;
   display: inline-block;
-  background: #7b80ee;
+  background: #2093ca;
   height: 39px;
   width: 100%;
   transition: ease-in all 0.5s;
@@ -769,7 +805,7 @@ ul.social_icon li a:hover {
 }
 
 .subs_btn:hover {
-  background: #7b80ee8a;
+  background: #2093ca8a;
   transition: ease-in all 0.5s;
 }
 
@@ -788,7 +824,7 @@ ul.social_icon li a:hover {
 }
 
 .copyright a:hover {
-  color: #7b80ee;
+  color: #2093ca;
 }
 
 /** end footer **/
@@ -807,7 +843,7 @@ ul.social_icon li a:hover {
   z-index: 8;
   padding: 1rem;
   border-radius: 1rem;
-  background: #00000075;
+  background: rgb(0 0 0 / 17%);
 }
 .credit_fotographer {
   position: relative;
@@ -826,14 +862,14 @@ ul.social_icon li a:hover {
 }
 body {
   scrollbar-width: thin;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 body::-webkit-scrollbar:hover {
-  width: 10px;
-  height: 10px;
+  background: #3473a6;
 }
 body::-webkit-scrollbar-track {
   background: gainsboro;
@@ -933,4 +969,14 @@ body::-webkit-scrollbar-thumb:hover {
 .load_ini.go_ini {
   opacity: 1;
   transform: translateX(0);
+}
+.cameras_img img {
+  width: 80%;
+  border-radius: 2rem;
+  height: 350px;
+}
+#come_partecipare h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
