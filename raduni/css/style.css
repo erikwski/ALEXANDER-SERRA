@@ -374,6 +374,9 @@ ul.email li {
   .list_style {
     padding-left: 1rem;
   }
+  .about_img figure.right_shadow::before {
+    right: -1rem !important;
+  }
 }
 @media screen and (min-width: 768px) {
   .margin_tablet {
@@ -505,11 +508,6 @@ ul.email li {
   height: 100%;
   border-radius: 80px;
 }
-.about_img figure.right_shadow::before {
-  right: -4rem;
-  left: auto;
-}
-
 .about_img figure img {
   z-index: 9999;
   position: relative;
@@ -620,7 +618,7 @@ ul.email li {
 
 .choose_bg {
   background: rgb(32 147 202 / 82%);
-  padding: 100px;
+  padding: 100px 1rem;
 }
 .choose .titlepage {
   padding-bottom: 20px;
