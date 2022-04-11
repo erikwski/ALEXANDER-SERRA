@@ -3,7 +3,7 @@
 ---------------------------------------------------------------------*/
 
 $(function () {
-  "use strict";
+  ("use strict");
 
   /* Preloader
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -56,23 +56,91 @@ $(function () {
 
   /* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+  //predazzo
+  let dt_predazzo = new Date("06/30/2022") - new Date();
+  //livigno
+  let dt_livigno = new Date() - new Date();
+  //sestriere
+  let dt_sestriere = new Date() - new Date();
 
-  $("[data-countdown]").each(function () {
-    var $this = $(this),
-      finalDate = $(this).data("countdown");
-    $this.countdown(finalDate, function (event) {
-      var $this = $(this).html(
-        event.strftime(
-          "" +
-            '<div class="time-bar"><span class="time-box">%w</span> <span class="line-b">weeks</span></div> ' +
-            '<div class="time-bar"><span class="time-box">%d</span> <span class="line-b">days</span></div> ' +
-            '<div class="time-bar"><span class="time-box">%H</span> <span class="line-b">hr</span></div> ' +
-            '<div class="time-bar"><span class="time-box">%M</span> <span class="line-b">min</span></div> ' +
-            '<div class="time-bar"><span class="time-box">%S</span> <span class="line-b">sec</span></div>'
-        )
-      );
-    });
-  });
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  let countDown1 = new Date("06/30/2022").getTime();
+  let x1 = setInterval(function () {
+    const now = new Date().getTime(),
+      distance = countDown1 - now;
+
+    ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
+      ($("#countdown1 span")[1].innerText = Math.floor(
+        (distance % day) / hour
+      )),
+      ($("#countdown1 span")[2].innerText = Math.floor(
+        (distance % hour) / minute
+      )),
+      ($("#countdown1 span")[3].innerText = Math.floor(
+        (distance % minute) / second
+      ));
+
+    if (distance < 0) {
+      //offerta scaduta
+      $("#countdown1").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
+      clearInterval(x1);
+    }
+    //seconds
+  }, 1000);
+
+  let countDown2 = new Date("07/19/2022").getTime();
+  let x2 = setInterval(function () {
+    const now = new Date().getTime(),
+      distance = countDown2 - now;
+
+    ($("#countdown2 span")[0].innerText = Math.floor(distance / day)),
+      ($("#countdown2 span")[1].innerText = Math.floor(
+        (distance % day) / hour
+      )),
+      ($("#countdown2 span")[2].innerText = Math.floor(
+        (distance % hour) / minute
+      )),
+      ($("#countdown2 span")[3].innerText = Math.floor(
+        (distance % minute) / second
+      ));
+
+    if (distance < 0) {
+      //offerta scaduta
+      $("#countdown2").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
+      clearInterval(x2);
+    }
+    //seconds
+  }, 1000);
+
+  let countDown3 = new Date("08/02/2022").getTime();
+  let x3 = setInterval(function () {
+    const now = new Date().getTime(),
+      distance = countDown3 - now;
+
+    ($("#countdown3 span")[0].innerText = Math.floor(distance / day)),
+      ($("#countdown3 span")[1].innerText = Math.floor(
+        (distance % day) / hour
+      )),
+      ($("#countdown3 span")[2].innerText = Math.floor(
+        (distance % hour) / minute
+      )),
+      ($("#countdown3 span")[3].innerText = Math.floor(
+        (distance % minute) / second
+      ));
+
+    if (distance < 0) {
+      //offerta scaduta
+      $("#countdown3").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
+      clearInterval(x3);
+    }
+    //seconds
+  }, 1000);
+
+  /* fine countdown */
 
   $(".visualizza_dati_bonifico").click(() => {
     $("#dati_bonifico").toggle(500);
@@ -97,7 +165,7 @@ $(function () {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-
+      if (this.getAttribute("href") === "#!") return;
       document.querySelector(this.getAttribute("href")).scrollIntoView({
         behavior: "smooth",
       });
