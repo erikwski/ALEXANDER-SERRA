@@ -539,7 +539,10 @@ ul.email li {
 /** end about **/
 
 /** cameras **/
-
+#materiale_occorrente {
+  padding: 50px 1rem;
+  background: #fefefd;
+}
 .cameras {
   padding-top: 200px;
   background: #fefefd;
@@ -1002,8 +1005,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .countdown .counter {
   position: relative;
-  padding: 10px;
-  font-size: 32px;
+  padding: 10px 20px;
+  font-size: 48px;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;

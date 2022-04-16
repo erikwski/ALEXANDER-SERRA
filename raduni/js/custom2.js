@@ -68,7 +68,7 @@ $(function () {
     hour = minute * 60,
     day = hour * 24;
 
-  let countDown1 = new Date("06/30/2022").getTime();
+  let countDown1 = new Date("05/01/2022").getTime();
   let x1 = setInterval(function () {
     const now = new Date().getTime(),
       distance = countDown1 - now;
@@ -88,54 +88,6 @@ $(function () {
       //offerta scaduta
       $("#countdown1").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
       clearInterval(x1);
-    }
-    //seconds
-  }, 1000);
-
-  let countDown2 = new Date("07/19/2022").getTime();
-  let x2 = setInterval(function () {
-    const now = new Date().getTime(),
-      distance = countDown2 - now;
-
-    ($("#countdown2 span")[0].innerText = Math.floor(distance / day)),
-      ($("#countdown2 span")[1].innerText = Math.floor(
-        (distance % day) / hour
-      )),
-      ($("#countdown2 span")[2].innerText = Math.floor(
-        (distance % hour) / minute
-      )),
-      ($("#countdown2 span")[3].innerText = Math.floor(
-        (distance % minute) / second
-      ));
-
-    if (distance < 0) {
-      //offerta scaduta
-      $("#countdown2").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
-      clearInterval(x2);
-    }
-    //seconds
-  }, 1000);
-
-  let countDown3 = new Date("08/02/2022").getTime();
-  let x3 = setInterval(function () {
-    const now = new Date().getTime(),
-      distance = countDown3 - now;
-
-    ($("#countdown3 span")[0].innerText = Math.floor(distance / day)),
-      ($("#countdown3 span")[1].innerText = Math.floor(
-        (distance % day) / hour
-      )),
-      ($("#countdown3 span")[2].innerText = Math.floor(
-        (distance % hour) / minute
-      )),
-      ($("#countdown3 span")[3].innerText = Math.floor(
-        (distance % minute) / second
-      ));
-
-    if (distance < 0) {
-      //offerta scaduta
-      $("#countdown3").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
-      clearInterval(x3);
     }
     //seconds
   }, 1000);

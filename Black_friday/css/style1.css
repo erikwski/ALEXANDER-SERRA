@@ -502,7 +502,7 @@ html {
 
 body {
   background: rgb(56, 182, 255);
-  background: linear-gradient(270deg, rgb(34 104 144) 0%, rgb(126 103 23) 100%);
+  background: linear-gradient(270deg, #255774 0%, #663e11 100%);
 }
 
 body.is-preload *,
@@ -4023,14 +4023,14 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 @media screen and (max-width: 980px) {
   #header {
-    height: 14rem;
-    padding-bottom: 5rem;
+    height: 16rem;
+    padding-bottom: 6rem;
   }
 }
 
 @media screen and (max-width: 736px) {
   #header {
-    padding-bottom: 5rem;
+    padding-bottom: 7rem;
   }
 
   #header .logo {
