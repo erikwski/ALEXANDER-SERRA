@@ -68,7 +68,7 @@ $(function () {
     hour = minute * 60,
     day = hour * 24;
 
-  let countDown1 = new Date("05/01/2022").getTime();
+  let countDown1 = new Date("06/24/2022").getTime();
   let x1 = setInterval(function () {
     const now = new Date().getTime(),
       distance = countDown1 - now;
