@@ -41,7 +41,6 @@
 :root {
   --primary: #2293ca;
   --secondary: #f07f00;
-  --background: #001633;
 }
 body {
   font-family: "Rubik", sans-serif;
@@ -81,13 +80,36 @@ html,
 body {
   overflow-y: hidden;
 }
-html.loaded,
-html.loaded body {
+html.enable_scroll,
+html.enable_scroll body {
   overflow-y: auto;
 }
 html.loaded #loader,
 html.loaded #loader img {
   transform: translateX(100%);
+}
+#undefined-sticky-wrapper {
+  transform: translateY(-77px);
+  opacity: 0.5;
+  transition: 0.5s all;
+}
+html.loaded #undefined-sticky-wrapper {
+  transform: translateY(0);
+  opacity: 1;
+}
+#home {
+  filter: blur(10px);
+  transition: 1s filter 0.5s;
+}
+html.loaded #home {
+  filter: blur(0);
+}
+#opening {
+  transform: scale(0);
+  transition: 1s transform 1s;
+}
+html.loaded #opening {
+  transform: scale(1);
 }
 body {
   scrollbar-width: thin;
@@ -112,7 +134,11 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
 #loader {
-  background: var(--background);
+  background-image: radial-gradient(
+    circle 610px at 5.2% 51.6%,
+    rgb(4, 7, 95) 0%,
+    rgba(7, 3, 53, 1) 97.5%
+  );
   position: absolute;
   top: 0;
   left: 0;
@@ -144,10 +170,10 @@ body::-webkit-scrollbar-thumb:hover {
     animation: runner_on_start 1.25s ease-in-out both;
   }
   #loader.text_on_center #logo_text {
-    animation: text_on_center 1s ease-in-out both;
+    animation: text_on_center 0.8s ease-in-out both;
   }
   #loader.text_on_center #logo_man {
-    animation: runner_on_center 1s ease-in-out both;
+    animation: runner_on_center 0.9s ease-in-out both;
   }
   #loader.logo_out #logo_text {
     animation: logo_out_text 1s 0.3s ease-in-out both;
@@ -169,17 +195,17 @@ body::-webkit-scrollbar-thumb:hover {
       left: -300px;
     }
     100% {
-      transform: translateX(-100px) rotate(0);
+      transform: translateX(-100px) rotate(5deg);
       left: calc(40% - 150px);
     }
   }
   @keyframes runner_on_center {
     0% {
-      transform: translateX(-100px) rotate(0);
+      transform: translateX(-100px) rotate(5deg);
       left: calc(40% - 150px);
     }
     100% {
-      transform: translateX(0) rotate(0);
+      transform: translateX(0) rotate(15deg);
       left: calc(50% - 150px);
     }
   }
@@ -200,17 +226,21 @@ body::-webkit-scrollbar-thumb:hover {
   @keyframes logo_out_text {
     0% {
       left: calc(50% - 150px);
+      transform: rotate(0);
     }
     100% {
       left: calc(100%);
+      transform: rotate(10deg);
     }
   }
   @keyframes logo_out_logo {
     0% {
       left: calc(50% - 150px);
+      transform: rotate(15deg);
     }
     100% {
       left: calc(100%);
+      transform: rotate(0);
     }
   }
 }
@@ -236,7 +266,7 @@ body::-webkit-scrollbar-thumb:hover {
     animation: runner_on_center 1.5s ease-in-out both;
   }
   #loader.text_on_center #logo_text {
-    animation: text_on_center 1s ease-in-out both;
+    animation: text_on_center 0.8s ease-in-out both;
   }
   #loader.logo_out #logo_text {
     animation: logo_out_text 1s ease-in-out both;
@@ -279,9 +309,11 @@ body::-webkit-scrollbar-thumb:hover {
   @keyframes logo_out_text {
     0% {
       left: calc(50% - 60px);
+      transform: rotate(0);
     }
     100% {
       left: calc(100%);
+      transform: rotate(10deg);
     }
   }
   @keyframes logo_out_logo {
@@ -658,6 +690,13 @@ body .sm-clean li.current_page_item > a {
   font-weight: 700;
   padding-bottom: 35px;
 }
+.medium-text.pb-0 {
+  padding-bottom: 0;
+}
+
+.dark_grey {
+  color: #666666;
+}
 
 .title-description-up {
   font-size: 16px;
@@ -802,6 +841,11 @@ a.button:hover {
   background-color: transparent;
   color: var(--primary);
 }
+a.button.hero_section:hover {
+  background-color: #00000061;
+  color: #fff;
+  transform: scale(1.1);
+}
 
 a.button-dot {
   color: #fff !important;
@@ -895,12 +939,17 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_image_01.jpg);
+  background-image: url(images/hero_image.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 77px);
   display: flex;
+}
+@media screen and (max-width: 650px) {
+  #home {
+    background-image: url(images/hero_image_mobile.png);
+  }
 }
 
 #home .section-wrapper {
@@ -913,6 +962,12 @@ h1.big-text {
   font-size: 80px;
   line-height: 120%;
   margin-bottom: 40px;
+  color: white;
+  background: #00000047;
+  width: fit-content;
+  border-radius: 2rem;
+  padding: 1rem;
+  text-align: end;
 }
 
 /* ===================================
@@ -929,6 +984,7 @@ h1.big-text {
 
 .service-holder {
   margin: 25px 0;
+  text-align: center;
 }
 
 .service-holder:after {
@@ -955,6 +1011,55 @@ h1.big-text {
   margin-bottom: -10px;
   -webkit-transform: translateZ(0);
 }
+.title_services {
+  color: var(--primary);
+  font-size: 3rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  opacity: 0.45;
+  cursor: default;
+  text-align: center;
+  transition: 1s opacity;
+}
+.title_services:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 800px) {
+  .title_services {
+    display: none;
+  }
+}
+#services .content-1170 {
+  margin: 0;
+  width: auto;
+  padding: 150px 1rem 100px;
+}
+#services .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cont_service {
+  width: 23%;
+  margin: 1rem 1%;
+}
+@media screen and (max-width: 420px) {
+  .cont_service {
+    width: 95%;
+    margin: 1rem 2.5%;
+  }
+}
+@media screen and (min-width: 421px) and (max-width: 800px) {
+  .cont_service {
+    width: 90%;
+    margin: 1rem 5%;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1500px) {
+  .cont_service {
+    width: 46%;
+    margin: 1rem 2%;
+  }
+}
 
 /* ===================================
     5. About Section CSS
@@ -966,6 +1071,14 @@ h1.big-text {
   background-position: right center;
   background-repeat: no-repeat;
   background-size: auto;
+}
+.italic_opacity {
+  font-style: italic;
+  opacity: 0.75;
+}
+#about img {
+  max-height: 750px;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 /* ===================================
@@ -1050,183 +1163,6 @@ h1.big-text {
   opacity: 0.8;
   transform: scale(1.1);
 }
-
-/* ===================================
-    8. Portfolio Section CSS
-====================================== */
-
-.grid {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  max-width: 100%;
-  font-size: 0;
-  line-height: 0;
-}
-
-.grid-sizer {
-  width: 25%;
-}
-
-.grid-item {
-  float: left;
-  font-size: 0;
-  line-height: 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.grid-item.p_one_fourth {
-  width: 25%;
-}
-
-.grid-item.p_one_half {
-  width: 50%;
-}
-
-.grid-item.p_three_fourth {
-  width: 75%;
-}
-
-.grid-item.p_one {
-  width: 100%;
-}
-
-.grid-item img {
-  width: 100% !important;
-  height: auto;
-  display: block;
-}
-
-.grid-item .entry-holder {
-  text-align: center;
-  background-color: #fff;
-  padding: 50px 20px;
-}
-
-.grid-item a.item-link:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.portfolio-text-holder {
-  color: #fff;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  display: inline-block;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.portfolio-title {
-  font-size: 30px;
-  line-height: 170%;
-  margin-bottom: 0;
-  font-weight: 700;
-  color: #b3b3b3;
-}
-
-.portfolio-desc {
-  font-size: 14px;
-  line-height: 22px;
-  color: #b3b3b3;
-  letter-spacing: 2px;
-  margin-bottom: 0;
-}
-
-.grid-item a.item-link:hover:after,
-.grid-item a.item-link:hover .portfolio-text-holder {
-  opacity: 1;
-}
-
-.portfolio-content h1 {
-  font-size: 44px;
-  color: #000;
-  line-height: 130%;
-}
-
-.portfolio-load-content-holder {
-  opacity: 0;
-  transform: translateY(70px);
-  transition: all 0.5s ease;
-  width: 1170px;
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-.portfolio-load-content-holder.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.portfolio-load-content-holder.show.viceversa {
-  opacity: 0;
-  transform: translateY(70px);
-}
-
-.section.no-padding .portfolio-content-wrapper {
-  padding: 195px 0 75px 0;
-}
-
-.portfolio-content-wrapper {
-  display: none;
-}
-
-.portfolio-content-wrapper.show {
-  display: block;
-}
-
-#portfolio-grid {
-  transition: all 0.5s ease;
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-#portfolio-grid.hide {
-  opacity: 0;
-  transform: translateY(70px);
-}
-
-.close-icon {
-  background-image: url(images/close-left-arrow.png);
-  background-repeat: no-repeat;
-  width: 70px;
-  height: 70px;
-  display: inline-block;
-  margin-bottom: 20px;
-  background-size: 40px;
-  background-position: 50%;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: absolute;
-  left: -100px;
-  top: 195px;
-}
-
-.close-icon:hover {
-  transform: translateX(-5px);
-}
-
-/* ===================================
-    8.1 Single Portfolio
-====================================== */
-
-.portfolio-item-wrapper {
-  margin-top: 100px;
-  margin-bottom: 50px;
-}
-
 /* ===================================
     9. Pricing Section CSS
 ====================================== */
@@ -1331,7 +1267,6 @@ h1.big-text {
 .pricing-button {
   text-align: center;
 }
-
 /* ===================================
     10. Team Section CSS
 ====================================== */
@@ -1446,6 +1381,9 @@ li.milestone h5 {
   max-width: 240px;
   padding-top: 0;
   line-height: 115%;
+}
+.fake_menu_for_mobile {
+  display: none;
 }
 
 li.milestone .milestone-info-left {
@@ -2293,7 +2231,6 @@ footer .footer-social-divider:before {
   }
 
   h1.big-text {
-    text-align: center;
     font-size: 60px;
   }
 
@@ -2410,8 +2347,6 @@ footer .footer-social-divider:before {
   }
 
   .service-holder {
-    text-align: center;
-    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -2538,6 +2473,9 @@ footer .footer-social-divider:before {
     margin-top: 50px;
     text-align: center;
   }
+  .fake_menu_for_mobile {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2658,7 +2596,6 @@ footer .footer-social-divider:before {
   }
 
   h1.big-text {
-    text-align: center;
     font-size: 40px;
   }
 }
@@ -2671,4 +2608,12 @@ footer .footer-social-divider:before {
   .footer-mail {
     font-size: 28px;
   }
+}
+#opening {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.c_primary {
+  color: var(--primary);
 }

@@ -7,8 +7,6 @@
   fixForBlogThumbnailSize();
   fixTeamLayout();
   newsBackgroundImages();
-  skillsFill();
-  portfolioItemContentLoadOnClick();
   fixForMenu();
   singlePostStickyInfo();
   slowScroll();
@@ -18,7 +16,7 @@
   firstSectionActiveFix();
   setMenu();
   SendMail();
-
+  $("#year").html(new Date().getFullYear());
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
 
@@ -26,22 +24,7 @@
     isotopeSetUp();
     setUpParallax();
     hashFix();
-    setTimeout(() => {
-      //OMINO ARRIVA AL CENTRO DELLO SCHERMO
-      $("#loader").addClass("runner_on_center");
-      setTimeout(() => {
-        //TESTO DEL LOGO ARRIVA AL CENTRO
-        $("#loader").addClass("text_on_center");
-        setTimeout(() => {
-          //SIA TESTO CHE OMINO CORRONO OUT
-          $("#loader").addClass("logo_out");
-          setTimeout(() => {
-            //BACKGROUND ESCE DALLO SCHERMO
-            $("html").addClass("loaded");
-          }, 900);
-        }, 1000);
-      }, 1200);
-    }, 500);
+    animazioneIniziale();
   });
 
   $(window).on("resize", function () {
@@ -56,6 +39,32 @@
   //------------------------------------------------------------------------
   //Helper Methods -->
   //------------------------------------------------------------------------
+
+  function animazioneIniziale() {
+    $("html").addClass("loaded enable_scroll");
+    /* 
+    setTimeout(() => {
+      //OMINO ARRIVA AL CENTRO DELLO SCHERMO
+      $("#loader").addClass("runner_on_center");
+      setTimeout(() => {
+        //TESTO DEL LOGO ARRIVA AL CENTRO
+        $("#loader").addClass("text_on_center");
+        setTimeout(() => {
+          //SIA TESTO CHE OMINO CORRONO OUT
+          $("#loader").addClass("logo_out");
+          setTimeout(() => {
+            //BACKGROUND ESCE DALLO SCHERMO
+            $("html").addClass("loaded");
+            //PIANO PIANO RENDERIZZO ELEMENTI
+            setTimeout(() => {
+              $("html").addClass("enable_scroll");
+            }, 1200);
+          }, 900);
+        }, 800);
+      }, 1150);
+    }, 500);
+    */
+  }
 
   function multiClickFunctionStop() {
     $("#toggle").off("click");
@@ -173,109 +182,6 @@
     });
   }
 
-  function portfolioItemContentLoadOnClick() {
-    $(".ajax-portfolio").on("click", function (e) {
-      e.preventDefault();
-      var portfolioItemID = $(this).data("id");
-      $(this).addClass("animate-plus");
-      if ($("#pcw-" + portfolioItemID).length) {
-        //Check if is allready loaded
-        $("html, body").animate(
-          { scrollTop: $("#portfolio-wrapper").offset().top },
-          400
-        );
-        setTimeout(function () {
-          $("#portfolio-grid, .more-posts-portfolio-holder").addClass("hide");
-          setTimeout(function () {
-            $("#pcw-" + portfolioItemID).addClass("show");
-            $(".portfolio-load-content-holder").addClass("show");
-            $(".ajax-portfolio").removeClass("animate-plus");
-            $("#portfolio-grid, .more-posts-portfolio-holder").hide();
-          }, 300);
-        }, 500);
-      } else {
-        loadPortfolioItemContent(portfolioItemID);
-      }
-    });
-  }
-
-  function loadPortfolioItemContent(portfolioItemID) {
-    $.ajax({
-      url: $('.ajax-portfolio[data-id="' + portfolioItemID + '"]').attr("href"),
-      type: "POST",
-      success: function (html) {
-        var getPortfolioItemHtml = $(html)
-          .find(".portfolio-item-wrapper")
-          .html();
-        $(".portfolio-load-content-holder").append(
-          '<div id="pcw-' +
-            portfolioItemID +
-            '" class="portfolio-content-wrapper">' +
-            getPortfolioItemHtml +
-            "</div>"
-        );
-        if (!$("#pcw-" + portfolioItemID + " .close-icon").length) {
-          $("#pcw-" + portfolioItemID).prepend(
-            '<div class="close-icon"></div>'
-          );
-        }
-        $("html, body").animate(
-          { scrollTop: $("#portfolio-wrapper").offset().top },
-          400
-        );
-        setTimeout(function () {
-          $("#pcw-" + portfolioItemID).imagesLoaded(function () {
-            skillsFill();
-            $(".site-content").fitVids(); //Fit Video
-            $("#portfolio-grid, .more-posts-portfolio-holder").addClass("hide");
-            setTimeout(function () {
-              $("#pcw-" + portfolioItemID).addClass("show");
-              $(".portfolio-load-content-holder").addClass("show");
-              $(".ajax-portfolio").removeClass("animate-plus");
-              $("#portfolio-grid").hide();
-            }, 300);
-            $(".close-icon").on("click", function (e) {
-              var portfolioReturnItemID = $(this)
-                .closest(".portfolio-content-wrapper")
-                .attr("id")
-                .split("-")[1];
-              $(".portfolio-load-content-holder").addClass("viceversa");
-              $("#portfolio-grid, .more-posts-portfolio-holder").css(
-                "display",
-                "block"
-              );
-              setTimeout(function () {
-                $("#pcw-" + portfolioReturnItemID).removeClass("show");
-                $(".portfolio-load-content-holder").removeClass(
-                  "viceversa show"
-                );
-                $("#portfolio-grid, .more-posts-portfolio-holder").removeClass(
-                  "hide"
-                );
-              }, 300);
-              setTimeout(function () {
-                $("html, body").animate(
-                  {
-                    scrollTop: $("#p-item-" + portfolioReturnItemID).offset()
-                      .top,
-                  },
-                  400
-                );
-              }, 500);
-            });
-          });
-        }, 500);
-      },
-    });
-    return false;
-  }
-
-  function skillsFill() {
-    $(".skill-fill").each(function () {
-      $(this).width($(this).data("fill"));
-    });
-  }
-
   function fixForMenu() {
     $(".header-holder").sticky({ topSpacing: 0 });
   }
@@ -336,7 +242,7 @@
   }
 
   function fitVideo() {
-    $(".site-content, .portfolio-item-wrapper").fitVids({
+    $(".site-content").fitVids({
       ignore: ".wp-block-embed__wrapper",
     });
   }
