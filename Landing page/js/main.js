@@ -2,13 +2,12 @@
   "use strict";
   var count = 1;
 
-  setToltip();
   fixForFooterNoContent();
   fixForBlogThumbnailSize();
   fixTeamLayout();
+  imageSliderSettings();
+  textSliderSettings();
   newsBackgroundImages();
-  fixForMenu();
-  singlePostStickyInfo();
   slowScroll();
   logoClickFix();
   placeholderShowHide();
@@ -78,13 +77,6 @@
     }
   }
 
-  function setToltip() {
-    $(".tooltip").tipper({
-      direction: "top",
-      follow: true,
-    });
-  }
-
   function fixForFooterNoContent() {
     if (
       $(".footer-content").html().replace(/\s/g, "") == "" ||
@@ -139,9 +131,69 @@
     });
   }
 
+  function imageSliderSettings() {
+    $(".image-slider").each(function () {
+      var id = $(this).attr("id");
+      var auto_value = window[id + "_auto"];
+      var hover_pause = window[id + "_hover"];
+      var speed_value = window[id + "_speed"];
+      auto_value = auto_value === "true" ? true : false;
+      hover_pause = hover_pause === "true" ? true : false;
+      $("#" + id).owlCarousel({
+        loop: true,
+        autoHeight: true,
+        smartSpeed: 1000,
+        autoplay: auto_value,
+        autoplayHoverPause: hover_pause,
+        autoplayTimeout: speed_value,
+        responsiveClass: true,
+        items: 1,
+      });
+      $(this).on("mouseleave", function () {
+        $(this).trigger("stop.owl.autoplay");
+        $(this).trigger("play.owl.autoplay", [auto_value]);
+      });
+    });
+
+    //TOGGLE VISUALIZZA TUTTA LA RECENSIONE
+    $(".text-slide-btn a").click(function () {
+      let el = $(this).parents(".text-slide").find(".toggle_recensione");
+      el.is(":visible")
+        ? $(this).html("VISUALIZZA TUTTO")
+        : $(this).html("NASCONDI");
+      el.toggle(500);
+    });
+  }
+
+  function textSliderSettings() {
+    $(".text-slider").each(function () {
+      var id = $(this).attr("id");
+      var auto_value = window[id + "_auto"];
+      var hover_pause = window[id + "_hover"];
+      var speed_value = window[id + "_speed"];
+      auto_value = auto_value === "true" ? true : false;
+      hover_pause = hover_pause === "true" ? true : false;
+      $("#" + id).owlCarousel({
+        loop: true,
+        autoHeight: false,
+        smartSpeed: 1000,
+        autoplay: auto_value,
+        autoplayHoverPause: hover_pause,
+        autoplayTimeout: speed_value,
+        responsiveClass: true,
+        dots: false,
+        animateIn: "fadeIn",
+        animateOut: "fadeOut",
+        nav: true,
+        items: 1,
+      });
+    });
+  }
+
   function setUpParallax() {
     $("[data-jarallax-element]").jarallax({
       speed: 0.2,
+      beforeTop: 300,
     });
   }
 
@@ -179,18 +231,6 @@
         "background-image",
         "url(" + ($(this).data("background-image") + ")")
       );
-    });
-  }
-
-  function fixForMenu() {
-    $(".header-holder").sticky({ topSpacing: 0 });
-  }
-
-  function singlePostStickyInfo() {
-    $(".single-post .entry-info").stick_in_parent({
-      offset_top: 120,
-      parent: ".single-content-wrapper",
-      spacer: ".sticky-spacer",
     });
   }
 
@@ -295,57 +335,52 @@
   }
 
   function SendMail() {
-    $('.contact-form [type="submit"]').on("click", function () {
+    $("#invia_mail").click(() => {
       var emailVal = $("#contact-email").val();
-      if (isValidEmailAddress(emailVal)) {
+      if (
+        isValidEmailAddress(emailVal) ||
+        $("#contact-telephone").val().length > 0
+      ) {
         var params = {
           action: "SendMessage",
           name: $("#name").val(),
-          email: $("#contact-email").val(),
+          email: $("#contact-email").val() || "mailnoncompilata@fakemail.com",
+          tel: $("#contact-telephone").val(),
           subject: $("#subject").val(),
           message: $("#message").val(),
         };
-        $.ajax({
-          type: "POST",
-          url: "php/sendMail.php",
-          data: params,
-          success: function (response) {
-            if (response) {
-              var responseObj = $.parseJSON(response);
-              if (responseObj.ResponseData) {
-                alert(responseObj.ResponseData);
-              }
-            }
-          },
-          error: function (xhr, ajaxOptions, thrownError) {
-            //xhr.status : 404, 303, 501...
-            var error = null;
-            switch (xhr.status) {
-              case "301":
-                error = "Redirection Error!";
-                break;
-              case "307":
-                error = "Error, temporary server redirection!";
-                break;
-              case "400":
-                error = "Bad request!";
-                break;
-              case "404":
-                error = "Page not found!";
-                break;
-              case "500":
-                error = "Server is currently unavailable!";
-                break;
-              default:
-                error = "Unespected error, please try again later.";
-            }
-            if (error) {
-              alert(error);
-            }
-          },
-        });
+        $.post(
+          "https://getform.io/f/5584c108-b4a4-41cf-8219-164eac51d191",
+          params
+        )
+          .done(() => {
+            Swal.fire({
+              icon: "success",
+              title:
+                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile",
+              showConfirmButton: true,
+              confirmButtonText: "OK",
+            }).then(() => {
+              $(
+                ".contact-form input:not([type='submit']), .contact-form textarea"
+              ).val("");
+            });
+          })
+          .fail(() => {
+            Swal.fire({
+              icon: "error",
+              title: "Errore nell'invio della richiesta, riprovare più tardi",
+              showConfirmButton: true,
+              confirmButtonText: "OK",
+            });
+          });
       } else {
-        alert("Your email is not in valid format");
+        Swal.fire({
+          icon: "warning",
+          title: "Compila correttamente la mail oppure il numero di telefono",
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+        });
       }
     });
   }
