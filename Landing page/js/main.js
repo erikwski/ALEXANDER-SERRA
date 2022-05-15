@@ -26,6 +26,10 @@
     animazioneIniziale();
   });
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   $(window).on("resize", function () {
     fixForBlogThumbnailSize();
     setActiveMenuItem();
@@ -40,8 +44,7 @@
   //------------------------------------------------------------------------
 
   function animazioneIniziale() {
-    $("html").addClass("loaded enable_scroll");
-    /* 
+    // $("html").addClass("loaded enable_scroll");
     setTimeout(() => {
       //OMINO ARRIVA AL CENTRO DELLO SCHERMO
       $("#loader").addClass("runner_on_center");
@@ -62,7 +65,6 @@
         }, 800);
       }, 1150);
     }, 500);
-    */
   }
 
   function multiClickFunctionStop() {
