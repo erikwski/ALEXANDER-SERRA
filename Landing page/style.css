@@ -76,7 +76,8 @@ html {
 }
 body,
 html {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 html,
 body {
@@ -2071,7 +2072,9 @@ body.blog {
   background-repeat: no-repeat;
   background-size: auto;
 }
-
+#utils .section-wrapper {
+  padding-top: 100px;
+}
 #utils .content-wrapper {
   display: flex;
   justify-content: center;

@@ -56,6 +56,7 @@
           $("#loader").addClass("logo_out");
           setTimeout(() => {
             //BACKGROUND ESCE DALLO SCHERMO
+            $("#loader").remove();
             $("html").addClass("loaded");
             //PIANO PIANO RENDERIZZO ELEMENTI
             setTimeout(() => {
