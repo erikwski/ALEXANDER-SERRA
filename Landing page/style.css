@@ -1154,17 +1154,12 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_image.png);
+  background-image: url(images/hero_image.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 77px);
   display: flex;
-}
-@media screen and (max-width: 650px) {
-  #home {
-    background-image: url(images/hero_image_mobile.png);
-  }
 }
 
 #home .section-wrapper {
@@ -1179,52 +1174,13 @@ h1.big-text {
   margin-bottom: 40px;
   color: white;
   width: fit-content;
-  text-align: end;
   color: #e9e9e9;
   text-shadow: -1px -1px 1px rgb(255 255 255 / 10%),
     2px 2px 1px rgb(0 0 0 / 50%);
-}
-
-/* ===================================
-    4. Services Section CSS
-====================================== */
-
-#services {
-  background-image: url(images/on_black_left.png);
-  background-color: #000000;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
-.service-holder {
-  margin: 25px 0;
+  padding: 1.5rem 5rem;
+  background: rgb(0 0 0 / 40%);
+  border-radius: 10rem;
   text-align: center;
-}
-
-.service-holder:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.service-txt h4 {
-  font-size: 46px;
-  color: #fff;
-  font-weight: 700;
-  line-height: 110%;
-}
-
-.service-num {
-  font-size: 264px;
-  font-weight: 700;
-  color: #000000;
-  text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
-  line-height: 100%;
-  height: 165px;
-  overflow: hidden;
-  margin-bottom: -10px;
-  -webkit-transform: translateZ(0);
 }
 .title_services {
   color: var(--primary);
@@ -1247,38 +1203,6 @@ h1.big-text {
     display: none;
   }
 }
-#services .content-1170 {
-  margin: 0;
-  width: auto;
-  padding: 150px 1rem 100px;
-}
-#services .content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cont_service {
-  width: 23%;
-  margin: 1rem 1%;
-}
-@media screen and (max-width: 420px) {
-  .cont_service {
-    width: 95%;
-    margin: 1rem 2.5%;
-  }
-}
-@media screen and (min-width: 421px) and (max-width: 800px) {
-  .cont_service {
-    width: 90%;
-    margin: 1rem 5%;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1500px) {
-  .cont_service {
-    width: 46%;
-    margin: 1rem 2%;
-  }
-}
-
 /* ===================================
     5. About Section CSS
 ====================================== */
@@ -1296,6 +1220,7 @@ h1.big-text {
 }
 #about img {
   max-height: 750px;
+  z-index: 99;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
@@ -1316,7 +1241,7 @@ h1.big-text {
 
 #news {
   background-image: url(images/on_white_left.png);
-  background-color: #ffffff;
+  background-color: #000000;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: auto;
@@ -1352,10 +1277,11 @@ h1.big-text {
 }
 
 .blog-item-holder-scode h4 a {
-  color: #000 !important;
+  color: #fff !important;
   font-size: 34px;
   line-height: 110%;
   font-weight: 700;
+  opacity: 0.3;
   transition: 0.3s;
   letter-spacing: -1px;
 }
@@ -1518,12 +1444,14 @@ ul.milestones-holder {
   padding: 0;
   list-style: none;
   margin: 0;
+  display: flex;
 }
 
 li.milestone {
-  width: 45%;
+  width: 30%;
   display: inline-block;
-  margin: 30px 9% 30px 0;
+  margin: 30px 1.666666% 30px;
+  text-align: center;
 }
 
 li.milestone:nth-child(2n) {
@@ -2126,7 +2054,8 @@ body.blog {
 }
 
 #utils .card .box:hover {
-  transform: translateY(-50px);
+  transform: translateY(-50px) scale(1.05);
+  cursor: pointer;
 }
 
 #utils .card .box:before {
@@ -2760,7 +2689,9 @@ footer .footer-social-divider:before {
     margin-bottom: 10px;
     display: block;
   }
-
+  .milestones-holder {
+    flex-direction: column;
+  }
   li.milestone {
     width: 100%;
     margin-bottom: 60px;
@@ -2929,7 +2860,9 @@ footer .footer-social-divider:before {
     margin-left: 0;
   }
 }
-
+.only_mobile {
+  display: none;
+}
 @media screen and (max-width: 650px) {
   .blog-item-holder .entry-date.published,
   .blog-item-holder .cat-links,
@@ -2942,9 +2875,17 @@ footer .footer-social-divider:before {
   .single .entry-info div:after {
     display: none;
   }
-
+  #home .section-wrapper {
+    margin-top: 120px;
+  }
   h1.big-text {
     font-size: 40px;
+    padding: 2rem;
+    padding: 3rem 2rem;
+    border-radius: 100%;
+  }
+  .only_mobile {
+    display: block;
   }
 }
 
@@ -2960,7 +2901,7 @@ footer .footer-social-divider:before {
 #opening {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 .c_primary {
   color: var(--primary);
@@ -2979,4 +2920,93 @@ footer .footer-social-divider:before {
 }
 .text-slide-btn .button {
   padding: 0 40px;
+}
+
+/* COOKIE POLICY */
+#cookie_policy {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  max-width: 50%;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  padding: 1rem 3rem;
+  border-radius: 10rem;
+  z-index: 105;
+  opacity: 0.75;
+  transform: scale(0.5) translateY(200px);
+  transition: 1s;
+}
+#cookie_policy:hover {
+  opacity: 1;
+}
+.enable_scroll #cookie_policy:not(.already_accepted) {
+  transform: scale(1) translateY(0) !important;
+}
+#policy_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  padding-right: 2rem;
+  z-index: 9999999999;
+}
+#policy_text h5 {
+  padding: 5px 0;
+}
+#confirm_cookie {
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  border: 1px solid #fff;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  transition: 0.7s all;
+}
+#confirm_cookie:hover {
+  transform: scale(1.05);
+  background-color: var(--primary);
+  color: #fff;
+}
+#confirm_cookie_btn {
+  display: none;
+}
+@media screen and (min-width: 451px) and (max-width: 800px) {
+  #cookie_policy {
+    max-width: 80%;
+    transform: scale(0.5) translateY(400px);
+  }
+}
+@media screen and (max-width: 450px) {
+  #cookie_policy {
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 2rem);
+    border-radius: 0;
+    max-width: none;
+    min-width: none;
+    padding: 1rem;
+    flex-direction: column;
+    transform: scale(0.5) translateY(600px);
+  }
+  #policy_text {
+    text-align: center;
+    padding: 0;
+  }
+  #policy_text a {
+    width: 100%;
+  }
+  #confirm_cookie {
+    display: none;
+  }
+  #confirm_cookie_btn {
+    display: block;
+    margin-top: 1rem;
+  }
 }

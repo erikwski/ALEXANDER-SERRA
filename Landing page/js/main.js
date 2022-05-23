@@ -2,6 +2,8 @@
   "use strict";
   var count = 1;
 
+  gestionePrivacyPolicy();
+  updateHtmlForYear();
   fixForFooterNoContent();
   fixForBlogThumbnailSize();
   fixTeamLayout();
@@ -15,7 +17,7 @@
   firstSectionActiveFix();
   setMenu();
   SendMail();
-  $("#year").html(new Date().getFullYear());
+
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
 
@@ -42,6 +44,21 @@
   //------------------------------------------------------------------------
   //Helper Methods -->
   //------------------------------------------------------------------------
+
+  function gestionePrivacyPolicy() {
+    if (localStorage.getItem("accepted"))
+      $("#cookie_policy").addClass("already_accepted");
+    $("#confirm_cookie,#confirm_cookie_btn").click(() => {
+      $("#cookie_policy").addClass("already_accepted");
+      localStorage.setItem("accepted", "yes");
+    });
+  }
+
+  function updateHtmlForYear() {
+    let yy = new Date().getFullYear();
+    $("#year").html(yy);
+    $("#anni_di_esperienza").html(yy - 2011);
+  }
 
   function animazioneIniziale() {
     // $("html").addClass("loaded enable_scroll");
@@ -102,10 +119,6 @@
           .height($(this).find(".entry-holder").innerHeight() + 80);
       }
     });
-  }
-
-  function is_touch_device() {
-    return !!("ontouchstart" in window);
   }
 
   function setActiveMenuItem() {
@@ -239,7 +252,7 @@
 
   function slowScroll() {
     $(
-      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll'
+      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie'
     ).on("click", function (e) {
       if ($(this).attr("href") === "#") {
         e.preventDefault();
@@ -303,6 +316,11 @@
   }
 
   function setMenu() {
+    $(".trigger_link_click").click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      window.location = $(this).find(".trigger_that").attr("href");
+    });
     $(".main-menu").smartmenus({
       subMenusSubOffsetX: 1,
       subMenusSubOffsetY: -8,
