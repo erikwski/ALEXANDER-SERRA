@@ -1,0 +1,28 @@
+{
+  "pacchetti": [
+    {
+      "id": 1,
+      "desc": "BASIC MENSILE"
+    },
+    {
+      "id": 2,
+      "desc": "BASIC TRIMESTRALE"
+    },
+    {
+      "id": 3,
+      "desc": "STANDARD MENSILE"
+    },
+    {
+      "id": 4,
+      "desc": "STANDARD TRIMESTRALE"
+    },
+    {
+      "id": 5,
+      "desc": "PREMIUM MENSILE"
+    },
+    {
+      "id": 6,
+      "desc": "PREMIUM TRIMESTRALE"
+    }
+  ]
+}

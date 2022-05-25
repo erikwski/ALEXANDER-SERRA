@@ -263,7 +263,7 @@
                         </li>
                         <li class="pricing-list included-yes">
                           <span class="fa fa-check" aria-hidden="true"></span>
-                          1 feedback settimanale 
+                          <span>1 feedback settimanale</span>
                         </li>
                         <li class="pricing-list included-no">
                           <span class="fa fa-check" aria-hidden="true"></span>
@@ -277,13 +277,13 @@
                     </div>
                   </div>
                   <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching"> 
+                    <a href="#" class="button scroll buy_coaching" data-id="1"> 
                       <span class="fa fa-paypal"></span>
                       ACQUISTA PACCHETTO 
                     </a>
                   </div>
                   <div class="pricing-label">
-                    <a href="pdf/base.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
+                    <a href="pdf/basics.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
                   </div>
                 </div>
               </div>
@@ -324,13 +324,13 @@
                     </div>
                   </div>
                   <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching"> 
+                    <a href="#" class="button scroll buy_coaching" data-id="2"> 
                       <span class="fa fa-paypal"></span>
                       ACQUISTA PACCHETTO 
                     </a>
                   </div>
                   <div class="pricing-label">
-                    <a href="pdf/premium.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
+                    <a href="pdf/standard.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
                   </div>
                 </div>
               </div>
@@ -371,13 +371,13 @@
                     </div>
                   </div>
                   <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching"> 
+                    <a href="#" class="button scroll buy_coaching" data-id="3"> 
                       <span class="fa fa-paypal"></span>
                       ACQUISTA PACCHETTO 
                     </a>
                   </div>
                   <div class="pricing-label">
-                    <a href="pdf/avanzato.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
+                    <a href="pdf/premium.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
                   </div>
                 </div>
               </div>
@@ -412,7 +412,7 @@
                     </a>
                   </h4>
                   <div class="excerpt">
-                    Oasgni Runner, Beginner o Expert che sia, nutre paure (molto spesso irrazionali) durante la Corsa. In questo blog ho raccolto le 3 più comuni e alcuni fondamentali consigli per affrontarle ...
+                    Ogni Runner, Beginner o Expert che sia, nutre paure (molto spesso irrazionali) durante la Corsa. In questo blog ho raccolto le 3 più comuni e alcuni fondamentali consigli per affrontarle ...
                   </div>
                 </article>
 
@@ -725,6 +725,75 @@
           ACCETTA
         </a>
       </div>
+
+      <div id="modale_pagamento">
+        <div id="cont_close">
+          <a href="#" id="close_modale"><span class="fa fa-close"></span></a>
+        </div>
+        <div style="transition: 0.7s all .7s;">
+          <h5 id="titolo_modale">HAI SELEZIONATO IL COACHING <span class="c_secondary" id="nome_pacchetto"></span></h5>
+        </div>
+        <div style="transition: 0.7s all .8s;">
+          <label id="label_modale">Seleziona clickando sul pacchetto che fa per te</h5>
+        </div>
+        <div id="card_container" style="transition: 0.7s all .8s;">
+          <div class="card_pacchetti" id="pacc_mensile">
+            <h6>MENSILE</h6>
+            <h4 id="costo_mensile" class="price_tag"></h4>
+            <div class="cont_ico_pacc">
+              <img src="images/logo.png">
+            </div>
+          </div>
+          <div class="card_pacchetti" id="pacc_trimestrale">
+            <h6>TRIMESTRALE</h6>
+            <h4 id="costo_trimestrale" class="price_tag"></h4>
+            <div class="cont_ico_pacc">
+              <img src="images/logo.png">
+              <img src="images/logo.png">
+              <img src="images/logo.png">
+            </div>
+          </div>
+        </div>
+        <div id="dati_acquirente">
+          <h6>INSERISCI I TUOI DATI:</h6>
+          <div class="contact-form">
+            <p>
+              <input id="name_buyer" type="text" name="nome" placeholder="Cognome e nome (obbligatorio)">
+            </p>
+            <p class="full_center_column_mobile">
+              <input id="contact-email_buyer" type="email" name="email" placeholder="Email">
+              <input id="contact-telephone_buyer" type="tel" name="telefono" placeholder="Telefono (obbligatorio)">
+            </p>
+            <p class="contact-submit-holder">
+              <a href="#!" id="fake_paypal_btn" class="button" disabled>
+                COMPILA I DATI OBBLIGATORI
+                <span class="fa fa-paypal hide_on_mobile"></span>
+              </a>
+              <div id="paypal_container"></div>
+            </p>
+          </div>
+        </div>
+        <div id="dati_bonifico">
+          <a href="#" id="show_dati_bonifico" class="button">
+            ISTRUZIONI BONIFICO
+            <span class="fa fa-arrow-down hide_on_mobile" style="margin-left: 1rem;"></span>
+          </a>
+          <div class="toggle_dati_bonifico" style="display: none;">
+            <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+            <span><i>Intestatario:</i> SERRA ALEXANDER</span>
+            <span><i>Iban:</i> IT32K0567617295IB0000668343</span>
+            <span><i>Causale:</i> COACHING PER IL RUNNING</span>
+            <span><i>Costo:</i></span>
+            <span id="info_bonifico_mensile"><b>Mensile:</b> 60€</span>
+            <span id="info_bonifico_trimestrale"><b>Quadrimestrale:</b> 197€</span>
+            <span>
+              <i>
+                Una volta effettuato BONIFICO INVIA COPIA ad <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a> oppure telefonicamente al <a href="tel:3206349783">3206349783</a>.
+              </i>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -737,7 +806,8 @@
     <script src="js/jquery.smartmenus.min.js"></script>
     <script src="js/isotope.pkgd.js"></script>
     <script src='js/owl.carousel.min.js'></script>       
-    <script src='js/sweetalert.js'></script>         
+    <script src='js/sweetalert.js'></script>    
+    <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>     
     <script src="js/main.js"></script>
   </body>
 </html>

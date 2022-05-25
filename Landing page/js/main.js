@@ -1,6 +1,32 @@
 (function ($) {
-  "use strict";
+  ("use strict");
   var count = 1;
+  const COSTO_PACCHETTI = [
+    {
+      id: 1,
+      costo: 60,
+    },
+    {
+      id: 2,
+      costo: 157,
+    },
+    {
+      id: 3,
+      costo: 90,
+    },
+    {
+      id: 4,
+      costo: 237,
+    },
+    {
+      id: 5,
+      costo: 120,
+    },
+    {
+      id: 6,
+      costo: 317,
+    },
+  ];
 
   gestionePrivacyPolicy();
   updateHtmlForYear();
@@ -17,6 +43,7 @@
   firstSectionActiveFix();
   setMenu();
   SendMail();
+  gestioneModalePagamenti();
 
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
@@ -61,7 +88,8 @@
   }
 
   function animazioneIniziale() {
-    // $("html").addClass("loaded enable_scroll");
+    $("html").addClass("loaded enable_scroll");
+    /* 
     setTimeout(() => {
       //OMINO ARRIVA AL CENTRO DELLO SCHERMO
       $("#loader").addClass("runner_on_center");
@@ -83,6 +111,7 @@
         }, 800);
       }, 1150);
     }, 500);
+    */
   }
 
   function multiClickFunctionStop() {
@@ -252,7 +281,7 @@
 
   function slowScroll() {
     $(
-      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie'
+      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale'
     ).on("click", function (e) {
       if ($(this).attr("href") === "#") {
         e.preventDefault();
@@ -404,5 +433,178 @@
         });
       }
     });
+  }
+
+  function gestioneModalePagamenti() {
+    $(".buy_coaching").click(function () {
+      let pacchetto = $(this).data("id");
+      $("#modale_pagamento")
+        .addClass("open_modale")
+        .data("pacchetto", pacchetto);
+      $("html").addClass("disabled_scroll");
+      switch (pacchetto) {
+        case 1:
+          $("#nome_pacchetto").html("BASICS");
+          $("#costo_mensile").html("€60");
+          $("#costo_trimestrale").html("€157");
+          //23
+          break;
+        case 2:
+          $("#nome_pacchetto").html("STANDARD");
+          $("#costo_mensile").html("€90");
+          $("#costo_trimestrale").html("€237");
+          //33
+          break;
+        case 3:
+          $("#nome_pacchetto").html("PREMIUM");
+          $("#costo_mensile").html("€120");
+          $("#costo_trimestrale").html("€317");
+          //43
+          break;
+      }
+    });
+
+    $("#dati_acquirente input").on("change keyup", () => {
+      if (
+        $("#name_buyer").val().length &&
+        $("#contact-telephone_buyer").val().length
+      ) {
+        //PRONTO AD ACQUISTARE
+        if (!$("#paypal_container").hasClass("rendered_paypal")) {
+          inizializzaPaypal();
+        }
+      } else {
+        //NON VALIDO
+        if ($("#paypal_container").hasClass("rendered_paypal")) {
+          $("#paypal_container").removeClass("rendered_paypal").html("");
+          $("#fake_paypal_btn").fadeIn(500);
+        }
+      }
+    });
+
+    $(".card_pacchetti").click(function () {
+      if ($(this).hasClass("pacchetto_selezionato")) return;
+      $("#card_container").addClass("pacc_sel");
+      $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
+      $(this).addClass("pacchetto_selezionato");
+      $("#dati_acquirente, #dati_bonifico").addClass("show_acquirente");
+      if (
+        $("#name_buyer").val().length &&
+        $("#contact-telephone_buyer").val().length
+      ) {
+        //PRONTO AD ACQUISTARE
+        inizializzaPaypal();
+      }
+      $("#modale_pagamento").animate(
+        {
+          scrollTop:
+            $("#dati_acquirente").offset().top - $(window).height() / 2,
+        },
+        1000
+      );
+    });
+
+    $("#show_dati_bonifico").click(() => {
+      $(".toggle_dati_bonifico").toggle(500);
+      $("#modale_pagamento").animate(
+        {
+          scrollTop: $("#modale_pagamento")[0].offsetHeight,
+        },
+        1000
+      );
+    });
+
+    $("#close_modale").click(() => {
+      $("#modale_pagamento").removeClass("open_modale");
+      $("html").removeClass("disabled_scroll");
+      $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
+      $("#dati_acquirente, #dati_bonifico").removeClass("show_acquirente");
+      $("#card_container").removeClass("pacc_sel");
+      $("#dati_acquirente input").val("");
+      $("#paypal_container").removeClass("rendered_paypal").html("");
+    });
+    $($(".buy_coaching")[0]).click();
+  }
+
+  function inizializzaPaypal() {
+    $("#paypal_container").addClass("rendered_paypal").html("");
+    $("#fake_paypal_btn").fadeOut(500);
+    paypal.FUNDING.SOFORT = "disallowed";
+    paypal.FUNDING.MYBANK = "disallowed";
+    let paypal_inizialize = {
+      style: {
+        size: "responsive",
+        size: "large",
+        shape: "pill",
+        color: "blue",
+        label: "pay",
+        tagline: false,
+        fundingicons: true,
+        layout: "horizontal",
+      },
+      // Set up the transaction
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: "60",
+              },
+            },
+          ],
+        });
+      },
+
+      // Finalize the transaction
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (orderData) {
+          Swal.fire({
+            icon: "success",
+            title:
+              "Pagamento inviato correttamente, ti contatterò per fissare il nostro appuntamento",
+            showConfirmButton: true,
+            confirmButtonText: "OK",
+          }).then(() => {
+            $("#close_modale").click();
+          });
+        });
+      },
+    };
+    paypal.Buttons(paypal_inizialize).render("#paypal_container");
+
+    try {
+      let id_pacchetto = $("#modale_pagamento").data("pacchetto");
+      if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
+        id_pacchetto++;
+      let valore =
+        COSTO_PACCHETTI[
+          COSTO_PACCHETTI.findIndex((cc) => cc.id === id_pacchetto)
+        ].costo;
+
+      paypal_inizialize.createOrder = function (data, actions) {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: valore,
+              },
+            },
+          ],
+        });
+      };
+    } catch (error) {
+      alert(
+        "ERRORE CRITICO: contatta l'amministrazione per effettuare correttamente il pagamento"
+      );
+    }
+  }
+
+  function confermaPagamento() {
+    $.post("api/conferma_acquisto.php", {
+      persona: "erik",
+      mail: "test@jimmy.it",
+      telefono: "366980464",
+      pacchetto: "1",
+    }).done((j) => console.log(j));
   }
 })(jQuery);
