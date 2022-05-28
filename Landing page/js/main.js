@@ -281,7 +281,7 @@
 
   function slowScroll() {
     $(
-      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale'
+      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale, #back_to_normal_buy'
     ).on("click", function (e) {
       if ($(this).attr("href") === "#") {
         e.preventDefault();
@@ -435,8 +435,30 @@
     });
   }
 
+  function checkAcquistabile() {
+    let valid_input = true;
+    $("#dati_acquirente input:not([type='checkbox'])").each(function () {
+      if ($(this).val() === "") valid_input = false;
+    });
+    return valid_input && $("#condizioni_vendita").is(":checked");
+  }
+
   function gestioneModalePagamenti() {
     $(".buy_coaching").click(function () {
+      try {
+        let users = JSON.parse(localStorage.getItem("user"));
+        $("#name_buyer").val(users.persona);
+        $("#email_buyer").val(users.mail);
+        $("#telephone_buyer").val(users.telefono);
+        $("#cod_fisc_buyer").val(users.cod_fisc);
+        $("#address_buyer").val(users.address);
+        $("#city_buyer").val(users.city);
+        $("#cap_buyer").val(users.cap);
+        $("#prov_buyer").val(users.prov);
+        $("#condizioni_vendita").prop("checked", true);
+      } catch (error) {
+        console.log("JSON non valido");
+      }
       let pacchetto = $(this).data("id");
       $("#modale_pagamento")
         .addClass("open_modale")
@@ -449,13 +471,13 @@
           $("#costo_trimestrale").html("€157");
           //23
           break;
-        case 2:
+        case 3:
           $("#nome_pacchetto").html("STANDARD");
           $("#costo_mensile").html("€90");
           $("#costo_trimestrale").html("€237");
           //33
           break;
-        case 3:
+        case 5:
           $("#nome_pacchetto").html("PREMIUM");
           $("#costo_mensile").html("€120");
           $("#costo_trimestrale").html("€317");
@@ -465,16 +487,13 @@
     });
 
     $("#dati_acquirente input").on("change keyup", () => {
-      if (
-        $("#name_buyer").val().length &&
-        $("#contact-telephone_buyer").val().length
-      ) {
+      if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
-        if (!$("#paypal_container").hasClass("rendered_paypal")) {
+        if (!$("#paypal_container").hasClass("rendered_paypal"))
           inizializzaPaypal();
-        }
       } else {
         //NON VALIDO
+        $(".show_when_valid").removeClass("show_valid");
         if ($("#paypal_container").hasClass("rendered_paypal")) {
           $("#paypal_container").removeClass("rendered_paypal").html("");
           $("#fake_paypal_btn").fadeIn(500);
@@ -487,11 +506,8 @@
       $("#card_container").addClass("pacc_sel");
       $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
       $(this).addClass("pacchetto_selezionato");
-      $("#dati_acquirente, #dati_bonifico").addClass("show_acquirente");
-      if (
-        $("#name_buyer").val().length &&
-        $("#contact-telephone_buyer").val().length
-      ) {
+      $("#dati_acquirente").addClass("show_acquirente");
+      if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
         inizializzaPaypal();
       }
@@ -505,93 +521,109 @@
     });
 
     $("#show_dati_bonifico").click(() => {
-      $(".toggle_dati_bonifico").toggle(500);
-      $("#modale_pagamento").animate(
-        {
-          scrollTop: $("#modale_pagamento")[0].offsetHeight,
-        },
-        1000
-      );
+      $("#modale_pagamento").addClass("disabled_scroll").scrollTop(0);
+      $(".hide_on_bonifico").addClass("scale_out");
+      $(".toggle_dati_bonifico").show().addClass("scale_in");
+    });
+
+    $("#back_to_normal_buy").click(() => {
+      $("#modale_pagamento").removeClass("disabled_scroll").scrollTop(0);
+      $(".scale_out").removeClass("scale_out");
+      $(".scale_in").hide().removeClass("scale_in");
     });
 
     $("#close_modale").click(() => {
-      $("#modale_pagamento").removeClass("open_modale");
+      $("#modale_pagamento")
+        .removeClass("open_modale")
+        .removeClass("disabled_scroll")
+        .scrollTop(0);
       $("html").removeClass("disabled_scroll");
       $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
-      $("#dati_acquirente, #dati_bonifico").removeClass("show_acquirente");
+      $("#dati_acquirente").removeClass("show_acquirente");
       $("#card_container").removeClass("pacc_sel");
+      $("#fake_paypal_btn").fadeIn(500);
       $("#dati_acquirente input").val("");
+      $(".scale_out").removeClass("scale_out");
+      $(".scale_in").hide().removeClass("scale_in");
+      $(".show_when_valid").removeClass("show_valid");
       $("#paypal_container").removeClass("rendered_paypal").html("");
     });
     $($(".buy_coaching")[0]).click();
   }
 
   function inizializzaPaypal() {
+    let id_pacchetto = $("#modale_pagamento").data("pacchetto");
+    if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
+      id_pacchetto++;
     $("#paypal_container").addClass("rendered_paypal").html("");
+    $(".show_when_valid").addClass("show_valid");
     $("#fake_paypal_btn").fadeOut(500);
     paypal.FUNDING.SOFORT = "disallowed";
-    paypal.FUNDING.MYBANK = "disallowed";
-    let paypal_inizialize = {
-      style: {
-        size: "responsive",
-        size: "large",
-        shape: "pill",
-        color: "blue",
-        label: "pay",
-        tagline: false,
-        fundingicons: true,
-        layout: "horizontal",
-      },
-      // Set up the transaction
-      createOrder: function (data, actions) {
-        return actions.order.create({
-          purchase_units: [
-            {
-              amount: {
-                value: "60",
-              },
-            },
-          ],
-        });
-      },
-
-      // Finalize the transaction
-      onApprove: function (data, actions) {
-        return actions.order.capture().then(function (orderData) {
-          Swal.fire({
-            icon: "success",
-            title:
-              "Pagamento inviato correttamente, ti contatterò per fissare il nostro appuntamento",
-            showConfirmButton: true,
-            confirmButtonText: "OK",
-          }).then(() => {
-            $("#close_modale").click();
-          });
-        });
-      },
-    };
-    paypal.Buttons(paypal_inizialize).render("#paypal_container");
-
+    // paypal.FUNDING.MYBANK = "disallowed";
     try {
-      let id_pacchetto = $("#modale_pagamento").data("pacchetto");
-      if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
-        id_pacchetto++;
-      let valore =
-        COSTO_PACCHETTI[
-          COSTO_PACCHETTI.findIndex((cc) => cc.id === id_pacchetto)
-        ].costo;
-
-      paypal_inizialize.createOrder = function (data, actions) {
-        return actions.order.create({
-          purchase_units: [
-            {
-              amount: {
-                value: valore,
+      let paypal_inizialize = {
+        style: {
+          size: "responsive",
+          size: "large",
+          shape: "pill",
+          color: "blue",
+          label: "pay",
+          tagline: false,
+          fundingicons: true,
+          layout: "horizontal",
+        },
+        // Set up the transaction
+        createOrder: function (data, actions) {
+          return actions.order.create({
+            purchase_units: [
+              {
+                amount: {
+                  value:
+                    COSTO_PACCHETTI[
+                      COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
+                    ].costo,
+                },
               },
-            },
-          ],
-        });
+            ],
+          });
+        },
+
+        // Finalize the transaction
+        onApprove: function (data, actions) {
+          return actions.order.capture().then(function (orderData) {
+            let payer = orderData.payer;
+            confermaPagamento({
+              paypal_name: payer.name.surname + " " + payer.name.given_name,
+              paypal_address: `${payer.address.address_line_1}, ${payer.address.admin_area_1} - ${payer.address.postal_code}`,
+              paypal_mail: payer.email_address,
+              order_id: data.orderID,
+              payer_id: data.payerID,
+              data_pagamento: new Date().toLocaleString(),
+              persona: $("#name_buyer").val(),
+              mail: $("#email_buyer").val(),
+              telefono: $("#telephone_buyer").val(),
+              cod_fisc: $("#cod_fisc_buyer").val(),
+              address: $("#address_buyer").val(),
+              city: $("#city_buyer").val(),
+              cap: $("#cap_buyer").val(),
+              prov: $("#prov_buyer").val(),
+              pacchetto: id_pacchetto,
+            });
+            $("#close_modale").click();
+            Swal.fire({
+              icon: "success",
+              title:
+                "Pagamento inviato correttamente, ti contatterò per fissare il nostro appuntamento",
+              showConfirmButton: true,
+              confirmButtonText: "OK",
+            }).then(() => {
+              //aggiungi data
+              $("#close_modale").click();
+            });
+          });
+        },
       };
+      paypal.Buttons(paypal_inizialize).render("#paypal_container");
     } catch (error) {
       alert(
         "ERRORE CRITICO: contatta l'amministrazione per effettuare correttamente il pagamento"
@@ -599,12 +631,20 @@
     }
   }
 
-  function confermaPagamento() {
-    $.post("api/conferma_acquisto.php", {
-      persona: "erik",
-      mail: "test@jimmy.it",
-      telefono: "366980464",
-      pacchetto: "1",
-    }).done((j) => console.log(j));
+  function confermaPagamento(dati) {
+    try {
+      localStorage.setItem("user", JSON.stringify(dati));
+      $.post("api/conferma_acquisto.php", dati).done((j) => {
+        if (j.length) {
+          alert(
+            "ERRORE CRITICO: contatta l'amministrazione per confermare il pagamento"
+          );
+        }
+      });
+    } catch (error) {
+      alert(
+        "ERRORE CRITICO: contatta l'amministrazione per confermare il pagamento"
+      );
+    }
   }
 })(jQuery);
