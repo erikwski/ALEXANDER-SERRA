@@ -548,7 +548,7 @@
       $(".show_when_valid").removeClass("show_valid");
       $("#paypal_container").removeClass("rendered_paypal").html("");
     });
-    $($(".buy_coaching")[0]).click();
+    // $($(".buy_coaching")[0]).click();
   }
 
   function inizializzaPaypal() {
