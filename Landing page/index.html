@@ -758,20 +758,20 @@
           <h6>INSERISCI I TUOI DATI PER PROSEGUIRE COL PAGAMENTO:</h6>
           <div class="contact-form"style="padding: 0 1rem;">
             <p>
-              <input autocomplete="name" id="name_buyer" type="text" name="nome" placeholder="Cognome e nome">
+              <input maxlength="100" autocomplete="name" id="name_buyer" type="text" name="nome" placeholder="Cognome e nome">
             </p>
             <p>
-              <input autocomplete="off" id="cod_fisc_buyer" type="text" name="cod_fisc" placeholder="Codice fiscale/Partita IVA">
+              <input maxlength="64" autocomplete="off" id="cod_fisc_buyer" type="text" name="cod_fisc" placeholder="Codice fiscale/Partita IVA">
             </p>
             <p class="full_center_column_mobile">
-              <input autocomplete="email" id="email_buyer" type="email" name="email" placeholder="Email">
-              <input autocomplete="tel" id="telephone_buyer" type="tel" name="telefono" placeholder="Telefono">
+              <input maxlength="255" autocomplete="email" id="email_buyer" type="email" name="email" placeholder="Email">
+              <input maxlength="63" autocomplete="tel" id="telephone_buyer" type="tel" name="telefono" placeholder="Telefono">
             </p>
             <p class="full_center_column_address">
-              <input autocomplete="address-line1" id="address_buyer" type="text" name="address" placeholder="Indirizzo stradale">
-              <input autocomplete="address-level2" id="city_buyer" type="text" name="city" placeholder="Località">
-              <input autocomplete="postal-code" id="cap_buyer" type="text" name="cap" placeholder="Cap">
-              <input autocomplete="address-level1" id="prov_buyer" type="text" name="province" placeholder="Provincia">
+              <input maxlength="255" autocomplete="address-line1" id="address_buyer" type="text" name="address" placeholder="Indirizzo stradale">
+              <input maxlength="127" autocomplete="address-level2" id="city_buyer" type="text" name="city" placeholder="Località">
+              <input maxlength="10" autocomplete="postal-code" id="cap_buyer" type="text" name="cap" placeholder="Cap">
+              <input maxlength="5" autocomplete="address-level1" id="prov_buyer" type="text" name="province" placeholder="Provincia">
             </p>
             <p id="cond_vend_paragraph">
               <input type="checkbox" id="condizioni_vendita">
