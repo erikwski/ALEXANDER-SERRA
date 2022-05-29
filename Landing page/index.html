@@ -60,6 +60,7 @@
     <![endif]-->
   </head>
   <div id="loader">
+    <div class="loader"></div>
     <img id="logo_man" src="images/logo.png"></img>
     <img id="logo_text" src="images/testo_logo.png"></img>
   </div>
@@ -755,8 +756,9 @@
           </div>
         </div>
         <div class="hide_on_bonifico" id="dati_acquirente">
-          <h6>INSERISCI I TUOI DATI PER PROSEGUIRE COL PAGAMENTO:</h6>
-          <div class="contact-form"style="padding: 0 1rem;">
+          <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROSEGUIRE COL PAGAMENTO:</h6>
+          <label id="label_last_buy">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
+          <div class="contact-form"style="padding: 1rem 1rem 0;">
             <p>
               <input maxlength="100" autocomplete="name" id="name_buyer" type="text" name="nome" placeholder="Cognome e nome">
             </p>
@@ -771,7 +773,7 @@
               <input maxlength="255" autocomplete="address-line1" id="address_buyer" type="text" name="address" placeholder="Indirizzo stradale">
               <input maxlength="127" autocomplete="address-level2" id="city_buyer" type="text" name="city" placeholder="Località">
               <input maxlength="10" autocomplete="postal-code" id="cap_buyer" type="text" name="cap" placeholder="Cap">
-              <input maxlength="5" autocomplete="address-level1" id="prov_buyer" type="text" name="province" placeholder="Provincia">
+              <input maxlength="2" autocomplete="address-level1" id="prov_buyer" type="text" name="province" placeholder="Provincia">
             </p>
             <p id="cond_vend_paragraph">
               <input type="checkbox" id="condizioni_vendita">

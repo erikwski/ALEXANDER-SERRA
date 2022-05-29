@@ -4,26 +4,32 @@
   const COSTO_PACCHETTI = [
     {
       id: 1,
+      desc: "BASIC MENSILE",
       costo: 60,
     },
     {
       id: 2,
+      desc: "BASIC TRIMESTRALE",
       costo: 157,
     },
     {
       id: 3,
+      desc: "STANDARD MENSILE",
       costo: 90,
     },
     {
       id: 4,
+      desc: "STANDARD TRIMESTRALE",
       costo: 237,
     },
     {
       id: 5,
+      desc: "PREMIUM MENSILE",
       costo: 120,
     },
     {
       id: 6,
+      desc: "PREMIUM TRIMESTRALE",
       costo: 317,
     },
   ];
@@ -49,6 +55,7 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
+    $(".loader").remove();
     isotopeSetUp();
     setUpParallax();
     hashFix();
@@ -88,30 +95,16 @@
   }
 
   function animazioneIniziale() {
-    $("html").addClass("loaded enable_scroll");
-    /* 
+    $("#loader").addClass("runner_animation");
     setTimeout(() => {
-      //OMINO ARRIVA AL CENTRO DELLO SCHERMO
-      $("#loader").addClass("runner_on_center");
+      //BACKGROUND ESCE DALLO SCHERMO
+      $("html").addClass("loaded");
+      //PIANO PIANO RENDERIZZO ELEMENTI
       setTimeout(() => {
-        //TESTO DEL LOGO ARRIVA AL CENTRO
-        $("#loader").addClass("text_on_center");
-        setTimeout(() => {
-          //SIA TESTO CHE OMINO CORRONO OUT
-          $("#loader").addClass("logo_out");
-          setTimeout(() => {
-            //BACKGROUND ESCE DALLO SCHERMO
-            $("#loader").remove();
-            $("html").addClass("loaded");
-            //PIANO PIANO RENDERIZZO ELEMENTI
-            setTimeout(() => {
-              $("html").addClass("enable_scroll");
-            }, 1200);
-          }, 900);
-        }, 800);
-      }, 1150);
-    }, 500);
-    */
+        $("#loader").remove();
+        $("html").addClass("enable_scroll");
+      }, 1200);
+    }, 3000);
   }
 
   function multiClickFunctionStop() {
@@ -438,7 +431,12 @@
   function checkAcquistabile() {
     let valid_input = true;
     $("#dati_acquirente input:not([type='checkbox'])").each(function () {
-      if ($(this).val() === "") valid_input = false;
+      if ($(this).val() === "") {
+        valid_input = false;
+        $(this).addClass("invalid_input");
+      } else {
+        $(this).removeClass("invalid_input");
+      }
     });
     return valid_input && $("#condizioni_vendita").is(":checked");
   }
@@ -456,8 +454,9 @@
         $("#cap_buyer").val(users.cap);
         $("#prov_buyer").val(users.prov);
         $("#condizioni_vendita").prop("checked", true);
+        $("#label_last_buy").show();
       } catch (error) {
-        console.log("JSON non valido");
+        console.log("L'utente non ha mai acquistato un pacchetto");
       }
       let pacchetto = $(this).data("id");
       $("#modale_pagamento")
@@ -561,6 +560,10 @@
     paypal.FUNDING.SOFORT = "disallowed";
     // paypal.FUNDING.MYBANK = "disallowed";
     try {
+      let pacchetto_venduto =
+        COSTO_PACCHETTI[
+          COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
+        ];
       let paypal_inizialize = {
         style: {
           size: "responsive",
@@ -578,10 +581,7 @@
             purchase_units: [
               {
                 amount: {
-                  value:
-                    COSTO_PACCHETTI[
-                      COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
-                    ].costo,
+                  value: pacchetto_venduto.costo,
                 },
               },
             ],
@@ -608,6 +608,8 @@
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
               pacchetto: id_pacchetto,
+              costo: pacchetto_venduto.costo,
+              pacchetto_desc: pacchetto_venduto.desc,
             });
             $("#close_modale").click();
             Swal.fire({
