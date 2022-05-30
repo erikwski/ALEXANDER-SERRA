@@ -438,11 +438,20 @@
         $(this).removeClass("invalid_input");
       }
     });
-    return valid_input && $("#condizioni_vendita").is(":checked");
+
+    let valid_checkbox = true;
+    $("#dati_acquirente input[type='checkbox']").each(function () {
+      if (!$(this).prop("checked")) valid_checkbox = false;
+    });
+    return valid_input && valid_checkbox;
   }
 
   function gestioneModalePagamenti() {
     $(".buy_coaching").click(function () {
+      //spunto checkbox privacy se già accettata
+      if (localStorage.getItem("accepted")) {
+        $("#privacy_policy").prop("checked", true);
+      }
       try {
         let users = JSON.parse(localStorage.getItem("user"));
         $("#name_buyer").val(users.persona);
@@ -453,7 +462,7 @@
         $("#city_buyer").val(users.city);
         $("#cap_buyer").val(users.cap);
         $("#prov_buyer").val(users.prov);
-        $("#condizioni_vendita").prop("checked", true);
+        $("#modale_pagamento input[type='checkbox']").prop("checked", true);
         $("#label_last_buy").show();
       } catch (error) {
         console.log("L'utente non ha mai acquistato un pacchetto");

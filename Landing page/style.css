@@ -3030,7 +3030,7 @@ footer .footer-social-divider:before {
 #confirm_cookie_btn {
   display: none;
 }
-@media screen and (min-width: 451px) and (max-width: 800px) {
+@media screen and (min-width: 451px) and (max-width: 1100px) {
   #cookie_policy {
     max-width: 80%;
     transform: scale(0.5) translateY(400px);
@@ -3270,12 +3270,12 @@ footer .footer-social-divider:before {
 .toggle_dati_bonifico a {
   color: #000;
 }
-#cond_vend_paragraph {
+.contact-form p.cont_checkbox {
   font-size: 13px;
   line-height: 13px;
   margin-bottom: 1rem !important;
 }
-#cond_vend_paragraph input {
+.cont_checkbox input {
   margin-right: 10px !important;
 }
 @media screen and (max-width: 700px) {
@@ -3284,7 +3284,7 @@ footer .footer-social-divider:before {
     line-height: 36px;
     margin-top: -16px;
   }
-  #cond_vend_paragraph {
+  .contact-form p.cont_checkbox {
     font-size: 12px;
   }
 }
