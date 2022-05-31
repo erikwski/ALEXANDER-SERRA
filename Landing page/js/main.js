@@ -56,6 +56,7 @@
 
   $(window).on("load", function () {
     $(".loader").remove();
+    scrollToTopOfPage();
     isotopeSetUp();
     setUpParallax();
     hashFix();
@@ -63,7 +64,7 @@
   });
 
   window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+    scrollToTopOfPage();
   };
 
   $(window).on("resize", function () {
@@ -86,6 +87,13 @@
       $("#cookie_policy").addClass("already_accepted");
       localStorage.setItem("accepted", "yes");
     });
+  }
+
+  function scrollToTopOfPage() {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   }
 
   function updateHtmlForYear() {
@@ -658,4 +666,6 @@
       );
     }
   }
+
+  scrollToTopOfPage();
 })(jQuery);
