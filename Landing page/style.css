@@ -1533,6 +1533,13 @@ p.milestone-num {
   text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
 }
 
+.coaching_running {
+  padding: 5px 1rem;
+  background: var(--primary);
+  border-radius: 1rem;
+  color: #fff;
+}
+
 /* ===================================
     13. Blog Page CSS
 ====================================== */
