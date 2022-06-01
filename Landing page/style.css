@@ -1189,7 +1189,7 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_image.png);
+  background-image: url(images/hero_imager.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2076,6 +2076,11 @@ body.blog {
 #utils .card:nth-child(3) .box .content a,
 #utils .card:nth-child(3) .rounded_icon {
   background: #23c186 !important;
+}
+
+#utils .card:nth-child(4) .box .content a,
+#utils .card:nth-child(4) .rounded_icon {
+  background: #ff6422 !important;
 }
 
 #utils .card .box {
