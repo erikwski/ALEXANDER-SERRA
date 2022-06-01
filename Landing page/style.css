@@ -1189,17 +1189,12 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_imager.jpg);
+  background-image: url(images/hero_image.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 77px);
   display: flex;
-}
-@media screen and (max-width: 650px) {
-  #home {
-    background-image: url(images/hero_image_mobile.png);
-  }
 }
 
 #home .section-wrapper {
@@ -1458,7 +1453,8 @@ h1.big-text {
 .pricing-label {
   text-align: center;
 }
-.pricing-label a {
+.pricing-label a,
+.curriculum_link a {
   text-decoration: underline;
   color: #afafaf;
   font-size: 1rem;
@@ -1514,9 +1510,8 @@ li.milestone h5 {
 }
 
 li.milestone .milestone-info-left {
-  margin-right: 35px;
-  text-align: right;
-  width: 30%;
+  text-align: center;
+  width: 100%;
 }
 
 li.milestone .milestone-info-right {
@@ -3205,6 +3200,23 @@ footer .footer-social-divider:before {
   font-weight: 900;
   padding-top: 0;
 }
+#pacc_trimestrale:after {
+  content: attr(risparmio);
+  position: absolute;
+  bottom: -20px;
+  width: 70%;
+  min-width: 150px;
+  max-width: 300px;
+  transition: 0.7s ease-in-out;
+  transform: scale(0.85);
+  padding: 5px 1rem;
+  background: linear-gradient(181deg, var(--secondary), #b16613);
+  color: #fff;
+  border-radius: 5rem;
+}
+#pacchetto_selezionato.pacchetto_selezionato:after {
+  bottom: -12px;
+}
 .price_tag {
   color: var(--primary);
   font-size: 64px;
@@ -3337,7 +3349,8 @@ footer .footer-social-divider:before {
   text-overflow: ellipsis;
   text-align: center;
 }
-#fake_paypal_btn {
+#fake_paypal_btn,
+#fake_bonifico {
   pointer-events: none;
   background: #d9d9d9;
   border-color: #c3c3c3;
@@ -3347,10 +3360,29 @@ footer .footer-social-divider:before {
   text-overflow: ellipsis;
   text-align: center;
 }
+#oppure_pay_label {
+  text-align: center;
+  width: 100%;
+  transition: margin 0.5s;
+  margin-bottom: 1.25rem !important;
+}
+#oppure_pay_label.acquisto_valido {
+  margin-bottom: 0 !important;
+}
 @media screen and (min-width: 900px) {
   #dati_acquirente {
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  #paypal_container {
+    position: absolute;
+    width: 96%;
+    left: 2%;
+  }
+  #oppure_pay_label.acquisto_valido {
+    margin-top: 60px;
   }
 }
 html.disabled_scroll,

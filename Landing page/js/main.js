@@ -1,4 +1,5 @@
 (function ($) {
+  window.$ = $;
   ("use strict");
   var count = 1;
   const COSTO_PACCHETTI = [
@@ -483,21 +484,21 @@
       switch (pacchetto) {
         case 1:
           $("#nome_pacchetto").html("BASICS");
-          $("#costo_mensile").html("€60");
-          $("#costo_trimestrale").html("€157");
-          //23
+          $("#costo_mensile, #info_bonifico_mensile span").html("€60");
+          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€157");
+          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €23");
           break;
         case 3:
           $("#nome_pacchetto").html("STANDARD");
-          $("#costo_mensile").html("€90");
-          $("#costo_trimestrale").html("€237");
-          //33
+          $("#costo_mensile, #info_bonifico_mensile span").html("€90");
+          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€237");
+          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €33");
           break;
         case 5:
           $("#nome_pacchetto").html("PREMIUM");
-          $("#costo_mensile").html("€120");
-          $("#costo_trimestrale").html("€317");
-          //43
+          $("#costo_mensile, #info_bonifico_mensile span").html("€120");
+          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€317");
+          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €43");
           break;
       }
     });
@@ -510,9 +511,10 @@
       } else {
         //NON VALIDO
         $(".show_when_valid").removeClass("show_valid");
+        $("#oppure_pay_label").removeClass("acquisto_valido");
         if ($("#paypal_container").hasClass("rendered_paypal")) {
           $("#paypal_container").removeClass("rendered_paypal").html("");
-          $("#fake_paypal_btn").fadeIn(500);
+          $("#fake_paypal_btn, #fake_bonifico").fadeIn(500);
         }
       }
     });
@@ -529,8 +531,7 @@
       }
       $("#modale_pagamento").animate(
         {
-          scrollTop:
-            $("#dati_acquirente").offset().top - $(window).height() / 2,
+          scrollTop: $("#dati_acquirente").position().top,
         },
         1000
       );
@@ -557,11 +558,12 @@
       $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
       $("#dati_acquirente").removeClass("show_acquirente");
       $("#card_container").removeClass("pacc_sel");
-      $("#fake_paypal_btn").fadeIn(500);
+      $("#fake_paypal_btn, #fake_bonifico").fadeIn(500);
       $("#dati_acquirente input").val("");
       $(".scale_out").removeClass("scale_out");
       $(".scale_in").hide().removeClass("scale_in");
       $(".show_when_valid").removeClass("show_valid");
+      $("#oppure_pay_label").removeClass("acquisto_valido");
       $("#paypal_container").removeClass("rendered_paypal").html("");
     });
     // $($(".buy_coaching")[0]).click();
@@ -573,7 +575,8 @@
       id_pacchetto++;
     $("#paypal_container").addClass("rendered_paypal").html("");
     $(".show_when_valid").addClass("show_valid");
-    $("#fake_paypal_btn").fadeOut(500);
+    $("#oppure_pay_label").addClass("acquisto_valido");
+    $("#fake_paypal_btn, #fake_bonifico").fadeOut(500);
     paypal.FUNDING.SOFORT = "disallowed";
     // paypal.FUNDING.MYBANK = "disallowed";
     try {
