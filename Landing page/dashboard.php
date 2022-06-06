@@ -199,7 +199,7 @@
       
       var log = document.getElementById("login");
       log.addEventListener("click",()=>{
-        fetch('/api/check_login.php?username='+document.getElementById("username").value+'&password='+document.getElementById("password").value)
+        fetch('api/check_login.php?username='+document.getElementById("username").value+'&password='+document.getElementById("password").value)
           .then(response => response.json())
           .then(data =>{
             if(data.status){
