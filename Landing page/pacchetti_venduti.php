@@ -337,6 +337,7 @@
           })
         })
       })
+      .fail(()=>  Swal.fire('Errore nella connessione al server! Contattare amministrazione', '', 'error'))
     });
     
   </script>
