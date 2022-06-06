@@ -1233,6 +1233,18 @@ h1.big-text {
 .title_services.black-text {
   color: #000;
 }
+.credit_fotographer {
+  position: relative;
+}
+.credit_fotographer:before {
+  content: "Credit to: DANIELE FURLANETTO";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 16px;
+  text-align: center;
+  width: 370px;
+}
 @media screen and (max-width: 800px) {
   .title_services {
     display: none;
