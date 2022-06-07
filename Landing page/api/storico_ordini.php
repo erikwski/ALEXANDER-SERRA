@@ -36,7 +36,7 @@
   }
 
   $sql = "SELECT id,persona,mail,telefono,codice_fiscale,indirizzo,localita,cap,provincia,data_acquisto,flag_contattato,pacchetto";
-  $sql .= " FROM vendite WHERE flag_contattato <> 'C' ORDER BY id";
+  $sql .= " FROM vendite WHERE flag_contattato <> 'C' ORDER BY id DESC";
   $result = $mysqli->query($sql);
   if (!$result) {
     printf("Errore durante il salvataggio dei dati: se hai acquistato il pacchetto contattami in privato %s\n", $mysqli->error);
