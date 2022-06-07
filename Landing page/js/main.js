@@ -60,7 +60,7 @@
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
-        <img src="/images/logo/logo.png" style="position: absolute;top: 1rem;left: calc(50% - 100px);width: 200px;">
+        <img src="images/logo/logo.png" style="position: absolute;top: 1rem;left: calc(50% - 100px);width: 200px;">
         <div class="fake_card">
           <h3>Il sito sarà disponibile dall' 11 Giugno</h3>
           <div class="timer_container">
@@ -73,7 +73,7 @@
             </div>
           </div>
           <h3 style="font-size: 1.5rem;">Intanto approfitta dell'offerta sul mio nuovo Coaching !!!</h3>
-          <a href="/offerta.html" class="button">VISUALIZZA OFFERTA</a>
+          <a href="offerta.html" class="button">VISUALIZZA OFFERTA</a>
         </div>
       `);
       const second = 1000,
