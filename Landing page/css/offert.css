@@ -7,7 +7,7 @@
   position: relative;
 }
 .pricing-table-price:before {
-  content: "79€";
+  content: "316€";
   position: absolute;
   top: -3rem;
   left: -3rem;
@@ -21,6 +21,55 @@
   top: 0.5rem;
   left: -3rem;
   width: 90px;
+  background: #ff000094;
+  height: 3px;
+  transform: rotate(344deg);
+}
+.pricing-table-title {
+  position: relative;
+  padding-bottom: 0;
+}
+.pricing-table-title:before {
+  content: "TRIMESTRALE";
+  position: absolute;
+  top: 10px;
+  left: 6rem;
+  width: 100px;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+  color: #5c5c5c;
+}
+.pricing-table-title:after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 6.5rem;
+  width: 90px;
+  background: #ff000094;
+  height: 3px;
+  transform: rotate(344deg);
+}
+.last_desc_price {
+  position: relative;
+}
+.last_desc_price:before {
+  content: "79€";
+  position: absolute;
+  top: -20px;
+  right: 5rem;
+  width: 30px;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+  color: #5c5c5c;
+}
+.last_desc_price:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 4.1rem;
+  width: 50px;
   background: #ff000094;
   height: 3px;
   transform: rotate(344deg);
@@ -102,6 +151,8 @@
 #home .section-wrapper {
   margin-top: 60px;
   margin-bottom: 60px;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 900px) {
   .div_offer {
