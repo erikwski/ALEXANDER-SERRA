@@ -583,9 +583,6 @@
   }
 
   function inizializzaPaypal() {
-    let id_pacchetto = $("#modale_pagamento").data("pacchetto");
-    if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
-      id_pacchetto++;
     $("#paypal_container").addClass("rendered_paypal").html("");
     $(".show_when_valid").addClass("show_valid");
     $("#oppure_pay_label").addClass("acquisto_valido");
@@ -636,7 +633,7 @@
               city: $("#city_buyer").val(),
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
-              pacchetto: id_pacchetto,
+              pacchetto: 7,
               costo: 237,
               pacchetto_desc: "OFFERTA 10 GIUGNO",
             });

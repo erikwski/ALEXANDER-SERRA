@@ -99,6 +99,10 @@
   color: #fff;
   margin-bottom: 2rem;
 }
+#home .section-wrapper {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 @media screen and (max-width: 900px) {
   .div_offer {
     padding: 2rem;
