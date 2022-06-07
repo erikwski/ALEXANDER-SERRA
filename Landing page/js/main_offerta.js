@@ -56,72 +56,13 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    let data_show_website = new Date("11/06/2022");
-    let today = new Date();
-    if (data_show_website > today) {
-      $(".site-wrapper").addClass("not_ready_website").html(`
-        <img src="/images/logo/logo.png" style="position: absolute;top: 1rem;left: calc(50% - 100px);width: 200px;">
-        <div class="fake_card">
-          <h3>Il sito sarà disponibile dall' 11 Giugno</h3>
-          <div class="timer_container">
-            <i style="color: #828282;">Sarà disponibile fra:</i>
-            <div id="countdown1" class="countdown">
-              <div class="counter"><span></span><b>Giorni</b></div>
-              <div class="counter"><span></span><b>Ore</b></div>
-              <div class="counter"><span></span><b>Min</b></div>
-              <div class="counter"><span></span><b>Sec</b></div>
-            </div>
-          </div>
-          <h3 style="font-size: 1.5rem;">Intanto approfitta dell'offerta sul mio nuovo Coaching !!!</h3>
-          <a href="/offerta.html" class="button">VISUALIZZA OFFERTA</a>
-        </div>
-      `);
-      const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-      let countDown1 = new Date("06/11/2022").getTime();
-      let x1 = setInterval(function () {
-        const now = new Date().getTime(),
-          distance = countDown1 - now;
-
-        ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
-          ($("#countdown1 span")[1].innerText = Math.floor(
-            (distance % day) / hour
-          )),
-          ($("#countdown1 span")[2].innerText = Math.floor(
-            (distance % hour) / minute
-          )),
-          ($("#countdown1 span")[3].innerText = Math.floor(
-            (distance % minute) / second
-          ));
-
-        if (distance < 0) {
-          //offerta scaduta
-          $("#countdown1").html(
-            "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
-          );
-          clearInterval(x1);
-        }
-        //seconds
-      }, 1000);
-      setTimeout(() => {
-        $(".loader").remove();
-        $("#loader img").remove();
-        $("html").addClass("loaded enable_scroll");
-        setTimeout(() => {
-          $("#loader").remove();
-        }, 1000);
-      }, 1000);
-    } else {
-      $(".loader").remove();
-      scrollToTopOfPage();
-      isotopeSetUp();
-      setUpParallax();
-      hashFix();
-      animazioneIniziale();
-    }
+    $(".loader").remove();
+    scrollToTopOfPage();
+    isotopeSetUp();
+    setUpParallax();
+    hashFix();
+    animazioneIniziale();
+    checkPacchettiRimasti();
   });
 
   window.onbeforeunload = function () {
@@ -163,7 +104,44 @@
     $("#anni_di_esperienza").html(yy - 2011);
   }
 
+  function checkPacchettiRimasti() {
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let countDown1 = new Date("06/11/2022").getTime();
+    let x1 = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown1 - now;
+
+      ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
+        ($("#countdown1 span")[1].innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        ($("#countdown1 span")[2].innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        ($("#countdown1 span")[3].innerText = Math.floor(
+          (distance % minute) / second
+        ));
+
+      if (distance < 0) {
+        //offerta scaduta
+        $("#countdown1").html(
+          "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
+        );
+        clearInterval(x1);
+      }
+      //seconds
+    }, 1000);
+    $(".div_offer").attr("pacchetti_rimasti", "20 COACHING DISPONIBILI");
+  }
+
   function animazioneIniziale() {
+    $("#loader").remove();
+    $("html").addClass("loaded enable_scroll");
+    return;
     $("#loader").addClass("runner_animation");
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
@@ -536,31 +514,10 @@
       } catch (error) {
         console.log("L'utente non ha mai acquistato un pacchetto");
       }
-      let pacchetto = $(this).data("id");
-      $("#modale_pagamento")
-        .addClass("open_modale")
-        .data("pacchetto", pacchetto);
+      $("#modale_pagamento").show().addClass("open_modale");
       $("html").addClass("disabled_scroll");
-      switch (pacchetto) {
-        case 1:
-          $("#nome_pacchetto").html("BASICS");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€60");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€157");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €23");
-          break;
-        case 3:
-          $("#nome_pacchetto").html("STANDARD");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€90");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€237");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €33");
-          break;
-        case 5:
-          $("#nome_pacchetto").html("PREMIUM");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€120");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€317");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €43");
-          break;
-      }
+      $(".card_pacchetti").click();
+      $("#pacc_trimestrale").attr("risparmio", "RISPARMI €79");
     });
 
     $("#dati_acquirente input").on("change keyup", () => {
@@ -626,7 +583,6 @@
       $("#oppure_pay_label").removeClass("acquisto_valido");
       $("#paypal_container").removeClass("rendered_paypal").html("");
     });
-    // $($(".buy_coaching")[0]).click();
   }
 
   function inizializzaPaypal() {
@@ -640,10 +596,6 @@
     paypal.FUNDING.SOFORT = "disallowed";
     // paypal.FUNDING.MYBANK = "disallowed";
     try {
-      let pacchetto_venduto =
-        COSTO_PACCHETTI[
-          COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
-        ];
       let paypal_inizialize = {
         style: {
           size: "responsive",
@@ -661,7 +613,7 @@
             purchase_units: [
               {
                 amount: {
-                  value: pacchetto_venduto.costo,
+                  value: 237,
                 },
               },
             ],
@@ -688,8 +640,8 @@
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
               pacchetto: id_pacchetto,
-              costo: pacchetto_venduto.costo,
-              pacchetto_desc: pacchetto_venduto.desc,
+              costo: 237,
+              pacchetto_desc: "OFFERTA 10 GIUGNO",
             });
             $("#close_modale").click();
             Swal.fire({
