@@ -139,9 +139,6 @@
   }
 
   function animazioneIniziale() {
-    $("#loader").remove();
-    $("html").addClass("loaded enable_scroll");
-    return;
     $("#loader").addClass("runner_animation");
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
