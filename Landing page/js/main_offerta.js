@@ -56,7 +56,6 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    debugger;
     let data_show_website = new Date("06/09/2022 19:00");
     let today = new Date();
     if (data_show_website > today) {
@@ -67,7 +66,7 @@
           <div class="timer_container">
             <i style="color: #323232;">Countdown offerta:</i>
             <div id="countdown2" class="countdown">
-              <div class="counter"><span></span><b>Giorni</b></div>
+              <div class="counter hide_on_mobile"><span></span><b>Giorni</b></div>
               <div class="counter"><span></span><b>Ore</b></div>
               <div class="counter"><span></span><b>Min</b></div>
               <div class="counter"><span></span><b>Sec</b></div>
@@ -81,7 +80,7 @@
         day = hour * 24;
 
       let countDown2 = new Date("06/09/2022 19:00").getTime();
-      let x1 = setInterval(function () {
+      let x2 = setInterval(function () {
         const now = new Date().getTime(),
           distance = countDown2 - now;
 
@@ -98,10 +97,8 @@
 
         if (distance < 0) {
           //offerta scaduta
-          $("#countdown2").html(
-            "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
-          );
-          clearInterval(x1);
+          clearInterval(x2);
+          location.reload();
         }
         //seconds
       }, 1000);
