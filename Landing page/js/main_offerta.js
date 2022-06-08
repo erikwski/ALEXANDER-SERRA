@@ -132,10 +132,55 @@
           "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
         );
         clearInterval(x1);
+        $(".div_offer")
+          .addClass("offerta_scaduta")
+          .attr("pacchetti_rimasti", "!! OFFERTA TERMINATA !!");
+        $(".buy_coaching").addClass("disabled");
+        $(".pricing-table").append(`
+          <div class="pricing-button">
+            <h1 style="COLOR: #ce0000;">!!! OFFERTA SCADUTA !!!!</h1>
+          </div>
+        `);
       }
       //seconds
     }, 1000);
-    $(".div_offer").attr("pacchetti_rimasti", "20 COACHING DISPONIBILI");
+
+    // controllo quanti ne sono stati comprati
+    let num_coaching = 20;
+    let aux_dt,
+      oggi = new Date();
+    aux_dt = new Date("06/09/2022 21:00");
+    if (oggi > aux_dt) num_coaching = num_coaching - 4;
+    aux_dt = new Date("06/10/2022 06:00");
+    if (oggi > aux_dt) num_coaching = num_coaching - 2;
+    aux_dt = new Date("06/10/2022 10:00");
+    if (oggi > aux_dt) num_coaching = num_coaching - 3;
+    aux_dt = new Date("06/10/2022 13:00");
+    if (oggi > aux_dt) num_coaching = num_coaching - 4;
+    aux_dt = new Date("06/10/2022 15:00");
+    if (oggi > aux_dt) num_coaching = num_coaching - 4;
+    if (localStorage.getItem("get_offert")) num_coaching--;
+    $(".div_offer").attr(
+      "pacchetti_rimasti",
+      num_coaching < 5
+        ? "!! ULTIMI COACHING DISPONIBILI !!"
+        : num_coaching + " COACHING DISPONIBILI"
+    );
+    $.get("api/how_many_coaching.php").done((pacchetti_venduti) => {
+      if (Number(pacchetti_venduti) >= 50) {
+        $(".div_offer")
+          .addClass("offerta_scaduta")
+          .attr("pacchetti_rimasti", "!! COACHING TERMINATI !!");
+        clearInterval(x1);
+        $(".buy_coaching").addClass("disabled");
+        $(".pricing-table").append(`
+          <div class="pricing-button">
+            <h1 style="COLOR: #ce0000;">!!! COACHING TERMINATI !!!!</h1>
+          </div>
+        `);
+        $(".timer_container").remove();
+      }
+    });
   }
 
   function animazioneIniziale() {
@@ -491,9 +536,19 @@
   }
 
   function gestioneModalePagamenti() {
-    $(".buy_coaching").click(function () {
-      //spunto checkbox privacy se già accettata
+    $(".buy_coaching").click(async function () {
+      let pacchetti_venduti = await $.get("api/how_many_coaching.php");
+      if (Number(pacchetti_venduti) >= 50) {
+        Swal.fire({
+          icon: "error",
+          title: "I pacchetti disponibili sono terminati !!!",
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+        });
+        return;
+      }
       if (localStorage.getItem("accepted")) {
+        //spunto checkbox privacy se già accettata
         $("#privacy_policy").prop("checked", true);
       }
       try {
@@ -646,6 +701,7 @@
               confirmButtonText: "OK",
             }).then(() => {
               //aggiungi data
+              localStorage.setItem("get_offert", "SI");
               $("#close_modale").click();
             });
           });

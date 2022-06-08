@@ -78,7 +78,7 @@
   $mysqli->close();
 
   if (!$sviluppo){
-    $to = "erikwski.spam@gmail.com";
+    $to = "alerunner91@gmail.com";
     $subject = "Acquisto nuovo coaching !!!";
     $message = "
       Venduto pacchetto ".$pacchetto_desc."
