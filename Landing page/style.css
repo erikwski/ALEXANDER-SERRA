@@ -3530,7 +3530,7 @@ html.disabled_scroll,
   left: 0;
   width: 100%;
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
   .countdown .counter {
     font-size: 30px;
   }
@@ -3541,8 +3541,6 @@ html.disabled_scroll,
   .not_ready_website a {
     font-size: 12px !important;
   }
-}
-@media screen and (max-width: 450px) {
   .not_ready_website img {
     width: 150px !important;
     left: calc(50% - 75px) !important;
