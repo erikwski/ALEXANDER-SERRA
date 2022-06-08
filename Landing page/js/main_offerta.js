@@ -56,6 +56,7 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
+    debugger;
     let data_show_website = new Date("06/09/2022 19:00");
     let today = new Date();
     if (data_show_website > today) {
@@ -79,7 +80,7 @@
         hour = minute * 60,
         day = hour * 24;
 
-      let countDown2 = new Date("06/11/2022").getTime();
+      let countDown2 = new Date("06/09/2022 19:00").getTime();
       let x1 = setInterval(function () {
         const now = new Date().getTime(),
           distance = countDown2 - now;
