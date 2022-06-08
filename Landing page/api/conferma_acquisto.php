@@ -78,7 +78,7 @@
   $mysqli->close();
 
   if (!$sviluppo){
-    $to = "alerunner91@gmail.com";
+    $to = "radunirunningcoach@outlook.it";
     $subject = "Acquisto nuovo coaching !!!";
     $message = "
       Venduto pacchetto ".$pacchetto_desc."

@@ -60,7 +60,7 @@
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
-        <img src="images/logo/logo.png" style="position: absolute;top: 1rem;left: calc(50% - 100px);width: 200px;">
+        <img src="images/logo/logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
         <div class="fake_card">
           <h3>Il sito sarà disponibile dall' 11 Giugno</h3>
           <div class="timer_container">

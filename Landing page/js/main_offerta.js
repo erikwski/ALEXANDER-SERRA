@@ -56,13 +56,71 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    $(".loader").remove();
-    scrollToTopOfPage();
-    isotopeSetUp();
-    setUpParallax();
-    hashFix();
-    animazioneIniziale();
-    checkPacchettiRimasti();
+    let data_show_website = new Date("06/09/2022 19:00");
+    let today = new Date();
+    if (data_show_website > today) {
+      $(".site-wrapper").addClass("not_ready_website").html(`
+        <img src="images/logo/logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
+        <div class="fake_card">
+          <h3>L'offerta si attiverà alle ore 19:00</h3>
+          <div class="timer_container">
+            <i style="color: #323232;">Countdown offerta:</i>
+            <div id="countdown2" class="countdown">
+              <div class="counter"><span></span><b>Giorni</b></div>
+              <div class="counter"><span></span><b>Ore</b></div>
+              <div class="counter"><span></span><b>Min</b></div>
+              <div class="counter"><span></span><b>Sec</b></div>
+            </div>
+          </div>
+        </div>
+      `);
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      let countDown2 = new Date("06/11/2022").getTime();
+      let x1 = setInterval(function () {
+        const now = new Date().getTime(),
+          distance = countDown2 - now;
+
+        ($("#countdown2 span")[0].innerText = Math.floor(distance / day)),
+          ($("#countdown2 span")[1].innerText = Math.floor(
+            (distance % day) / hour
+          )),
+          ($("#countdown2 span")[2].innerText = Math.floor(
+            (distance % hour) / minute
+          )),
+          ($("#countdown2 span")[3].innerText = Math.floor(
+            (distance % minute) / second
+          ));
+
+        if (distance < 0) {
+          //offerta scaduta
+          $("#countdown2").html(
+            "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
+          );
+          clearInterval(x1);
+        }
+        //seconds
+      }, 1000);
+      setTimeout(() => {
+        $(".loader").remove();
+        $("#loader img").remove();
+        $("html").addClass("loaded enable_scroll");
+        setTimeout(() => {
+          $("#loader").remove();
+        }, 1000);
+      }, 1000);
+    } else {
+      $(".loader").remove();
+      scrollToTopOfPage();
+      isotopeSetUp();
+      setUpParallax();
+      hashFix();
+      animazioneIniziale();
+      checkPacchettiRimasti();
+    }
   });
 
   window.onbeforeunload = function () {

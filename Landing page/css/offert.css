@@ -185,3 +185,11 @@
     text-overflow: ellipsis;
   }
 }
+#countdown2 {
+  color: #000;
+  text-shadow: 2px 2px rgb(255, 255, 255);
+}
+.not_ready_website h3 {
+  color: #000;
+  text-shadow: 2px 2px 1px var(--primary);
+}
