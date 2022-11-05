@@ -54,25 +54,41 @@
 
   <body
     class="leading-normal tracking-normal text-white gradient overflow-x-hidden flex justify-center items-center"
-    style="min-height: 100vh; padding: 150px 0"
+    style="min-height: 100vh; padding: 100px 0;"
   >
-    <div id="logo">
+    <div id="notReadyOffert" style="display: none;">
       <img
-        src="img/logo/Logo_vettoriale.png"
-        class="load_ini"
-        width="300"
-        height="150"
-        style="position: absolute; top: 1rem; left: calc(50% - 150px)"
-      />
+          src="img/logo/Logo_vettoriale.png"
+          class="load_ini"
+          style="margin: 0;"
+          width="300"
+          height="150"
+          />
+      <b></b>
+    </div>
+    <div id="bannerTimeout">
+      <i style="color: #b3b3b3;" id="titleTimer">L'offerta inzia fra:</i>
+      <div id="countdown1" class="countdown">
+        <div class="counter"><span></span><b>Giorni</b></div>
+        <div class="counter"><span></span><b>Ore</b></div>
+        <div class="counter"><span></span><b>Min</b></div>
+        <div class="counter"><span></span><b>Sec</b></div>
+      </div>
     </div>
     <div class="card load_ini">
       <div id="intro_container">
-        <h4 class="mb-4 text-center" style="font-size: 2.5rem">
-          <b>CORRI CON ALEX</b>
+        <img
+          src="img/logo/Logo_vettoriale.png"
+          class="load_ini"
+          style="margin: auto;"
+          width="200"
+          height="86"
+          />
+        <h4 class="mb-4 mt-4 text-center adapt-title-mobile" style="font-size: 2.5rem">
+          <b>#RUNALECHALLENGE</b>
         </h4>
-        <p class="text-center px-4">
-          è un Percorso Gratuito di 4 settimane in cui, dal 10 Maggio al 10
-          Giugno , ti guiderò con Allenamenti di Corsa adeguati al tuo livello.
+        <p class="text-center px-4 pb-4">
+          È un Percorso Gratutito di 12 giorni in cui, dal 14 Novembre al 25 Novembre, ti guiderò con Allenamenti di Corsa adeguati al tuo livello.
         </p>
         <p style="color: #2093ca;text-align: center;width: 100%;font-size: 1.2rem;margin: 5px 0 -1rem;opacity: .8;">Scegli il gruppo adatto a te</p>
         <div class="flex justify-center items-center mt-6 flex-col lg:flex-row">
@@ -123,109 +139,110 @@
     <div
       class="card"
       id="card_gruppi_whatsapp"
-      style="display: none; margin-left: 30px"
+      style="display: none; margin-left: 30px; margin-right: 30px; text-align: center;"
     >
-      <h4 class="mb-4 text-center" style="font-size: 2.5rem">
-        <b>ENTRA NEL GRUPPO WHATSAPP</b>
-      </h4>
-      <div>
-        <label
-          class="flex items-center space-x-3 mb-6 text-center"
-          id="container_check"
-        >
-          <input
-            style="min-width: 24px"
-            type="checkbox"
-            name="checked-demo"
-            class="form-tick appearance-none bg-white bg-check h-6 w-6 border border-gray-300 rounded-md checked:bg-blue-500 checked:border-transparent focus:outline-none"
-          />
-          <span class="text-gray-500 dark:text-white font-normal text-center">
-            Accetta termini e condizioni per entrare nel gruppo whatsapp
-          </span>
-        </label>
+      <div id="beforeCondition">
+        <h4 class="mb-4 text-center adapt-title-mobile" style="font-size: 2.5rem">
+          <b>ENTRA NEL GRUPPO WHATSAPP</b>
+        </h4>
+        <div>
+          <label
+            class="flex items-center space-x-3 mb-6 text-center justify-center"
+            id="containerCondition"
+          >
+            <button>Accetta termini e condizioni</button>
+          </label>
+        </div>
+        <div style="width: 100%; text-align:center;" class="mb-4 md:/mb-8">
+          <a
+            href="https://www.iubenda.com/privacy-policy/41318817"
+            class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+            title="Privacy Policy "
+            >Privacy Policy</a
+          >
+          <script type="text/javascript">
+            (function (w, d) {
+              var loader = function () {
+                var s = d.createElement("script"),
+                  tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s, tag);
+              };
+              if (w.addEventListener) {
+                w.addEventListener("load", loader, false);
+              } else if (w.attachEvent) {
+                w.attachEvent("onload", loader);
+              } else {
+                w.onload = loader;
+              }
+            })(window, document);
+          </script>
+        </div>
+        <label style="color: #bbbbbbc7; width: 100%;" class="mt-4">Accettare i termini e condizioni é necessario per poter entrare all'interno di gruppi whatsapp</label>
       </div>
-      <a
-        href="https://www.iubenda.com/privacy-policy/41318817"
-        class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
-        title="Privacy Policy "
-        >Privacy Policy</a
-      >
-      <script type="text/javascript">
-        (function (w, d) {
-          var loader = function () {
-            var s = d.createElement("script"),
-              tag = d.getElementsByTagName("script")[0];
-            s.src = "https://cdn.iubenda.com/iubenda.js";
-            tag.parentNode.insertBefore(s, tag);
-          };
-          if (w.addEventListener) {
-            w.addEventListener("load", loader, false);
-          } else if (w.attachEvent) {
-            w.attachEvent("onload", loader);
-          } else {
-            w.onload = loader;
-          }
-        })(window, document);
-      </script>
-      <label style="margin: 2rem 0 -8px;color: #bbbbbbc7;">Accetta i termini e condizioni e scegli il gruppo adatto a te:</label>
-      <div class="flex flex-col">
-        <a
-          href="https://chat.whatsapp.com/KOgFaeDN686EeUo8nX3jQz"
-          class="btn_group disabled"
-        >
-          PRINCIPIANTE
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-reception-2"
-            viewBox="0 0 16 16"
+      <div id="afterCondition" style="display: none;">
+        <h4 class="mb-4 text-center adapt-title-mobile" style="font-size: 2.5rem">
+          <b>SCEGLI IL GRUPPO CHE FA PER TE</b>
+        </h4>
+        <div class="flex flex-col items-center">
+          <a
+            href="https://chat.whatsapp.com/CLkCp46C0zOJPHMk5cO5r0"
+            class="btn_group"
           >
-            <path
-              d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4 5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-        </a>
-        <label class="text-center" style="color: #ffffff73;">se inizi a Correre da Zero o fatichi a fare più di 20' consecutivi di corsa.</label>
-        <a
-          href="https://chat.whatsapp.com/GgKzwMm3S5oC0GqH32eP7Y"
-          class="btn_group disabled"
-        >
-          INTERMEDIO
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-reception-3"
-            viewBox="0 0 16 16"
+            START
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-reception-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4 5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </a>
+          <label class="text-center" style="color: #ffffff73;">se inizi a Correre da Zero o fatichi a fare più di 10' consecutivi di corsa.</label>
+          <a
+            href="https://chat.whatsapp.com/CfbLkSUQn3Y3E5Mra1ap8I"
+            class="btn_group"
           >
-            <path
-              d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-        </a>
-        <label class="text-center" style="color: #ffffff73;">se Corri da almeno 6/12 mesi e non superi mai 1 ora di corsa continua.</label>
-        <a
-          href="https://chat.whatsapp.com/IdgPJy1SoiXFOmn7CkZO0M"
-          class="btn_group disabled"
-        >
-          AVANZATO
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-reception-4"
-            viewBox="0 0 16 16"
+            MEDIUM
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-reception-3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </a>
+          <label class="text-center" style="color: #ffffff73;">se Corri da almeno 6/8 mesi e non superi mai 40 minuti di corsa continua</label>
+          <a
+            href="https://chat.whatsapp.com/Gv1XbDQ5U8uAgJafJyqZBN"
+            class="btn_group"
           >
-            <path
-              d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z"
-            />
-          </svg>
-        </a>
-        <label class="text-center" style="color: #ffffff73;">se Corri da più di un anno e Corri per più di un 1 ora senza alcun problema.</label>
+            PRO
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-reception-4"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z"
+              />
+            </svg>
+          </a>
+          <label class="text-center" style="color: #ffffff73;">se Corri da più di un anno e Corri tranquillamente più di 1 ora</label>
+        </div>
       </div>
       <a href="#!" class="back_home">
         <svg
@@ -243,53 +260,48 @@
       </a>
     </div>
 
-    <div class="card" id="card_info" style="display: none; margin-left: 30px">
+    <div class="card" id="card_info" style="display: none; margin-left: 30px; margin-right: 30px; text-align: center;">
       <h4 class="mb-4 text-center" style="font-size: 2.5rem">
         <b>INFO EVENTO:</b>
       </h4>
       <p>
-        In questo mese impareremo a conoscere le differenti tipologie e
-        metodologie di allenamento e ad affrontare in maniera ottimale tutte le
-        varie fasi dell'allenamento, dal Riscaldamento al Defaticamento. La
-        settimana dal 10 Maggio al 17 Maggio sarà dedicata ai test per
-        verificare il tuo livello di Partenza e anche la tua motivazione! Senza
-        test non sarà possibile infatti prendere parte al Percorso Running.
+        In questi 12 giorni insieme impareremo a conoscere le differenti tipologie e metodologie di allenamento....fino a Defaticamento va bene.
+      </p>
+      <p class="mb-2">
+        Inoltre sarai guidat* con esercizi di potenziamento muscolare e prevenzione degli infortuni propedeutici alla Corsa.
       </p>
       <label>Quando avverrà l'evento?</label>
       <p>
-        Dal 18 Maggio al 9 Giugno riceverai ogni settimana per 3 settimane 3
-        allenamenti adeguati al gruppo di Allenamento che hai scelto:
+        Dal 14 al 25 Novembre riceverai ogni giorno allenamenti adeguati al gruppo di Allenamento che hai scelto:
         <ul style="text-align: center;list-style: circle;padding: 8px;">
           <li>
-            PRINCIPIANTE se inizi a Correre da Zero o fatichi a fare più di 20' consecutivi di corsa.
+            START: Se inizi a correre da Zero o fatichi a fare più di 10 minuti consecutivi di corsa
           </li>
           <li>
-            INTERMEDIO se Corri da almeno 6/12 mesi e non superi mai 1 ora di corsa continua.
+            MEDIUM: Se Corri da almeno 6/8 mesi e non superi mai 40 minuti di corsa continua
           </li>
           <li>
-            AVANZATO se Corri da più di un anno e Corri per più di un 1 ora senza alcun problema.
+            PRO: Se Corri da più di un anno e Corri tranquillamente più di 1 ora.
           </li>
         </ul>
       </p>
-      <label>Cosa troverai in "Corri con Alex"?</label>
+      <label>Cosa troverai in <span class="eventBadge">#RUNALECHALLENGE</span> ?</label>
       <p>
         Allenamenti Standard (e non personalizzati) per migliorare globalmente
         nella Corsa e conoscere tutte le tipologie di allenamento utili per 
         raggiungere i tuoi obiettivi e migliorare il tuo benessere psicofisico.
       </p>
-      <label>Cosa non troverai in "Corri con Alex"?</label>
+      <label>Cosa non troverai in <span class="eventBadge">#RUNALECHALLENGE</span> ?</label>
       <p>
         Programmazioni personalizzate o specifiche per obiettivi agonistici.
         Tutti gli allenamenti saranno Standard e non saranno previsti Feedback
         personalizzati sull'andamento dell'allenamento.
       </p>
-      <label>Promo speciale per chi entra nel gruppo:?</label>
-      <p>
-        Il 10 Giugno, solo per te che sarai nel
-        gruppo, riceverai un'esclusiva OFFERTA che ti permetterà di entrare nel
-        mondo del mio #coachingperilrunning. Entra nel gruppo se non vuoi
-        perderti l'occasione irripetibile di Correre con me per un mese 🤩
+      <label>Promo speciale per chi entra nel gruppo:</label>
+      <p class="mb-4">
+        Il 24 Novembre, in occasione del Black Friday e solo per chi sarà nel gruppo, arriverà un'esclusiva OFFERTA che ti permetterà di entrare nel mondo del mio <span class="eventBadge">#COACHINGPERILRUNNING</span>.
       </p>
+      <i style="font-size: 20px;" class="my-4 text-center">Ti aspetto se non vuoi perderti l'occasione irripetibile di Correre con me!</i>
       <a href="#!" class="back_home blue_hover">
         <svg
           xmlns="http://www.w3.org/2000/svg"
