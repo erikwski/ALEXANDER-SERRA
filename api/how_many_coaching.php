@@ -1,16 +1,12 @@
 <?php
   session_start();
-  if(!isset($_SESSION['user_logged'])){
-    echo "non abilitato";
-    exit();
-  }
-  $sviluppo = false;
+  $sviluppo = true;
 
   if ($sviluppo){
     $db_host = 'localhost';
     $db_user = 'root';
     $db_password = '';
-    $db_db = 'alexrunningcoach';
+    $db_db = 'my_avid3830173';
     $db_port = 3306;
   }else{
     $db_host = 'localhost';
@@ -36,7 +32,7 @@
   }
 
   $sql = "SELECT COUNT(*) AS contatore";
-  $sql .= " FROM vendite WHERE pacchetto = 7 ORDER BY id DESC";
+  $sql .= " FROM vendite WHERE pacchetto = 8 ORDER BY id DESC";
   $result = $mysqli->query($sql);
   if (!$result) {
     printf("Errore durante il salvataggio dei dati: se hai acquistato il pacchetto contattami in privato %s\n", $mysqli->error);

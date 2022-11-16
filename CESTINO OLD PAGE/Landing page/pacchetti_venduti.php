@@ -43,7 +43,7 @@
       color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#2293ca" />
     <style>
       
       h1{

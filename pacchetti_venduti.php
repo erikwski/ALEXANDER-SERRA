@@ -43,7 +43,7 @@
       color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#2293ca" />
     <style>
       
       h1{
@@ -237,6 +237,11 @@
         id: 7,
         desc: "OFFERTA 10 GIUGNO",
         costo: 317,
+      },
+      {
+        id: 8,
+        desc: "BLACK FRIDAY 2022",
+        costo: 197,
       },
     ];
 
