@@ -1,0 +1,3 @@
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule .* https://www.alexrunningcoach.it%{REQUEST_URI} [L,R=301]
