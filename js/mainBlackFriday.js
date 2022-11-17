@@ -1,7 +1,8 @@
 (function ($) {
   window.$ = $;
   ("use strict");
-  var count = 1;
+  var count = 1,
+    analisiCorsaPromo = true;
   const COSTO_PACCHETTI = [
     {
       id: 1,
@@ -122,17 +123,18 @@
         }, 1000);
       }, 1000);
     } else {
-      $(".loader").remove();
       scrollToTopOfPage();
       isotopeSetUp();
       setUpParallax();
       hashFix();
       animazioneIniziale();
       checkPacchettiRimasti();
+      promoAnalisiCorsaAttiva();
     }
   });
 
   window.onbeforeunload = function () {
+    window.location.hash = "";
     scrollToTopOfPage();
   };
 
@@ -169,6 +171,17 @@
     let yy = new Date().getFullYear();
     $("#year").html(yy);
     $("#anni_di_esperienza").html(yy - 2011);
+  }
+
+  function promoAnalisiCorsaAttiva() {
+    let oggi = new Date();
+    finePromo = new Date("11/25/2022 00:00");
+    analisiCorsaPromo = oggi < finePromo;
+    if (analisiCorsaPromo) {
+      $("#includeIfAnalisi")
+        .removeClass("included-no")
+        .addClass("included-yes");
+    }
   }
 
   function checkPacchettiRimasti() {
@@ -213,6 +226,7 @@
     }, 1000);
 
     // controllo quanti ne sono stati comprati
+    /*
     let num_coaching = 20;
     let aux_dt,
       oggi = new Date();
@@ -251,19 +265,15 @@
         $(".timer_container").remove();
       }
     });
+    */
   }
 
   function animazioneIniziale() {
-    $("#loader").addClass("runner_animation");
+    $("html").addClass("loaded");
     setTimeout(() => {
-      //BACKGROUND ESCE DALLO SCHERMO
-      $("html").addClass("loaded");
-      //PIANO PIANO RENDERIZZO ELEMENTI
-      setTimeout(() => {
-        $("#loader").remove();
-        $("html").addClass("enable_scroll");
-      }, 1200);
-    }, 3000);
+      $("#loader").remove();
+      $("html").addClass("enable_scroll");
+    }, 1000);
   }
 
   function multiClickFunctionStop() {
@@ -639,7 +649,7 @@
       $("#modale_pagamento").show().addClass("open_modale");
       $("html").addClass("disabled_scroll");
       $(".card_pacchetti").click();
-      $("#pacc_trimestrale").attr("risparmio", "RISPARMI €79");
+      $("#pacc_trimestrale").attr("risparmio", "STAI RISPARMIANDO €40");
     });
 
     $("#dati_acquirente input").on("change keyup", () => {
@@ -732,7 +742,7 @@
             purchase_units: [
               {
                 amount: {
-                  value: 237,
+                  value: 197,
                 },
               },
             ],
