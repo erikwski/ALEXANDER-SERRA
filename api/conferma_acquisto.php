@@ -79,6 +79,7 @@
 
   if (!$sviluppo){
     $to = "radunirunningcoach@outlook.it";
+    $to = "erikwski.spam@gmail.com"; //updDtEff
     $subject = "Acquisto nuovo coaching !!!";
     $message = "
       Venduto pacchetto ".$pacchetto_desc."

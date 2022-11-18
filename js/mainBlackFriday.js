@@ -2,7 +2,7 @@
   window.$ = $;
   ("use strict");
   var count = 1,
-    analisiCorsaPromo = true;
+    analisiCorsaPromo = false;
   const COSTO_PACCHETTI = [
     {
       id: 1,
@@ -91,7 +91,7 @@
         hour = minute * 60,
         day = hour * 24;
 
-      let countDown2 = new Date("11/25/2022 00:00").getTime();
+      let countDown2 = data_show_website.getTime();
       let x2 = setInterval(function () {
         const now = new Date().getTime(),
           distance = countDown2 - now;
@@ -127,9 +127,9 @@
       isotopeSetUp();
       setUpParallax();
       hashFix();
-      animazioneIniziale();
       checkPacchettiRimasti();
       promoAnalisiCorsaAttiva();
+      animazioneIniziale();
     }
   });
 
@@ -181,6 +181,51 @@
       $("#includeIfAnalisi")
         .removeClass("included-no")
         .addClass("included-yes");
+
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      let countDownPopup = finePromo.getTime();
+      let x3 = setInterval(function () {
+        const now = new Date().getTime(),
+          distance = countDownPopup - now;
+
+        //($("#countdownPopup span")[0].innerText = Math.floor(distance / day)),
+        let hhPopup = (distance % day) / hour,
+          mmPopup = (distance % hour) / minute,
+          ssPopup = (distance % minute) / second;
+        $("#countdownPopup .counterPopup")[0].innerText =
+          (hhPopup < 10 && "0") + Math.floor(hhPopup);
+        $("#countdownPopup .counterPopup")[1].innerText =
+          (mmPopup < 10 && "0") + Math.floor(mmPopup);
+        $("#countdownPopup .counterPopup")[2].innerText =
+          (ssPopup < 10 && "0") + Math.floor(ssPopup);
+
+        if (distance < 0) {
+          //offerta scaduta
+          clearInterval(x3);
+          location.reload();
+        }
+        //seconds
+      }, 1000);
+      $("#popup-overlay, #popupButton").click(() => {
+        try {
+          $("#popup").addClass("toggleOut");
+          $("#popup-overlay").addClass("delay-0").removeClass("open");
+
+          setTimeout(() => {
+            $("#popup, #popup-overlay").remove();
+            clearInterval(x3);
+          }, 1700);
+        } catch (error) {
+          console.log(error, "ciao");
+        }
+      });
+      $("#popup, #popup-overlay").addClass("open");
+    } else {
+      $("#popup, #popup-overlay").remove();
     }
   }
 
@@ -768,9 +813,11 @@
               city: $("#city_buyer").val(),
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
-              pacchetto: 8,
+              pacchetto: analisiCorsaPromo ? 8 : 9,
               costo: 237,
-              pacchetto_desc: "OFFERTA 10 GIUGNO",
+              pacchetto_desc: analisiCorsaPromo
+                ? "BLACK FRIDAY CON ANALISI CORSA"
+                : "TRIMESTRALE BLACK FRIDAY",
             });
             $("#close_modale").click();
             Swal.fire({

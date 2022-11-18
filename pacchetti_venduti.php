@@ -240,6 +240,11 @@
       },
       {
         id: 8,
+        desc: "BLACK FRIDAY 2022 + ANALISI CORSA",
+        costo: 197,
+      },
+      {
+        id: 9,
         desc: "BLACK FRIDAY 2022",
         costo: 197,
       },
