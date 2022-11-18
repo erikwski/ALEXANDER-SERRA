@@ -350,7 +350,7 @@ html.loaded #pricing {
   height: 100%;
   transform: scale(0%);
   opacity: 0;
-  transition: 1.2s all ease-in-out 0.7s;
+  transition: 1.2s all ease-in-out 0.4s;
 }
 #popup {
   z-index: 1201;
@@ -362,7 +362,7 @@ html.loaded #pricing {
   font-size: 48px;
   transform: scale(0);
   opacity: 0;
-  transition: 1.2s all ease-in-out 1s;
+  transition: 1.2s all ease-in-out 0.7s;
 }
 #popup.open,
 #popup-overlay.open {
@@ -485,4 +485,48 @@ html.loaded #pricing {
 }
 .delay-0 {
   transition-delay: 0s !important;
+}
+#reviewContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.review {
+  background: rgb(255 255 255 / 80%);
+  padding: 1rem;
+  height: auto;
+  width: 85%;
+  border-radius: 5px;
+  margin: 1em 0em;
+  color: #000;
+  position: relative;
+}
+.review h4 {
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+.review p {
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 22px;
+}
+.bi-star-fill {
+  fill: #bcbcbc;
+}
+.starContainer {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.review:after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgba(255, 255, 255, 0.4);
 }

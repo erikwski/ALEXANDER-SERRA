@@ -3453,17 +3453,22 @@ html.disabled_scroll,
 .full_center_column_address input:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 500px) {
-  .full_center_column_address {
-    flex-direction: column;
-  }
-}
 @media screen and (max-width: 1100px) {
   .full_center_column_address {
     flex-wrap: wrap;
   }
   .full_center_column_address input {
     width: 48% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .full_center_column_address {
+    flex-direction: column;
+  }
+  .full_center_column_address input {
+    width: 95% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
