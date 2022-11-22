@@ -67,8 +67,8 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    let data_show_website = new Date("11/24/2022 18:00"); //updDtEff
-    // let data_show_website = new Date("11/11/2022 18:00");
+    // let data_show_website = new Date("11/24/2022 18:00"); //updDtEff
+    let data_show_website = new Date("11/11/2022 18:00");
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
