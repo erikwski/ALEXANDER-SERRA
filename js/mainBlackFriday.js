@@ -237,7 +237,7 @@
       hour = minute * 60,
       day = hour * 24;
 
-    let countDown1 = new Date("11/24/2022").getTime();
+    let countDown1 = new Date("11/26/2022").getTime();
     let x1 = setInterval(function () {
       const now = new Date().getTime(),
         distance = countDown1 - now;
@@ -256,8 +256,9 @@
       if (distance < 0) {
         //offerta scaduta
         $("#countdown1").html(
-          "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
+          "<h3 class='offerta_scaduta' style='padding: 1rem 0 0;'>OFFERTA SCADUTA</h3>"
         );
+        $("#titleTimer").remove();
         clearInterval(x1);
         $(".div_offer")
           .addClass("offerta_scaduta")
