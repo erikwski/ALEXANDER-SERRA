@@ -54,44 +54,6 @@ $(function () {
     );
   });
 
-  /* Countdown
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-  let data_livigno = new Date("08/18/2022");
-  let data_sestriere = new Date("09/01/2022");
-  let prossimo_raduno =
-    new Date() > data_livigno ? data_sestriere : data_livigno;
-
-  const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
-
-  let countDown1 = prossimo_raduno.getTime();
-  let x1 = setInterval(function () {
-    const now = new Date().getTime(),
-      distance = countDown1 - now;
-
-    ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
-      ($("#countdown1 span")[1].innerText = Math.floor(
-        (distance % day) / hour
-      )),
-      ($("#countdown1 span")[2].innerText = Math.floor(
-        (distance % hour) / minute
-      )),
-      ($("#countdown1 span")[3].innerText = Math.floor(
-        (distance % minute) / second
-      ));
-
-    if (distance < 0) {
-      //offerta scaduta
-      $("#countdown1").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
-      clearInterval(x1);
-    }
-    //seconds
-  }, 1000);
-
-  /* fine countdown */
-
   $(".visualizza_dati_bonifico").click(() => {
     $("#dati_bonifico").toggle(500);
     $("body,html").animate(
@@ -102,14 +64,18 @@ $(function () {
     );
   });
 
-  $(".cameras_text").click(function (e) {
+  $(".activeRaduno .cameras_text").click(function (e) {
     e.stopPropagation();
-    $("body,html").animate(
-      {
-        scrollTop: $("#come_partecipare").offset().top,
-      },
-      1000
-    );
+    window.location.href = $(this).data("raduno") + ".html";
+  });
+
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
   });
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

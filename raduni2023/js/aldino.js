@@ -56,19 +56,14 @@ $(function () {
 
   /* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-  //predazzo
-  let dt_predazzo = new Date("06/30/2022") - new Date();
-  //livigno
-  let dt_livigno = new Date() - new Date();
-  //sestriere
-  let dt_sestriere = new Date() - new Date();
+  let prossimo_raduno = new Date("02/12/2023");
 
   const second = 1000,
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24;
 
-  let countDown1 = new Date("06/24/2022").getTime();
+  let countDown1 = prossimo_raduno.getTime();
   let x1 = setInterval(function () {
     const now = new Date().getTime(),
       distance = countDown1 - now;
@@ -104,14 +99,9 @@ $(function () {
     );
   });
 
-  $(".cameras_text").click(function (e) {
+  $(".activeRaduno .cameras_text").click(function (e) {
     e.stopPropagation();
-    $("body,html").animate(
-      {
-        scrollTop: $("#come_partecipare").offset().top,
-      },
-      1000
-    );
+    window.location.href = $(this).data("raduno") + ".html";
   });
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
