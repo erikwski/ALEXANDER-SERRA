@@ -543,7 +543,7 @@
       $("html").addClass("disabled_scroll");
       switch (pacchetto) {
         case 1:
-          $("#nome_pacchetto").html("BASICS");
+          $("#nome_pacchetto").html("BASIC");
           $("#costo_mensile, #info_bonifico_mensile span").html("€60");
           $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€157");
           $("#pacc_trimestrale").attr("risparmio", "RISPARMI €23");

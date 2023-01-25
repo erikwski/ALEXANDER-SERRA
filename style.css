@@ -2983,6 +2983,10 @@ footer .footer-social-divider:before {
   .footer-mail {
     font-size: 28px;
   }
+
+  .hideOnVerySmall {
+    display: none !important;
+  }
 }
 #opening {
   display: flex;
@@ -3187,7 +3191,7 @@ footer .footer-social-divider:before {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 10px;
 }
 .card_pacchetti {
   min-width: 30%;
@@ -3343,11 +3347,23 @@ footer .footer-social-divider:before {
 }
 @media screen and (max-width: 400px) {
   .toggle_dati_bonifico {
-    font-size: 110%;
-    line-height: 33px;
+    font-size: 100%;
+    line-height: 30px;
     margin-top: 0;
   }
 }
+@media screen and (max-width: 360px) {
+  #modale_pagamento.disabled_scroll #titolo_modale {
+    display: none;
+  }
+  .toggle_dati_bonifico {
+    font-size: 100%;
+    line-height: 28px;
+    margin-top: 0;
+    top: 25px;
+  }
+}
+
 .toggle_dati_bonifico.scale_in {
   transform: scale(1);
   opacity: 1;
