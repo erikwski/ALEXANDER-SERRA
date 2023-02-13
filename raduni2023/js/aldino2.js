@@ -56,7 +56,7 @@ $(function () {
 
   /* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-  let prossimo_raduno = new Date("02/12/2023");
+  let prossimo_raduno = new Date("05/01/2023");
 
   const second = 1000,
     minute = second * 60,
@@ -81,7 +81,9 @@ $(function () {
 
     if (distance < 0) {
       //offerta scaduta
-      $("#countdown1").html("<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>");
+      $("#countdown1").html(
+        "<h3 class='offerta_scaduta'>ISCRIZIONI CHIUSE</h3>"
+      );
       clearInterval(x1);
     }
     //seconds
