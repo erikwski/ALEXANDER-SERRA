@@ -367,10 +367,6 @@ ul.email li {
   max-width: 28%;
   transform: scale(0.8);
 }
-.activeRaduno {
-  flex: 0 0 44%;
-  max-width: 44%;
-}
 
 .notAvaiable img,
 .notAvaiable h3 {
@@ -422,10 +418,6 @@ ul.email li {
     flex: 0 0 100%;
     max-width: 100%;
     transform: scale(0.8);
-  }
-  .activeRaduno {
-    flex: 0 0 100%;
-    max-width: 100%;
   }
   .notAvaiable .cameras_img :before {
     left: -2%;
