@@ -1206,7 +1206,7 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_image.jpg);
+  background-image: url(images/hero_image2.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

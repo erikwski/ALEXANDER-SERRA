@@ -1,39 +1,6 @@
 (function ($) {
   window.$ = $;
   let invioMailutente = false;
-  const COSTO_PACCHETTI = [
-    {
-      id: 1,
-      desc: "BASIC MENSILE",
-      costo: 60,
-    },
-    {
-      id: 2,
-      desc: "BASIC TRIMESTRALE",
-      costo: 157,
-    },
-    {
-      id: 3,
-      desc: "STANDARD MENSILE",
-      costo: 90,
-    },
-    {
-      id: 4,
-      desc: "STANDARD TRIMESTRALE",
-      costo: 237,
-    },
-    {
-      id: 5,
-      desc: "PREMIUM MENSILE",
-      costo: 120,
-    },
-    {
-      id: 6,
-      desc: "PREMIUM TRIMESTRALE",
-      costo: 317,
-    },
-  ];
-
   gestionePrivacyPolicy();
   updateHtmlForYear();
   fixForFooterNoContent();
@@ -55,53 +22,51 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    let data_show_website = new Date("06/11/2022");
+    // let data_show_website = new Date("05/11/2023 18:00");
+    // DATA DEBUG
+    let data_show_website = new Date("05/06/2023 18:00");
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
         <img src="/images/logo/Logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
         <div class="fake_card">
-          <h3>Il sito sarà disponibile dall' 11 Giugno</h3>
+          <h3>L'OFFERTA INIZIERÁ FRA:</h3>
           <div class="timer_container">
-            <i style="color: #828282;">Sarà disponibile fra:</i>
-            <div id="countdown1" class="countdown">
+            <i style="color: #323232;">Countdown offerta:</i>
+            <div id="countdown2" class="countdown">
               <div class="counter"><span></span><b>Giorni</b></div>
               <div class="counter"><span></span><b>Ore</b></div>
               <div class="counter"><span></span><b>Min</b></div>
               <div class="counter"><span></span><b>Sec</b></div>
             </div>
           </div>
-          <h3 style="font-size: 1.5rem;">Intanto approfitta dell'offerta sul mio nuovo Coaching !!!</h3>
-          <a href="offerta.html" class="button">VISUALIZZA OFFERTA</a>
         </div>
       `);
       const second = 1000,
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24;
-
-      let countDown1 = new Date("06/11/2022").getTime();
-      let x1 = setInterval(function () {
+      console.log(data_show_website);
+      let countDown2 = data_show_website.getTime();
+      let x2 = setInterval(function () {
         const now = new Date().getTime(),
-          distance = countDown1 - now;
+          distance = countDown2 - now;
 
-        ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
-          ($("#countdown1 span")[1].innerText = Math.floor(
+        ($("#countdown2 span")[0].innerText = Math.floor(distance / day)),
+          ($("#countdown2 span")[1].innerText = Math.floor(
             (distance % day) / hour
           )),
-          ($("#countdown1 span")[2].innerText = Math.floor(
+          ($("#countdown2 span")[2].innerText = Math.floor(
             (distance % hour) / minute
           )),
-          ($("#countdown1 span")[3].innerText = Math.floor(
+          ($("#countdown2 span")[3].innerText = Math.floor(
             (distance % minute) / second
           ));
 
         if (distance < 0) {
           //offerta scaduta
-          $("#countdown1").html(
-            "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
-          );
-          clearInterval(x1);
+          clearInterval(x2);
+          location.reload();
         }
         //seconds
       }, 1000);
@@ -110,20 +75,21 @@
         $("#loader img").remove();
         $("html").addClass("loaded enable_scroll");
         setTimeout(() => {
-          $("#loader, #cover_loader").remove();
+          $("#loader").remove();
         }, 1000);
       }, 1000);
     } else {
-      $(".loader").remove();
       scrollToTopOfPage();
       isotopeSetUp();
       setUpParallax();
       hashFix();
+      checkPacchettiRimasti();
       animazioneIniziale();
     }
   });
 
   window.onbeforeunload = function () {
+    window.location.hash = "";
     scrollToTopOfPage();
   };
 
@@ -162,17 +128,62 @@
     $("#anni_di_esperienza").html(yy - 2011);
   }
 
+  function checkPacchettiRimasti() {
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let countDown1 = new Date("05/16/2023").getTime();
+    let x1 = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown1 - now;
+
+      ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
+        ($("#countdown1 span")[1].innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        ($("#countdown1 span")[2].innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        ($("#countdown1 span")[3].innerText = Math.floor(
+          (distance % minute) / second
+        ));
+
+      if (distance < 0) {
+        //offerta scaduta
+        $("#countdown1").html(
+          "<h3 class='offerta_scaduta' style='padding: 1rem 0 0;'>OFFERTA SCADUTA</h3>"
+        );
+        $("#titleTimer").remove();
+        clearInterval(x1);
+        $(".div_offer")
+          .addClass("offerta_scaduta")
+          .attr("pacchetti_rimasti", "!! OFFERTA TERMINATA !!");
+        $(".buy_coaching").addClass("disabled");
+        $(".pricing-table").append(`
+          <div class="pricing-button">
+            <h1 style="COLOR: #ce0000;">!!! OFFERTA SCADUTA !!!!</h1>
+          </div>
+        `);
+      }
+      //seconds
+    }, 1000);
+
+    // controllo quanti ne sono stati comprati
+    let num_coaching = 20;
+    $(".div_offer").attr(
+      "pacchetti_rimasti",
+      "SOLO" + num_coaching + " COACHING DISPONIBILI"
+    );
+  }
+
   function animazioneIniziale() {
-    $("#loader").addClass("runner_animation");
+    $("html").addClass("loaded");
     setTimeout(() => {
-      //BACKGROUND ESCE DALLO SCHERMO
-      $("html").addClass("loaded");
-      //PIANO PIANO RENDERIZZO ELEMENTI
-      setTimeout(() => {
-        $("#loader, #cover_loader").remove();
-        $("html").addClass("enable_scroll");
-      }, 1200);
-    }, 3000);
+      $("#loader").remove();
+      $("html").addClass("enable_scroll");
+    }, 1000);
   }
 
   function multiClickFunctionStop() {
@@ -515,9 +526,19 @@
   }
 
   function gestioneModalePagamenti() {
-    $(".buy_coaching").click(function () {
-      //spunto checkbox privacy se già accettata
+    $(".buy_coaching").click(async function () {
+      let pacchetti_venduti = await $.get("api/how_many_coaching.php");
+      if (Number(pacchetti_venduti) >= 50) {
+        Swal.fire({
+          icon: "error",
+          title: "I pacchetti disponibili sono terminati !!!",
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+        });
+        return;
+      }
       if (localStorage.getItem("accepted")) {
+        //spunto checkbox privacy se già accettata
         $("#privacy_policy").prop("checked", true);
       }
       try {
@@ -535,31 +556,10 @@
       } catch (error) {
         console.log("L'utente non ha mai acquistato un pacchetto");
       }
-      let pacchetto = $(this).data("id");
-      $("#modale_pagamento")
-        .addClass("open_modale")
-        .data("pacchetto", pacchetto);
+      $("#modale_pagamento").show().addClass("open_modale");
       $("html").addClass("disabled_scroll");
-      switch (pacchetto) {
-        case 1:
-          $("#nome_pacchetto").html("BASIC");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€60");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€157");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €23");
-          break;
-        case 3:
-          $("#nome_pacchetto").html("STANDARD");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€90");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€237");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €33");
-          break;
-        case 5:
-          $("#nome_pacchetto").html("PREMIUM");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€120");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€317");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €43");
-          break;
-      }
+      $(".card_pacchetti").click();
+      $("#pacc_trimestrale").attr("risparmio", "STAI RISPARMIANDO €58");
     });
 
     $("#dati_acquirente input").on("change keyup", () => {
@@ -626,13 +626,9 @@
       $("#oppure_pay_label").removeClass("acquisto_valido");
       $("#paypal_container").removeClass("rendered_paypal").html("");
     });
-    // $($(".buy_coaching")[0]).click();
   }
 
   function inizializzaPaypal() {
-    let id_pacchetto = $("#modale_pagamento").data("pacchetto");
-    if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
-      id_pacchetto++;
     $("#paypal_container").addClass("rendered_paypal").html("");
     $(".show_when_valid").addClass("show_valid");
     $("#oppure_pay_label").addClass("acquisto_valido");
@@ -640,10 +636,6 @@
     paypal.FUNDING.SOFORT = "disallowed";
     // paypal.FUNDING.MYBANK = "disallowed";
     try {
-      let pacchetto_venduto =
-        COSTO_PACCHETTI[
-          COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
-        ];
       let paypal_inizialize = {
         style: {
           size: "responsive",
@@ -661,7 +653,7 @@
             purchase_units: [
               {
                 amount: {
-                  value: pacchetto_venduto.costo,
+                  value: 77,
                 },
               },
             ],
@@ -687,9 +679,9 @@
               city: $("#city_buyer").val(),
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
-              pacchetto: id_pacchetto,
-              costo: pacchetto_venduto.costo,
-              pacchetto_desc: pacchetto_venduto.desc,
+              pacchetto: 10,
+              costo: 237,
+              pacchetto_desc: "10Km & Lode",
             });
             $("#close_modale").click();
             Swal.fire({
@@ -700,6 +692,7 @@
               confirmButtonText: "OK",
             }).then(() => {
               //aggiungi data
+              localStorage.setItem("get_offert", "SI");
               $("#close_modale").click();
             });
           });
