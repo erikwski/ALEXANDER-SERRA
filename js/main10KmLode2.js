@@ -22,7 +22,7 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    let data_show_website = new Date("05/10/2023 00:00");
+    let data_show_website = new Date("05/12/2023 00:00");
     // DATA DEBUG
     // let data_show_website = new Date("05/06/2023 18:00");
     let today = new Date();
