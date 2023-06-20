@@ -22,7 +22,7 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    let data_show_website = new Date("06/15/2023 22:00");
+    let data_show_website = new Date("06/22/2023 22:00");
     // DATA DEBUG
     // let data_show_website = new Date("05/06/2023 18:00");
     let today = new Date();
@@ -30,7 +30,7 @@
       $(".site-wrapper").addClass("not_ready_website").html(`
         <img src="/images/logo/Logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
         <div class="fake_card">
-          <h3>L'OFFERTA INIZIERÁ FRA:</h3>
+          <h3>10KM & LODE INIZIERÁ FRA:</h3>
           <div class="timer_container">
             <i style="color: #323232;">Countdown offerta:</i>
             <div id="countdown2" class="countdown">
@@ -134,7 +134,7 @@
       hour = minute * 60,
       day = hour * 24;
 
-    let countDown1 = new Date("06/17/2023").getTime();
+    let countDown1 = new Date("06/24/2023").getTime();
     let x1 = setInterval(function () {
       const now = new Date().getTime(),
         distance = countDown1 - now;
