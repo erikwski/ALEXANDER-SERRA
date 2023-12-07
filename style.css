@@ -3411,6 +3411,10 @@ footer .footer-social-divider:before {
   transition: margin 0.5s;
   margin-bottom: 1.25rem !important;
 }
+#paypal_container {
+  max-width: 600px;
+  margin: auto;
+}
 #oppure_pay_label.acquisto_valido {
   margin-bottom: 0 !important;
 }

@@ -253,6 +253,16 @@ if (!isset($_SESSION['user_logged'])) {
       id: 10,
       desc: "10KM & LODE",
       costo: 77,
+    },
+    {
+      id: 11,
+      desc: "OFFERTA 15 DICEMBRE",
+      costo: 45,
+    },
+    {
+      id: 12,
+      desc: "OFFERTA 22 DICEMBRE",
+      costo: 157,
     }
   ];
 
