@@ -98,6 +98,29 @@
   text-align: center;
   position: relative;
 }
+.div_offer:before {
+  content: attr(pacchetti_rimasti);
+  box-shadow: 0px 0px 10px -1px #ffffff;
+  background: linear-gradient(179deg, var(--secondary), #980e18);
+  border-radius: 2rem;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  bottom: -30px;
+  left: 20%;
+  width: 60%;
+}
+@media screen and (max-width: 600px) {
+  .div_offer:before {
+    left: 2%;
+    width: 80%;
+    bottom: -15px;
+  }
+}
 .buy_coaching.disabled {
   pointer-events: none;
   background: #e9e9e9;
@@ -207,7 +230,23 @@ body {
   color: rgb(204, 204, 204);
 }
 #loader {
-  background-image: radial-gradient(#030119 0%, rgb(2, 2, 8) 47.5%);
+  background: linear-gradient(90deg, #0d0000 0%, rgb(2 5 0) 72%);
+}
+#loader img {
+  height: 50%;
+  margin: auto;
+  animation: blink-1 2s both infinite;
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 .medium-text {
   color: rgb(183, 183, 183);

@@ -232,9 +232,14 @@
       //seconds
     }, 1000);
 
+    let num_coaching = 10;
+    if (localStorage.getItem("get_offert")) num_coaching--;
+    $(".div_offer").attr(
+      "pacchetti_rimasti",
+      num_coaching + " COACHING DISPONIBILI"
+    );
     // controllo quanti ne sono stati comprati
     /*
-    let num_coaching = 20;
     let aux_dt,
       oggi = new Date();
     aux_dt = new Date("11/24/2022 21:00");
@@ -251,11 +256,6 @@
     if (oggi > aux_dt) num_coaching = num_coaching - 2;
     aux_dt = new Date("11/25/2022 21:00");
     if (oggi > aux_dt) num_coaching = num_coaching - 1;
-    if (localStorage.getItem("get_offert")) num_coaching--;
-    $(".div_offer").attr(
-      "pacchetti_rimasti",
-      num_coaching + " COACHING DISPONIBILI"
-    );
     $.get("api/how_many_coaching.php").done((pacchetti_venduti) => {
       console.log(pacchetti_venduti);
       if (Number(pacchetti_venduti) >= 50) {
