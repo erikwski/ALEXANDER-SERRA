@@ -25,8 +25,8 @@
   $("#toggle").on("click", multiClickFunctionStop);
 
   $(window).on("load", function () {
-    // let data_show_website = new Date("11/24/2022 18:00"); //updDtEff
-    let data_show_website = new Date("12/14/2023 00:00");
+    // let data_show_website = new Date("11/24/2022 18:00"); // ! updDtEff
+    let data_show_website = new Date("12/22/2023 00:00");
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
@@ -48,7 +48,7 @@
           <div class="timer_container">
             <i style="color: #323232;">Countdown offerta:</i>
             <div id="countdown2" class="countdown">
-              <div class="counter" style="display: none;"><span></span><b>Giorni</b></div>
+              <div class="counter"><span></span><b>Giorni</b></div>
               <div class="counter"><span></span><b>Ore</b></div>
               <div class="counter"><span></span><b>Min</b></div>
               <div class="counter"><span></span><b>Sec</b></div>
@@ -66,16 +66,13 @@
         const now = new Date().getTime(),
           distance = countDown2 - now;
 
-        ($("#countdown2 span")[0].innerText = Math.floor(distance / day)),
-          ($("#countdown2 span")[1].innerText = Math.floor(
-            (distance % day) / hour
-          )),
-          ($("#countdown2 span")[2].innerText = Math.floor(
-            (distance % hour) / minute
-          )),
-          ($("#countdown2 span")[3].innerText = Math.floor(
-            (distance % minute) / second
-          ));
+        $("#countdown2 span")[0].innerText = Math.floor(distance / day);
+        let dd = Math.floor((distance % day) / hour);
+        $("#countdown2 span")[1].innerText = dd < 10 ? "0" + dd : dd;
+        let mm = Math.floor((distance % hour) / minute);
+        $("#countdown2 span")[2].innerText = mm < 10 ? "0" + mm : mm;
+        let ss = Math.floor((distance % minute) / second);
+        $("#countdown2 span")[3].innerText = ss < 10 ? "0" + ss : ss;
 
         if (distance < 0) {
           //offerta scaduta
@@ -145,7 +142,7 @@
 
   function promoAnalisiCorsaAttiva() {
     let oggi = new Date();
-    finePromo = new Date("12/17/2023 00:00");
+    finePromo = new Date("12/24/2023 00:00");
     analisiCorsaPromo = oggi < finePromo;
 
     if (analisiCorsaPromo) {
@@ -165,7 +162,7 @@
         const now = new Date().getTime(),
           distance = countDownPopup - now;
         $("#countdownPopup .counterPopup")[0].innerText =
-          "0" + (16 - oggi.getDate());
+          "0" + (23 - oggi.getDate());
         let hhPopup = (distance % day) / hour,
           mmPopup = (distance % hour) / minute,
           ssPopup = (distance % minute) / second;
@@ -208,7 +205,7 @@
       hour = minute * 60,
       day = hour * 24;
 
-    let countDown1 = new Date("12/17/2023").getTime();
+    let countDown1 = new Date("12/24/2023").getTime();
     let x1 = setInterval(function () {
       const now = new Date().getTime(),
         distance = countDown1 - now;
@@ -244,11 +241,11 @@
       //seconds
     }, 1000);
 
-    let num_coaching = 10;
-    if (localStorage.getItem("get_offert")) num_coaching--;
+    let num_coaching = 5;
+    // if (localStorage.getItem("get_offert")) num_coaching--;
     $(".div_offer").attr(
       "pacchetti_rimasti",
-      num_coaching + " COACHING DISPONIBILI"
+      "SOLO " + num_coaching + " COACHING DISPONIBILI"
     );
     // controllo quanti ne sono stati comprati
     /*
@@ -668,7 +665,7 @@
       $("#modale_pagamento").show().addClass("open_modale");
       $("html").addClass("disabled_scroll");
       $(".card_pacchetti").click();
-      $("#pacc_trimestrale").attr("risparmio", "STAI RISPARMIANDO €15");
+      $("#pacc_trimestrale").attr("risparmio", "RISPARMIO DI €80");
     });
 
     $("#dati_acquirente input").on("change keyup", () => {
@@ -726,9 +723,9 @@
         city: $("#city_buyer").val(),
         cap: $("#cap_buyer").val(),
         prov: $("#prov_buyer").val(),
-        pacchetto: 11,
-        costo: 45,
-        pacchetto_desc: "OFFERTA 15 DICEMBRE",
+        pacchetto: 12,
+        costo: 157,
+        pacchetto_desc: "OFFERTA 22 DICEMBRE",
       });
     });
 
@@ -782,7 +779,7 @@
             purchase_units: [
               {
                 amount: {
-                  value: 45,
+                  value: 157,
                 },
               },
             ],
@@ -808,9 +805,9 @@
               city: $("#city_buyer").val(),
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
-              pacchetto: 11,
-              costo: 45,
-              pacchetto_desc: "OFFERTA 15 DICEMBRE",
+              pacchetto: 12,
+              costo: 157,
+              pacchetto_desc: "OFFERTA 22 DICEMBRE",
             });
             $("#close_modale").click();
             Swal.fire({

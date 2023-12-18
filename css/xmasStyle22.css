@@ -11,7 +11,7 @@
   position: relative;
 }
 .pricing-table-price:before {
-  content: "60€";
+  content: "237€";
   position: absolute;
   top: -3rem;
   left: -3rem;
@@ -694,6 +694,9 @@ html.loaded #pricing {
   #popup .counterPopup {
     padding: 1rem 0.5rem;
     font-size: 2rem;
+  }
+  #countdown2 .counter {
+    font-size: 32px;
   }
 }
 @media screen and (max-width: 400px) {
