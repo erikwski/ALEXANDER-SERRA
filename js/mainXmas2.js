@@ -26,17 +26,29 @@
 
   $(window).on("load", function () {
     // let data_show_website = new Date("11/24/2022 18:00"); //updDtEff
-    let data_show_website = new Date("12/16/2022 00:00");
+    let data_show_website = new Date("12/14/2023 00:00");
     let today = new Date();
     if (data_show_website > today) {
       $(".site-wrapper").addClass("not_ready_website").html(`
-        <img src="/images/logo/Logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
         <div class="fake_card">
-          <h3>NON ANCORA DISPONIBILE:</h3>
+          <img src="/images/logo/logoNatale.png" class="xmasLogoLoad">
+          <img
+            class="xmasDeco giftDeco"
+            src="images/xmasDecoration.png"
+            width="64"
+            alt=""
+        >
+        <img
+            class="xmasDeco topLeft giftDeco"
+            src="images/xmasDecoration.png"
+            width="64"
+            alt=""
+        >
+          <h3>L'OFFERTA DI NATALE INIZIA TRA:</h3>
           <div class="timer_container">
             <i style="color: #323232;">Countdown offerta:</i>
             <div id="countdown2" class="countdown">
-              <div class="counter"><span></span><b>Giorni</b></div>
+              <div class="counter" style="display: none;"><span></span><b>Giorni</b></div>
               <div class="counter"><span></span><b>Ore</b></div>
               <div class="counter"><span></span><b>Min</b></div>
               <div class="counter"><span></span><b>Sec</b></div>
@@ -133,7 +145,7 @@
 
   function promoAnalisiCorsaAttiva() {
     let oggi = new Date();
-    finePromo = new Date("12/16/2023 00:00");
+    finePromo = new Date("12/17/2023 00:00");
     analisiCorsaPromo = oggi < finePromo;
 
     if (analisiCorsaPromo) {
@@ -152,16 +164,16 @@
       let x3 = setInterval(function () {
         const now = new Date().getTime(),
           distance = countDownPopup - now;
-
-        //($("#countdownPopup span")[0].innerText = Math.floor(distance / day)),
+        $("#countdownPopup .counterPopup")[0].innerText =
+          "0" + (16 - oggi.getDate());
         let hhPopup = (distance % day) / hour,
           mmPopup = (distance % hour) / minute,
           ssPopup = (distance % minute) / second;
-        $("#countdownPopup .counterPopup")[0].innerText =
-          (hhPopup < 10 && "0") + Math.floor(hhPopup);
         $("#countdownPopup .counterPopup")[1].innerText =
-          (mmPopup < 10 && "0") + Math.floor(mmPopup);
+          (hhPopup < 10 && "0") + Math.floor(hhPopup);
         $("#countdownPopup .counterPopup")[2].innerText =
+          (mmPopup < 10 && "0") + Math.floor(mmPopup);
+        $("#countdownPopup .counterPopup")[3].innerText =
           (ssPopup < 10 && "0") + Math.floor(ssPopup);
 
         if (distance < 0) {
@@ -196,7 +208,7 @@
       hour = minute * 60,
       day = hour * 24;
 
-    let countDown1 = new Date("12/16/2023").getTime();
+    let countDown1 = new Date("12/17/2023").getTime();
     let x1 = setInterval(function () {
       const now = new Date().getTime(),
         distance = countDown1 - now;

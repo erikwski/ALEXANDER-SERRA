@@ -199,7 +199,7 @@
   text-shadow: 1px 2px 1px var(--secondary);
 }
 @media screen and (max-width: 450px) {
-  .not_ready_website img {
+  .not_ready_website .xmasLogoLoad {
     width: 300px !important;
     left: calc(50% - 150px) !important;
   }
@@ -370,19 +370,23 @@ html.loaded #loader img {
 .card_pacchetti {
   padding: 1.5rem;
 }
-.xmasDeco {
-  position: absolute;
-  bottom: -20px;
-  right: -18px;
+.xmasDeco,
+.not_ready_website img.xmasDeco {
+  position: absolute !important;
+  bottom: -20px !important;
+  right: -18px !important;
+  left: auto !important;
   width: 64px !important;
-  transform: rotate(315deg);
+  transform: rotate(315deg) !important;
 }
-.xmasDeco.topLeft {
-  position: absolute;
-  top: -20px;
-  left: -18px;
+
+.xmasDeco.topLeft,
+.not_ready_website img.xmasDeco.topLeft {
+  position: absolute !important;
+  top: -20px !important;
+  left: -18px !important;
   width: 64px !important;
-  transform: rotate(135deg);
+  transform: rotate(135deg) !important;
 }
 .giftDeco {
   transform: rotate(0deg) !important;
@@ -496,11 +500,11 @@ html.loaded #pricing {
 .titleContainer strong,
 .counterPopup {
   color: transparent;
-  background: #530000;
+  background: #ffffff99;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  text-shadow: 2px 3px 0px #226f54;
+  text-shadow: 2px 2px 0px #226f54;
 }
 .titleContainer span {
   font-weight: 300;
@@ -641,10 +645,59 @@ html.loaded #pricing {
   border-right: 10px solid rgba(255, 255, 255, 0.4);
 }
 .not_ready_website {
-  background: linear-gradient(45deg, black, #323030);
+  background: linear-gradient(90deg, #6f222254, #00968840);
 }
 .not_ready_website h3 {
   font-size: 2.5rem !important;
-  color: #ff6a00;
+  color: var(--secondary);
   text-shadow: 1px 1px 1px #000000;
+}
+.not_ready_website .fake_card {
+  position: relative;
+  padding-top: 60px;
+  max-width: 600px;
+}
+.not_ready_website .fake_card .xmasLogoLoad {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 125px);
+  width: 250px;
+}
+.not_ready_website .xmasDeco {
+  width: 100px !important;
+}
+#countdown2 {
+  color: var(--primary);
+  text-shadow: 1px 1px rgb(0 0 0);
+}
+#countdown2 .counter {
+  font-size: 40px;
+}
+@media screen and (max-width: 700px) {
+  #popup {
+    top: 100px;
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .not_ready_website h3 {
+    font-size: 2rem !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  #popup {
+    top: 100px;
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+  #popup .counterPopup {
+    padding: 1rem 0.5rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .not_ready_website h3 {
+    font-size: 1.75rem !important;
+  }
 }
