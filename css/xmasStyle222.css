@@ -5,6 +5,19 @@
 .pricing-table {
   max-width: 800px;
 }
+.pricing-risparmio {
+  position: absolute;
+  width: 60%;
+  text-align: center;
+  background: var(--primary);
+  top: -20px;
+  border-radius: 22px;
+  font-weight: 600;
+  left: 20%;
+  font-size: 1.25rem;
+  min-width: 300px;
+  box-shadow: 0 0 3px 0px #fff;
+}
 .pricing-table-price {
   width: min-content;
   margin: 0 auto;
@@ -16,8 +29,9 @@
   top: -3rem;
   left: -3rem;
   width: 100px;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  color: #bfbfbf;
 }
 .pricing-table-price:after {
   content: "";
@@ -25,7 +39,7 @@
   top: 0.5rem;
   left: -3rem;
   width: 90px;
-  background: #ff000094;
+  background: #ff000059;
   height: 3px;
   transform: rotate(344deg);
 }
@@ -683,6 +697,11 @@ html.loaded #pricing {
 @media screen and (max-width: 600px) {
   .not_ready_website h3 {
     font-size: 2rem !important;
+  }
+  .pricing-risparmio {
+    position: absolute !important;
+    width: 90% !important;
+    left: 5% !important;
   }
 }
 @media screen and (max-width: 450px) {

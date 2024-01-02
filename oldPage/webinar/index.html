@@ -1,420 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webinar respirazione 21/03/2022</title>
-    <link rel="icon" type="image/png" href="logo_alex.png" />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      sizes="144x144"
-      href="logo_alex.png"
-    />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="sweetalert.css" />
-    <!--Replace with your tailwind.css once created-->
-  </head>
-
-  <body
-    class="antialiased text-gray-100 leading-normal tracking-wider bg-cover text-center"
-  >
-    <div
-      class="max-w-6xl flex items-center justify-center h-auto flex-wrap mx-auto my-32"
-    >
-      <!--Main Col-->
-      <div
-        id="profile"
-        class="w-full lg:w-3/5 rounded-xl shadow-2xl bg-gray-900 opacity-75 mx-6 lg:mx-0"
-      >
-        <div class="p-4 md:p-12 text-center lg:text-left">
-          <!-- Image for mobile view-->
-          <div
-            class="block rounded-2xl shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center mb-4"
-            style="background-image: url('logo_alex.png')"
-          ></div>
-
-          <h1 class="text-3xl font-bold pt-8 lg:pt-0 text-center">
-            Webinar sulla GINNASTICA RESPIRATORIA
-          </h1>
-          <span class="text-gray-500 flex justify-center items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="mr-2"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"
-              />
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
-              />
-            </svg>
-            il 21/3/22 alle ore 19.15
-          </span>
-          <div
-            class="mx-auto lg:mx-0 pt-3 border-b-2 border-blue-400 opacity-25"
-            style="margin-left: 10%; width: 80%"
-          ></div>
-          <div
-            class="flex justify-center items-center flex-col md:flex-row mt-4"
-          >
-            <p
-              class="pt-4 text-center font-bold flex items-center justify-center lg:justify-start w-full md:w-2/4"
-            >
-              Insieme alla Dott.ssa Creola Irene (Fisioterapista specializzata
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Webinar respirazione 21/03/2022</title>
+        <link rel="icon" type="image/png" href="logo_alex.png">
+        <link
+            rel="apple-touch-icon"
+            type="image/png"
+            sizes="144x144"
+            href="logo_alex.png"
+        >
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sweetalert.css">
+        <!--Replace with your tailwind.css once created-->
+    </head>
+    <body class="antialiased text-gray-100 leading-normal tracking-wider bg-cover text-center">
+        <div class="max-w-6xl flex items-center justify-center h-auto flex-wrap mx-auto my-32">
+            <!--Main Col-->
+            <div id="profile" class="w-full lg:w-3/5 rounded-xl shadow-2xl bg-gray-900 opacity-75 mx-6 lg:mx-0">
+                <div class="p-4 md:p-12 text-center lg:text-left">
+                    <!-- Image for mobile view-->
+                    <div class="block rounded-2xl shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center mb-4" style="background-image: url('logo_alex.png')"></div>
+                    <h1 class="text-3xl font-bold pt-8 lg:pt-0 text-center">
+                        Webinar sulla GINNASTICA RESPIRATORIA
+                    </h1>
+                    <span class="text-gray-500 flex justify-center items-center">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="mr-2"
+                            viewBox="0 0 16 16"
+                        >
+                            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                        il 21/3/22 alle ore 19.15
+                    </span>
+                    <div class="mx-auto lg:mx-0 pt-3 border-b-2 border-blue-400 opacity-25" style="margin-left: 10%; width: 80%"></div>
+                    <div class="flex justify-center items-center flex-col md:flex-row mt-4">
+                        <p class="pt-4 text-center font-bold flex items-center justify-center lg:justify-start w-full md:w-2/4">
+                            Insieme alla Dott.ssa Creola Irene (Fisioterapista specializzata
               in Riabilitazione Posturale)
-            </p>
-
-            <div
-              class="shadow-lg rounded-2xl w-80 p-4 bg-white dark:bg-gray-800 w-full md:w-2/4 my-4 md:my-0"
-            >
-              <div class="flex flex-row items-start gap-4">
-                <img src="irene_creola.jpg" class="w-28 h-28 rounded-lg" />
-                <div class="h-28 w-full flex flex-col justify-between">
-                  <div>
-                    <p
-                      class="text-gray-800 dark:text-white text-xl font-medium"
-                    >
-                      Irene creola
-                    </p>
-                    <p class="text-gray-400 text-xs">
-                      Fisioterapista posturale
-                    </p>
-                  </div>
-                  <div class="rounded-lg bg-blue-100 dark:bg-white p-2 w-full">
-                    <div
-                      class="flex items-center justify-between text-xs text-gray-400 dark:text-black"
-                    >
-                      <p class="flex flex-col items-center">
-                        Post
-                        <span class="text-black dark:text-indigo-500 font-bold">
-                          84
-                        </span>
-                      </p>
-                      <p class="flex flex-col items-center">
-                        Followers
-                        <span class="text-black dark:text-indigo-500 font-bold">
-                          2739
-                        </span>
-                      </p>
+                        </p>
+                        <div class="shadow-lg rounded-2xl w-80 p-4 bg-white dark:bg-gray-800 w-full md:w-2/4 my-4 md:my-0">
+                            <div class="flex flex-row items-start gap-4">
+                                <img src="irene_creola.jpg" class="w-28 h-28 rounded-lg">
+                                <div class="h-28 w-full flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-gray-800 dark:text-white text-xl font-medium">
+                                            Irene creola
+                                        </p>
+                                        <p class="text-gray-400 text-xs">
+                                            Fisioterapista posturale
+                                        </p>
+                                    </div>
+                                    <div class="rounded-lg bg-blue-100 dark:bg-white p-2 w-full">
+                                        <div class="flex items-center justify-between text-xs text-gray-400 dark:text-black">
+                                            <p class="flex flex-col items-center">
+                                                Post
+                                                <span class="text-black dark:text-indigo-500 font-bold">
+                                                    84
+                                                </span>
+                                            </p>
+                                            <p class="flex flex-col items-center">
+                                                Followers
+                                                <span class="text-black dark:text-indigo-500 font-bold">
+                                                    2739
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p
-            class="pt-2 text-gray-200 text-md flex items-center justify-center text-center"
-          >
-            In questa lezione di 1h imparerai gli esercizi giusti per migliorare
+                    <p class="pt-2 text-gray-200 text-md flex items-center justify-center text-center">
+                        In questa lezione di 1h imparerai gli esercizi giusti per migliorare
             la tua repirazione e liberare il tuo diaframma.
-            <br style="height: 10px" />
-            Adatto ai Runners che vogliono migliorare la gestione del respiro in
+                        <br style="height: 10px">
+                        Adatto ai Runners che vogliono migliorare la gestione del respiro in
             corsa e nella vita quotidiana.
-          </p>
-
-          <h4 class="text-xl text-center mt-4"><b>RIASSUMENDO:</b></h4>
-          <div class="p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
-            <div class="grid row-gap-8 sm:grid-cols-3">
-              <div class="text-center">
-                <h6 class="text-5xl font-bold text-deep-purple-accent-400">
-                  1H
-                </h6>
-                <p class="font-bold" style="margin-top: 4px">Durata</p>
-              </div>
-              <div class="text-center">
-                <h6
-                  class="text-5xl font-bold text-deep-purple-accent-400 mt-4 sm:mt-0"
-                >
-                  9€
-                </h6>
-                <p class="font-bold" style="margin-top: 4px">Costo</p>
-              </div>
-              <div class="text-center">
-                <h6
-                  class="text-5xl font-bold text-deep-purple-accent-400 mt-4 sm:mt-0"
-                >
-                  14gg
-                </h6>
-                <p class="font-bold" style="margin-top: 4px">Scaricabile per</p>
-              </div>
+                    </p>
+                    <h4 class="text-xl text-center mt-4">
+                        <b>RIASSUMENDO:</b>
+                    </h4>
+                    <div class="p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
+                        <div class="grid row-gap-8 sm:grid-cols-3">
+                            <div class="text-center">
+                                <h6 class="text-5xl font-bold text-deep-purple-accent-400">
+                                    1H
+                                </h6>
+                                <p class="font-bold" style="margin-top: 4px">Durata</p>
+                            </div>
+                            <div class="text-center">
+                                <h6 class="text-5xl font-bold text-deep-purple-accent-400 mt-4 sm:mt-0">
+                                    9€
+                                </h6>
+                                <p class="font-bold" style="margin-top: 4px">Costo</p>
+                            </div>
+                            <div class="text-center">
+                                <h6 class="text-5xl font-bold text-deep-purple-accent-400 mt-4 sm:mt-0">
+                                    14gg
+                                </h6>
+                                <p class="font-bold" style="margin-top: 4px">Scaricabile per</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8 pb-4 px-0 md:px-4 lg:px-8" id="paypal_container"></div>
+                    <div class="grid items-center justify-center">
+                        <label style="color: #929292; margin-bottom: 5px">
+                            Puoi acquistare il webinar anche tramite bonifico
+              bancario:
+                        </label
+            >
+                        <a href="#!" class="visualizza_dati_bonifico">ISTRUZIONI BONIFICO
+                        </a
+            >
+                        <div class="dati_bonifico flex flex-col justify-center items-center p-0 md:p-3 lg:p-6" style="display: none">
+                            <b>ISTRUZIONI PER ACQUISTARE IL WEBINAR, INOLTRA BONIFICO A:</b>
+                            <span>
+                                <i>Intestatario:</i> SERRA ALEXANDER
+                            </span>
+                            <span>
+                                <i>Iban:</i> IT30W0538766690000003286021
+                            </span>
+                            <span>
+                                <i>Causale:</i> WEBINAR 21/03/2022
+                            </span>
+                            <span>
+                                <b>Costo:</b> 9€
+                            </span>
+                            <span class="text-center">
+                                <i>
+                                    Una volta effettuato BONIFICO INVIA COPIA ad
+                                    <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM
+                                    </a
+                  >
+                                    oppure telefonicamente al
+                                    <a href="tel:3206349783">3206349783</a>
+                                    .
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pb-16 lg:pb-0 flex flex-wrap items-center justify-between flex-col md:flex-row">
+                        <a href="https://www.instagram.com/runningcoach_/" target="_blank" class="flex justify-center items-center w-full md:w-2/4">
+                            <span class="text-gray-200">@runningcoach_</span>
+                            <svg
+                                class="h-12 p-2 bg-white fill-current text-gray-600 hover:text-green-700 rounded-xl ml-4"
+                                role="img"
+                                viewBox="0 0 512 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g>
+                                    <path d="M256,0c-69.526,0 -78.244,0.295 -105.549,1.541c-27.248,1.243 -45.858,5.57 -62.142,11.899c-16.834,6.542 -31.111,15.296 -45.342,29.528c-14.232,14.231 -22.986,28.508 -29.528,45.342c-6.329,16.283 -10.656,34.893 -11.899,62.141c-1.246,27.305 -1.54,36.023 -1.54,105.549c0,69.524 0.294,78.242 1.54,105.547c1.243,27.248 5.57,45.858 11.899,62.141c6.542,16.834 15.296,31.111 29.528,45.344c14.231,14.231 28.508,22.985 45.342,29.527c16.284,6.328 34.894,10.656 62.142,11.899c27.305,1.245 36.023,1.54 105.549,1.54c69.524,0 78.242,-0.295 105.547,-1.54c27.248,-1.243 45.858,-5.571 62.141,-11.899c16.834,-6.542 31.111,-15.296 45.344,-29.527c14.231,-14.233 22.985,-28.51 29.527,-45.344c6.328,-16.283 10.656,-34.893 11.899,-62.141c1.245,-27.305 1.54,-36.023 1.54,-105.547c0,-69.526 -0.295,-78.244 -1.54,-105.549c-1.243,-27.248 -5.571,-45.858 -11.899,-62.141c-6.542,-16.834 -15.296,-31.111 -29.527,-45.342c-14.233,-14.232 -28.51,-22.986 -45.344,-29.528c-16.283,-6.329 -34.893,-10.656 -62.141,-11.899c-27.305,-1.246 -36.023,-1.541 -105.547,-1.541Zm0,46.127c68.354,0 76.451,0.26 103.445,1.492c24.959,1.139 38.514,5.309 47.535,8.814c11.949,4.644 20.477,10.192 29.435,19.15c8.959,8.958 14.506,17.487 19.15,29.435c3.506,9.021 7.676,22.576 8.815,47.535c1.231,26.995 1.492,35.092 1.492,103.447c0,68.354 -0.261,76.451 -1.492,103.445c-1.139,24.959 -5.309,38.514 -8.815,47.535c-4.644,11.949 -10.191,20.477 -19.15,29.435c-8.958,8.959 -17.486,14.506 -29.435,19.15c-9.021,3.506 -22.576,7.676 -47.535,8.814c-26.99,1.232 -35.086,1.493 -103.445,1.493c-68.361,0 -76.455,-0.261 -103.447,-1.493c-24.959,-1.138 -38.514,-5.308 -47.535,-8.814c-11.949,-4.644 -20.477,-10.191 -29.436,-19.15c-8.958,-8.958 -14.506,-17.486 -19.149,-29.435c-3.506,-9.021 -7.676,-22.576 -8.815,-47.535c-1.232,-26.994 -1.492,-35.091 -1.492,-103.445c0,-68.355 0.26,-76.452 1.492,-103.447c1.139,-24.959 5.309,-38.514 8.815,-47.535c4.643,-11.948 10.191,-20.477 19.149,-29.435c8.959,-8.958 17.487,-14.506 29.436,-19.15c9.021,-3.505 22.576,-7.675 47.535,-8.814c26.995,-1.232 35.092,-1.492 103.447,-1.492Z" style="fill: url(#_Linear1); fill-rule: nonzero"/>
+                                    <path d="M256,341.332c-47.129,0 -85.334,-38.205 -85.334,-85.332c0,-47.129 38.205,-85.334 85.334,-85.334c47.127,0 85.332,38.205 85.332,85.334c0,47.127 -38.205,85.332 -85.332,85.332Zm0,-216.792c-72.604,0 -131.46,58.856 -131.46,131.46c0,72.602 58.856,131.458 131.46,131.458c72.602,0 131.458,-58.856 131.458,-131.458c0,-72.604 -58.856,-131.46 -131.458,-131.46Z" style="fill: url(#_Linear2); fill-rule: nonzero"/>
+                                    <path d="M423.372,119.346c0,16.967 -13.754,30.72 -30.72,30.72c-16.966,0 -30.72,-13.753 -30.72,-30.72c0,-16.966 13.754,-30.719 30.72,-30.719c16.966,0 30.72,13.753 30.72,30.719Z" style="fill: url(#_Linear3); fill-rule: nonzero"/>
+                                </g>
+                                <defs>
+                                    <linearGradient
+                                        gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                        gradientUnits="userSpaceOnUse"
+                                        id="_Linear1"
+                                        x1="0"
+                                        x2="1"
+                                        y1="0"
+                                        y2="0"
+                                    >
+                                        <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                        <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                        <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                        <stop offset="1" style="stop-color: #feda77; stop-opacity: 1"/>
+                                    </linearGradient>
+                                    <linearGradient
+                                        gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                        gradientUnits="userSpaceOnUse"
+                                        id="_Linear2"
+                                        x1="0"
+                                        x2="1"
+                                        y1="0"
+                                        y2="0"
+                                    >
+                                        <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                        <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                        <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                        <stop offset="1" style="stop-color: #ffbf00; stop-opacity: 1"/>
+                                    </linearGradient>
+                                    <linearGradient
+                                        gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                        gradientUnits="userSpaceOnUse"
+                                        id="_Linear3"
+                                        x1="0"
+                                        x2="1"
+                                        y1="0"
+                                        y2="0"
+                                    >
+                                        <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                        <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                        <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                        <stop offset="1" style="stop-color: #ffbf00; stop-opacity: 1"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                        <div class="flex justify-center items-center mt-4 md:mt-0 w-full md:w-2/4">
+                            <span class="text-gray-200">@irene_fisioposturale</span>
+                            <a class="link ml-4" href="#!">
+                                <svg
+                                    class="h-12 p-2 bg-white fill-current text-gray-600 hover:text-green-700 rounded-xl"
+                                    role="img"
+                                    viewBox="0 0 512 512"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <g>
+                                        <path d="M256,0c-69.526,0 -78.244,0.295 -105.549,1.541c-27.248,1.243 -45.858,5.57 -62.142,11.899c-16.834,6.542 -31.111,15.296 -45.342,29.528c-14.232,14.231 -22.986,28.508 -29.528,45.342c-6.329,16.283 -10.656,34.893 -11.899,62.141c-1.246,27.305 -1.54,36.023 -1.54,105.549c0,69.524 0.294,78.242 1.54,105.547c1.243,27.248 5.57,45.858 11.899,62.141c6.542,16.834 15.296,31.111 29.528,45.344c14.231,14.231 28.508,22.985 45.342,29.527c16.284,6.328 34.894,10.656 62.142,11.899c27.305,1.245 36.023,1.54 105.549,1.54c69.524,0 78.242,-0.295 105.547,-1.54c27.248,-1.243 45.858,-5.571 62.141,-11.899c16.834,-6.542 31.111,-15.296 45.344,-29.527c14.231,-14.233 22.985,-28.51 29.527,-45.344c6.328,-16.283 10.656,-34.893 11.899,-62.141c1.245,-27.305 1.54,-36.023 1.54,-105.547c0,-69.526 -0.295,-78.244 -1.54,-105.549c-1.243,-27.248 -5.571,-45.858 -11.899,-62.141c-6.542,-16.834 -15.296,-31.111 -29.527,-45.342c-14.233,-14.232 -28.51,-22.986 -45.344,-29.528c-16.283,-6.329 -34.893,-10.656 -62.141,-11.899c-27.305,-1.246 -36.023,-1.541 -105.547,-1.541Zm0,46.127c68.354,0 76.451,0.26 103.445,1.492c24.959,1.139 38.514,5.309 47.535,8.814c11.949,4.644 20.477,10.192 29.435,19.15c8.959,8.958 14.506,17.487 19.15,29.435c3.506,9.021 7.676,22.576 8.815,47.535c1.231,26.995 1.492,35.092 1.492,103.447c0,68.354 -0.261,76.451 -1.492,103.445c-1.139,24.959 -5.309,38.514 -8.815,47.535c-4.644,11.949 -10.191,20.477 -19.15,29.435c-8.958,8.959 -17.486,14.506 -29.435,19.15c-9.021,3.506 -22.576,7.676 -47.535,8.814c-26.99,1.232 -35.086,1.493 -103.445,1.493c-68.361,0 -76.455,-0.261 -103.447,-1.493c-24.959,-1.138 -38.514,-5.308 -47.535,-8.814c-11.949,-4.644 -20.477,-10.191 -29.436,-19.15c-8.958,-8.958 -14.506,-17.486 -19.149,-29.435c-3.506,-9.021 -7.676,-22.576 -8.815,-47.535c-1.232,-26.994 -1.492,-35.091 -1.492,-103.445c0,-68.355 0.26,-76.452 1.492,-103.447c1.139,-24.959 5.309,-38.514 8.815,-47.535c4.643,-11.948 10.191,-20.477 19.149,-29.435c8.959,-8.958 17.487,-14.506 29.436,-19.15c9.021,-3.505 22.576,-7.675 47.535,-8.814c26.995,-1.232 35.092,-1.492 103.447,-1.492Z" style="fill: url(#_Linear1); fill-rule: nonzero"/>
+                                        <path d="M256,341.332c-47.129,0 -85.334,-38.205 -85.334,-85.332c0,-47.129 38.205,-85.334 85.334,-85.334c47.127,0 85.332,38.205 85.332,85.334c0,47.127 -38.205,85.332 -85.332,85.332Zm0,-216.792c-72.604,0 -131.46,58.856 -131.46,131.46c0,72.602 58.856,131.458 131.46,131.458c72.602,0 131.458,-58.856 131.458,-131.458c0,-72.604 -58.856,-131.46 -131.458,-131.46Z" style="fill: url(#_Linear2); fill-rule: nonzero"/>
+                                        <path d="M423.372,119.346c0,16.967 -13.754,30.72 -30.72,30.72c-16.966,0 -30.72,-13.753 -30.72,-30.72c0,-16.966 13.754,-30.719 30.72,-30.719c16.966,0 30.72,13.753 30.72,30.719Z" style="fill: url(#_Linear3); fill-rule: nonzero"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient
+                                            gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                            gradientUnits="userSpaceOnUse"
+                                            id="_Linear1"
+                                            x1="0"
+                                            x2="1"
+                                            y1="0"
+                                            y2="0"
+                                        >
+                                            <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                            <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                            <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                            <stop offset="1" style="stop-color: #feda77; stop-opacity: 1"/>
+                                        </linearGradient>
+                                        <linearGradient
+                                            gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                            gradientUnits="userSpaceOnUse"
+                                            id="_Linear2"
+                                            x1="0"
+                                            x2="1"
+                                            y1="0"
+                                            y2="0"
+                                        >
+                                            <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                            <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                            <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                            <stop offset="1" style="stop-color: #ffbf00; stop-opacity: 1"/>
+                                        </linearGradient>
+                                        <linearGradient
+                                            gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
+                                            gradientUnits="userSpaceOnUse"
+                                            id="_Linear3"
+                                            x1="0"
+                                            x2="1"
+                                            y1="0"
+                                            y2="0"
+                                        >
+                                            <stop offset="0" style="stop-color: #515bd4; stop-opacity: 1"/>
+                                            <stop offset="0.26" style="stop-color: #9510b8; stop-opacity: 1"/>
+                                            <stop offset="0.66" style="stop-color: #e51804; stop-opacity: 1"/>
+                                            <stop offset="1" style="stop-color: #ffbf00; stop-opacity: 1"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Use https://simpleicons.org/ to find the svg for your preferred product -->
+                </div>
             </div>
-          </div>
-
-          <div
-            class="pt-8 pb-4 px-0 md:px-4 lg:px-8"
-            id="paypal_container"
-          ></div>
-          <div class="grid items-center justify-center">
-            <label style="color: #929292; margin-bottom: 5px"
-              >Puoi acquistare il webinar anche tramite bonifico
-              bancario:</label
-            >
-            <a href="#!" class="visualizza_dati_bonifico"
-              >ISTRUZIONI BONIFICO</a
-            >
-            <div
-              class="dati_bonifico flex flex-col justify-center items-center p-0 md:p-3 lg:p-6"
-              style="display: none"
-            >
-              <b>ISTRUZIONI PER ACQUISTARE IL WEBINAR, INOLTRA BONIFICO A:</b>
-              <span><i>Intestatario:</i> SERRA ALEXANDER</span>
-              <span><i>Iban:</i> IT32K0567617295IB0000668343</span>
-              <span><i>Causale:</i> WEBINAR 21/03/2022</span>
-              <span><b>Costo:</b> 9€</span>
-              <span class="text-center">
-                <i>
-                  Una volta effettuato BONIFICO INVIA COPIA ad
-                  <a href="mailto:ALERUNNER91@GMAIL.COM"
-                    >ALERUNNER91@GMAIL.COM</a
-                  >
-                  oppure telefonicamente al
-                  <a href="tel:3206349783">3206349783</a>.
-                </i>
-              </span>
-            </div>
-          </div>
-          <div
-            class="mt-6 pb-16 lg:pb-0 flex flex-wrap items-center justify-between flex-col md:flex-row"
-          >
-            <a
-              href="https://www.instagram.com/runningcoach_/"
-              target="_blank"
-              class="flex justify-center items-center w-full md:w-2/4"
-            >
-              <span class="text-gray-200">@runningcoach_</span>
-              <svg
-                class="h-12 p-2 bg-white fill-current text-gray-600 hover:text-green-700 rounded-xl ml-4"
-                role="img"
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <path
-                    d="M256,0c-69.526,0 -78.244,0.295 -105.549,1.541c-27.248,1.243 -45.858,5.57 -62.142,11.899c-16.834,6.542 -31.111,15.296 -45.342,29.528c-14.232,14.231 -22.986,28.508 -29.528,45.342c-6.329,16.283 -10.656,34.893 -11.899,62.141c-1.246,27.305 -1.54,36.023 -1.54,105.549c0,69.524 0.294,78.242 1.54,105.547c1.243,27.248 5.57,45.858 11.899,62.141c6.542,16.834 15.296,31.111 29.528,45.344c14.231,14.231 28.508,22.985 45.342,29.527c16.284,6.328 34.894,10.656 62.142,11.899c27.305,1.245 36.023,1.54 105.549,1.54c69.524,0 78.242,-0.295 105.547,-1.54c27.248,-1.243 45.858,-5.571 62.141,-11.899c16.834,-6.542 31.111,-15.296 45.344,-29.527c14.231,-14.233 22.985,-28.51 29.527,-45.344c6.328,-16.283 10.656,-34.893 11.899,-62.141c1.245,-27.305 1.54,-36.023 1.54,-105.547c0,-69.526 -0.295,-78.244 -1.54,-105.549c-1.243,-27.248 -5.571,-45.858 -11.899,-62.141c-6.542,-16.834 -15.296,-31.111 -29.527,-45.342c-14.233,-14.232 -28.51,-22.986 -45.344,-29.528c-16.283,-6.329 -34.893,-10.656 -62.141,-11.899c-27.305,-1.246 -36.023,-1.541 -105.547,-1.541Zm0,46.127c68.354,0 76.451,0.26 103.445,1.492c24.959,1.139 38.514,5.309 47.535,8.814c11.949,4.644 20.477,10.192 29.435,19.15c8.959,8.958 14.506,17.487 19.15,29.435c3.506,9.021 7.676,22.576 8.815,47.535c1.231,26.995 1.492,35.092 1.492,103.447c0,68.354 -0.261,76.451 -1.492,103.445c-1.139,24.959 -5.309,38.514 -8.815,47.535c-4.644,11.949 -10.191,20.477 -19.15,29.435c-8.958,8.959 -17.486,14.506 -29.435,19.15c-9.021,3.506 -22.576,7.676 -47.535,8.814c-26.99,1.232 -35.086,1.493 -103.445,1.493c-68.361,0 -76.455,-0.261 -103.447,-1.493c-24.959,-1.138 -38.514,-5.308 -47.535,-8.814c-11.949,-4.644 -20.477,-10.191 -29.436,-19.15c-8.958,-8.958 -14.506,-17.486 -19.149,-29.435c-3.506,-9.021 -7.676,-22.576 -8.815,-47.535c-1.232,-26.994 -1.492,-35.091 -1.492,-103.445c0,-68.355 0.26,-76.452 1.492,-103.447c1.139,-24.959 5.309,-38.514 8.815,-47.535c4.643,-11.948 10.191,-20.477 19.149,-29.435c8.959,-8.958 17.487,-14.506 29.436,-19.15c9.021,-3.505 22.576,-7.675 47.535,-8.814c26.995,-1.232 35.092,-1.492 103.447,-1.492Z"
-                    style="fill: url(#_Linear1); fill-rule: nonzero"
-                  />
-                  <path
-                    d="M256,341.332c-47.129,0 -85.334,-38.205 -85.334,-85.332c0,-47.129 38.205,-85.334 85.334,-85.334c47.127,0 85.332,38.205 85.332,85.334c0,47.127 -38.205,85.332 -85.332,85.332Zm0,-216.792c-72.604,0 -131.46,58.856 -131.46,131.46c0,72.602 58.856,131.458 131.46,131.458c72.602,0 131.458,-58.856 131.458,-131.458c0,-72.604 -58.856,-131.46 -131.458,-131.46Z"
-                    style="fill: url(#_Linear2); fill-rule: nonzero"
-                  />
-                  <path
-                    d="M423.372,119.346c0,16.967 -13.754,30.72 -30.72,30.72c-16.966,0 -30.72,-13.753 -30.72,-30.72c0,-16.966 13.754,-30.719 30.72,-30.719c16.966,0 30.72,13.753 30.72,30.719Z"
-                    style="fill: url(#_Linear3); fill-rule: nonzero"
-                  />
-                </g>
-                <defs>
-                  <linearGradient
-                    gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                    gradientUnits="userSpaceOnUse"
-                    id="_Linear1"
-                    x1="0"
-                    x2="1"
-                    y1="0"
-                    y2="0"
-                  >
-                    <stop
-                      offset="0"
-                      style="stop-color: #515bd4; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.26"
-                      style="stop-color: #9510b8; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.66"
-                      style="stop-color: #e51804; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="1"
-                      style="stop-color: #feda77; stop-opacity: 1"
-                    />
-                  </linearGradient>
-                  <linearGradient
-                    gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                    gradientUnits="userSpaceOnUse"
-                    id="_Linear2"
-                    x1="0"
-                    x2="1"
-                    y1="0"
-                    y2="0"
-                  >
-                    <stop
-                      offset="0"
-                      style="stop-color: #515bd4; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.26"
-                      style="stop-color: #9510b8; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.66"
-                      style="stop-color: #e51804; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="1"
-                      style="stop-color: #ffbf00; stop-opacity: 1"
-                    />
-                  </linearGradient>
-                  <linearGradient
-                    gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                    gradientUnits="userSpaceOnUse"
-                    id="_Linear3"
-                    x1="0"
-                    x2="1"
-                    y1="0"
-                    y2="0"
-                  >
-                    <stop
-                      offset="0"
-                      style="stop-color: #515bd4; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.26"
-                      style="stop-color: #9510b8; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="0.66"
-                      style="stop-color: #e51804; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="1"
-                      style="stop-color: #ffbf00; stop-opacity: 1"
-                    />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </a>
-            <div
-              class="flex justify-center items-center mt-4 md:mt-0 w-full md:w-2/4"
-            >
-              <span class="text-gray-200">@irene_fisioposturale</span>
-              <a class="link ml-4" href="#!">
-                <svg
-                  class="h-12 p-2 bg-white fill-current text-gray-600 hover:text-green-700 rounded-xl"
-                  role="img"
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g>
-                    <path
-                      d="M256,0c-69.526,0 -78.244,0.295 -105.549,1.541c-27.248,1.243 -45.858,5.57 -62.142,11.899c-16.834,6.542 -31.111,15.296 -45.342,29.528c-14.232,14.231 -22.986,28.508 -29.528,45.342c-6.329,16.283 -10.656,34.893 -11.899,62.141c-1.246,27.305 -1.54,36.023 -1.54,105.549c0,69.524 0.294,78.242 1.54,105.547c1.243,27.248 5.57,45.858 11.899,62.141c6.542,16.834 15.296,31.111 29.528,45.344c14.231,14.231 28.508,22.985 45.342,29.527c16.284,6.328 34.894,10.656 62.142,11.899c27.305,1.245 36.023,1.54 105.549,1.54c69.524,0 78.242,-0.295 105.547,-1.54c27.248,-1.243 45.858,-5.571 62.141,-11.899c16.834,-6.542 31.111,-15.296 45.344,-29.527c14.231,-14.233 22.985,-28.51 29.527,-45.344c6.328,-16.283 10.656,-34.893 11.899,-62.141c1.245,-27.305 1.54,-36.023 1.54,-105.547c0,-69.526 -0.295,-78.244 -1.54,-105.549c-1.243,-27.248 -5.571,-45.858 -11.899,-62.141c-6.542,-16.834 -15.296,-31.111 -29.527,-45.342c-14.233,-14.232 -28.51,-22.986 -45.344,-29.528c-16.283,-6.329 -34.893,-10.656 -62.141,-11.899c-27.305,-1.246 -36.023,-1.541 -105.547,-1.541Zm0,46.127c68.354,0 76.451,0.26 103.445,1.492c24.959,1.139 38.514,5.309 47.535,8.814c11.949,4.644 20.477,10.192 29.435,19.15c8.959,8.958 14.506,17.487 19.15,29.435c3.506,9.021 7.676,22.576 8.815,47.535c1.231,26.995 1.492,35.092 1.492,103.447c0,68.354 -0.261,76.451 -1.492,103.445c-1.139,24.959 -5.309,38.514 -8.815,47.535c-4.644,11.949 -10.191,20.477 -19.15,29.435c-8.958,8.959 -17.486,14.506 -29.435,19.15c-9.021,3.506 -22.576,7.676 -47.535,8.814c-26.99,1.232 -35.086,1.493 -103.445,1.493c-68.361,0 -76.455,-0.261 -103.447,-1.493c-24.959,-1.138 -38.514,-5.308 -47.535,-8.814c-11.949,-4.644 -20.477,-10.191 -29.436,-19.15c-8.958,-8.958 -14.506,-17.486 -19.149,-29.435c-3.506,-9.021 -7.676,-22.576 -8.815,-47.535c-1.232,-26.994 -1.492,-35.091 -1.492,-103.445c0,-68.355 0.26,-76.452 1.492,-103.447c1.139,-24.959 5.309,-38.514 8.815,-47.535c4.643,-11.948 10.191,-20.477 19.149,-29.435c8.959,-8.958 17.487,-14.506 29.436,-19.15c9.021,-3.505 22.576,-7.675 47.535,-8.814c26.995,-1.232 35.092,-1.492 103.447,-1.492Z"
-                      style="fill: url(#_Linear1); fill-rule: nonzero"
-                    />
-                    <path
-                      d="M256,341.332c-47.129,0 -85.334,-38.205 -85.334,-85.332c0,-47.129 38.205,-85.334 85.334,-85.334c47.127,0 85.332,38.205 85.332,85.334c0,47.127 -38.205,85.332 -85.332,85.332Zm0,-216.792c-72.604,0 -131.46,58.856 -131.46,131.46c0,72.602 58.856,131.458 131.46,131.458c72.602,0 131.458,-58.856 131.458,-131.458c0,-72.604 -58.856,-131.46 -131.458,-131.46Z"
-                      style="fill: url(#_Linear2); fill-rule: nonzero"
-                    />
-                    <path
-                      d="M423.372,119.346c0,16.967 -13.754,30.72 -30.72,30.72c-16.966,0 -30.72,-13.753 -30.72,-30.72c0,-16.966 13.754,-30.719 30.72,-30.719c16.966,0 30.72,13.753 30.72,30.719Z"
-                      style="fill: url(#_Linear3); fill-rule: nonzero"
-                    />
-                  </g>
-                  <defs>
-                    <linearGradient
-                      gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                      gradientUnits="userSpaceOnUse"
-                      id="_Linear1"
-                      x1="0"
-                      x2="1"
-                      y1="0"
-                      y2="0"
-                    >
-                      <stop
-                        offset="0"
-                        style="stop-color: #515bd4; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.26"
-                        style="stop-color: #9510b8; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.66"
-                        style="stop-color: #e51804; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="1"
-                        style="stop-color: #feda77; stop-opacity: 1"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                      gradientUnits="userSpaceOnUse"
-                      id="_Linear2"
-                      x1="0"
-                      x2="1"
-                      y1="0"
-                      y2="0"
-                    >
-                      <stop
-                        offset="0"
-                        style="stop-color: #515bd4; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.26"
-                        style="stop-color: #9510b8; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.66"
-                        style="stop-color: #e51804; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="1"
-                        style="stop-color: #ffbf00; stop-opacity: 1"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      gradientTransform="matrix(-149.618,494.3,-494.3,-149.618,300.81,-27.1283)"
-                      gradientUnits="userSpaceOnUse"
-                      id="_Linear3"
-                      x1="0"
-                      x2="1"
-                      y1="0"
-                      y2="0"
-                    >
-                      <stop
-                        offset="0"
-                        style="stop-color: #515bd4; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.26"
-                        style="stop-color: #9510b8; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="0.66"
-                        style="stop-color: #e51804; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="1"
-                        style="stop-color: #ffbf00; stop-opacity: 1"
-                      />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Use https://simpleicons.org/ to find the svg for your preferred product -->
         </div>
-      </div>
-    </div>
-    <script src="jquery.min.js"></script>
-    <script src="sweetalert.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>
-    <script src="index.js"></script>
-  </body>
+        <script src="jquery.min.js"></script>
+        <script src="sweetalert.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>
+        <script src="index.js"></script>
+    </body>
 </html>

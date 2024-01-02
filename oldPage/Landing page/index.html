@@ -1,868 +1,954 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <!--- basic page needs
+    <head>
+        <!--- basic page needs
         ================================================== -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ALEX RUNNING COACH</title>
-    <!-- SEO TAG
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ALEX RUNNING COACH</title>
+        <!-- SEO TAG
         ================================================== -->
-    <meta
-      name="description"
-      content="Ciao, mi chiamo alex e sono un running coach. Programmo i tuoi allenamenti di corsa e ti seguo nel percorso per farti raggiungere i tuoi obiettivi. DIVENTA ANCHE TU UN ALERUNNER"
-    />
-    <meta
-      name="keywords"
-      content="running coach coaching corsa run alex alexander serra correre da zero programma allenamento training asics frontrunner coaching pacchetti"
-    />
-    <meta name="author" content="erikwski" />
-
-    <!-- icon of website
+        <meta name="description" content="Ciao, mi chiamo alex e sono un running coach. Programmo i tuoi allenamenti di corsa e ti seguo nel percorso per farti raggiungere i tuoi obiettivi. DIVENTA ANCHE TU UN ALERUNNER">
+        <meta name="keywords" content="running coach coaching corsa run alex alexander serra correre da zero programma allenamento training asics frontrunner coaching pacchetti">
+        <meta name="author" content="erikwski">
+        <!-- icon of website
         ================================================== -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/logo/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/logo/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/logo/favicon-16x16.png"
-    />
-    <link rel="manifest" href="images/logo/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="images/logo/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#2293ca" />
-
-    <link rel="shortcut icon" href="images/logo/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik:400,700,700i"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-    <!--[if lt IE 9]>
+        <link rel="apple-touch-icon" sizes="180x180" href="images/logo/apple-touch-icon.png">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="images/logo/favicon-32x32.png"
+        >
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="images/logo/favicon-16x16.png"
+        >
+        <link rel="manifest" href="images/logo/site.webmanifest">
+        <link rel="mask-icon" href="images/logo/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#2293ca">
+        <link rel="shortcut icon" href="images/logo/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,700i" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <div id="loader">
-    <div class="loader"></div>
-    <img id="logo_man" src="images/logo.png"></img>
-    <img id="logo_text" src="images/testo_logo.png"></img>
-  </div>
-
-  <body class="page-template-onepage">
-    <div class="site-wrapper">
-
-      <header class="header-holder">
-        <div class="menu-wrapper center-relative relative">
-          <div class="header-logo">
-            <a href="index.html">
-              <img src="images/logo_completo.png" alt="logo" />
-            </a>
-          </div>
-
-          <div class="toggle-holder">
-            <div id="toggle">
-              <div class="first-menu-line"></div>
-              <div class="second-menu-line"></div>
-              <div class="third-menu-line"></div>
-            </div>
-          </div>
-
-          <div class="menu-holder">
-            <nav id="header-main-menu">
-              <ul class="main-menu sm sm-clean">
-                <li>
-                  <a href="#home">Home</a>
-                </li>
-                <li>
-                  <a href="#about">Chi sono</a>
-                </li>
-                <li>
-                  <a href="#millstones">Traguardi</a>
-                </li>
-                <li>
-                  <a href="#pricing">Coaching</a>
-                </li>
-                <li>
-                  <a href="#news">Blog</a>
-                </li>
-                <li>
-                  <a href="#clients">Recensioni</a>
-                </li>
-                <li>
-                  <a href="#utils">Link utili</a>
-                </li>
-                <li>
-                  <a href="#contact">Contattami</a>
-                </li>
-                <li class="fake_menu_for_mobile">
-                  <a href="#"></a>
-                </li>
-                <li class="fake_menu_for_mobile">
-                  <a href="#"></a>
-                </li>
-                <li class="fake_menu_for_mobile">
-                  <a href="#"></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="clear"></div>
-        </div>
-      </header>
-
-      <div id="content" class="site-content center-relative">
-        <!-- Home Section -->
-        <div id="home" class="section no-page-title">
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper" id="opening">
-              <h1 class="big-text">
-                RUNNING<br class="only_mobile"> COACH<br />
-                <span class="c_primary"> ALEXANDER<br class="only_mobile"> SERRA</span>
-              </h1>
-              <div class="button-holder text-left">
-                <a href="#about" class="button hero_section">CHI SONO</a>
-              </div>
-              <div class="button-holder text-left">
-                <a href="#pricing" class="button hero_section">SCOPRI I MIEI COACHING</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- About Section -->
-        <div id="about" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">ABOUT</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper">
-              <div class="one_half">
-                <p class="title-description-up">CHI SONO</p>
-                <h2 class="entry-title medium-text pb-0 dark_grey">
-                  Professione:<br /> RUNNING COACH
-                </h2>
-                <h4 class="entry-title c_primary italic_opacity">
-                    Alleno Runners: Principianti, Amatori e Professionisti.
-                </h4>
-                <p>
-                  Creo programmi RUNNING su misura e li aggiorno mensilmente per accrescere i miglioramenti e l'entusiasmo dei miei Runners.
-                  <br />
-                  Sono Allenatore <b>FIDAL</b> specializzato nella corsa e laureato in <b>Scienze Motorie</b>.
-                </p>
-                <p class="curriculum_link">
-                  <a href="pdf/curriculum.pdf" target="_blank"> IL MIO PERCORSO </a>
-                </p>
-                <br />
-                <div class="button-holder text-left">
-                  <a href="#pricing" class="button"> I MIEI COACHING </a>
+    </head>
+    <div id="loader">
+        <div class="loader"></div>
+        <img id="logo_man" src="images/logo.png"></img>
+        <img id="logo_text" src="images/testo_logo.png"></img>
+    </div>
+    <body class="page-template-onepage">
+        <div class="site-wrapper">
+            <header class="header-holder">
+                <div class="menu-wrapper center-relative relative">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="images/logo_completo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="toggle-holder">
+                        <div id="toggle">
+                            <div class="first-menu-line"></div>
+                            <div class="second-menu-line"></div>
+                            <div class="third-menu-line"></div>
+                        </div>
+                    </div>
+                    <div class="menu-holder">
+                        <nav id="header-main-menu">
+                            <ul class="main-menu sm sm-clean">
+                                <li>
+                                    <a href="#home">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#about">Chi sono</a>
+                                </li>
+                                <li>
+                                    <a href="#millstones">Traguardi</a>
+                                </li>
+                                <li>
+                                    <a href="#pricing">Coaching</a>
+                                </li>
+                                <li>
+                                    <a href="#news">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#clients">Recensioni</a>
+                                </li>
+                                <li>
+                                    <a href="#utils">Link utili</a>
+                                </li>
+                                <li>
+                                    <a href="#contact">Contattami</a>
+                                </li>
+                                <li class="fake_menu_for_mobile">
+                                    <a href="#"></a>
+                                </li>
+                                <li class="fake_menu_for_mobile">
+                                    <a href="#"></a>
+                                </li>
+                                <li class="fake_menu_for_mobile">
+                                    <a href="#"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-              </div>
-
-              <div
-                class="one_half last credit_fotographer"
-                data-threshold="0 0"
-                data-jarallax-element="60 0"
-              >
-                <img src="images/about_me.png" alt="" />
-              </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Millstones Section -->
-        <div id="millstones" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">TRAGUARDI</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper">
-              <ul class="milestones-holder">
-                <li class="milestone">
-                  <div class="milestone-info-left">
-                    <p class="milestone-num" id="anni_di_esperienza">10</p>
-                  </div>
-                  <div class="milestone-info-right">
-                    <h5>Anni di esperienza</h5>
-                    <p class="milestone-text">
-                      Dal 2011 alleno Corridori di ogni livello, dal Principiante al Professionista
-                    </p>
-                  </div>
-                </li>
-
-                <li class="milestone">
-                  <div class="milestone-info-left">
-                    <p class="milestone-num">+300</p>
-                  </div>
-                  <div class="milestone-info-right">
-                    <h5>Runners</h5>
-                    <p class="milestone-text">
-                      seguiti con il mio <br />
-                      <span class="coaching_running">#coachingperilrunning</span>
-                    </p>
-                  </div>
-                </li>
-
-                <li class="milestone">
-                  <div class="milestone-info-left">
-                    <p class="milestone-num">+900</p>
-                  </div>
-                  <div class="milestone-info-right">
-                    <h5>Programmazioni personalizzate</h5>
-                    <p class="milestone-text">
-                      realizzate su misura per i miei Runners
-                    </p>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pricing Section -->
-        <div id="pricing" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">I MIEI COACHING</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper">
-              <div class="one_third">
-                <div class="pricing-table">
-                  <p class="pricing-num">1</p>
-                  <div class="pricing-wrapper">
-                    <div class="pricing-table-header">
-                      <div class="pricing-table-title">BASIC</div>
+            </header>
+            <div id="content" class="site-content center-relative">
+                <!-- Home Section -->
+                <div id="home" class="section no-page-title">
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper" id="opening">
+                            <h1 class="big-text">
+                                RUNNING
+                                <br class="only_mobile"> COACH
+                                <br>
+                                <span class="c_primary"> ALEXANDER
+                                    <br class="only_mobile"> SERRA
+                                </span>
+                            </h1>
+                            <div class="button-holder text-left">
+                                <a href="#about" class="button hero_section">CHI SONO</a>
+                            </div>
+                            <div class="button-holder text-left">
+                                <a href="#pricing" class="button hero_section">SCOPRI I MIEI COACHING</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pricing-table-desc">A PARTIRE DA</div>
-                    <div class="pricing-table-price">€52</div>
-                    <div class="pricing-table-desc last_desc_price">/MESE</div>
-                    <div class="pricing-table-content-holder">
-                      <ul>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Incontro di 45 minuti
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Programmazione RUNNING personalizzata
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          <span class="truncate">1 feedback settimanale</span>
-                        </li>
-                        <li class="pricing-list included-no">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          <span>Schede <b class="c_primary">STANDARD</b> di forza,tecnica,core stability, stretching e mobilità articolare</span>
-                        </li>
-                        <li class="pricing-list included-no">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Analisi tecnica di corsa
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching" data-id="1"> 
-                      <span class="fa fa-paypal"></span>
-                      ACQUISTA COACHING 
-                    </a>
-                  </div>
-                  <div class="pricing-label">
-                    <a href="pdf/COACHING_BASIC.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
-                  </div>
                 </div>
-              </div>
-
-              <div class="one_third">
-                <div class="pricing-table">
-                  <p class="pricing-num">2</p>
-                  <div class="pricing-wrapper">
-                    <div class="pricing-table-header">
-                      <div class="pricing-table-title">STANDARD</div>
+                <!-- About Section -->
+                <div id="about" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">ABOUT</h3>
                     </div>
-                    <div class="pricing-table-desc">A PARTIRE DA</div>
-                    <div class="pricing-table-price">€79</div>
-                    <div class="pricing-table-desc last_desc_price">/MESE</div>
-                    <div class="pricing-table-content-holder">
-                      <ul>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Incontro di 60 minuti
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Programmazione RUNNING personalizzata
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          3 feedback settimanali
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          <span>Schede <b class="c_primary">STANDARD</b> di forza,tecnica,core stability, stretching e mobilità articolare</span>
-                        </li>
-                        <li class="pricing-list included-no">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Analisi tecnica di corsa
-                        </li>
-                      </ul>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <div class="one_half">
+                                <p class="title-description-up">CHI SONO</p>
+                                <h2 class="entry-title medium-text pb-0 dark_grey">
+                                    Professione:
+                                    <br>
+                                    RUNNING COACH
+                                </h2>
+                                <h4 class="entry-title c_primary italic_opacity">
+                                    Alleno Runners: Principianti, Amatori e Professionisti.
+                                </h4>
+                                <p>
+                                    Creo programmi RUNNING su misura e li aggiorno mensilmente per accrescere i miglioramenti e l'entusiasmo dei miei Runners.
+                                    <br>
+                                    Sono Allenatore
+                                    <b>FIDAL</b> specializzato nella corsa e laureato in
+                                    <b>Scienze Motorie</b>
+                                    .
+                                </p>
+                                <p class="curriculum_link">
+                                    <a href="pdf/curriculum.pdf" target="_blank"> IL MIO PERCORSO</a>
+                                </p>
+                                <br>
+                                <div class="button-holder text-left">
+                                    <a href="#pricing" class="button"> I MIEI COACHING</a>
+                                </div>
+                            </div>
+                            <div class="one_half last credit_fotographer" data-threshold="0 0" data-jarallax-element="60 0">
+                                <img src="images/about_me.png" alt="">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching" data-id="3"> 
-                      <span class="fa fa-paypal"></span>
-                      ACQUISTA COACHING 
-                    </a>
-                  </div>
-                  <div class="pricing-label">
-                    <a href="pdf/COACHING_STANDARD.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
-                  </div>
                 </div>
-              </div>
-
-              <div class="one_third last">
-                <div class="pricing-table">
-                  <p class="pricing-num">3</p>
-                  <div class="pricing-wrapper">
-                    <div class="pricing-table-header">
-                      <div class="pricing-table-title">PREMIUM</div>
+                <!-- Millstones Section -->
+                <div id="millstones" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">TRAGUARDI</h3>
                     </div>
-                    <div class="pricing-table-desc">A PARTIRE DA</div>
-                    <div class="pricing-table-price">€105</div>
-                    <div class="pricing-table-desc last_desc_price">/MESE</div>
-                    <div class="pricing-table-content-holder">
-                      <ul>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Incontro di 90 minuti
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Programmazione RUNNING personalizzata
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          5 feedback settimanali
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          <span>Schede <b class="c_primary">SU MISURA</b> di forza,tecnica,core stability, stretching e mobilità articolare</span>
-                        </li>
-                        <li class="pricing-list included-yes">
-                          <span class="fa fa-check" aria-hidden="true"></span>
-                          Analisi tecnica di corsa
-                        </li>
-                      </ul>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <ul class="milestones-holder">
+                                <li class="milestone">
+                                    <div class="milestone-info-left">
+                                        <p class="milestone-num" id="anni_di_esperienza">10</p>
+                                    </div>
+                                    <div class="milestone-info-right">
+                                        <h5>Anni di esperienza</h5>
+                                        <p class="milestone-text">
+                                            Dal 2011 alleno Corridori di ogni livello, dal Principiante al Professionista
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="milestone">
+                                    <div class="milestone-info-left">
+                                        <p class="milestone-num">+300</p>
+                                    </div>
+                                    <div class="milestone-info-right">
+                                        <h5>Runners</h5>
+                                        <p class="milestone-text">
+                                            seguiti con il mio
+                                            <br>
+                                            <span class="coaching_running">#coachingperilrunning</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="milestone">
+                                    <div class="milestone-info-left">
+                                        <p class="milestone-num">+900</p>
+                                    </div>
+                                    <div class="milestone-info-right">
+                                        <h5>Programmazioni personalizzate</h5>
+                                        <p class="milestone-text">
+                                            realizzate su misura per i miei Runners
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-                  <div class="pricing-button">
-                    <a href="#" class="button scroll buy_coaching" data-id="5"> 
-                      <span class="fa fa-paypal"></span>
-                      ACQUISTA COACHING 
-                    </a>
-                  </div>
-                  <div class="pricing-label">
-                    <a href="pdf/COACHING_PREMIUM.pdf" target="_blank"> VISUALIZZA DETTAGLI </a>
-                  </div>
                 </div>
-              </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- News Section -->
-        <div id="news" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">IL MIO BLOG</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper">
-              <div
-                class="blog-holder-scode latest-posts-scode block center-relative"
-              >
-                <article class="relative blog-item-holder-scode">
-                  <div class="post-thumbnail">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/le-paure-dei-runners-come-vincerle-di-corsa" target="_blank">
-                      <div
-                        class="latest-posts-background-featured-image-holder"
-                        data-background-image="images/blog_img_01.png"
-                      ></div>
-                    </a>
-                  </div>
-                  <h4 class="entry-title">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/le-paure-dei-runners-come-vincerle-di-corsa" target="_blank">
-                      LE PAURE DEI RUNNERS
-                    </a>
-                  </h4>
-                  <div class="excerpt">
-                    Ogni Runner, Beginner o Expert che sia, nutre paure (molto spesso irrazionali) durante la Corsa. In questo blog ho raccolto le 3 più comuni e alcuni fondamentali consigli per affrontarle ...
-                  </div>
-                </article>
-
-                <article class="relative blog-item-holder-scode">
-                  <div class="post-thumbnail">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/dai-cento-metri-alla-maratona" target="_blank">
-                      <div
-                        class="latest-posts-background-featured-image-holder"
-                        data-background-image="images/blog_img_02.jpg"
-                      ></div>
-                    </a>
-                  </div>
-                  <h4 class="entry-title">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/dai-cento-metri-alla-maratona" target="_blank">
-                      DAI CENTO METRI ALLA MARATONA
-                    </a>
-                  </h4>
-                  <div class="excerpt">
-                    Da Atleta correvo i 100 metri, Ora alleno i Maratoneti! Essere ASICS FrontRunner è un Onore, un nuovo punto di partenza per diffondere sempre più questo messaggio: SoundMindSoundBody ...
-                  </div>
-                </article>
-
-                <article class="relative blog-item-holder-scode">
-                  <div class="post-thumbnail">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/asics-novablast-2-la-scarpa-perfetta-per-ogni-corsa" target="_blank">
-                      <div
-                        class="latest-posts-background-featured-image-holder"
-                        data-background-image="images/blog_img_03.jpg"
-                      ></div>
-                    </a>
-                  </div>
-                  <h4 class="entry-title">
-                    <a href="https://www.asics.com/it/it-it/frontrunner/articles/asics-novablast-2-la-scarpa-perfetta-per-ogni-corsa" target="_blank">
-                      ASICS NOVABLAST 2
-                    </a>
-                  </h4>
-                  <div class="excerpt">
-                    Asics Novablast 2 è una scarpa da allenamento quotidiano per corse comode ma vivaci. 
+                <!-- Pricing Section -->
+                <div id="pricing" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">I MIEI COACHING</h3>
+                    </div>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <div class="one_third">
+                                <div class="pricing-table">
+                                    <p class="pricing-num">1</p>
+                                    <div class="pricing-wrapper">
+                                        <div class="pricing-table-header">
+                                            <div class="pricing-table-title">BASIC</div>
+                                        </div>
+                                        <div class="pricing-table-desc">A PARTIRE DA</div>
+                                        <div class="pricing-table-price">€52</div>
+                                        <div class="pricing-table-desc last_desc_price">/MESE</div>
+                                        <div class="pricing-table-content-holder">
+                                            <ul>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Incontro di 45 minuti
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Programmazione RUNNING personalizzata
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    <span class="truncate">1 feedback settimanale</span>
+                                                </li>
+                                                <li class="pricing-list included-no">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    <span>Schede
+                                                        <b class="c_primary">STANDARD</b> di forza,tecnica,core stability, stretching e mobilità articolare
+                                                    </span>
+                                                </li>
+                                                <li class="pricing-list included-no">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Analisi tecnica di corsa
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-button">
+                                        <a href="#" class="button scroll buy_coaching" data-id="1">
+                                            <span class="fa fa-paypal"></span>
+                                            ACQUISTA COACHING
+                                        </a>
+                                    </div>
+                                    <div class="pricing-label">
+                                        <a href="pdf/COACHING_BASIC.pdf" target="_blank"> VISUALIZZA DETTAGLI</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="one_third">
+                                <div class="pricing-table">
+                                    <p class="pricing-num">2</p>
+                                    <div class="pricing-wrapper">
+                                        <div class="pricing-table-header">
+                                            <div class="pricing-table-title">STANDARD</div>
+                                        </div>
+                                        <div class="pricing-table-desc">A PARTIRE DA</div>
+                                        <div class="pricing-table-price">€79</div>
+                                        <div class="pricing-table-desc last_desc_price">/MESE</div>
+                                        <div class="pricing-table-content-holder">
+                                            <ul>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Incontro di 60 minuti
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Programmazione RUNNING personalizzata
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    3 feedback settimanali
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    <span>Schede
+                                                        <b class="c_primary">STANDARD</b> di forza,tecnica,core stability, stretching e mobilità articolare
+                                                    </span>
+                                                </li>
+                                                <li class="pricing-list included-no">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Analisi tecnica di corsa
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-button">
+                                        <a href="#" class="button scroll buy_coaching" data-id="3">
+                                            <span class="fa fa-paypal"></span>
+                                            ACQUISTA COACHING
+                                        </a>
+                                    </div>
+                                    <div class="pricing-label">
+                                        <a href="pdf/COACHING_STANDARD.pdf" target="_blank"> VISUALIZZA DETTAGLI</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="one_third last">
+                                <div class="pricing-table">
+                                    <p class="pricing-num">3</p>
+                                    <div class="pricing-wrapper">
+                                        <div class="pricing-table-header">
+                                            <div class="pricing-table-title">PREMIUM</div>
+                                        </div>
+                                        <div class="pricing-table-desc">A PARTIRE DA</div>
+                                        <div class="pricing-table-price">€105</div>
+                                        <div class="pricing-table-desc last_desc_price">/MESE</div>
+                                        <div class="pricing-table-content-holder">
+                                            <ul>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Incontro di 90 minuti
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Programmazione RUNNING personalizzata
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    5 feedback settimanali
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    <span>Schede
+                                                        <b class="c_primary">SU MISURA</b> di forza,tecnica,core stability, stretching e mobilità articolare
+                                                    </span>
+                                                </li>
+                                                <li class="pricing-list included-yes">
+                                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                                    Analisi tecnica di corsa
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-button">
+                                        <a href="#" class="button scroll buy_coaching" data-id="5">
+                                            <span class="fa fa-paypal"></span>
+                                            ACQUISTA COACHING
+                                        </a>
+                                    </div>
+                                    <div class="pricing-label">
+                                        <a href="pdf/COACHING_PREMIUM.pdf" target="_blank"> VISUALIZZA DETTAGLI</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- News Section -->
+                <div id="news" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">IL MIO BLOG</h3>
+                    </div>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <div class="blog-holder-scode latest-posts-scode block center-relative">
+                                <article class="relative blog-item-holder-scode">
+                                    <div class="post-thumbnail">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/le-paure-dei-runners-come-vincerle-di-corsa" target="_blank">
+                                            <div class="latest-posts-background-featured-image-holder" data-background-image="images/blog_img_01.png"></div>
+                                        </a>
+                                    </div>
+                                    <h4 class="entry-title">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/le-paure-dei-runners-come-vincerle-di-corsa" target="_blank">
+                                            LE PAURE DEI RUNNERS
+                                        </a>
+                                    </h4>
+                                    <div class="excerpt">
+                                        Ogni Runner, Beginner o Expert che sia, nutre paure (molto spesso irrazionali) durante la Corsa. In questo blog ho raccolto le 3 più comuni e alcuni fondamentali consigli per affrontarle ...
+                                    </div>
+                                </article>
+                                <article class="relative blog-item-holder-scode">
+                                    <div class="post-thumbnail">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/dai-cento-metri-alla-maratona" target="_blank">
+                                            <div class="latest-posts-background-featured-image-holder" data-background-image="images/blog_img_02.jpg"></div>
+                                        </a>
+                                    </div>
+                                    <h4 class="entry-title">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/dai-cento-metri-alla-maratona" target="_blank">
+                                            DAI CENTO METRI ALLA MARATONA
+                                        </a>
+                                    </h4>
+                                    <div class="excerpt">
+                                        Da Atleta correvo i 100 metri, Ora alleno i Maratoneti! Essere ASICS FrontRunner è un Onore, un nuovo punto di partenza per diffondere sempre più questo messaggio: SoundMindSoundBody ...
+                                    </div>
+                                </article>
+                                <article class="relative blog-item-holder-scode">
+                                    <div class="post-thumbnail">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/asics-novablast-2-la-scarpa-perfetta-per-ogni-corsa" target="_blank">
+                                            <div class="latest-posts-background-featured-image-holder" data-background-image="images/blog_img_03.jpg"></div>
+                                        </a>
+                                    </div>
+                                    <h4 class="entry-title">
+                                        <a href="https://www.asics.com/it/it-it/frontrunner/articles/asics-novablast-2-la-scarpa-perfetta-per-ogni-corsa" target="_blank">
+                                            ASICS NOVABLAST 2
+                                        </a>
+                                    </h4>
+                                    <div class="excerpt">
+                                        Asics Novablast 2 è una scarpa da allenamento quotidiano per corse comode ma vivaci. 
                     Il punto di forza è la sua multipotenzialità: ammortizzata sì, reattiva anche! ...
-                  </div>
-                </article>
-              </div>
-              <br />
-              <div class="button-holder center-text">
-                <a href="https://www.asics.com/it/it-it/frontrunner/profile?key=58299" class="button" target="_blank"> VAI AL BLOG </a>
-              </div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
-
-        <!-- Reviews Section -->
-        <div id="clients" class="section no-page-title">                   
-            <div class="section-wrapper block content-1170 center-relative">                                                
-                <div class="content-wrapper">
-                  <div class="one" data-threshold="0 0" data-jarallax-element="60 0">
-                      <h4 class="entry-title title_services black-text">
-                          STORIE DEI MIEI RUNNERS
-                      </h4>
-                      <script>
+                                    </div>
+                                </article>
+                            </div>
+                            <br>
+                            <div class="button-holder center-text">
+                                <a href="https://www.asics.com/it/it-it/frontrunner/profile?key=58299" class="button" target="_blank"> VAI AL BLOG</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- Reviews Section -->
+                <div id="clients" class="section no-page-title">
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <div class="one" data-threshold="0 0" data-jarallax-element="60 0">
+                                <h4 class="entry-title title_services black-text">
+                                    STORIE DEI MIEI RUNNERS
+                                </h4>
+                                <script>
                           var textSlider_speed = "20000";
                           var textSlider_auto = "true";
                           var textSlider_hover = "true";
-                      </script>
-
-                      <div class="text-slider-wrapper relative">
-                          <div class="text-slider-header-quotes"></div>
-                          <div id="textSlider" class="text-slider slider owl-carousel owl-theme">
-
-                              <div class="text-slide">
-                                <div class="rounded_name"><h5>M</h5></div>
-                                <p class="text-slide-name">Marta</p><br />
-                                <p class="text-slide-position">ALERUNNER</p>
-                                <p class="text-slide-content">
-                                  Ho deciso di affidarmi ad Alex in quanto Running Coach perché correvo da circa un anno e mezzo con costanza, ma dopo i primi progressi mi ero un po’ “stabilizzata” e non vedevo più miglioramenti nelle mie corse.<br />
-                                </p>
-                                <p class="text-slide-content toggle_recensione" style="display: none;">
-                                  Prima di iniziare il percorso di Coaching avevo difficoltà nell'affrontare un’intera sessione di corsa senza dover ricorrere a delle pause di camminata necessarie a riprendere fiato.<br />
-                                  Durante il percorso ho imparato a conoscere l’importanza del riscaldamento, rispettando così i tempi di adattamento all’attività del mio corpo. Ho imparato inoltre a gestire la fatica, a variare continuamente le tipologie di allenamento, alternando corse veloci e brevi a corse lente e lunghe.<br />
-                                  Ho scoperto che le salite sono delle brutte compagne di corsa, ma accidenti quanto servono; tutta questa varietà degli allenamenti rende le uscite uniche e divertenti! <br />
-                                  I programmi di allenamento sono sempre molto chiari e vengono sempre discussi prima durante l'incontro iniziale in cui si fissano gli obiettivi che cambiano ogni 4 settimane.<br />
-                                  I benefici che ho ottenuno sono stati inimmaginabili. Dopo questa esperienza, che per me dura da 5 mesi, sono arrivata a correre 14 km senza mai fermarmi. Ovviamente anche i tempi sono migliorati tantissimo. <br />
-                                  Il servizio di Feedback è sempre preciso, puntuale ed utilissimo perché la scheda può essere soggetta a modifiche in base alle sensazioni che noi runners comunichiamo ad Alexander.
-                                </p>
-                                <p class="text-slide-btn">
-                                  <a href="#" class="button"> VISUALIZZA TUTTO </a>
-                                </p>
-                              </div>
-
-                              <div class="text-slide">
-                                <div class="rounded_name"><h5>V</h5></div>
-                                <p class="text-slide-name">Veronica</p><br />
-                                <p class="text-slide-position">ALERUNNER</p>
-                                <p class="text-slide-content">
-                                  Ho deciso di affidarmi ad Alexander in quanto Running Coach perché cercavo professionalità e conoscenze tecniche per il mio percorso di crescita nella corsa. Cercavo un Coach con spiccate doti umane e relazionali come lui: una persona vera, onesta e sincera e sono felicissima di non essermi sbagliata.
-                                </p>
-                                <p class="text-slide-content toggle_recensione" style="display: none;">
-                                  Prima di iniziare il percorso i miei problemi erano la scarsa motivazione e la poca costanza negli allenamenti perché gli obiettivi sembravano irraggiungibili e lontani.<br />
-                                  Durante il percorso ho imparato a dare la giusta importanza agli allenamenti, a cercare di prendermi i miei spazi e soprattutto a fare il corretto riscaldamento che, lo ammetto, fa la differenza!<br />
-                                  I programmi di allenamento sono una vera bomba!! Venendo dal basket la corsa prima mi annoiava, ma ora grazie ad Alex mi diverto!<br />
-                                  I benefici che ho ottenuto sono: miglioramento nella tecnica di corsa, fiducia nel raggiungimento degli obiettivi, miglioramento dei tempi di corsa e soprattutto felicità in movimento.<br />
-                                  Il servizio di feedback di Alex è un vero e proprio valore aggiunto. È Sempre costruttivo, pieno di consigli e spunti per migliorare già dall’allenamento successivo. Alexander  riesce sempre a trovare il positivo anche nei momenti più difficili.
-                                </p>
-                                <p class="text-slide-btn">
-                                  <a href="#" class="button"> VISUALIZZA TUTTO </a>
-                                </p>
-                              </div>
-
-                              <div class="text-slide">
-                                <div class="rounded_name"><h5>L</h5></div>
-                                <p class="text-slide-name">Luca</p><br />
-                                <p class="text-slide-position">ALERUNNER</p>
-                                <p class="text-slide-content">
-                                  Mi sono affidato ad Alex perché dopo quasi cinque anni che correvo, sentivo il bisogno di fare un salto di qualità nella corsa. <br />
-                                </p>
-                                <p class="text-slide-content toggle_recensione" style="display: none;">
-                                  Da autodidatta non riuscivo più a migliorare da solo e avevo bisogno di qualcuno che mi desse un nuovo ritmo. <br />
-                                  Nonostante l’impegno mi ero accorto che i miei allenamenti “a caso” producevano solamente risultati casuali. <br />
-                                  Sbirciando tra i post di Alexander su Instagram, ho avuto subito l'impressione di grande serietà e preparazione. <br />
-                                  La mia scelta di affidarmi a lui si è rivelata azzeccatissima! Fin dal primo incontro avvenuto online, Alexander si è subito dimostrato preparato, serio, empatico e capace di capire le mie esigenze e difficoltà. <br />
-                                  Dopo aver analizzato le mie abitudini nella corsa, ha preparato una scheda ad hoc, calzata su misura per me e quindi unica. <br />
-                                  Durante questo percorso ho imparato a programmare gli allenamenti e soprattutto a gestire il passo, dosando le forze , cosa che prima non riuscivo a fare. <br />
-                                  Il servizio di feedback che fornisce è parte fondamentale del percorso, poiché oltre a indicarti eventuali errori o fugarti i dubbi, ti fornisce quello stimolo in più gratificandoti dopo gli allenamenti. <br />
-                                  A distanza di tre mesi dall’inizio del coaching, posso dire di essere diventato un runner più forte e consapevole mentalmente. Sono più soddisfatto che mai per la scelta fatta e a breve comincerò anche a testarmi in qualche gara.<br />
-                                  Grazie Alex!
-                                </p>
-                                <p class="text-slide-btn">
-                                  <a href="#" class="button"> VISUALIZZA TUTTO </a>
-                                </p>
-                              </div>
-
-                          </div>
-                          <div class="clear"></div>                                        
-                      </div>                    
-                  </div>                            
+                                </script>
+                                <div class="text-slider-wrapper relative">
+                                    <div class="text-slider-header-quotes"></div>
+                                    <div id="textSlider" class="text-slider slider owl-carousel owl-theme">
+                                        <div class="text-slide">
+                                            <div class="rounded_name">
+                                                <h5>M</h5>
+                                            </div>
+                                            <p class="text-slide-name">Marta</p>
+                                            <br>
+                                            <p class="text-slide-position">ALERUNNER</p>
+                                            <p class="text-slide-content">
+                                                Ho deciso di affidarmi ad Alex in quanto Running Coach perché correvo da circa un anno e mezzo con costanza, ma dopo i primi progressi mi ero un po’ “stabilizzata” e non vedevo più miglioramenti nelle mie corse.
+                                                <br>
+                                            </p>
+                                            <p class="text-slide-content toggle_recensione" style="display: none;">
+                                                Prima di iniziare il percorso di Coaching avevo difficoltà nell'affrontare un’intera sessione di corsa senza dover ricorrere a delle pause di camminata necessarie a riprendere fiato.
+                                                <br>
+                                                Durante il percorso ho imparato a conoscere l’importanza del riscaldamento, rispettando così i tempi di adattamento all’attività del mio corpo. Ho imparato inoltre a gestire la fatica, a variare continuamente le tipologie di allenamento, alternando corse veloci e brevi a corse lente e lunghe.
+                                                <br>
+                                                Ho scoperto che le salite sono delle brutte compagne di corsa, ma accidenti quanto servono; tutta questa varietà degli allenamenti rende le uscite uniche e divertenti!
+                                                <br>
+                                                I programmi di allenamento sono sempre molto chiari e vengono sempre discussi prima durante l'incontro iniziale in cui si fissano gli obiettivi che cambiano ogni 4 settimane.
+                                                <br>
+                                                I benefici che ho ottenuno sono stati inimmaginabili. Dopo questa esperienza, che per me dura da 5 mesi, sono arrivata a correre 14 km senza mai fermarmi. Ovviamente anche i tempi sono migliorati tantissimo.
+                                                <br>
+                                                Il servizio di Feedback è sempre preciso, puntuale ed utilissimo perché la scheda può essere soggetta a modifiche in base alle sensazioni che noi runners comunichiamo ad Alexander.
+                                            </p>
+                                            <p class="text-slide-btn">
+                                                <a href="#" class="button"> VISUALIZZA TUTTO</a>
+                                            </p>
+                                        </div>
+                                        <div class="text-slide">
+                                            <div class="rounded_name">
+                                                <h5>V</h5>
+                                            </div>
+                                            <p class="text-slide-name">Veronica</p>
+                                            <br>
+                                            <p class="text-slide-position">ALERUNNER</p>
+                                            <p class="text-slide-content">
+                                                Ho deciso di affidarmi ad Alexander in quanto Running Coach perché cercavo professionalità e conoscenze tecniche per il mio percorso di crescita nella corsa. Cercavo un Coach con spiccate doti umane e relazionali come lui: una persona vera, onesta e sincera e sono felicissima di non essermi sbagliata.
+                                            </p>
+                                            <p class="text-slide-content toggle_recensione" style="display: none;">
+                                                Prima di iniziare il percorso i miei problemi erano la scarsa motivazione e la poca costanza negli allenamenti perché gli obiettivi sembravano irraggiungibili e lontani.
+                                                <br>
+                                                Durante il percorso ho imparato a dare la giusta importanza agli allenamenti, a cercare di prendermi i miei spazi e soprattutto a fare il corretto riscaldamento che, lo ammetto, fa la differenza!
+                                                <br>
+                                                I programmi di allenamento sono una vera bomba!! Venendo dal basket la corsa prima mi annoiava, ma ora grazie ad Alex mi diverto!
+                                                <br>
+                                                I benefici che ho ottenuto sono: miglioramento nella tecnica di corsa, fiducia nel raggiungimento degli obiettivi, miglioramento dei tempi di corsa e soprattutto felicità in movimento.
+                                                <br>
+                                                Il servizio di feedback di Alex è un vero e proprio valore aggiunto. È Sempre costruttivo, pieno di consigli e spunti per migliorare già dall’allenamento successivo. Alexander  riesce sempre a trovare il positivo anche nei momenti più difficili.
+                                            </p>
+                                            <p class="text-slide-btn">
+                                                <a href="#" class="button"> VISUALIZZA TUTTO</a>
+                                            </p>
+                                        </div>
+                                        <div class="text-slide">
+                                            <div class="rounded_name">
+                                                <h5>L</h5>
+                                            </div>
+                                            <p class="text-slide-name">Luca</p>
+                                            <br>
+                                            <p class="text-slide-position">ALERUNNER</p>
+                                            <p class="text-slide-content">
+                                                Mi sono affidato ad Alex perché dopo quasi cinque anni che correvo, sentivo il bisogno di fare un salto di qualità nella corsa.
+                                                <br>
+                                            </p>
+                                            <p class="text-slide-content toggle_recensione" style="display: none;">
+                                                Da autodidatta non riuscivo più a migliorare da solo e avevo bisogno di qualcuno che mi desse un nuovo ritmo.
+                                                <br>
+                                                Nonostante l’impegno mi ero accorto che i miei allenamenti “a caso” producevano solamente risultati casuali.
+                                                <br>
+                                                Sbirciando tra i post di Alexander su Instagram, ho avuto subito l'impressione di grande serietà e preparazione.
+                                                <br>
+                                                La mia scelta di affidarmi a lui si è rivelata azzeccatissima! Fin dal primo incontro avvenuto online, Alexander si è subito dimostrato preparato, serio, empatico e capace di capire le mie esigenze e difficoltà.
+                                                <br>
+                                                Dopo aver analizzato le mie abitudini nella corsa, ha preparato una scheda ad hoc, calzata su misura per me e quindi unica.
+                                                <br>
+                                                Durante questo percorso ho imparato a programmare gli allenamenti e soprattutto a gestire il passo, dosando le forze , cosa che prima non riuscivo a fare.
+                                                <br>
+                                                Il servizio di feedback che fornisce è parte fondamentale del percorso, poiché oltre a indicarti eventuali errori o fugarti i dubbi, ti fornisce quello stimolo in più gratificandoti dopo gli allenamenti.
+                                                <br>
+                                                A distanza di tre mesi dall’inizio del coaching, posso dire di essere diventato un runner più forte e consapevole mentalmente. Sono più soddisfatto che mai per la scelta fatta e a breve comincerò anche a testarmi in qualche gara.
+                                                <br>
+                                                Grazie Alex!
+                                            </p>
+                                            <p class="text-slide-btn">
+                                                <a href="#" class="button"> VISUALIZZA TUTTO</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Link utili -->
+                <div id="utils" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">LINK UTILI</h3>
+                    </div>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper" data-threshold="0 0" data-jarallax-element="60 0">
+                            <div class="card trigger_link_click">
+                                <div class="box">
+                                    <div class="content">
+                                        <h2>01</h2>
+                                        <h3>Gruppo
+                                            <br> Telegram
+                                        </h3>
+                                        <p>Entra nel gruppo telegram per poter visualizzare contenuti esclusivi ed avere aggiornamenti costanti sugli ultimi eventi/offerte.</p>
+                                        <a href="https://t.me/AlexanderSerra" class="trigger_that">Entra qui</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="rounded_icon">
+                                    <span class="fa fa-telegram"></span>
+                                </a>
+                            </div>
+                            <div class="card trigger_link_click">
+                                <div class="box">
+                                    <div class="content">
+                                        <h2>02</h2>
+                                        <h3>Asics
+                                            <br> FrontRunner
+                                        </h3>
+                                        <p>Faccio parte della community Asics FrontRunner che conta più di 700 membri che condividono un obiettivo: far muovere il mondo per una mente sana in un corpo sano.</p>
+                                        <a href="https://www.asics.com/it/it-it/frontrunner" class="bc_secondary trigger_that">Visualizza sito</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="rounded_icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                                        <path d="M15.037 34.034c-2.576 0-3.813-1.981-3.169-4.274 1.336-4.75 9.917-11.79 15.764-11.79 4.269 0 3.941 3.815 1.442 7.071l-1.382 1.528c-4.957 4.866-9.553 7.465-12.655 7.465zM35.939 2c-7.463.003-15.684 4.569-20.843 8.894l.407.59c8.009-5.615 19.126-9.268 22.191-3.79 1.618 2.891-1.13 8.726-4.998 13.34.928-2.038.316-5.949-5.077-5.949C18.65 15.084 1 26.964 1 39.119c0 4.871 3.377 8.049 8.94 8.049 14.895 0 35.097-24.416 35.097-36.679C45.036 6.158 42.544 2 35.939 2zM55.114 0 0 1 1.651.687z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="card trigger_link_click">
+                                <div class="box">
+                                    <div class="content">
+                                        <h2>03</h2>
+                                        <h3>Call
+                                            <br> conoscitiva
+                                        </h3>
+                                        <p>Prenota una call conoscitiva da 15 minuti completamente gratuita dove sarò a tua disposizione per aiutarti nella scelta del Coaching.</p>
+                                        <a href="https://calendly.com/alerun/15min?month=2022-05" class="trigger_that">Richiedi ora</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="rounded_icon">
+                                    <span class="fa fa-calendar"></span>
+                                </a>
+                            </div>
+                            <div class="card trigger_link_click">
+                                <div class="box">
+                                    <div class="content">
+                                        <h2>04</h2>
+                                        <h3>I miei
+                                            <br> raduni
+                                        </h3>
+                                        <p>Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ti aspetto ai miei raduni!</p>
+                                        <a href="/raduni" class="trigger_that">Visualizza tutti</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="rounded_icon">
+                                    <span class="fa fa-group"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="button-holder center">
+                            <a href="#contact" class="button-dot">
+                                <span>CONTATTAMI</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Section -->
+                <div id="contact" class="section">
+                    <div class="page-title-holder">
+                        <h3 class="entry-title">CONTATTAMI</h3>
+                    </div>
+                    <div class="section-wrapper block content-1170 center-relative">
+                        <div class="content-wrapper">
+                            <div class="one_half">
+                                <p class="title-description-up">RICHIEDI INFORMAZIONI</p>
+                                <h2 class="entry-title medium-text">
+                                    RAGGIUNGIAMO INSIEME IL TUO OBIETTIVO
+                                </h2>
+                                <div class="button-holder center-text">
+                                    <a href="mailto:alerunner91@gmail.com" class="button">
+                                        <span class="fa fa-commenting-o"></span>
+                                        SCRIVIMI ALLA MAIL ALERUNNER91@GMAIL.COM
+                                    </a>
+                                </div>
+                                <div class="button-holder center-text">
+                                    <a href="https://wa.link/lunpdl" class="button">
+                                        <span class="fa fa-whatsapp"></span>
+                                        CONTATTAMI AL +39 3206349783
+                                    </a>
+                                </div>
+                                <div class="button-holder center-text">
+                                    <a href="https://www.instagram.com/runningcoach_/" class="button">
+                                        <span class="fa fa-instagram"></span>
+                                        SCOPRIMI SU INSTAGRAM
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="one_half last">
+                                <div class="contact-form">
+                                    <p>
+                                        <input
+                                            id="name"
+                                            type="text"
+                                            name="nome"
+                                            placeholder="Nome"
+                                        >
+                                    </p>
+                                    <p class="full_center_column_mobile">
+                                        <input
+                                            id="contact-email"
+                                            type="email"
+                                            name="email"
+                                            placeholder="Email"
+                                        >
+                                        <input
+                                            id="contact-telephone"
+                                            type="tel"
+                                            name="telefono"
+                                            placeholder="Telefono"
+                                        >
+                                    </p>
+                                    <p>
+                                        <input
+                                            id="subject"
+                                            type="text"
+                                            name="richiesta"
+                                            placeholder="Oggetto"
+                                        >
+                                    </p>
+                                    <p>
+                                        <textarea id="message" name="messaggio" placeholder="Messaggio"></textarea>
+                                    </p>
+                                    <p class="contact-submit-holder">
+                                        <a href="#" id="invia_mail" class="button">
+                                            INVIA MESSAGGIO
+                                            <span class="fa fa-envelope-square"></span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Link utili -->
-        <div id="utils" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">LINK UTILI</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper" data-threshold="0 0" data-jarallax-element="60 0">
-              <div class="card trigger_link_click">
-                <div class="box">
-                  <div class="content">
-                    <h2>01</h2>
-                    <h3>Gruppo<br /> Telegram</h3>
-                    <p>Entra nel gruppo telegram per poter visualizzare contenuti esclusivi ed avere aggiornamenti costanti sugli ultimi eventi/offerte.</p>
-                    <a href="https://t.me/AlexanderSerra" class="trigger_that">Entra qui</a>
-                  </div>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content center-relative">
+                    <div class="footer-logo">
+                        <img src="images/logo_completo.png" alt="Seppo">
+                    </div>
+                    <div class="footer-social-divider"></div>
+                    <div class="full_center_column_mobile">
+                        <div class="copyright-holder">
+                            ©
+                            <span id="year"></span>
+                            , Coded by
+                            <a href="https://www.erikwski.com">Erikwski</a>
+                        </div>
+                        <div class="copyright-holder">
+                            <a href="policy.html">Visualizza la nostra Privacy Policy Cookie</a>
+                        </div>
+                        <div class="copyright-holder">
+                            <a href="pdf/TERMINI_CONDIZIONI.pdf">Termini e condizioni di vendita</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="#" class="rounded_icon">
-                  <span class="fa fa-telegram"></span>
-                </a>
-              </div>
-
-              <div class="card trigger_link_click">
-                <div class="box">
-                  <div class="content">
-                    <h2>02</h2>
-                    <h3>Asics<br /> FrontRunner</h3>
-                    <p>Faccio parte della community Asics FrontRunner che conta più di 700 membri che condividono un obiettivo: far muovere il mondo per una mente sana in un corpo sano.</p>
-                    <a href="https://www.asics.com/it/it-it/frontrunner" class="bc_secondary trigger_that">Visualizza sito</a>
-                  </div>
+            </footer>
+            <div id="cookie_policy">
+                <div id="policy_text">
+                    <h5>
+                        <i>Questo sito web utilizza i Cookie</i>
+                    </h5>
+                    <a href="policy.html" class="c_primary">Visualizza la nostra policy</a>
                 </div>
-                <a href="#" class="rounded_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M15.037 34.034c-2.576 0-3.813-1.981-3.169-4.274 1.336-4.75 9.917-11.79 15.764-11.79 4.269 0 3.941 3.815 1.442 7.071l-1.382 1.528c-4.957 4.866-9.553 7.465-12.655 7.465zM35.939 2c-7.463.003-15.684 4.569-20.843 8.894l.407.59c8.009-5.615 19.126-9.268 22.191-3.79 1.618 2.891-1.13 8.726-4.998 13.34.928-2.038.316-5.949-5.077-5.949C18.65 15.084 1 26.964 1 39.119c0 4.871 3.377 8.049 8.94 8.049 14.895 0 35.097-24.416 35.097-36.679C45.036 6.158 42.544 2 35.939 2zM55.114 0 0 1 1.651.687z"/></svg>
+                <a href="#" id="confirm_cookie">
+                    <span class="fa fa-check"></span>
                 </a>
-              </div>
-
-              <div class="card trigger_link_click">
-                <div class="box">
-                  <div class="content">
-                    <h2>03</h2>
-                    <h3>Call<br /> conoscitiva</h3>
-                    <p>Prenota una call conoscitiva da 15 minuti completamente gratuita dove sarò a tua disposizione per aiutarti nella scelta del Coaching.</p>
-                    <a href="https://calendly.com/alerun/15min?month=2022-05" class="trigger_that">Richiedi ora</a>
-                  </div>
-                </div>
-                <a href="#" class="rounded_icon">
-                  <span class="fa fa-calendar"></span>
+                <a href="#" id="confirm_cookie_btn" class="button">
+                    ACCETTA
                 </a>
-              </div>
-
-              <div class="card trigger_link_click">
-                <div class="box">
-                  <div class="content">
-                    <h2>04</h2>
-                    <h3>I miei<br /> raduni</h3>
-                    <p>Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ti aspetto ai miei raduni!</p>
-                    <a href="/raduni" class="trigger_that">Visualizza tutti</a>
-                  </div>
-                </div>
-                <a href="#" class="rounded_icon">
-                  <span class="fa fa-group"></span>
-                </a>
-              </div>
             </div>
-            <div class="button-holder center">
-              <a href="#contact" class="button-dot">
-                <span>CONTATTAMI</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div id="contact" class="section">
-          <div class="page-title-holder">
-            <h3 class="entry-title">CONTATTAMI</h3>
-          </div>
-          <div class="section-wrapper block content-1170 center-relative">
-            <div class="content-wrapper">
-              <div class="one_half">
-                <p class="title-description-up">RICHIEDI INFORMAZIONI</p>
-                <h2 class="entry-title medium-text">
-                  RAGGIUNGIAMO INSIEME IL TUO OBIETTIVO
-                </h2>
-                <div class="button-holder center-text">
-                  <a href="mailto:alerunner91@gmail.com" class="button">
-                    <span class="fa fa-commenting-o"></span>
-                    SCRIVIMI ALLA MAIL ALERUNNER91@GMAIL.COM
-                  </a>
-                </div>
-                <div class="button-holder center-text">
-                  <a href="https://wa.link/lunpdl" class="button">
-                    <span class="fa fa-whatsapp"></span>
-                    CONTATTAMI AL +39 3206349783
-                  </a>
-                </div>
-                <div class="button-holder center-text">
-                  <a href="https://www.instagram.com/runningcoach_/" class="button">
-                    <span class="fa fa-instagram"></span>
-                    SCOPRIMI SU INSTAGRAM
-                  </a>
-                </div>
-              </div>
-
-              <div class="one_half last">
-                <div class="contact-form">
-                  <p>
-                    <input
-                      id="name"
-                      type="text"
-                      name="nome"
-                      placeholder="Nome"
-                    />
-                  </p>
-                  <p class="full_center_column_mobile">
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                    />
-                    <input
-                      id="contact-telephone"
-                      type="tel"
-                      name="telefono"
-                      placeholder="Telefono"
-                    />
-                  </p>
-                  <p>
-                    <input
-                      id="subject"
-                      type="text"
-                      name="richiesta"
-                      placeholder="Oggetto"
-                    />
-                  </p>
-                  <p>
-                    <textarea
-                      id="message"
-                      name="messaggio"
-                      placeholder="Messaggio"
-                    ></textarea>
-                  </p>
-                  <p class="contact-submit-holder">
-                    <a href="#" id="invia_mail" class="button">
-                      INVIA MESSAGGIO
-                      <span class="fa fa-envelope-square"></span>
+            <div id="modale_pagamento">
+                <div id="cont_close">
+                    <a href="#" id="close_modale" class="circle_btn_modale">
+                        <span class="fa fa-close"></span>
                     </a>
-                  </p>
                 </div>
-              </div>
-              <div class="clear"></div>
+                <div style="transition: 0.7s all .7s;">
+                    <h5 id="titolo_modale">HAI SELEZIONATO IL COACHING
+                        <span class="c_secondary" id="nome_pacchetto"></span>
+                    </h5>
+                </div>
+                <div class="hide_on_bonifico" style="transition: 0.7s all .8s;">
+                    <label id="label_modale">Seleziona clickando sul pacchetto che fa per te
+                    </h5>
+                </div>
+                <div class="hide_on_bonifico" id="card_container" style="transition: 0.7s all .8s;">
+                    <div class="card_pacchetti" id="pacc_mensile">
+                        <h6>MENSILE</h6>
+                        <h4 id="costo_mensile" class="price_tag"></h4>
+                        <div class="cont_ico_pacc">
+                            <img src="images/logo.png">
+                        </div>
+                    </div>
+                    <div class="card_pacchetti" id="pacc_trimestrale">
+                        <h6>TRIMESTRALE</h6>
+                        <h4 id="costo_trimestrale" class="price_tag"></h4>
+                        <div class="cont_ico_pacc">
+                            <img src="images/logo.png">
+                            <img src="images/logo.png">
+                            <img src="images/logo.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="hide_on_bonifico" id="dati_acquirente">
+                    <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
+                    <label id="label_last_buy">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
+                    <div class="contact-form" style="padding: 1rem 1rem 0;">
+                        <p>
+                            <input
+                                maxlength="100"
+                                autocomplete="name"
+                                id="name_buyer"
+                                type="text"
+                                name="nome"
+                                placeholder="Cognome e nome"
+                            >
+                        </p>
+                        <p>
+                            <input
+                                maxlength="64"
+                                autocomplete="off"
+                                id="cod_fisc_buyer"
+                                type="text"
+                                name="cod_fisc"
+                                placeholder="Codice fiscale/Partita IVA"
+                            >
+                        </p>
+                        <p class="full_center_column_mobile">
+                            <input
+                                maxlength="255"
+                                autocomplete="email"
+                                id="email_buyer"
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                            >
+                            <input
+                                maxlength="63"
+                                autocomplete="tel"
+                                id="telephone_buyer"
+                                type="tel"
+                                name="telefono"
+                                placeholder="Telefono"
+                            >
+                        </p>
+                        <p class="full_center_column_address">
+                            <input
+                                maxlength="255"
+                                autocomplete="address-line1"
+                                id="address_buyer"
+                                type="text"
+                                name="address"
+                                placeholder="Indirizzo stradale"
+                            >
+                            <input
+                                maxlength="127"
+                                autocomplete="address-level2"
+                                id="city_buyer"
+                                type="text"
+                                name="city"
+                                placeholder="Località"
+                            >
+                            <input
+                                maxlength="10"
+                                autocomplete="postal-code"
+                                id="cap_buyer"
+                                type="text"
+                                name="cap"
+                                placeholder="Cap"
+                            >
+                            <input
+                                maxlength="2"
+                                autocomplete="address-level1"
+                                id="prov_buyer"
+                                type="text"
+                                name="province"
+                                placeholder="Provincia"
+                            >
+                        </p>
+                        <p class="cont_checkbox">
+                            <input type="checkbox" id="privacy_policy">
+                            <label for="privacy_policy">Ho letto e acconsento al trattamento dei miei dati secondo
+                                <a href="policy.html" target="_blank">l'informativa privacy e la cookie policy</a>
+                            </label>
+                        </p>
+                        <p class="cont_checkbox">
+                            <input type="checkbox" id="condizioni_vendita">
+                            <label for="condizioni_vendita">Ho letto e accetto le presenti
+                                <a href="pdf/TERMINI_CONDIZIONI.pdf" target="_blank">condizioni di vendita</a>, ivi inclusa la perdita del diritto di recesso una volta iniziato il coaching ai sensi dell'art. 59 Codice del Consumo"
+                            </label>
+                        </p>
+                        <p class="cont_checkbox">
+                            <input type="checkbox" id="clausole_vessatorie">
+                            <label for="clausole_vessatorie">Approvo espressamente le seguenti clausole:
+                                <br>Art. 3.1) Fruizione delle tabelle di allenamento - esonero da responsabilità;
+                                <br> 3.2) Idoneità fisica ed esonero responsabilità;
+                                <br> Art. 3.3) Durata del coaching e sospensione - clausola risolutiva espressa; Art.
+                                <br> 3.4) Risoluzione anticipata - penale; Art.
+                                <br> 3.5) Attivazione coaching e clausola risolutiva espressa;
+                                <br> Art. 4) Pagamento, clausola risolutiva espressa - esonero da responsabilità;
+                                <br> Art. 6) Divieto di divulgazione - esonero da responsabilità;
+                                <br> Art. 7) Patto di non concorrenza;
+                                <br> Art. 8.2) Recesso - esclusione;
+                                <br> Art. 10) Esonero da responsabilità;
+                                <br> Art. 13) Legge applicabile, giurisdizione di riferimento e foro competente
+                            </label>
+                        </p>
+                        <p class="contact-submit-holder">
+                            <a
+                                href="#!"
+                                id="fake_paypal_btn"
+                                class="button"
+                                disabled
+                            >
+                                COMPILA I DATI OBBLIGATORI
+                                <span class="fa fa-paypal hide_on_mobile"></span>
+                            </a>
+                            <div id="paypal_container"></div>
+                        </p>
+                        <p id="oppure_pay_label">
+                            <label>oppure</label>
+                        </p>
+                        <a
+                            href="#!"
+                            id="fake_bonifico"
+                            class="button"
+                            disabled
+                        >
+                            BONIFICO BANCARIO
+                            <span class="fa fa-bank hide_on_mobile"></span>
+                        </a>
+                        <p class="contact-submit-holder">
+                            <div id="dati_bonifico" class="show_when_valid">
+                                <a href="#" id="show_dati_bonifico" class="button">
+                                    ISTRUZIONI BONIFICO
+                                    <span class="fa fa-bank hide_on_mobile" style="margin-left: 1rem;"></span>
+                                </a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="toggle_dati_bonifico" style="display: none;">
+                    <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+                    <span>
+                        <i>Intestatario:</i> SERRA ALEXANDER
+                    </span>
+                    <span>
+                        <i>Iban:</i> IT30W0538766690000003286021
+                    </span>
+                    <span>
+                        <i>Causale:</i> COACHING PER IL RUNNING
+                    </span>
+                    <span>
+                        <i>Costo:</i>
+                    </span>
+                    <span id="info_bonifico_mensile">
+                        <b>Mensile:</b>
+                        <span>60€</span>
+                    </span>
+                    <span id="info_bonifico_trimestrale">
+                        <b>Quadrimestrale:</b>
+                        <span>197€</span>
+                    </span>
+                    <span>
+                        <i>
+                            Una volta effettuato BONIFICO INVIA COPIA ad
+                            <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a> oppure telefonicamente al
+                            <a href="tel:3206349783">3206349783</a>
+                            .
+                        </i>
+                    </span>
+                    <a href="#" id="back_to_normal_buy" class="circle_btn_modale">
+                        <span class="fa fa-arrow-left"></span>
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-content center-relative">
-          <div class="footer-logo">
-            <img src="images/logo_completo.png" alt="Seppo" />
-          </div>
-          <div class="footer-social-divider"></div>
-          
-          <div class="full_center_column_mobile">
-            <div class="copyright-holder">
-              © <span id="year"></span>, Coded by
-              <a href="https://www.erikwski.com">Erikwski</a>
-            </div>
-            <div class="copyright-holder">
-              <a href="policy.html">Visualizza la nostra Privacy Policy Cookie</a>
-            </div>
-            <div class="copyright-holder">
-              <a href="pdf/TERMINI_CONDIZIONI.pdf">Termini e condizioni di vendita</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-      
-      <div id="cookie_policy">
-        <div id="policy_text">
-          <h5><i>Questo sito web utilizza i Cookie</i></h5>
-          <a href="policy.html" class="c_primary">Visualizza la nostra policy</a>
-        </div>
-        <a href="#" id="confirm_cookie">
-          <span class="fa fa-check"></span>
-        </a>
-        <a href="#" id="confirm_cookie_btn" class="button">
-          ACCETTA
-        </a>
-      </div>
-
-      <div id="modale_pagamento">
-        <div id="cont_close">
-          <a href="#" id="close_modale" class="circle_btn_modale"><span class="fa fa-close"></span></a>
-        </div>
-        <div style="transition: 0.7s all .7s;">
-          <h5 id="titolo_modale">HAI SELEZIONATO IL COACHING <span class="c_secondary" id="nome_pacchetto"></span></h5>
-        </div>
-        <div class="hide_on_bonifico" style="transition: 0.7s all .8s;">
-          <label id="label_modale">Seleziona clickando sul pacchetto che fa per te</h5>
-        </div>
-        <div class="hide_on_bonifico" id="card_container" style="transition: 0.7s all .8s;">
-          <div class="card_pacchetti" id="pacc_mensile">
-            <h6>MENSILE</h6>
-            <h4 id="costo_mensile" class="price_tag"></h4>
-            <div class="cont_ico_pacc">
-              <img src="images/logo.png">
-            </div>
-          </div>
-          <div class="card_pacchetti" id="pacc_trimestrale">
-            <h6>TRIMESTRALE</h6>
-            <h4 id="costo_trimestrale" class="price_tag"></h4>
-            <div class="cont_ico_pacc">
-              <img src="images/logo.png">
-              <img src="images/logo.png">
-              <img src="images/logo.png">
-            </div>
-          </div>
-        </div>
-        <div class="hide_on_bonifico" id="dati_acquirente">
-          <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
-          <label id="label_last_buy">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
-          <div class="contact-form"style="padding: 1rem 1rem 0;">
-            <p>
-              <input maxlength="100" autocomplete="name" id="name_buyer" type="text" name="nome" placeholder="Cognome e nome">
-            </p>
-            <p>
-              <input maxlength="64" autocomplete="off" id="cod_fisc_buyer" type="text" name="cod_fisc" placeholder="Codice fiscale/Partita IVA">
-            </p>
-            <p class="full_center_column_mobile">
-              <input maxlength="255" autocomplete="email" id="email_buyer" type="email" name="email" placeholder="Email">
-              <input maxlength="63" autocomplete="tel" id="telephone_buyer" type="tel" name="telefono" placeholder="Telefono">
-            </p>
-            <p class="full_center_column_address">
-              <input maxlength="255" autocomplete="address-line1" id="address_buyer" type="text" name="address" placeholder="Indirizzo stradale">
-              <input maxlength="127" autocomplete="address-level2" id="city_buyer" type="text" name="city" placeholder="Località">
-              <input maxlength="10" autocomplete="postal-code" id="cap_buyer" type="text" name="cap" placeholder="Cap">
-              <input maxlength="2" autocomplete="address-level1" id="prov_buyer" type="text" name="province" placeholder="Provincia">
-            </p>
-            <p class="cont_checkbox">
-              <input type="checkbox" id="privacy_policy">
-              <label for="privacy_policy">Ho letto e acconsento al trattamento dei miei dati secondo <a href="policy.html" target="_blank">l'informativa privacy e la cookie policy</a></label>
-            </p>
-            <p class="cont_checkbox">
-              <input type="checkbox" id="condizioni_vendita">
-              <label for="condizioni_vendita">Ho letto e accetto le presenti <a href="pdf/TERMINI_CONDIZIONI.pdf" target="_blank">condizioni di vendita</a>, ivi inclusa la perdita del diritto di recesso una volta iniziato il coaching ai sensi dell'art. 59 Codice del Consumo" </label>
-            </p>
-            <p class="cont_checkbox">
-              <input type="checkbox" id="clausole_vessatorie">
-              <label for="clausole_vessatorie">Approvo espressamente le seguenti clausole: <br />Art. 3.1) Fruizione delle tabelle di allenamento - esonero da responsabilità;<br /> 3.2) Idoneità fisica ed esonero responsabilità;<br /> Art. 3.3) Durata del coaching e sospensione - clausola risolutiva espressa; Art.<br /> 3.4) Risoluzione anticipata - penale; Art.<br /> 3.5) Attivazione coaching e clausola risolutiva espressa;<br /> Art. 4) Pagamento, clausola risolutiva espressa - esonero da responsabilità;<br /> Art. 6) Divieto di divulgazione - esonero da responsabilità;<br /> Art. 7) Patto di non concorrenza;<br /> Art. 8.2) Recesso - esclusione;<br /> Art. 10) Esonero da responsabilità;<br /> Art. 13) Legge applicabile, giurisdizione di riferimento e foro competente</label>
-            </p>
-            <p class="contact-submit-holder">
-              <a href="#!" id="fake_paypal_btn" class="button" disabled>
-                COMPILA I DATI OBBLIGATORI
-                <span class="fa fa-paypal hide_on_mobile"></span>
-              </a>
-              <div id="paypal_container"></div>
-            </p>
-            <p id="oppure_pay_label">
-              <label>oppure</label>
-            </p>
-            <a href="#!" id="fake_bonifico" class="button" disabled>
-                BONIFICO BANCARIO
-                <span class="fa fa-bank hide_on_mobile"></span>
-              </a>
-            <p class="contact-submit-holder">
-              <div id="dati_bonifico" class="show_when_valid">
-                <a href="#" id="show_dati_bonifico" class="button">
-                  ISTRUZIONI BONIFICO
-                  <span class="fa fa-bank hide_on_mobile" style="margin-left: 1rem;"></span>
-                </a>
-              </div>
-            </p>
-          </div>
-        </div>
-        <div class="toggle_dati_bonifico" style="display: none;">
-          <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
-          <span><i>Intestatario:</i> SERRA ALEXANDER</span>
-          <span><i>Iban:</i> IT32K0567617295IB0000668343</span>
-          <span><i>Causale:</i> COACHING PER IL RUNNING</span>
-          <span><i>Costo:</i></span>
-          <span id="info_bonifico_mensile"><b>Mensile:</b> <span>60€</span></span>
-          <span id="info_bonifico_trimestrale"><b>Quadrimestrale:</b> <span>197€</span></span>
-          <span>
-            <i>
-              Una volta effettuato BONIFICO INVIA COPIA ad <a href="mailto:ALERUNNER91@GMAIL.COM">ALERUNNER91@GMAIL.COM</a> oppure telefonicamente al <a href="tel:3206349783">3206349783</a>.
-            </i>
-          </span>
-          <a href="#" id="back_to_normal_buy" class="circle_btn_modale">
-            <span class="fa fa-arrow-left"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <!--Load JavaScript-->
-    <script src="js/jquery.js"></script>
-    <script src="js/jarallax.js"></script>
-    <script src="js/jarallax-element.min.js"></script>
-    <script src="js/imagesloaded.pkgd.js"></script>
-    <script src="js/jquery.fitvids.js"></script>
-    <script src="js/jquery.smartmenus.min.js"></script>
-    <script src="js/isotope.pkgd.js"></script>
-    <script src='js/owl.carousel.min.js'></script>       
-    <script src='js/sweetalert.js'></script>    
-    <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>  
-    <script src="js/main_landing.js"></script>
-  </body>
+        <!--Load JavaScript-->
+        <script src="js/jquery.js"></script>
+        <script src="js/jarallax.js"></script>
+        <script src="js/jarallax-element.min.js"></script>
+        <script src="js/imagesloaded.pkgd.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/jquery.smartmenus.min.js"></script>
+        <script src="js/isotope.pkgd.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/sweetalert.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>
+        <script src="js/main_landing.js"></script>
+    </body>
 </html>
