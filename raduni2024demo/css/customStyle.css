@@ -1,0 +1,16 @@
+.soldout .cameras_img :before {
+  content: "SOLDOUT";
+  position: absolute;
+  top: 40px;
+  left: 2%;
+  width: 96%;
+  background: #a11212;
+  z-index: 99999999999;
+  transform: rotate(5deg);
+  padding: 10px;
+  color: #fff;
+  filter: opacity(5.5);
+  font-size: 26px;
+  font-weight: 600;
+  border-radius: 1rem;
+}
