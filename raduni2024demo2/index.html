@@ -66,51 +66,20 @@
                     <div class="row d_flex columnOnMobile" style="padding-top: 20px;">
                         <div class="col-md-6">
                             <div class="about_img">
-                                <label style="text-align: center;width: 100%;">ALCUNI SCATTI DEI RADUNI 2022</label>
-                                <div class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel1.jpeg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel2.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel3.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel4.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel5.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel6.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel7.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel8.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel9.jpg" alt="homeImage">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/carouselHome/carousel10.jpg" alt="homeImage">
-                                    </div>
-                                </div>
+                                <label style="text-align: center;width: 100%;">ALCUNI SCATTI DEI RADUNI PRECEDENTI</label>
+                                <div class="owl-carousel owl-theme" id="appenImage"></div>
                             </div>
                         </div>
                         <div class="col-md-5 offset-md-1 adaptMaxWidth">
                             <div class="titlepage text-center">
-                                <h2>Estate 2023, vieni a Correre in Altura!</h2>
+                                <h2>Estate 2024, vieni a Correre in Altura!</h2>
                                 <p style="padding: 10px 0;">
-                                    Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ecco le date e le location dei 3 eventi che ho organizzato:
+                                    Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ecco la data e la location dell'evento che ho organizzato:
                                 </p>
                                 <ul>
                                     <li>
-                                        Dal 06/08/23 al 12/08/23 a
-                                        <b>Aldino</b>
+                                        Dal 04/08/24 al 10/08/24 a
+                                        <b>PASSO OCLINI</b>
                                     </li>
                                 </ul>
                                 <p style="padding: 0 0 10px;">
@@ -140,7 +109,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="titlepage text_align_center">
-                                <h2>3 date disponibili:</h2>
+                                <h2>evento disponibile</h2>
                             </div>
                         </div>
                     </div>
@@ -152,9 +121,9 @@
                                         <img src="img/aldino.webp" alt="#">
                                     </figure>
                                 </div>
-                                <p>Dal 06/08/23 al 12/08/23</p>
-                                <h3>Aldino</h3>
-                                <a class="read_more" href="aldino.html">INFO RADUNO</a>
+                                <p>Dal 04/08/24 al 10/08/24</p>
+                                <h3>PASSO OCLINI</h3>
+                                <a class="read_more" href="passoOclini.html">INFO RADUNO</a>
                             </div>
                         </div>
                     </div>
@@ -243,5 +212,33 @@
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        // Ottieni il riferimento alla div in cui appendere gli elementi
+        var appendHereDiv = document.getElementById("appenImage");
+    
+        // Numero totale di immagini da appendere
+        var numberOfImages = 13;
+    
+        // Percorso della cartella delle immagini
+        var imagePath = "img/carousel/";
+    
+        // Ciclo per creare gli elementi e appendere le immagini
+        for (var i = 1; i <= numberOfImages; i++) {
+            // Crea un nuovo elemento div
+            var newDiv = document.createElement("div");
+            newDiv.className = "item";
+    
+            // Crea un nuovo elemento img
+            var newImg = document.createElement("img");
+            newImg.src = imagePath + i + ".jpg";
+            newImg.alt = "homeImage";
+    
+            // Appendi l'elemento img al div
+            newDiv.appendChild(newImg);
+    
+            // Appendi il div alla div con id "appendHere"
+            appendHereDiv.appendChild(newDiv);
+        }
+    </script>
 </body>
 </html>

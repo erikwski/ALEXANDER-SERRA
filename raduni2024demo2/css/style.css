@@ -1174,7 +1174,7 @@ body::-webkit-scrollbar-thumb:hover {
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid 10px solid #48a6d2;
+  border-right: 10px solid #48a6d2;
 }
 .offertaLancio {
   background: linear-gradient(45deg, #f07f00, #c06700);
@@ -1183,4 +1183,10 @@ body::-webkit-scrollbar-thumb:hover {
   color: #fff;
   padding: 5px;
   border-radius: 5px;
+}
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
