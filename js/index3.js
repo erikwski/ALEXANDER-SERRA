@@ -171,8 +171,79 @@
       setTimeout(() => {
         $("#loader, #cover_loader").remove();
         $("html").addClass("enable_scroll");
+        showPopupRaduni2024();
       }, 1200);
     }, 3000);
+  }
+
+  function showPopupRaduni2024() {
+    let oggi = new Date(),
+      finePromo = new Date("04/08/2023 00:00");
+    if (oggi < finePromo && +localStorage.getItem("popupRaduni") < 3) {
+      $("#removeIfNoOffer").show();
+
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      let countDownPopup = finePromo.getTime();
+      let x3 = setInterval(function () {
+        const now = new Date().getTime(),
+          distance = countDownPopup - now;
+
+        let ggPopup = Math.floor(distance / day);
+        let hhPopup = (distance % day) / hour;
+        //   mmPopup = (distance % hour) / minute,
+        //   ssPopup = (distance % minute) / second;
+        $("#countdownPopup .counterPopup")[0].innerText =
+          (ggPopup < 10 && "0") + Math.floor(ggPopup);
+        $("#countdownPopup .counterPopup")[1].innerText =
+          (hhPopup < 10 && "0") + Math.floor(hhPopup);
+        // $("#countdownPopup .counterPopup")[1].innerText =
+        //   (mmPopup < 10 && "0") + Math.floor(mmPopup);
+        // $("#countdownPopup .counterPopup")[2].innerText =
+        //   (ssPopup < 10 && "0") + Math.floor(ssPopup);
+
+        if (distance < 0) {
+          //offerta scaduta
+          clearInterval(x3);
+          location.reload();
+        }
+        //seconds
+      }, 1000);
+
+      $("#popupButton").click(() => {
+        //setto a 5 cosí da non mostrare piú popup a chi lo clicca
+        localStorage.setItem("popupRaduni", 2);
+        try {
+          $.get("api/updateContatore.php", {
+            id: 1,
+          }).always(() => (window.location.href = "raduni2024"));
+        } catch (error) {
+          localStorage.setItem("popupRaduni", 2);
+          console.log("errore check popup");
+        }
+      });
+      $("#popup-overlay, #popupSkip").click(() => {
+        try {
+          let closedClick = +localStorage.getItem("popupRaduni");
+          localStorage.setItem("popupRaduni", closedClick++);
+          $("#popup").addClass("toggleOut");
+          $("#popup-overlay").addClass("delay-0").removeClass("open");
+
+          setTimeout(() => {
+            $("#popup, #popup-overlay").remove();
+            clearInterval(x3);
+          }, 1700);
+        } catch (error) {
+          console.log(error, "ciao");
+        }
+      });
+      $("#popup, #popup-overlay").addClass("open");
+    } else {
+      $("#popup, #popup-overlay").remove();
+    }
   }
 
   function multiClickFunctionStop() {
