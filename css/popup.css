@@ -30,19 +30,24 @@
   transform: translateY(0%);
   opacity: 1;
 }
+#popup .button {
+  background-color: green;
+  border: 2px solid green;
+}
 .titleContainer {
-  background-color: #1da6b9;
-  background-image: linear-gradient(
-    225deg,
-    #1da6b9 0%,
-    #1a85a6 46%,
-    #0c61b9 100%
-  );
+  background: linear-gradient(rgb(51 51 51 / 70%), rgb(33 150 243 / 20%)),
+    url(../raduni2024/img/carouselHome/carousel8.jpg);
+  background-position: center;
+  background-size: cover;
   color: #fff;
   padding: 1rem 1rem 3rem;
   display: grid;
   text-align: center;
   position: relative;
+}
+.titleContainer h3 {
+  font-size: 18px;
+  line-height: 18px;
 }
 .titleContainer strong,
 .counterPopup {
@@ -58,6 +63,15 @@
   font-size: 15px;
   color: #fff;
   text-transform: uppercase;
+}
+.prenotaOra {
+  font-weight: 600;
+  background: linear-gradient(359deg, #2f7b1699, #28621cb3);
+  width: fit-content;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+  margin: auto;
 }
 .countDownContainer {
   position: absolute;
@@ -86,8 +100,9 @@
   padding-top: 90px;
 }
 #popupSkip {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
   text-decoration: underline;
   margin-bottom: 20px;
 }

@@ -1,9 +1,4 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['user_logged'])){
-    echo "non abilitato";
-    exit();
-  }
   $sviluppo = false;
 
   if ($sviluppo){
@@ -35,13 +30,12 @@
     exit();
   }
 
-  $idContatore = $_GET["idContatore"];
+  $idContatore = $_GET["id"];
 
-  $sql = "UPDATE contatori
-    SET contatore = @contatore := contatore + 1
-    WHERE id = $idContatore";
+  $sql = "UPDATE contatori SET contatore = contatore + 1 WHERE id = $idContatore";
   $result = $mysqli->query($sql);
   if (!$result) {
+    printf($sql);
     printf("Errore durante il salvataggio dei dati: %s\n", $mysqli->error);
   }
   $mysqli->close();
