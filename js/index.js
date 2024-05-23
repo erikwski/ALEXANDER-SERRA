@@ -148,11 +148,21 @@
   //------------------------------------------------------------------------
 
   function gestionePrivacyPolicy() {
-    if (localStorage.getItem("accepted"))
-      $("#cookie_policy").addClass("already_accepted");
+    if (localStorage.getItem("accepted")) acceptCookie();
     $("#confirm_cookie,#confirm_cookie_btn").click(() => {
-      $("#cookie_policy").addClass("already_accepted");
       localStorage.setItem("accepted", "yes");
+      acceptCookie();
+    });
+  }
+  
+  function acceptCookie(){
+    $("#cookie_policy").addClass("already_accepted");
+    
+    gtag('consent', 'update', {
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted'
     });
   }
 
