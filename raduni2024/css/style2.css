@@ -1195,3 +1195,40 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.program {
+  margin-top: 8px;
+}
+.program li strong{
+  line-height: 12px;
+}
+.program li {
+  margin-bottom: 8px;
+}
+.write_to_me{
+  color: #2093ca;
+  background: #fff;
+  border: 1px solid #2093ca;
+  width: 300px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  transition: ease-in all 0.5s;
+  border-radius: 5px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px -2px black;
+  margin: 6px;
+  gap: 0 8px;
+}
+.write_to_me svg > *{
+  fill: #2093ca;
+}
+.write_to_me:hover{
+  color: #fff;
+  background: #2093ca;
+}
+.write_to_me:hover svg > *{
+  fill: #fff;
+}
