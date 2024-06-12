@@ -109,11 +109,16 @@ html.loaded #home {
   filter: blur(0);
 }
 #opening {
-  transform: scale(0);
+  transform: scale(0) translateY(0);
   transition: 1s transform 1s;
 }
 html.loaded #opening {
-  transform: scale(1);
+  transform: scale(1) translateY(0);
+}
+@media screen and (max-width: 650px) {
+  html.loaded #opening {
+    transform: scale(1) translateY(100px);
+  }
 }
 body {
   scrollbar-width: thin;
@@ -882,8 +887,7 @@ body a.button {
   display: inline-block;
   color: #fff;
   background-color: var(--primary);
-  text-align: left;
-  padding: 10px 40px;
+  padding: 20px 40px;
   cursor: pointer;
   vertical-align: middle;
   text-decoration: none;
@@ -894,6 +898,8 @@ body a.button {
   font-size: 14px;
   letter-spacing: 2px;
   box-sizing: border-box;
+  line-height: 16px;
+  text-align: center;
 }
 
 a.button:hover {
@@ -1206,7 +1212,7 @@ a.button-dot:hover:before {
   animation-name: fadeOut;
 }
 #home {
-  background-image: url(images/hero_image2.jpg);
+  background-image: url(images/firstBg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1230,7 +1236,7 @@ h1.big-text {
   text-shadow: -1px -1px 1px rgb(255 255 255 / 10%),
     2px 2px 1px rgb(0 0 0 / 50%);
   padding: 1.5rem 5rem;
-  background: rgb(0 0 0 / 40%);
+  background: rgb(0 0 0 / 20%);
   border-radius: 10rem;
   text-align: center;
 }
@@ -1249,18 +1255,6 @@ h1.big-text {
 }
 .title_services.black-text {
   color: #000;
-}
-.credit_fotographer {
-  position: relative;
-}
-.credit_fotographer:before {
-  content: "Credit to: DANIELE FURLANETTO";
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  font-size: 16px;
-  text-align: center;
-  width: 370px;
 }
 @media screen and (max-width: 800px) {
   .title_services {
@@ -1282,7 +1276,8 @@ h1.big-text {
   font-style: italic;
   opacity: 0.75;
 }
-#about img {
+#about .cut-img {
+  height: 650px;
   max-height: 750px;
   z-index: 99;
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
@@ -3000,14 +2995,10 @@ footer .footer-social-divider:before {
   .single .entry-info div:after {
     display: none;
   }
-  #home .section-wrapper {
-    margin-top: 120px;
-  }
   h1.big-text {
     font-size: 40px;
-    padding: 2rem;
-    padding: 3rem 2rem;
-    border-radius: 100%;
+    padding: 1em;
+    border-radius: 4rem;
   }
   .only_mobile {
     display: block;
@@ -3649,5 +3640,62 @@ html.disabled_scroll,
   }
   100% {
     transform: scale(1);
+  }
+}
+.quote {
+  font-size: 3em;
+  line-height: 1em;
+  text-align: center;
+  display: block;
+  width: max-content;
+  padding: 0 .75em;
+  font-family: "Permanent Marker", cursive;
+}
+/* .quote::before{
+      content: "’’";
+    position: absolute;
+    left: -100px;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-size: 8em;
+    text-align: left;
+    font-family: Arial;
+    letter-spacing: -16px;
+    font-style: normal;
+    font-weight: bold;
+    color: #f7cca7;
+} */
+.full-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.certification {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.certification span {
+  width: 100px;
+  line-height: 20px;
+  color: #000;
+}
+
+.col-mobile {
+  flex-wrap: wrap;
+  gap: 10px 0px;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 500px) {
+  .col-mobile {
+    flex-direction: column;
+  }
+  #about .cut-img{
+    height: 450px;
   }
 }
