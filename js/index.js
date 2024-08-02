@@ -33,13 +33,7 @@
       costo: 317,
     },
   ];
-  let oggi = new Date(),
-    startPopup = new Date("02/04/2024 00:00"),
-    endPopup = new Date("04/08/2024 00:00"),
-    isPopupEnabled =
-      oggi > startPopup &&
-      oggi < endPopup &&
-      +localStorage.getItem("popupRaduni") < 3;
+  let oggi = new Date();
 
   gestionePrivacyPolicy();
   updateHtmlForYear();
@@ -60,6 +54,16 @@
 
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
+
+  $("#percorsoDett").on("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".site-wrapper").addClass("navigationOut");
+    setTimeout(() => {
+      window.history.pushState({ skipAnimation: true }, null, "");
+      window.location.href = "/percorso.html";
+    }, 500);
+  });
 
   $(window).on("load", function () {
     let data_show_website = new Date("06/11/2022");
@@ -126,9 +130,18 @@
       isotopeSetUp();
       setUpParallax();
       hashFix();
-      animazioneIniziale();
+      if (history.state?.skipAnimation){
+        skipAnimazioneIniziale();
+      }else{
+        window.history.replaceState({ skipAnimation: false }, null, "");
+        animazioneIniziale();
+      }
     }
   });
+
+  window.onpopstate = function (event) {
+    console.log(event.state);// See example render function in summary below
+  };
 
   window.onbeforeunload = function () {
     scrollToTopOfPage();
@@ -179,95 +192,34 @@
     $("#anni_di_esperienza").html(yy - 2011);
   }
 
+  function skipAnimazioneIniziale(){
+    $("#loader, #cover_loader").remove();
+    $("html").addClass("loaded enable_scroll");
+    $(".site-wrapper").addClass("navigationOut skipAnimation");
+    setTimeout(() => {
+      $(".site-wrapper").removeClass("skipAnimation");
+      setTimeout(() => {
+        $(document).scrollTop($("#about").offset().top - 77);
+        $(".site-wrapper").removeClass("navigationOut");
+        $('a[href="#about"]').click();
+        window.history.pushState({ skipAnimation: false }, null, "");
+        // setTimeout(()=> $(document).scrollTop($("#about").offset().top - 77), 1)
+      }, 1);
+    }, 1);
+    
+  }
+
   function animazioneIniziale() {
     $("#loader").addClass("runner_animation");
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
       $("html").addClass("loaded");
-      showPopupRaduni2024();
       //PIANO PIANO RENDERIZZO ELEMENTI
       setTimeout(() => {
         $("#loader, #cover_loader").remove();
-        if (!isPopupEnabled) $("html").addClass("enable_scroll");
+        $("html").addClass("loaded enable_scroll");
       }, 1200);
     }, 3000);
-  }
-
-  function showPopupRaduni2024() {
-    if (isPopupEnabled) {
-      $("#removeIfNoOffer").show();
-
-      const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-      let countDownPopup = endPopup.getTime();
-      let x3 = setInterval(function () {
-        const now = new Date().getTime(),
-          distance = countDownPopup - now;
-
-        let ggPopup = Math.floor(distance / day);
-        let hhPopup = (distance % day) / hour;
-        //   mmPopup = (distance % hour) / minute,
-        //   ssPopup = (distance % minute) / second;
-        $("#countdownPopup .counterPopup")[0].innerText =
-          (ggPopup < 10 && "0") + Math.floor(ggPopup);
-        $("#countdownPopup .counterPopup")[1].innerText =
-          (hhPopup < 10 && "0") + Math.floor(hhPopup);
-        // $("#countdownPopup .counterPopup")[1].innerText =
-        //   (mmPopup < 10 && "0") + Math.floor(mmPopup);
-        // $("#countdownPopup .counterPopup")[2].innerText =
-        //   (ssPopup < 10 && "0") + Math.floor(ssPopup);
-
-        if (distance < 0) {
-          //offerta scaduta
-          clearInterval(x3);
-          location.reload();
-        }
-        //seconds
-      }, 1000);
-
-      $("#popupButton").click(() => {
-        //setto a 5 cosí da non mostrare piú popup a chi lo clicca
-        localStorage.setItem("popupRaduni", 5);
-        try {
-          $.get("api/updateContatore.php", {
-            id: 1,
-          }).always(() => (window.location.href = "raduni2024"));
-        } catch (error) {
-          localStorage.setItem("popupRaduni", 2);
-          console.log("errore check popup");
-        }
-      });
-      $("#popup-overlay, #popupSkip").click(() => {
-        try {
-          let closedClick = +localStorage.getItem("popupRaduni");
-          localStorage.setItem("popupRaduni", closedClick++);
-          try {
-            $.get("api/updateContatore.php", {
-              id: 2,
-            }).always(() => console.log("raduni2024 declined"));
-          } catch (error) {
-            localStorage.setItem("popupRaduni", 2);
-            console.log("errore check popup");
-          }
-          $("html").addClass("enable_scroll");
-          $("#popup").addClass("toggleOut");
-          $("#popup-overlay").addClass("delay-0").removeClass("open");
-
-          setTimeout(() => {
-            $("#popup, #popup-overlay").remove();
-            clearInterval(x3);
-          }, 1700);
-        } catch (error) {
-          console.log(error, "ciao");
-        }
-      });
-      $("#popup, #popup-overlay").addClass("open");
-    } else {
-      $("#popup, #popup-overlay").remove();
-    }
   }
 
   function multiClickFunctionStop() {

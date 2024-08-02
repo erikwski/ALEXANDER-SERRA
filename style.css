@@ -752,6 +752,9 @@ body .sm-clean li.current_page_item > a {
 .medium-text.pb-0 {
   padding-bottom: 0;
 }
+.medium-text.pb-2 {
+  padding-bottom: .5em;
+}
 
 .dark_grey {
   color: #666666;
