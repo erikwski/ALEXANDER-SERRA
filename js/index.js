@@ -60,7 +60,7 @@
     e.preventDefault();
     $(".site-wrapper").addClass("navigationOut");
     setTimeout(() => {
-      window.history.pushState({ skipAnimation: true }, null, "");
+      window.history.pushState({ skipAnimation: true }, null, "/index.html");
       window.location.href = "/percorso.html";
     }, 500);
   });
