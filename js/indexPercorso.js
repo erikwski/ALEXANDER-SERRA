@@ -1,6 +1,7 @@
 $(function () {
   ("use strict");
-
+  localStorage.setItem("skipAndScrollTo", "about");
+  
   $(document).ready(function () {
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");

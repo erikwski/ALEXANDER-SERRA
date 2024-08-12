@@ -55,15 +55,15 @@
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
 
-  $("#percorsoDett").on("click", (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    $(".site-wrapper").addClass("navigationOut");
-    localStorage.setItem("skipAndScrollTo", "about");
-    setTimeout(() => {
-      window.location.href = "percorso.html";
-    }, 500);
-  });
+  // $("#percorsoDett").on("click", (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   $(".site-wrapper").addClass("navigationOut");
+  //   localStorage.setItem("skipAndScrollTo", "about");
+  //   setTimeout(() => {
+  //     window.location.href = "percorso.html";
+  //   }, 500);
+  // });
 
   $(window).on("load", function () {
     $(".loader").remove();
