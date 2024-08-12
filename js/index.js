@@ -61,7 +61,7 @@
     $(".site-wrapper").addClass("navigationOut");
     localStorage.setItem("skipAndScrollTo", "about");
     setTimeout(() => {
-      window.location.href = "/percorso.html";
+      window.location.href = "percorso.html";
     }, 500);
   });
 
