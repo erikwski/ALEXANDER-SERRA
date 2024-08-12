@@ -2,7 +2,7 @@ $(function () {
   ("use strict");
 
   $(document).ready(function () {
-    console.log("ciao");
+    console.log("percorso");
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");
     $("html").addClass("loaded enable_scroll");

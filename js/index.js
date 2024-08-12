@@ -1,4 +1,6 @@
 (function ($) {
+  console.log("ciao 1");
+  
   window.$ = $;
   let invioMailutente = false;
   const COSTO_PACCHETTI = [
@@ -66,6 +68,7 @@
   });
 
   $(window).on("load", function () {
+    console.log("ciao load");
     let data_show_website = new Date("06/11/2022");
     let today = new Date();
     if (data_show_website > today) {
