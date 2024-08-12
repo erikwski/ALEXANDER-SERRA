@@ -1,6 +1,4 @@
-(function ($) {
-  console.log("ciao 1");
-  
+(function ($) {  
   window.$ = $;
   let invioMailutente = false;
   const COSTO_PACCHETTI = [
@@ -61,97 +59,26 @@
     e.stopPropagation();
     e.preventDefault();
     $(".site-wrapper").addClass("navigationOut");
+    localStorage.setItem("skipAndScrollTo", "about");
     setTimeout(() => {
-      history.pushState({skipAnimation: true}, "mainPage", "index.html");
       window.location.href = "/percorso.html";
     }, 500);
   });
 
   $(window).on("load", function () {
-    console.log("ciao load");
-    let data_show_website = new Date("06/11/2022");
-    let today = new Date();
-    if (data_show_website > today) {
-      $(".site-wrapper").addClass("not_ready_website").html(`
-        <img src="/images/logo/Logo_vettoriale.png" style="position: absolute;top: 1rem;left: calc(50% - 150px);width: 300px;">
-        <div class="fake_card">
-          <h3>Il sito sarà disponibile dall' 11 Giugno</h3>
-          <div class="timer_container">
-            <i style="color: #828282;">Sarà disponibile fra:</i>
-            <div id="countdown1" class="countdown">
-              <div class="counter"><span></span><b>Giorni</b></div>
-              <div class="counter"><span></span><b>Ore</b></div>
-              <div class="counter"><span></span><b>Min</b></div>
-              <div class="counter"><span></span><b>Sec</b></div>
-            </div>
-          </div>
-          <h3 style="font-size: 1.5rem;">Intanto approfitta dell'offerta sul mio nuovo Coaching !!!</h3>
-          <a href="offerta.html" class="button">VISUALIZZA OFFERTA</a>
-        </div>
-      `);
-      const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-      let countDown1 = new Date("06/11/2022").getTime();
-      let x1 = setInterval(function () {
-        const now = new Date().getTime(),
-          distance = countDown1 - now;
-
-        ($("#countdown1 span")[0].innerText = Math.floor(distance / day)),
-          ($("#countdown1 span")[1].innerText = Math.floor(
-            (distance % day) / hour
-          )),
-          ($("#countdown1 span")[2].innerText = Math.floor(
-            (distance % hour) / minute
-          )),
-          ($("#countdown1 span")[3].innerText = Math.floor(
-            (distance % minute) / second
-          ));
-
-        if (distance < 0) {
-          //offerta scaduta
-          $("#countdown1").html(
-            "<h3 class='offerta_scaduta'>OFFERTA SCADUTA</h3>"
-          );
-          clearInterval(x1);
-        }
-        //seconds
-      }, 1000);
-      setTimeout(() => {
-        $(".loader").remove();
-        $("#loader img").remove();
-        $("html").addClass("loaded enable_scroll");
-        setTimeout(() => {
-          $("#loader, #cover_loader").remove();
-        }, 1000);
-      }, 1000);
+    $(".loader").remove();
+    scrollToTopOfPage();
+    isotopeSetUp();
+    setUpParallax();
+    hashFix();
+    const scrollTo = localStorage.getItem("skipAndScrollTo");
+    if (scrollTo) {
+      localStorage.removeItem("skipAndScrollTo");
+      skipAnimazioneIniziale(scrollTo);
     } else {
-      $(".loader").remove();
-      scrollToTopOfPage();
-      isotopeSetUp();
-      setUpParallax();
-      hashFix();
-      // skipAnimazioneIniziale();
-      if (history.state?.skipAnimation){
-        skipAnimazioneIniziale();
-      }else{
-        // window.history.replaceState({ skipAnimation: false }, null, "");
-        animazioneIniziale();
-      }
+      animazioneIniziale();
     }
   });
-
-  window.onpopstate = function (event) {
-    debugger;
-    console.log(event.state?.skipAnimation);
-    if (event.state && event.state.skipAnimation) {
-      // Force reload to ensure proper rendering
-      console.log("reloaded");
-      window.location.reload();
-    }
-  };
 
   window.onbeforeunload = function () {
     scrollToTopOfPage();
@@ -202,21 +129,18 @@
     $("#anni_di_esperienza").html(yy - 2011);
   }
 
-  function skipAnimazioneIniziale(){
+  function skipAnimazioneIniziale(scrollTo) {
     $("#loader, #cover_loader").remove();
     $("html").addClass("loaded enable_scroll");
     $(".site-wrapper").addClass("navigationOut skipAnimation");
     setTimeout(() => {
       $(".site-wrapper").removeClass("skipAnimation");
       setTimeout(() => {
-        $(document).scrollTop($("#about").offset().top - 77);
+        $(document).scrollTop($(`#${scrollTo}`).offset().top - 77);
         $(".site-wrapper").removeClass("navigationOut");
-        $('a[href="#about"]').click();
-        window.history.pushState({ skipAnimation: false }, null, "");
-        // setTimeout(()=> $(document).scrollTop($("#about").offset().top - 77), 1)
+        $(`a[href="#${scrollTo}"]`).click();
       }, 1);
     }, 1);
-    
   }
 
   function animazioneIniziale() {
