@@ -766,6 +766,20 @@ body .sm-clean li.current_page_item > a {
   padding-bottom: .25em;
 }
 
+.button-holder-calendly{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.button-holder-calendly .button{
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .dark_grey {
   color: #666666;
 }
@@ -1529,12 +1543,20 @@ h1.big-text-percorso {
     12. Milestones Section CSS
 ====================================== */
 
-#millstones, #miaFilosofia {
+#millstones, #miaFilosofia, #calendly {
   background-image: url(images/on_black_left.png);
   background-color: #000000;
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+#millstones .page-title-holder, #miaFilosofia .page-title-holder, #calendly .page-title-holder, #utils .page-title-holder{
+  background: #2292ca7f;
+}
+
+#millstones .page-title-holder:after, #miaFilosofia .page-title-holder:after, #calendly .page-title-holder:after, #utils .page-title-holder:after{
+  border-color: #2292ca7f transparent transparent transparent;
 }
 
 ul.milestones-holder {
@@ -2566,6 +2588,10 @@ footer .footer-social-divider:before {
 }
 
 @media screen and (max-width: 1020px) {
+  .button-holder-calendly{
+    margin-top: 50px;
+  }
+
   #header-main-menu {
     padding-bottom: 70px;
   }
@@ -3208,7 +3234,7 @@ footer .footer-social-divider:before {
   background-color: #f5f5f5;
 }
 
-#modale_pagamento::-webkit-scrollbar {
+#::-webkit-scrollbar {
   width: 4px;
   height: 5px;
   background-color: #ccc;

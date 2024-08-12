@@ -130,12 +130,13 @@
       isotopeSetUp();
       setUpParallax();
       hashFix();
-      if (history.state?.skipAnimation){
-        skipAnimazioneIniziale();
-      }else{
-        window.history.replaceState({ skipAnimation: false }, null, "");
-        animazioneIniziale();
-      }
+      skipAnimazioneIniziale();
+      // if (history.state?.skipAnimation){
+      //   skipAnimazioneIniziale();
+      // }else{
+      //   window.history.replaceState({ skipAnimation: false }, null, "");
+      //   animazioneIniziale();
+      // }
     }
   });
 
