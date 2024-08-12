@@ -130,18 +130,24 @@
       isotopeSetUp();
       setUpParallax();
       hashFix();
-      skipAnimazioneIniziale();
-      // if (history.state?.skipAnimation){
-      //   skipAnimazioneIniziale();
-      // }else{
-      //   window.history.replaceState({ skipAnimation: false }, null, "");
-      //   animazioneIniziale();
-      // }
+      // skipAnimazioneIniziale();
+      if (history.state?.skipAnimation){
+        skipAnimazioneIniziale();
+      }else{
+        window.history.replaceState({ skipAnimation: false }, null, "");
+        animazioneIniziale();
+      }
     }
   });
 
   window.onpopstate = function (event) {
-    console.log(event.state);// See example render function in summary below
+    debugger;
+    console.log(event.state?.skipAnimation);
+    if (event.state && event.state.skipAnimation) {
+      // Force reload to ensure proper rendering
+      console.log("reloaded");
+      window.location.reload();
+    }
   };
 
   window.onbeforeunload = function () {
