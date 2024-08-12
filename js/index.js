@@ -51,6 +51,7 @@
   setMenu();
   SendMail();
   gestioneModalePagamenti();
+  gestioneCallConoscitiva();
 
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
@@ -493,6 +494,26 @@
       if (!$(this).prop("checked")) valid_checkbox = false;
     });
     return valid_input && valid_checkbox;
+  }
+
+  function gestioneCallConoscitiva() {
+    $("#call-conoscitiva").click(()=>{
+      if (!$(".alex-dialog").hasClass("open")){
+        $("html").addClass("disabled_scroll");
+        $(".alex-dialog, .alex-dialog-overlay").addClass("open");
+        $(".alex-dialog .alex-dialog-container").append(`
+          <div class="alex-dialog-iframe-container">
+            <iframe src="https://calendly.com/runningcoach/15min" width="100%" height="100%" frameborder="0"></iframe>
+          </div>
+        `);
+      }
+    });
+
+    $(".alex-dialog-overlay, .alex-dialog-close").click(() => {
+      $("html").removeClass("disabled_scroll");
+      $(".alex-dialog, .alex-dialog-overlay").removeClass("open");
+      $(".alex-dialog .alex-dialog-container").html("");
+    });
   }
 
   function gestioneModalePagamenti() {
