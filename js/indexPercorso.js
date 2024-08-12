@@ -1,7 +1,7 @@
 $(function () {
   ("use strict");
   localStorage.setItem("skipAndScrollTo", "about");
-  
+
   $(document).ready(function () {
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");
@@ -14,7 +14,7 @@ $(function () {
     $("#openingPercorso").removeClass("loaded");
     $(".site-wrapper").removeClass("navigationIn");
     setTimeout(() => {
-      window.history.back();
+      // window.history.back();
     }, 500);
   }
 });
