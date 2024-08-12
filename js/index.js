@@ -134,7 +134,7 @@
       if (history.state?.skipAnimation){
         skipAnimazioneIniziale();
       }else{
-        window.history.replaceState({ skipAnimation: false }, null, "");
+        // window.history.replaceState({ skipAnimation: false }, null, "");
         animazioneIniziale();
       }
     }
