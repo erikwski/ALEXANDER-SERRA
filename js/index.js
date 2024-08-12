@@ -60,6 +60,7 @@
     e.preventDefault();
     $(".site-wrapper").addClass("navigationOut");
     setTimeout(() => {
+      history.pushState({skipAnimation: true}, "mainPage", "index.html");
       window.location.href = "/percorso.html";
     }, 500);
   });
