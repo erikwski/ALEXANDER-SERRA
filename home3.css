@@ -2427,6 +2427,19 @@ footer .footer-social-divider:before {
   margin: 0;
 }
 
+.highlighted-menu{
+  display: flex !important;
+  height: 47px;
+}
+
+.highlighted-menu a{ 
+  background: var(--primary);
+  padding: 2px 6px !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  margin: auto;
+}
+
 /* ===================================
     17. Responsive CSS
 ====================================== */
@@ -2641,6 +2654,12 @@ footer .footer-social-divider:before {
   .menu-holder.show {
     right: 0;
   }
+
+  .highlighted-menu{
+    height: auto;
+    padding: 6px 0 !important;
+  }
+
 
   .sm-clean ul ul a,
   .sm-clean ul ul a:hover,
