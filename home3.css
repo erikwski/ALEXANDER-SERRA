@@ -3698,10 +3698,11 @@ html.disabled_scroll,
 .quote {
   font-size: 3em;
   line-height: 1em;
-  text-align: center;
+  text-align: start;
   display: block;
   width: max-content;
-  padding: 0 .75em;
+  padding: 0;
+  width: 100%;
   font-family: "Permanent Marker", cursive;
 }
 /* .quote::before{
@@ -3754,6 +3755,14 @@ html.disabled_scroll,
 @media screen and (max-width: 1022px) {
   .center-mobile {
     justify-content: center;
+  }
+
+  .quote{
+    text-align: center;
+  }
+
+  .text-center-mobile{
+    text-align: center;
   }
 }
 
