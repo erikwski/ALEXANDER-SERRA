@@ -6,7 +6,7 @@ $(function () {
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");
     $("html").addClass("loaded enable_scroll");
-
+    window.history.replaceState({ skipAnimation: true }, null, "/index.html");
     $(".navigateBack").on("click", ()=>{
       $("#openingPercorso").removeClass("loaded");
       $(".site-wrapper").removeClass("navigationIn");
