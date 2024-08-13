@@ -1437,12 +1437,13 @@ h1.big-text-percorso {
   padding-bottom: 20px;
   background-color: #ffffff;
   margin-top: 30px;
-  max-width: 350px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid #000;
   position: relative;
   text-align: left;
+  border-radius: 2em;
 }
 
 .pricing-wrapper {
@@ -1455,30 +1456,45 @@ h1.big-text-percorso {
   font-weight: 500;
   padding: 40px 0;
   margin-bottom: 25px;
+  display: flex;
+  gap: 8px;
+}
+.pricing-table-title img{
+  width: 32px;
+  height: 32px;
 }
 
 .pricing-num {
-  font-size: 200px;
+  font-size: 60px;
   font-weight: 700;
   color: #ffffff;
   text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
   line-height: 100%;
   margin-bottom: -10px;
   position: absolute;
-  top: -50px;
+  top: -29px;
   right: -9px;
   z-index: 1;
+  background: #fff;
+  padding: 4px 10px;
 }
 
-.pricing-num:before {
-  content: "";
-  width: 150px;
-  background-color: white;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  z-index: -1;
+.pricing-badge-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pricing-badge-container .pricing-badge{
+  padding: 3px 6px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 1em;
+  box-shadow: 1px 1px 4px -2px #000;
+  font-size: 12px;
+  line-height: 12px;
+  background: linear-gradient(45deg, var(--primary), #2196f3);
 }
 
 .pricing-table-price {
@@ -1541,6 +1557,137 @@ h1.big-text-percorso {
 }
 .pricing-label a:hover {
   color: var(--primary);
+}
+
+/* CUSTOMIZING COACHING CARD */
+#start-coaching{
+  width: 100%;
+  margin: 0;
+}
+
+#start-coaching .pricing-table{
+  max-width: 100%;
+}
+
+#start-coaching .pricing-wrapper{
+  text-align: center;
+}
+
+#start-coaching .pricing-table-content-holder ul{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  text-align: start;
+}
+
+#start-coaching .pricing-table-title{
+  padding-bottom: 0;
+}
+
+#start-coaching .pricing-table-price{
+  color: #000;
+}
+
+#start-coaching .button.buy_coaching{
+  background: #000;
+  border-color: #000;
+}
+
+#start-coaching .button.buy_coaching:hover{
+  color: #000;
+  background: #fff;
+}
+
+#start-coaching .pricing-badge-container .pricing-badge{
+  background: linear-gradient(45deg, #000, #272727);
+}
+
+#pro-coaching .pricing-num{
+  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--secondary), 0px 4px 6px var(--secondary), 0 -1px var(--secondary);
+}
+
+#pro-coaching .fa-angle-double-right{
+  color: var(--secondary);
+}
+
+#pro-coaching .pricing-table-price{
+  color: var(--secondary);
+}
+
+#pro-coaching .button.buy_coaching{
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+#pro-coaching .button.buy_coaching:hover{
+  color: var(--secondary);
+  background: #fff;
+}
+
+#pro-coaching .pricing-table{
+  border: none;
+  box-shadow: 0px 0px 3px 0px var(--secondary);
+}
+
+#pro-coaching .pricing-badge-container .pricing-badge{
+  background: linear-gradient(45deg, var(--secondary), #ff6422);
+}
+
+#pro-coaching .pricing-badge-container, 
+#top-coaching .pricing-badge-container{
+  justify-content: start;
+}
+
+#top-coaching .pricing-num{
+  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--primary), 0px 4px 6px var(--primary), 0 -1px var(--primary);
+}
+
+#top-coaching .pricing-table{
+  border: none;
+  box-shadow: 0px 0px 3px 0px var(--primary);
+}
+
+.visibility-hidden-pc{
+  visibility: hidden;
+}
+
+.divider-coaching{
+  margin: 1em .5em;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(1deg, #00000087, lightgrey);
+  border-radius: 1em;
+}
+
+#extra-service{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+#extra-service .pricing-table{
+ text-align: center;
+  width: 100%;
+}
+
+#extra-service .pricing-table-title{
+ padding-bottom: 0;
+ justify-content: center;
+ align-items: center;
+}
+
+#extra-service .pricing-table-price{
+  line-height: 110%;
+  margin-bottom: .25em;
+}
+
+@media screen and (max-width: 800px) {
+  #extra-service{
+    flex-direction: column;
+  }
+  #extra-service .pricing-table{
+    margin-bottom: 1em;
+  }
 }
 
 /* ===================================
@@ -2605,6 +2752,30 @@ footer .footer-social-divider:before {
 }
 
 @media screen and (max-width: 1020px) {
+  #pricing .pricing-table{
+    max-width: none;
+  }
+
+  #pricing .pricing-table .pricing-wrapper{
+    text-align: center;
+  }
+
+  #pricing .pricing-table ul{
+    text-align: start;
+  }
+
+  #pro-coaching .pricing-badge-container, 
+  #top-coaching .pricing-badge-container{
+    justify-content: center;
+  }
+
+  
+  .visibility-hidden-pc{
+    visibility: visible;
+    display: none !important;
+  }
+
+  
   .button-holder-calendly{
     margin-top: 50px;
   }

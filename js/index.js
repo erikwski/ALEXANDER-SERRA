@@ -72,13 +72,14 @@
     isotopeSetUp();
     setUpParallax();
     hashFix();
-    const scrollTo = localStorage.getItem("skipAndScrollTo");
-    if (scrollTo) {
-      localStorage.removeItem("skipAndScrollTo");
-      skipAnimazioneIniziale(scrollTo);
-    } else {
-      animazioneIniziale();
-    }
+    skipAnimazioneIniziale("pricing");
+    // const scrollTo = localStorage.getItem("skipAndScrollTo");
+    // if (scrollTo) {
+    //   localStorage.removeItem("skipAndScrollTo");
+    //   skipAnimazioneIniziale(scrollTo);
+    // } else {
+    //   animazioneIniziale();
+    // }
   });
 
   window.onbeforeunload = function () {
@@ -137,9 +138,12 @@
     setTimeout(() => {
       $(".site-wrapper").removeClass("skipAnimation");
       setTimeout(() => {
-        $(document).scrollTop($(`#${scrollTo}`).offset().top - 77);
         $(".site-wrapper").removeClass("navigationOut");
-        $(`a[href="#${scrollTo}"]`).click();
+        const scrollEl = $("#" + scrollTo);
+        if (scrollEl.length) {
+          $(document).scrollTop(scrollEl.offset().top - 77);
+          $(`a[href="#${scrollTo}"]`).click();
+        }
       }, 1);
     }, 1);
   }
