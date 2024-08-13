@@ -72,14 +72,14 @@
     isotopeSetUp();
     setUpParallax();
     hashFix();
-    skipAnimazioneIniziale("pricing");
-    // const scrollTo = localStorage.getItem("skipAndScrollTo");
-    // if (scrollTo) {
-    //   localStorage.removeItem("skipAndScrollTo");
-    //   skipAnimazioneIniziale(scrollTo);
-    // } else {
-    //   animazioneIniziale();
-    // }
+    // skipAnimazioneIniziale("pricing");
+    const scrollTo = localStorage.getItem("skipAndScrollTo");
+    if (scrollTo) {
+      localStorage.removeItem("skipAndScrollTo");
+      skipAnimazioneIniziale(scrollTo);
+    } else {
+      animazioneIniziale();
+    }
   });
 
   window.onbeforeunload = function () {
