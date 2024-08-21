@@ -2,6 +2,30 @@
   --primary: #2293ca;
   --secondary: #f07f00;
 }
+
+.blurredWhoAmI{
+  position: relative;
+  background: transparent;
+}
+
+.blurredWhoAmI .contentNotBlurred{
+  z-index: 2;
+}
+
+.blurredWhoAmI::before{
+   content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/chiSono.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) grayscale(.3) brightness(0.9); /* Apply the blur here */
+    z-index: 1; /* Behind content */
+}
+
 /* ================ The Timeline ================ */
 
 .timeline {

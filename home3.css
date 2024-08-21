@@ -3948,6 +3948,12 @@ html.disabled_scroll,
   width: 100%;
 }
 @media screen and (max-width: 450px) {
+  .truncate-mobile {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .countdown .counter {
     font-size: 30px;
   }
