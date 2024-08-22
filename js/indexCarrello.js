@@ -1,5 +1,6 @@
 $(function () {
   ("use strict");
+  localStorage.setItem("skipAndScrollTo", "pricing");
 
   let invioMailutente = false;
   const COSTO_PACCHETTI = [
@@ -109,6 +110,8 @@ $(function () {
       costo: 997,
     },
   ];
+  let coachingGlobal = "";
+  let coachingMesi = 0;
 
   $(document).ready(function () {
     $(".site-wrapper").addClass("navigationIn");
@@ -118,6 +121,7 @@ $(function () {
     $(".navigateBack").on("click", navigateBack);
 
     gestioneCallConoscitiva();
+    gestionePagamenti();
   });
 
   function navigateBack(e) {
@@ -126,63 +130,6 @@ $(function () {
     setTimeout(() => {
       // window.history.back();
     }, 500);
-  }
-  
-  function isValidEmailAddress(emailAddress) {
-    var pattern =
-      /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-    return pattern.test(emailAddress);
-  }
-
-  function SendMail() {
-    $("#invia_mail").click(() => {
-      var emailVal = $("#contact-email").val();
-      if (
-        isValidEmailAddress(emailVal) ||
-        $("#contact-telephone").val().length > 0
-      ) {
-        var params = {
-          action: "SendMessage",
-          name: $("#name").val(),
-          email: $("#contact-email").val() || "mailnoncompilata@fakemail.com",
-          tel: $("#contact-telephone").val(),
-          subject: $("#subject").val(),
-          message: $("#message").val(),
-        };
-        $.post(
-          "https://getform.io/f/5584c108-b4a4-41cf-8219-164eac51d191",
-          params
-        )
-          .done(() => {
-            Swal.fire({
-              icon: "success",
-              title:
-                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            }).then(() => {
-              $(
-                ".contact-form input:not([type='submit']), .contact-form textarea"
-              ).val("");
-            });
-          })
-          .fail(() => {
-            Swal.fire({
-              icon: "error",
-              title: "Errore nell'invio della richiesta, riprovare più tardi",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            });
-          });
-      } else {
-        Swal.fire({
-          icon: "warning",
-          title: "Compila correttamente la mail oppure il numero di telefono",
-          showConfirmButton: true,
-          confirmButtonText: "OK",
-        });
-      }
-    });
   }
 
   function checkAcquistabile() {
@@ -203,51 +150,145 @@ $(function () {
     return valid_input && valid_checkbox;
   }
 
-  function gestioneModalePagamenti() {
-    $(".buy_coaching").click(function () {
-      //spunto checkbox privacy se già accettata
-      if (localStorage.getItem("accepted")) {
-        $("#privacy_policy").prop("checked", true);
+  function changedCoaching(pacchettoRichiesto) {
+    coachingGlobal = pacchettoRichiesto;
+    $(".coaching_card").removeClass("selected").find(".addToCart").html(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+      </svg>
+    `);
+    $("#riepilogo tbody").html("");
+    $("#cart")
+      .removeClass("basic pro top forza tecnica")
+      .addClass(pacchettoRichiesto);
+    $(".coaching_card").hide();
+    $("#tecnica, #forza").show();
+    // CHANGE LABEL
+    if (pacchettoRichiesto == "forza" || pacchettoRichiesto == "tecnica") {
+      //only services
+    } else {
+      //coaching
+      $("#coaching_name").html(pacchettoRichiesto.toUpperCase());
+      $(".coachingBenefit").hide();
+      $(`.switchCoaching`).removeClass("active");
+      $(".colorChanging").removeClass("c_primary c_secondary c_basic");
+      $(`.switchCoaching[data-coaching='${pacchettoRichiesto}']`).addClass(
+        "active"
+      );
+      $(`#${pacchettoRichiesto}-coaching`).show();
+      switch (pacchettoRichiesto) {
+        case "basic":
+          $(".colorChanging").addClass("c_basic");
+          $("#mensile, #trimestrale, #semestrale").show();
+          $("#mensile .price-tag").html("60€");
+          $("#trimestrale .price-tag").html("157€");
+          $("#semestrale .price-tag").html("297€");
+          break;
+        case "pro":
+          $(".colorChanging").addClass("c_secondary");
+          $("#trimestrale, #semestrale").show();
+          $("#trimestrale .price-tag").html("197€");
+          $("#semestrale .price-tag").html("377€");
+          break;
+        case "top":
+          $(".colorChanging").addClass("c_primary");
+          $("#mensile, #trimestrale, #semestrale, #annuale").show();
+          $("#mensile .price-tag").html("110€");
+          $("#trimestrale .price-tag").html("297€");
+          $("#semestrale .price-tag").html("567€");
+          $("#annuale .price-tag").html("997€");
+          break;
+        default:
       }
-      try {
-        let users = JSON.parse(localStorage.getItem("user"));
-        $("#name_buyer").val(users.persona);
-        $("#email_buyer").val(users.mail);
-        $("#telephone_buyer").val(users.telefono);
-        $("#cod_fisc_buyer").val(users.cod_fisc);
-        $("#address_buyer").val(users.address);
-        $("#city_buyer").val(users.city);
-        $("#cap_buyer").val(users.cap);
-        $("#prov_buyer").val(users.prov);
-        $("#modale_pagamento input[type='checkbox']").prop("checked", true);
-        $("#label_last_buy").show();
-      } catch (error) {
-        console.log("L'utente non ha mai acquistato un pacchetto");
+    }
+  }
+
+  function gestionePagamenti() {
+    if (localStorage.getItem("accepted")) {
+      $("#privacy_policy").prop("checked", true);
+    }
+    try {
+      let users = JSON.parse(localStorage.getItem("user"));
+      $("#name_buyer").val(users.persona);
+      $("#email_buyer").val(users.mail);
+      $("#telephone_buyer").val(users.telefono);
+      $("#cod_fisc_buyer").val(users.cod_fisc);
+      $("#address_buyer").val(users.address);
+      $("#city_buyer").val(users.city);
+      $("#cap_buyer").val(users.cap);
+      $("#prov_buyer").val(users.prov);
+      $("#modale_pagamento input[type='checkbox']").prop("checked", true);
+      $("#label_last_buy").show();
+    } catch (error) {
+      console.log("L'utente non ha mai acquistato un pacchetto");
+    }
+
+    // $("#dati_acquirente, #dati_bonifico").addClass("show_acquirente");
+    changedCoaching(
+      new URLSearchParams(window.location.search).get("coaching")
+    );
+
+    $(".switchCoaching").click(function () {
+      if (!$(this).hasClass("active"))
+        changedCoaching($(this).data("coaching"));
+    });
+
+    $(".coaching_card").click(function (e) {
+      e.preventDefault();
+      $("#riepilogo tbody").html("");
+      if ($(this).hasClass("selected")) {
+        $(this).removeClass("selected").find(".addToCart").html(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+              <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+            </svg>
+          `);
+      } else {
+        if ($(this).parents(".coaching_avaiable").length) {
+          coachingMesi = $(this).attr("id");
+          $(".coaching_avaiable .coaching_card")
+            .removeClass("selected")
+            .find(".addToCart").html(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+              <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z"/>
+              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+            </svg>
+          `);
+        }
+        $(this).addClass("selected").find(".addToCart").html(`
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16">
+            <path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z"/>
+          </svg>
+        `);
       }
-      let pacchetto = $(this).data("id");
-      $("#modale_pagamento")
-        .addClass("open_modale")
-        .data("pacchetto", pacchetto);
-      $("html").addClass("disabled_scroll");
-      switch (pacchetto) {
-        case 1:
-          $("#nome_pacchetto").html("BASIC");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€60");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€157");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €23");
-          break;
-        case 3:
-          $("#nome_pacchetto").html("STANDARD");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€90");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€237");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €33");
-          break;
-        case 5:
-          $("#nome_pacchetto").html("PREMIUM");
-          $("#costo_mensile, #info_bonifico_mensile span").html("€120");
-          $("#costo_trimestrale, #info_bonifico_trimestrale span").html("€317");
-          $("#pacc_trimestrale").attr("risparmio", "RISPARMI €43");
-          break;
+      if ($(".selected").length) {
+        let total = 0;
+        $(".selected").each(function () {
+          let name = $(this).parents(".coaching_avaiable").length
+            ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
+            : $(this).attr("id") == "forza"
+            ? "SCHEDA DI FORZA"
+            : "ANALISI TECNICA DI CORSA";
+
+          let price = $(this).find(".price-tag").html();
+          total += parseInt(price);
+          $("#riepilogo tbody").append(`
+        <tr>
+          <td>${name}</td>
+          <td>${price}</td>
+        </tr>
+      `);
+        });
+        $("#riepilogo tbody").append(`
+        <tr>
+          <td><strong>TOTALE:</strong></td>
+          <td>${total}€</td>
+        </tr>
+      `);
+        $("#riepilogo-cont").show();
+      } else {
+        $("#riepilogo-cont").hide();
       }
     });
 
@@ -287,8 +328,7 @@ $(function () {
 
     $("#show_dati_bonifico").click(() => {
       $("#modale_pagamento").addClass("disabled_scroll").scrollTop(0);
-      $(".hide_on_bonifico").addClass("scale_out");
-      $(".toggle_dati_bonifico").show().addClass("scale_in");
+      $("#toggle_dati_bonifico").toggle();
       if (!invioMailutente) invioMailDatiUtente();
     });
 

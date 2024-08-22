@@ -1585,21 +1585,21 @@ h1.big-text-percorso {
 }
 
 #start-coaching .pricing-table-price{
-  color: #000;
+  color: #111;
 }
 
 #start-coaching .button.buy_coaching{
-  background: #000;
-  border-color: #000;
+  background: #111;
+  border-color: #111;
 }
 
 #start-coaching .button.buy_coaching:hover{
-  color: #000;
+  color: #111;
   background: #fff;
 }
 
 #start-coaching .pricing-badge-container .pricing-badge{
-  background: linear-gradient(45deg, #000, #272727);
+  background: linear-gradient(45deg, #111, #272727);
 }
 
 #pro-coaching .pricing-num{
@@ -3670,7 +3670,7 @@ footer .footer-social-divider:before {
 }
 #dati_acquirente,
 #dati_bonifico {
-  transform: translatey(2000px);
+  transform: translateX(2000px);
   opacity: 0;
   transition: 1s ease-in-out all 0.3s;
   padding: 1rem;
@@ -3754,7 +3754,7 @@ footer .footer-social-divider:before {
 }
 #dati_acquirente.show_acquirente,
 #dati_bonifico.show_acquirente {
-  transform: translatey(0);
+  transform: translateX(0);
   opacity: 1;
 }
 #dati_acquirente {
@@ -3948,6 +3948,9 @@ html.disabled_scroll,
   width: 100%;
 }
 @media screen and (max-width: 450px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
   .truncate-mobile {
     display: block;
     white-space: nowrap;

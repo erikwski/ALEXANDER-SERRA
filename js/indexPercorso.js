@@ -9,6 +9,16 @@ $(function () {
   
     $(".navigateBack").on("click", navigateBack);
 
+    $("#carousel-project").owlCarousel({
+      loop: true,
+      autoHeight: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      autoplayTimeout: 8000,
+      responsiveClass: true,
+      items: 1,
+    });
+
     slowScroll();
   });
 

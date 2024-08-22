@@ -54,12 +54,409 @@
             </header>
             <div id="content" class="site-content center-relative">
                 <!-- progetti -->
-                <div id="cart" class="section">
-                    <div class="page-title-holder">
-                        <h3 class="entry-title">CARRELLO</h3>
-                    </div>
-                    <div class="section-wrapper block content-1170 center-relative">
+                <div id="cart" class="section baseAnimation" style="min-height: 100vh; color: #000;">
+                    <div class="block content-1170 center-relative center" style="padding-top: 2em; padding-bottom: 2em;">
+                        <div class="full-center" style="flex-direction: column;">
+                            <strong>CLICCA QUI PER CAMBIARE COACHING</strong>
 
+                            <div class="switchCoachingCont">
+                                <div class="switchCoaching" data-coaching="basic">
+                                    BASIC
+                                </div>
+                                <div class="switchCoaching" data-coaching="pro">
+                                    PRO
+                                </div>
+                                <div class="switchCoaching" data-coaching="top">
+                                    TOP
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="divider-cart"></div>
+                        <h2 class="entry-title pb-1 dark_grey center">
+                            STAI PER DIVENTARE UN ALERUNNER
+                            <strong class="colorChanging" id="coaching_name"></strong>
+                        </h2>
+                        <div class="coachingBenefitCont" style="padding: 8px;">
+                            <strong style="color: #000;">Il tuo coaching includerá:</strong>
+    
+                            <ul id="basic-coaching" class="coachingBenefit">
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Incontro di 30 minuti
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Programmazione RUNNING personalizzata
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    <span class="truncate">1 feedback settimanale</span>
+                                </li>
+                            </ul>
+    
+                            <ul id="pro-coaching" class="coachingBenefit">
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Incontro di 45 minuti
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Programmazione RUNNING personalizzata
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    3 feedback settimanali
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Monitoraggio tramite "TRAININGPEAKS" O "GARMIN CONNECT"
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    <span>
+                                        <b class="c_secondary">5 VIDEO GUIDE</b>
+                                        a tema “foam roll”, “piedi forti”, “tecnica di corsa”, “mobilitá articolare” & “stretching del runner”
+                                    </span>
+                                </li>
+                            </ul>
+    
+                            <ul id="top-coaching" class="coachingBenefit">
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Incontro di 60 minuti
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Programmazione RUNNING personalizzata
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    5 feedback settimanali
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Monitoraggio tramite "TRAININGPEAKS" O "GARMIN CONNECT"
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    <span>
+                                        <b class="c_primary">5 VIDEO GUIDE</b>
+                                        a tema “foam roll”, “piedi forti”, “tecnica di corsa”, “mobilitá articolare” & “stretching del runner”
+                                    </span>
+                                </li>
+                                <li class="pricing-list included-yes">
+                                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    <span>
+                                        Programma di 
+                                        <b class="c_primary">POTENZIAMENTO MUSCOLARE</b>
+                                        personalizzato
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divider-cart"></div>
+                        <strong>Quanti mesi vuoi acquistare?</strong>
+                        <div class="coaching_list coaching_avaiable">
+                            <div class="coaching_card" id="mensile">
+                                <div class="price-tag"></div>
+                                <img src="images/coachingMensile.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>MENSILE</strong>
+                                        <span>1 MESE</span>
+                                    </div>
+                                    <a href="#!" class="addToCart">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="coaching_card" id="trimestrale">
+                                <div class="price-tag"></div>
+                                <img src="images/coachingTrimestrale.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>TRIMESTRALE</strong>
+                                        <span>3 MESI</span>
+                                    </div>
+                                    <a href="#" class="addToCart ">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="coaching_card" id="semestrale">
+                                <div class="price-tag"></div>
+                                <img src="images/coachingSemestrale.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>SEMESTRALE</strong>
+                                        <span>6 MESI</span>
+                                    </div>
+                                    <a href="#" class="addToCart">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="coaching_card" id="annuale">
+                                <div class="price-tag"></div>
+                                <img src="images/coachingAnnuale.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>ANNUALE</strong>
+                                        <span>12 MESI</span>
+                                    </div>
+                                    <a href="#" class="addToCart">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider-cart"></div>
+                        <strong>Scopri i miei nuovissimi <strong class="colorChanging">SERVIZI EXTRA</strong></strong>
+                        <div class="coaching_list">
+                            <div class="coaching_card" id="tecnica">
+                                <div class="price-tag">37€</div>
+                                <img src="images/serviceTecnica.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>TECNICA</strong>
+                                        <span>ANALISI TECNICA DI CORSA</span>
+                                    </div>
+                                    <a href="#" class="addToCart ">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="coaching_card" id="forza">
+                                <div class="price-tag">57€</div>
+                                <img src="images/serviceForza.jpeg" alt="Mensile">
+                                
+                                <div class="coaching-detail">
+                                    <div class="full-center column">
+                                        <strong>FORZA</strong>
+                                        <span>SCHEDA ALLENAMENTO FORZA</span>
+                                    </div>
+                                    <a href="#!" class="addToCart">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="riepilogo-cont" style="display: none;">
+                            <div class="divider-cart"></div>
+                            <strong>RIEPILOGO</strong>
+    
+                            <table id="riepilogo" style="margin: auto; border: none;">
+                                <thead>
+                                    <th>SERVIZIO</th>
+                                    <th>COSTO</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+    
+                            <div class="pricing-button">
+                                <a href="carrello.html?coaching=tecnica" class="button scroll buy_coaching">
+                                    PROCEDI ALL'ACQUISTO
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="dati_acquirente" style="display: none;">
+                            <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
+                            <label id="label_last_buy">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
+                            <div class="contact-form" style="padding: 1rem 1rem 0;">
+                                <p>
+                                    <input
+                                        maxlength="100"
+                                        autocomplete="name"
+                                        id="name_buyer"
+                                        type="text"
+                                        name="nome"
+                                        placeholder="Cognome e nome"
+                                    >
+                                </p>
+                                <p>
+                                    <input
+                                        maxlength="64"
+                                        autocomplete="off"
+                                        id="cod_fisc_buyer"
+                                        type="text"
+                                        name="cod_fisc"
+                                        placeholder="Codice fiscale/Partita IVA"
+                                    >
+                                </p>
+                                <p class="full_center_column_mobile">
+                                    <input
+                                        maxlength="255"
+                                        autocomplete="email"
+                                        id="email_buyer"
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                    >
+                                    <input
+                                        maxlength="63"
+                                        autocomplete="tel"
+                                        id="telephone_buyer"
+                                        type="tel"
+                                        name="telefono"
+                                        placeholder="Telefono"
+                                    >
+                                </p>
+                                <p class="full_center_column_address">
+                                    <input
+                                        maxlength="255"
+                                        autocomplete="address-line1"
+                                        id="address_buyer"
+                                        type="text"
+                                        name="address"
+                                        placeholder="Indirizzo stradale"
+                                    >
+                                    <input
+                                        maxlength="127"
+                                        autocomplete="address-level2"
+                                        id="city_buyer"
+                                        type="text"
+                                        name="city"
+                                        placeholder="Località"
+                                    >
+                                    <input
+                                        maxlength="10"
+                                        autocomplete="postal-code"
+                                        id="cap_buyer"
+                                        type="text"
+                                        name="cap"
+                                        placeholder="Cap"
+                                    >
+                                    <input
+                                        maxlength="2"
+                                        autocomplete="address-level1"
+                                        id="prov_buyer"
+                                        type="text"
+                                        name="province"
+                                        placeholder="Provincia"
+                                    >
+                                </p>
+                                <p class="cont_checkbox">
+                                    <input type="checkbox" id="privacy_policy">
+                                    <label for="privacy_policy">
+                                        Ho letto e acconsento al trattamento dei miei dati secondo
+                                        <a href="policy.html" target="_blank">l'informativa privacy e la cookie policy</a>
+                                    </label>
+                                </p>
+                                <p class="cont_checkbox">
+                                    <input type="checkbox" id="condizioni_vendita">
+                                    <label for="condizioni_vendita">
+                                        Ho letto e accetto le presenti
+                                        <a href="pdf/TERMINI_CONDIZIONI.pdf" target="_blank">condizioni di vendita</a>
+                                        , ivi inclusa la perdita del diritto di recesso una volta iniziato il coaching ai sensi dell'art. 59 Codice del Consumo"
+                                    </label>
+                                </p>
+                                <p class="cont_checkbox">
+                                    <input type="checkbox" id="clausole_vessatorie">
+                                    <label for="clausole_vessatorie">
+                                        Approvo espressamente le seguenti clausole:
+                                        <br>
+                                        Art. 3.1) Fruizione delle tabelle di allenamento - esonero da responsabilità;
+                                        <br>
+                                        3.2) Idoneità fisica ed esonero responsabilità;
+                                        <br>
+                                        Art. 3.3) Durata del coaching e sospensione - clausola risolutiva espressa; Art.
+                                        <br>
+                                        3.4) Risoluzione anticipata - penale; Art.
+                                        <br>
+                                        3.5) Attivazione coaching e clausola risolutiva espressa;
+                                        <br>
+                                        Art. 4) Pagamento, clausola risolutiva espressa - esonero da responsabilità;
+                                        <br>
+                                        Art. 6) Divieto di divulgazione - esonero da responsabilità;
+                                        <br>
+                                        Art. 7) Patto di non concorrenza;
+                                        <br>
+                                        Art. 8.2) Recesso - esclusione;
+                                        <br>
+                                        Art. 10) Esonero da responsabilità;
+                                        <br>
+                                        Art. 13) Legge applicabile, giurisdizione di riferimento e foro competente
+                                    </label>
+                                </p>
+                                <p class="contact-submit-holder">
+                                    <a
+                                        href="#"
+                                        id="fake_paypal_btn"
+                                        class="button"
+                                        disabled
+                                    >
+                                        COMPILA I DATI OBBLIGATORI
+                                        <span class="fa fa-paypal hide_on_mobile"></span>
+                                    </a>
+                                    <div id="paypal_container"></div>
+                                </p>
+                                <p id="oppure_pay_label">
+                                    <label>oppure</label>
+                                </p>
+                                <a
+                                    href="#"
+                                    id="fake_bonifico"
+                                    class="button"
+                                    disabled
+                                >
+                                    BONIFICO BANCARIO
+                                    <span class="fa fa-bank hide_on_mobile"></span>
+                                </a>
+                                <p class="contact-submit-holder">
+                                    <div id="dati_bonifico" class="show_when_valid">
+                                        <a href="#" id="show_dati_bonifico" class="button">
+                                            ISTRUZIONI BONIFICO
+                                            <span class="fa fa-bank hide_on_mobile" style="margin-left: 1rem;"></span>
+                                        </a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="toggle_dati_bonifico" style="display: none;">
+                            <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+                            <span>
+                                <i>Intestatario:</i>
+                                SERRA ALEXANDER
+                            </span>
+                            <span>
+                                <i>Iban:</i>
+                                IT30W0538766690000003286021
+                            </span>
+                            <span>
+                                <i>Causale:</i>
+                                COACHING PER IL RUNNING
+                            </span>
+                            <span>
+                                <i>Costo:</i>
+                            </span>
+                            <span id="info_bonifico_mensile">
+                                <b>Mensile:</b>
+                                <span>60€</span>
+                            </span>
+                            <span id="info_bonifico_trimestrale">
+                                <b>Trimestrale:</b>
+                                <span>197€</span>
+                            </span>
+                            <span>
+                                <i>
+                                    Una volta effettuato BONIFICO INVIA COPIA ad
+                                    <a href="mailto:ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM">ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM</a>
+                                    oppure telefonicamente al
+                                    <a href="tel:3206349783">3206349783</a>
+                                    .
+                                </i>
+                            </span>
+                            <a href="#" id="back_to_normal_buy" class="circle_btn_modale">
+                                <span class="fa fa-arrow-left"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

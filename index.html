@@ -260,7 +260,7 @@
                                         </div>
                                     </div>
                                     <div class="pricing-button">
-                                        <a href="#" class="button scroll buy_coaching" data-id="1">
+                                        <a href="carrello.html?coaching=basic" class="button scroll buy_coaching">
                                             <span class="fa fa-paypal"></span>
                                             ACQUISTA COACHING
                                         </a>
@@ -321,7 +321,7 @@
                                         </div>
                                     </div>
                                     <div class="pricing-button">
-                                        <a href="#" class="button scroll buy_coaching" data-id="3">
+                                        <a href="carrello.html?coaching=pro" class="button scroll buy_coaching">
                                             <span class="fa fa-paypal"></span>
                                             ACQUISTA COACHING
                                         </a>
@@ -384,7 +384,7 @@
                                         </div>
                                     </div>
                                     <div class="pricing-button">
-                                        <a href="#" class="button scroll buy_coaching" data-id="5">
+                                        <a href="carrello.html?coaching=top" class="button scroll buy_coaching">
                                             <span class="fa fa-paypal"></span>
                                             ACQUISTA COACHING
                                         </a>
@@ -417,7 +417,7 @@
                                         <strong class="c_primary">Perfeziona la tua corsa</strong>, previeni infortuni e migliora l'efficienza
                                     </div>
                                     <div class="pricing-button">
-                                        <a href="#" class="button scroll buy_coaching" data-id="1">
+                                        <a href="carrello.html?coaching=tecnica" class="button scroll buy_coaching">
                                             <span class="fa fa-paypal"></span>
                                             ACQUISTA SERVIZIO
                                         </a>
@@ -439,7 +439,7 @@
                                         Riduci il <strong class="c_primary">rischio di infortuni</strong> e migliora la performance in gara e allenamento
                                     </div>
                                     <div class="pricing-button">
-                                        <a href="#" class="button scroll buy_coaching" data-id="1">
+                                        <a href="carrello.html?coaching=forza" class="button scroll buy_coaching">
                                             <span class="fa fa-paypal"></span>
                                             ACQUISTA SERVIZIO
                                         </a>
@@ -820,234 +820,6 @@
                     </svg>
                 </div>
                 <div class="alex-dialog-container"></div>
-            </div>
-            <div id="modale_pagamento">
-                <div id="cont_close">
-                    <a href="#" id="close_modale" class="circle_btn_modale">
-                        <span class="fa fa-close"></span>
-                    </a>
-                </div>
-                <div style="transition: 0.7s all .7s;">
-                    <h5 id="titolo_modale">
-                        <span class="hideOnVerySmall">HAI SELEZIONATO IL</span>
-                        COACHING
-                        <span class="c_secondary" id="nome_pacchetto"></span>
-                    </h5>
-                </div>
-                <div class="hide_on_bonifico" style="transition: 0.7s all .8s;">
-                    <label id="label_modale">
-                        Seleziona clickando sul pacchetto che fa per te
-                    </h5>
-                </div>
-                <div class="hide_on_bonifico" id="card_container" style="transition: 0.7s all .8s;">
-                    <div class="card_pacchetti" id="pacc_mensile">
-                        <h6>MENSILE</h6>
-                        <h4 id="costo_mensile" class="price_tag"></h4>
-                        <div class="cont_ico_pacc">
-                            <img src="images/logo.png" alt="logo_counter">
-                        </div>
-                    </div>
-                    <div class="card_pacchetti" id="pacc_trimestrale">
-                        <h6>TRIMESTRALE</h6>
-                        <h4 id="costo_trimestrale" class="price_tag"></h4>
-                        <div class="cont_ico_pacc">
-                            <img src="images/logo.png" alt="logo_counter">
-                            <img src="images/logo.png" alt="logo_counter">
-                            <img src="images/logo.png" alt="logo_counter">
-                        </div>
-                    </div>
-                </div>
-                <div class="hide_on_bonifico" id="dati_acquirente">
-                    <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
-                    <label id="label_last_buy">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
-                    <div class="contact-form" style="padding: 1rem 1rem 0;">
-                        <p>
-                            <input
-                                maxlength="100"
-                                autocomplete="name"
-                                id="name_buyer"
-                                type="text"
-                                name="nome"
-                                placeholder="Cognome e nome"
-                            >
-                        </p>
-                        <p>
-                            <input
-                                maxlength="64"
-                                autocomplete="off"
-                                id="cod_fisc_buyer"
-                                type="text"
-                                name="cod_fisc"
-                                placeholder="Codice fiscale/Partita IVA"
-                            >
-                        </p>
-                        <p class="full_center_column_mobile">
-                            <input
-                                maxlength="255"
-                                autocomplete="email"
-                                id="email_buyer"
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                            >
-                            <input
-                                maxlength="63"
-                                autocomplete="tel"
-                                id="telephone_buyer"
-                                type="tel"
-                                name="telefono"
-                                placeholder="Telefono"
-                            >
-                        </p>
-                        <p class="full_center_column_address">
-                            <input
-                                maxlength="255"
-                                autocomplete="address-line1"
-                                id="address_buyer"
-                                type="text"
-                                name="address"
-                                placeholder="Indirizzo stradale"
-                            >
-                            <input
-                                maxlength="127"
-                                autocomplete="address-level2"
-                                id="city_buyer"
-                                type="text"
-                                name="city"
-                                placeholder="Località"
-                            >
-                            <input
-                                maxlength="10"
-                                autocomplete="postal-code"
-                                id="cap_buyer"
-                                type="text"
-                                name="cap"
-                                placeholder="Cap"
-                            >
-                            <input
-                                maxlength="2"
-                                autocomplete="address-level1"
-                                id="prov_buyer"
-                                type="text"
-                                name="province"
-                                placeholder="Provincia"
-                            >
-                        </p>
-                        <p class="cont_checkbox">
-                            <input type="checkbox" id="privacy_policy">
-                            <label for="privacy_policy">
-                                Ho letto e acconsento al trattamento dei miei dati secondo
-                                <a href="policy.html" target="_blank">l'informativa privacy e la cookie policy</a>
-                            </label>
-                        </p>
-                        <p class="cont_checkbox">
-                            <input type="checkbox" id="condizioni_vendita">
-                            <label for="condizioni_vendita">
-                                Ho letto e accetto le presenti
-                                <a href="pdf/TERMINI_CONDIZIONI.pdf" target="_blank">condizioni di vendita</a>
-                                , ivi inclusa la perdita del diritto di recesso una volta iniziato il coaching ai sensi dell'art. 59 Codice del Consumo"
-                            </label>
-                        </p>
-                        <p class="cont_checkbox">
-                            <input type="checkbox" id="clausole_vessatorie">
-                            <label for="clausole_vessatorie">
-                                Approvo espressamente le seguenti clausole:
-                                <br>
-                                Art. 3.1) Fruizione delle tabelle di allenamento - esonero da responsabilità;
-                                <br>
-                                3.2) Idoneità fisica ed esonero responsabilità;
-                                <br>
-                                Art. 3.3) Durata del coaching e sospensione - clausola risolutiva espressa; Art.
-                                <br>
-                                3.4) Risoluzione anticipata - penale; Art.
-                                <br>
-                                3.5) Attivazione coaching e clausola risolutiva espressa;
-                                <br>
-                                Art. 4) Pagamento, clausola risolutiva espressa - esonero da responsabilità;
-                                <br>
-                                Art. 6) Divieto di divulgazione - esonero da responsabilità;
-                                <br>
-                                Art. 7) Patto di non concorrenza;
-                                <br>
-                                Art. 8.2) Recesso - esclusione;
-                                <br>
-                                Art. 10) Esonero da responsabilità;
-                                <br>
-                                Art. 13) Legge applicabile, giurisdizione di riferimento e foro competente
-                            </label>
-                        </p>
-                        <p class="contact-submit-holder">
-                            <a
-                                href="#"
-                                id="fake_paypal_btn"
-                                class="button"
-                                disabled
-                            >
-                                COMPILA I DATI OBBLIGATORI
-                                <span class="fa fa-paypal hide_on_mobile"></span>
-                            </a>
-                            <div id="paypal_container"></div>
-                        </p>
-                        <p id="oppure_pay_label">
-                            <label>oppure</label>
-                        </p>
-                        <a
-                            href="#"
-                            id="fake_bonifico"
-                            class="button"
-                            disabled
-                        >
-                            BONIFICO BANCARIO
-                            <span class="fa fa-bank hide_on_mobile"></span>
-                        </a>
-                        <p class="contact-submit-holder">
-                            <div id="dati_bonifico" class="show_when_valid">
-                                <a href="#" id="show_dati_bonifico" class="button">
-                                    ISTRUZIONI BONIFICO
-                                    <span class="fa fa-bank hide_on_mobile" style="margin-left: 1rem;"></span>
-                                </a>
-                            </div>
-                        </p>
-                    </div>
-                </div>
-                <div class="toggle_dati_bonifico" style="display: none;">
-                    <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
-                    <span>
-                        <i>Intestatario:</i>
-                        SERRA ALEXANDER
-                    </span>
-                    <span>
-                        <i>Iban:</i>
-                        IT30W0538766690000003286021
-                    </span>
-                    <span>
-                        <i>Causale:</i>
-                        COACHING PER IL RUNNING
-                    </span>
-                    <span>
-                        <i>Costo:</i>
-                    </span>
-                    <span id="info_bonifico_mensile">
-                        <b>Mensile:</b>
-                        <span>60€</span>
-                    </span>
-                    <span id="info_bonifico_trimestrale">
-                        <b>Trimestrale:</b>
-                        <span>197€</span>
-                    </span>
-                    <span>
-                        <i>
-                            Una volta effettuato BONIFICO INVIA COPIA ad
-                            <a href="mailto:ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM">ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM</a>
-                            oppure telefonicamente al
-                            <a href="tel:3206349783">3206349783</a>
-                            .
-                        </i>
-                    </span>
-                    <a href="#" id="back_to_normal_buy" class="circle_btn_modale">
-                        <span class="fa fa-arrow-left"></span>
-                    </a>
-                </div>
             </div>
         </div>
         <!--Load JavaScript-->
