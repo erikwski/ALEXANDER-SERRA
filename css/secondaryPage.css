@@ -213,11 +213,11 @@
   height: 26px;
 }
 
-#cart.basic .addToCart{
+#cart.start .addToCart{
   color: #111;
   border: 1px solid #111;
 }
-#cart.basic .coaching_card:hover .addToCart, #cart.basic .coaching_card.selected .addToCart{
+#cart.start .coaching_card:hover .addToCart, #cart.start .coaching_card.selected .addToCart{
   color: #fff;
   background: #111;
 }
@@ -289,11 +289,11 @@
 }
 
 
-#cart.basic .price-tag{
+#cart.start .price-tag{
   background: linear-gradient(90deg, #111, #000000);
   text-shadow: 1px 1px 1px #111;
 }
-#cart.basic .price-tag::before{
+#cart.start .price-tag::before{
   border-right: 20px solid #111;
 }
 
@@ -305,7 +305,7 @@
   border-right: 20px solid var(--secondary);
 }
 
-.c_basic{
+.c_start{
   color: #111;
 }
 .column{

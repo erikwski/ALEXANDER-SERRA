@@ -66,17 +66,17 @@ $(function () {
     },
     {
       id: 100,
-      desc: "BASIC - 1 MESE",
+      desc: "START - 1 MESE",
       costo: 60,
     },
     {
       id: 101,
-      desc: "BASIC - 3 MESI",
+      desc: "START - 3 MESI",
       costo: 157,
     },
     {
       id: 102,
-      desc: "BASIC - 6 MESI",
+      desc: "START - 6 MESI",
       costo: 297,
     },
     {
@@ -160,7 +160,7 @@ $(function () {
     `);
     $("#riepilogo tbody").html("");
     $("#cart")
-      .removeClass("basic pro top forza tecnica")
+      .removeClass("start pro top forza tecnica")
       .addClass(pacchettoRichiesto);
     $(".coaching_card").hide();
     $("#tecnica, #forza").show();
@@ -172,14 +172,14 @@ $(function () {
       $("#coaching_name").html(pacchettoRichiesto.toUpperCase());
       $(".coachingBenefit").hide();
       $(`.switchCoaching`).removeClass("active");
-      $(".colorChanging").removeClass("c_primary c_secondary c_basic");
+      $(".colorChanging").removeClass("c_primary c_secondary c_start");
       $(`.switchCoaching[data-coaching='${pacchettoRichiesto}']`).addClass(
         "active"
       );
       $(`#${pacchettoRichiesto}-coaching`).show();
       switch (pacchettoRichiesto) {
-        case "basic":
-          $(".colorChanging").addClass("c_basic");
+        case "start":
+          $(".colorChanging").addClass("c_start");
           $("#mensile, #trimestrale, #semestrale").show();
           $("#mensile .price-tag").html("60€");
           $("#trimestrale .price-tag").html("157€");
