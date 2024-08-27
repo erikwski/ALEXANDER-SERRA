@@ -109,6 +109,16 @@ $(function () {
       desc: "TOP - 12 MESI",
       costo: 997,
     },
+    {
+      id: 200,
+      desc: "ANALISI TECNICA DI CORSA",
+      costo: 37,
+    },
+    {
+      id: 201,
+      desc: "SCHEDA DI FORZA",
+      costo: 57,
+    },
   ];
   let coachingGlobal = "";
   let coachingMesi = 0;
@@ -117,6 +127,8 @@ $(function () {
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");
     $("html").addClass("loaded enable_scroll");
+    $("#tecnica").data("buyId", "200");
+    $("#forza").data("buyId", "201");
 
     $(".navigateBack").on("click", navigateBack);
 
@@ -151,6 +163,11 @@ $(function () {
   }
 
   function changedCoaching(pacchettoRichiesto) {
+    if (
+      typeof pacchettoRichiesto != "string" ||
+      ["start", "pro", "top", "forza", "tecnica"].indexOf(pacchettoRichiesto) == -1
+    )
+      pacchettoRichiesto = "start";
     coachingGlobal = pacchettoRichiesto;
     $(".coaching_card").removeClass("selected").find(".addToCart").html(`
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
@@ -167,6 +184,8 @@ $(function () {
     // CHANGE LABEL
     if (pacchettoRichiesto == "forza" || pacchettoRichiesto == "tecnica") {
       //only services
+      $(".coaching_avaiable").hide();
+      $("#" + pacchettoRichiesto).click();
     } else {
       //coaching
       $("#coaching_name").html(pacchettoRichiesto.toUpperCase());
@@ -184,20 +203,30 @@ $(function () {
           $("#mensile .price-tag").html("60€");
           $("#trimestrale .price-tag").html("157€");
           $("#semestrale .price-tag").html("297€");
+          $("#mensile").data("buyId", "100");
+          $("#trimestrale").data("buyId", "101");
+          $("#semestrale").data("buyId", "102");
           break;
         case "pro":
           $(".colorChanging").addClass("c_secondary");
           $("#trimestrale, #semestrale").show();
           $("#trimestrale .price-tag").html("197€");
           $("#semestrale .price-tag").html("377€");
+          $("#trimestrale").data("buyId", "110");
+          $("#semestrale").data("buyId", "111");
           break;
         case "top":
+          $("#forza").hide();
           $(".colorChanging").addClass("c_primary");
           $("#mensile, #trimestrale, #semestrale, #annuale").show();
           $("#mensile .price-tag").html("110€");
           $("#trimestrale .price-tag").html("297€");
           $("#semestrale .price-tag").html("567€");
           $("#annuale .price-tag").html("997€");
+          $("#mensile").data("buyId", "120");
+          $("#trimestrale").data("buyId", "121");
+          $("#semestrale").data("buyId", "122");
+          $("#annuale").data("buyId", "123");
           break;
         default:
       }
@@ -223,12 +252,7 @@ $(function () {
     } catch (error) {
       console.log("L'utente non ha mai acquistato un pacchetto");
     }
-
-    // $("#dati_acquirente, #dati_bonifico").addClass("show_acquirente");
-    changedCoaching(
-      new URLSearchParams(window.location.search).get("coaching")
-    );
-
+    
     $(".switchCoaching").click(function () {
       if (!$(this).hasClass("active"))
         changedCoaching($(this).data("coaching"));
@@ -287,11 +311,38 @@ $(function () {
         </tr>
       `);
         $("#riepilogo-cont").show();
+        $("#selectLabel").hide();
+        $(".buy_coaching").removeClass("disableBuy")
       } else {
         $("#riepilogo-cont").hide();
+        $("#selectLabel").show();
+        $(".buy_coaching").addClass("disableBuy")
       }
     });
 
+     changedCoaching(
+       new URLSearchParams(window.location.search).get("coaching")
+     );
+     
+     $(".buy_coaching").click((e)=>{
+      e.preventDefault();
+      let cartIdList = [];
+      $(".selected").each(function () {
+        cartIdList.push(+$(this).data("buyId"))
+      });
+      cartIdList.sort();
+      $("#cart").hide();
+      $("#buy-form").show();
+      $("#dati_acquirente").addClass("show_acquirente");
+      window.scrollTo(0, 0);
+      if (checkAcquistabile()) {
+        //PRONTO AD ACQUISTARE
+        inizializzaPaypal();
+      }
+      
+     });
+
+     // OLD PAYMENT METHODS
     $("#dati_acquirente input").on("change keyup", () => {
       if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
@@ -308,54 +359,12 @@ $(function () {
       }
     });
 
-    $(".card_pacchetti").click(function () {
-      if ($(this).hasClass("pacchetto_selezionato")) return;
-      $("#card_container").addClass("pacc_sel");
-      $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
-      $(this).addClass("pacchetto_selezionato");
-      $("#dati_acquirente").addClass("show_acquirente");
-      if (checkAcquistabile()) {
-        //PRONTO AD ACQUISTARE
-        inizializzaPaypal();
-      }
-      $("#modale_pagamento").animate(
-        {
-          scrollTop: $("#dati_acquirente").position().top,
-        },
-        1000
-      );
-    });
 
     $("#show_dati_bonifico").click(() => {
-      $("#modale_pagamento").addClass("disabled_scroll").scrollTop(0);
       $("#toggle_dati_bonifico").toggle();
       if (!invioMailutente) invioMailDatiUtente();
     });
 
-    $("#back_to_normal_buy").click(() => {
-      $("#modale_pagamento").removeClass("disabled_scroll").scrollTop(0);
-      $(".scale_out").removeClass("scale_out");
-      $(".scale_in").hide().removeClass("scale_in");
-    });
-
-    $("#close_modale").click(() => {
-      $("#modale_pagamento")
-        .removeClass("open_modale")
-        .removeClass("disabled_scroll")
-        .scrollTop(0);
-      $("html").removeClass("disabled_scroll");
-      $(".pacchetto_selezionato").removeClass("pacchetto_selezionato");
-      $("#dati_acquirente").removeClass("show_acquirente");
-      $("#card_container").removeClass("pacc_sel");
-      $("#fake_paypal_btn, #fake_bonifico").fadeIn(500);
-      $("#dati_acquirente input").val("");
-      $(".scale_out").removeClass("scale_out");
-      $(".scale_in").hide().removeClass("scale_in");
-      $(".show_when_valid").removeClass("show_valid");
-      $("#oppure_pay_label").removeClass("acquisto_valido");
-      $("#paypal_container").removeClass("rendered_paypal").html("");
-    });
-    // $($(".buy_coaching")[0]).click();
   }
 
   function inizializzaPaypal() {
