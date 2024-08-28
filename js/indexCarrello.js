@@ -122,6 +122,7 @@ $(function () {
   ];
   let coachingGlobal = "";
   let coachingMesi = 0;
+  let cartIdList = [];
 
   $(document).ready(function () {
     $(".site-wrapper").addClass("navigationIn");
@@ -149,7 +150,7 @@ $(function () {
     $("#dati_acquirente input:not([type='checkbox'])").each(function () {
       if ($(this).val() === "") {
         valid_input = false;
-        $(this).addClass("invalid_input");
+        if($(this).hasClass("dirty")) $(this).addClass("invalid_input");
       } else {
         $(this).removeClass("invalid_input");
       }
@@ -247,7 +248,7 @@ $(function () {
       $("#city_buyer").val(users.city);
       $("#cap_buyer").val(users.cap);
       $("#prov_buyer").val(users.prov);
-      $("#modale_pagamento input[type='checkbox']").prop("checked", true);
+      $("input[type='checkbox']").prop("checked", true);
       $("#label_last_buy").show();
     } catch (error) {
       console.log("L'utente non ha mai acquistato un pacchetto");
@@ -258,7 +259,7 @@ $(function () {
         changedCoaching($(this).data("coaching"));
     });
 
-    $(".coaching_card").click(function (e) {
+    $("#cart .coaching_card").click(function (e) {
       e.preventDefault();
       $("#riepilogo tbody").html("");
       if ($(this).hasClass("selected")) {
@@ -310,10 +311,12 @@ $(function () {
           <td>${total}€</td>
         </tr>
       `);
+        $("#price-bank").html(`${total}€`);
         $("#riepilogo-cont").show();
         $("#selectLabel").hide();
         $(".buy_coaching").removeClass("disableBuy")
       } else {
+        $("#price-bank").html("");
         $("#riepilogo-cont").hide();
         $("#selectLabel").show();
         $(".buy_coaching").addClass("disableBuy")
@@ -323,17 +326,95 @@ $(function () {
      changedCoaching(
        new URLSearchParams(window.location.search).get("coaching")
      );
+
+     $(".fa-copy").click(()=>{
+      navigator.clipboard.writeText("IT30W0538766690000003286021");
+      $("#copy-popup").addClass("shown");
+      setTimeout(() => {
+        $("#copy-popup").removeClass("shown");
+      }, 3000);
+     });
      
      $(".buy_coaching").click((e)=>{
       e.preventDefault();
-      let cartIdList = [];
+      cartIdList = [];
+      $("#riepilogo-card").html("<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong>");
       $(".selected").each(function () {
-        cartIdList.push(+$(this).data("buyId"))
+        const id = +$(this).data("buyId");
+        const name = $(this).parents(".coaching_avaiable").length
+          ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
+          : $(this).attr("id") == "forza"
+          ? "SCHEDA DI FORZA"
+          : "ANALISI TECNICA DI CORSA";
+
+        const price = $(this).find(".price-tag").html();
+        cartIdList.push({
+          id: id,
+          name: name,
+          price: parseFloat(price)
+        });
+                
+        if (id < 200) {
+          $("#riepilogo-card").append(`
+            <div class="coaching_card selected" id="mensile">
+              <div class="price-tag">${price}</div>
+              <img src="images/about_me.jpg" alt="Coaching" style="object-position: 0 30%;">
+              
+              <div class="coaching-detail">
+                  <div class="full-center column">
+                      <strong>ALERUNNER <span class='small-badge'>${coachingGlobal.toUpperCase()}</span></strong>
+                      <span>${coachingMesi.toUpperCase()}</span>
+                  </div>
+              </div>
+            </div>
+          `);
+        }
+        if (id == 200){
+          $("#riepilogo-card").append(`
+            <div class="coaching_card selected">
+              <div class="price-tag">37€</div>
+              <img src="images/serviceTecnica.jpeg" alt="Tecnica">
+              
+              <div class="coaching-detail">
+                  <div class="full-center column">
+                      <strong>TECNICA</strong>
+                      <span>ANALISI TECNICA DI CORSA</span>
+                  </div>
+              </div>
+            </div>
+          `);
+        }
+        if (id == 201) {
+          $("#riepilogo-card").append(`
+            <div class="coaching_card selected" id="forza">
+              <div class="price-tag">57€</div>
+              <img src="images/serviceForza.jpeg" alt="Forza">
+              
+              <div class="coaching-detail">
+                  <div class="full-center column">
+                    <strong>FORZA</strong>
+                    <span>SCHEDA ALLENAMENTO FORZA</span>
+                  </div>
+              </div>
+            </div>
+          `);
+        }
       });
-      cartIdList.sort();
+      let AMOUNT = 0;
+      cartIdList.forEach((el) => (AMOUNT += el.price));
+      $("#riepilogo-card").append(`
+          <div class="divider-cart"></div>
+          <strong>
+              TOTALE:<span class='small-badge'>${AMOUNT}€</span>
+          </strong>
+      `);
+      cartIdList.sort((a, b)=> a.id < b.id);
+      
       $("#cart").hide();
       $("#buy-form").show();
       $("#dati_acquirente").addClass("show_acquirente");
+      $("#riepilogo-card").addClass("showRiepilogo");
+
       window.scrollTo(0, 0);
       if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
@@ -343,7 +424,8 @@ $(function () {
      });
 
      // OLD PAYMENT METHODS
-    $("#dati_acquirente input").on("change keyup", () => {
+    $("#dati_acquirente input").on("change keyup", function() {
+      $(this).addClass("dirty");
       if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
         if (!$("#paypal_container").hasClass("rendered_paypal"))
@@ -360,28 +442,27 @@ $(function () {
     });
 
 
-    $("#show_dati_bonifico").click(() => {
-      $("#toggle_dati_bonifico").toggle();
+    $("#show_dati_bonifico").click((e) => {
+      e.preventDefault();
+      $("#toggle_dati_bonifico").toggle(500);
       if (!invioMailutente) invioMailDatiUtente();
     });
+
+    // $("#trimestrale").click();
+    // $(".buy_coaching").click();
+    // $(".coaching_card").show();
 
   }
 
   function inizializzaPaypal() {
-    let id_pacchetto = $("#modale_pagamento").data("pacchetto");
-    if ($("#pacc_trimestrale").hasClass("pacchetto_selezionato"))
-      id_pacchetto++;
     $("#paypal_container").addClass("rendered_paypal").html("");
     $(".show_when_valid").addClass("show_valid");
     $("#oppure_pay_label").addClass("acquisto_valido");
     $("#fake_paypal_btn, #fake_bonifico").fadeOut(500);
     paypal.FUNDING.SOFORT = "disallowed";
-    // paypal.FUNDING.MYBANK = "disallowed";
+    let AMOUNT = 0;
+    cartIdList.forEach(el=> AMOUNT += el.price);
     try {
-      let pacchetto_venduto =
-        COSTO_PACCHETTI[
-          COSTO_PACCHETTI.findIndex((cc) => cc.id == id_pacchetto)
-        ];
       let paypal_inizialize = {
         style: {
           size: "responsive",
@@ -399,7 +480,7 @@ $(function () {
             purchase_units: [
               {
                 amount: {
-                  value: pacchetto_venduto.costo,
+                  value: AMOUNT,
                 },
               },
             ],
@@ -408,9 +489,9 @@ $(function () {
 
         // Finalize the transaction
         onApprove: function (data, actions) {
-          return actions.order.capture().then(function (orderData) {
+          return actions.order.capture().then(async function (orderData) {
             let payer = orderData.payer;
-            confermaPagamento({
+            await confermaPagamento({
               paypal_name: payer.name.surname + " " + payer.name.given_name,
               paypal_address: `${payer.address.address_line_1}, ${payer.address.admin_area_1} - ${payer.address.postal_code}`,
               paypal_mail: payer.email_address,
@@ -425,9 +506,9 @@ $(function () {
               city: $("#city_buyer").val(),
               cap: $("#cap_buyer").val(),
               prov: $("#prov_buyer").val(),
-              pacchetto: id_pacchetto,
-              costo: pacchetto_venduto.costo,
-              pacchetto_desc: pacchetto_venduto.desc,
+              pacchetto: null,
+              costo: null,
+              pacchetto_desc: null,
             });
             $("#close_modale").click();
             Swal.fire({
@@ -446,40 +527,34 @@ $(function () {
       paypal.Buttons(paypal_inizialize).render("#paypal_container");
     } catch (error) {
       alert(
-        "ERRORE CRITICO: contatta l'amministrazione per effettuare correttamente il pagamento"
+        "ERRORE CRITICO: contattami per effettuare correttamente il pagamento"
       );
     }
   }
 
-  function confermaPagamento(dati) {
+  async function confermaPagamento(dati) {
     try {
       localStorage.setItem("user", JSON.stringify(dati));
-      $.post("api/conferma_acquisto.php", dati)
-        .done((j) => {
-          if (j.length) {
-            Swal.fire({
-              icon: "error",
-              title:
-                "ERRORE CRITICO: contatta l'amministrazione per confermare il pagamento",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            });
-          }
-        })
-        .error(() => {
+      cartIdList.forEach(async(pacchetto)=>{
+        dati.pacchetto = pacchetto.id;
+        dati.costo = pacchetto.price;
+        dati.pacchetto_desc = pacchetto.name;
+        const j = await $.post("api/conferma_acquisto.php", dati)
+        if (j.length) {
           Swal.fire({
             icon: "error",
             title:
-              "ERRORE CRITICO: contatta l'amministrazione per confermare il pagamento",
+              "ERRORE CRITICO: contattami per confermare il pagamento",
             showConfirmButton: true,
             confirmButtonText: "OK",
           });
-        });
+        }
+      })
     } catch (error) {
       Swal.fire({
         icon: "error",
         title:
-          "ERRORE CRITICO: contatta l'amministrazione per confermare il pagamento",
+          "ERRORE CRITICO: contattami per confermare il pagamento",
         showConfirmButton: true,
         confirmButtonText: "OK",
       });
@@ -497,7 +572,7 @@ $(function () {
       city: $("#city_buyer").val(),
       cap: $("#cap_buyer").val(),
       prov: $("#prov_buyer").val(),
-      pacchetto_desc: "10Km & Lode",
+      pacchetto_desc: cartIdList.map(pacchetto=> pacchetto.name).join(", "),
     };
     try {
       localStorage.setItem("user", JSON.stringify(dati));

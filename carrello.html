@@ -228,7 +228,7 @@
                         <div class="coaching_list">
                             <div class="coaching_card" id="tecnica">
                                 <div class="price-tag">37€</div>
-                                <img src="images/serviceTecnica.jpeg" alt="Mensile">
+                                <img src="images/serviceTecnica.jpeg" alt="Tecnica">
                                 
                                 <div class="coaching-detail">
                                     <div class="full-center column">
@@ -242,7 +242,7 @@
 
                             <div class="coaching_card" id="forza">
                                 <div class="price-tag">57€</div>
-                                <img src="images/serviceForza.jpeg" alt="Mensile">
+                                <img src="images/serviceForza.jpeg" alt="Forza">
                                 
                                 <div class="coaching-detail">
                                     <div class="full-center column">
@@ -280,95 +280,115 @@
                 </div>
 
                 <div id="buy-form" class="section baseAnimation" style="display: none;">
+                    <div id="riepilogo-card">
+                        
+                    </div>
                     <div id="dati_acquirente">
-                        <h6 style="padding-bottom: 0;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
+                        <h6 style="padding-bottom: 0; text-align: center;">INSERISCI I TUOI DATI PER PROCEDERE CON L'ACQUISTO:</h6>
                         <label id="label_last_buy" style="display: none;">Dati acquirente recuperati dall'ultimo acquisto effettuato</label>
                         <div id="new-buy-form">
-                            <div class="field padding-bottom--24">
-                                <label for="email">Email</label>
-                                <input type="email" name="email">
-                            </div>
-
-                            <div class="field field-checkbox padding-bottom--24" style="display: flex;">
-                                <label for="checkbox" for="checkTry">
-                                <input type="checkbox" id="checkTry"> 
-                                    Stay signed in for a week
-                                </label>
-                            </div>
-                        </div>
-                        <div class="contact-form" style="padding: 1rem 1rem 0;">
-                            <p>
-                                <input
+                            <!-- Nome & Codice fiscale -->
+                            <div class="field padding-bottom--24 f-12 fl-6">
+                                <input 
                                     maxlength="100"
                                     autocomplete="name"
                                     id="name_buyer"
-                                    type="text"
                                     name="nome"
-                                    placeholder="Cognome e nome"
+                                    type="text"
+                                    placeholder="Il tuo nome & cognome..."
                                 >
-                            </p>
-                            <p>
-                                <input
+                                <label for="name_buyer">Nome & Cognome</label>
+                                <span class="input-icon fa fa-user-circle" aria-hidden="true"></span>
+                            </div>
+                            <div class="field padding-bottom--24 f-12 fl-6">
+                                <input 
                                     maxlength="64"
                                     autocomplete="off"
                                     id="cod_fisc_buyer"
                                     type="text"
                                     name="cod_fisc"
-                                    placeholder="Codice fiscale/Partita IVA"
+                                    placeholder="Il tuo Codice fiscale/Partita IVA..."
                                 >
-                            </p>
-                            <p class="full_center_column_mobile">
-                                <input
+                                <label for="cod_fisc_buyer">Codice fiscale/Partita IVA</label>
+                                <span class="input-icon fa fa-credit-card-alt" aria-hidden="true"></span>
+                            </div>
+                            <!-- Mail & Telefono -->
+                            <div class="field padding-bottom--24 f-12 fl-6">
+                                <input 
                                     maxlength="255"
                                     autocomplete="email"
                                     id="email_buyer"
                                     type="email"
                                     name="email"
-                                    placeholder="Email"
+                                    placeholder="La tua mail..."
                                 >
-                                <input
-                                    maxlength="63"
+                                <label for="email_buyer">E-Mail</label>
+                                <span class="input-icon fa fa-envelope" aria-hidden="true"></span>
+                            </div>
+                            <div class="field padding-bottom--24 f-12 fl-6">
+                                <input 
+                                    maxlength="16"
                                     autocomplete="tel"
                                     id="telephone_buyer"
                                     type="tel"
                                     name="telefono"
-                                    placeholder="Telefono"
+                                    placeholder="Il tuo telefono..."
                                 >
-                            </p>
-                            <p class="full_center_column_address">
-                                <input
+                                <label for="telephone_buyer">Telefono</label>
+                                <span class="input-icon fa fa-phone" aria-hidden="true"></span>
+                            </div>
+                            <!-- Indirizzo -->
+                            <div class="field padding-bottom--24 f-12 fm-6 fl-3">
+                                <input 
                                     maxlength="255"
                                     autocomplete="address-line1"
                                     id="address_buyer"
                                     type="text"
                                     name="address"
-                                    placeholder="Indirizzo stradale"
+                                    placeholder="Il tuo indirizzo di residenza..."
                                 >
-                                <input
+                                <label for="address_buyer">Indirizzo di residenza</label>
+                                <span class="input-icon fa fa-address-card" aria-hidden="true"></span>
+                            </div>
+                            <div class="field padding-bottom--24 f-12 fm-6 fl-3">
+                                <input 
                                     maxlength="127"
                                     autocomplete="address-level2"
                                     id="city_buyer"
                                     type="text"
                                     name="city"
-                                    placeholder="Località"
+                                    placeholder="La tua localitá..."
                                 >
-                                <input
+                                <label for="city_buyer">Localitá</label>
+                                <span class="input-icon fa fa-location-arrow" aria-hidden="true"></span>
+                            </div>
+                            <div class="field padding-bottom--24 f-6 fl-3">
+                                <input 
                                     maxlength="10"
                                     autocomplete="postal-code"
                                     id="cap_buyer"
                                     type="text"
                                     name="cap"
-                                    placeholder="Cap"
+                                    placeholder="Il tuo CAP..."
                                 >
-                                <input
+                                <label for="cap_buyer">CAP</label>
+                                <span class="input-icon fa fa-crosshairs" aria-hidden="true"></span>
+                                
+                            </div>
+                            <div class="field padding-bottom--24 f-6 fl-3">
+                                <input 
                                     maxlength="2"
                                     autocomplete="address-level1"
                                     id="prov_buyer"
                                     type="text"
                                     name="province"
-                                    placeholder="Provincia"
+                                    placeholder="La tua provincia..."
                                 >
-                            </p>
+                                <label for="prov_buyer">Provincia</label>
+                                <span class="input-icon fa fa-map" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="checkbox-container">                
                             <p class="cont_checkbox">
                                 <input type="checkbox" id="privacy_policy">
                                 <label for="privacy_policy">
@@ -412,7 +432,8 @@
                                     Art. 13) Legge applicabile, giurisdizione di riferimento e foro competente
                                 </label>
                             </p>
-                            <p class="contact-submit-holder">
+                            <p class="contact-submit-holder" style="margin-bottom: 0;">
+                                <strong id="payLabel">COMPLETA IL TUO ACQUISTO PAGANDO TRAMITE:</strong>
                                 <a
                                     href="#"
                                     id="fake_paypal_btn"
@@ -422,7 +443,7 @@
                                     COMPILA I DATI OBBLIGATORI
                                     <span class="fa fa-paypal hide_on_mobile"></span>
                                 </a>
-                                <div id="paypal_container"></div>
+                                <div id="paypal_container" style="max-width: 600px; margin: auto;"></div>
                             </p>
                             <p id="oppure_pay_label">
                                 <label>oppure</label>
@@ -444,80 +465,72 @@
                                     </a>
                                 </div>
                             </p>
+                            <p>
+                                <div id="toggle_dati_bonifico" style="display: none; ">
+                                    <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
+                                    <span>
+                                        <i>Intestatario:</i>
+                                        SERRA ALEXANDER
+                                    </span>
+                                    <span>
+                                        <i>Iban:</i>
+                                        IT30W0538766690000003286021
+                                        <span class="fa fa-copy c_primary" style="font-size: 18px;"></span>
+                                    </span>
+                                    <span>
+                                        <i>Causale:</i>
+                                        COACHING PER IL RUNNING
+                                    </span>
+                                    <span>
+                                        <i>Costo per i servizi selezionati: <strong id="price-bank"></strong></i>
+                                    </span>
+                                    <span>
+                                        <i>
+                                            Una volta effettuato BONIFICO INVIA COPIA ad
+                                            <a href="mailto:ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM">ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM</a>
+                                            oppure telefonicamente al
+                                            <a href="tel:3206349783">3206349783</a>
+                                            .
+                                        </i>
+                                    </span>
+                                </div>
+                            </p>
                         </div>
-                    </div>
-                    <div class="toggle_dati_bonifico" style="display: none;">
-                        <b>PER INTRAPRENDERE IL COACHING  INOLTRA BONIFICO A:</b>
-                        <span>
-                            <i>Intestatario:</i>
-                            SERRA ALEXANDER
-                        </span>
-                        <span>
-                            <i>Iban:</i>
-                            IT30W0538766690000003286021
-                        </span>
-                        <span>
-                            <i>Causale:</i>
-                            COACHING PER IL RUNNING
-                        </span>
-                        <span>
-                            <i>Costo:</i>
-                        </span>
-                        <span id="info_bonifico_mensile">
-                            <b>Mensile:</b>
-                            <span>60€</span>
-                        </span>
-                        <span id="info_bonifico_trimestrale">
-                            <b>Trimestrale:</b>
-                            <span>197€</span>
-                        </span>
-                        <span>
-                            <i>
-                                Una volta effettuato BONIFICO INVIA COPIA ad
-                                <a href="mailto:ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM">ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM</a>
-                                oppure telefonicamente al
-                                <a href="tel:3206349783">3206349783</a>
-                                .
-                            </i>
-                        </span>
-                        <a href="#" id="back_to_normal_buy" class="circle_btn_modale">
-                            <span class="fa fa-arrow-left"></span>
-                        </a>
                     </div>
                 </div>
             </div>
             <div class="section blurredWhoAmI" id="calendly">
-                    <div class="page-title-holder contentNotBlurred">
-                        <h3 class="entry-title">CALL GRATUITA</h3>
-                    </div>
-                    <div class="section-wrapper block content-1170 center-relative contentNotBlurred">
-                        <div class="content-wrapper center" style="padding: 10px; background: #0000000d; border-radius: 1em;">
-                            <h2 class="entry-title pb-1 doubt-on-coaching" style="color: #000000c7; text-shadow: 1px 1px 1px white;">
-                               HAI BISOGNO DI ALTRE INFORMAZIONI PRIMA DI DIVENTARE ALERUNNER<strong class="c_primary">?</strong>
-                            </h2>
-                            <div class="button-holder button-holder-calendly">
-                                <a href="#" class="button full-center" id="call-conoscitiva">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
-                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/>
-                                    </svg>
-                                    <strong>
-                                        PRENOTA UNA CALL CONOSCITIVA GRATUITA
-                                    </strong>
-                                </a>
-                            </div>
-                            <div class="button-holder button-holder-calendly">
-                                <a href="#" class="button full-center navigateBack" id="back-to-main" style="padding: 6px 12px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-                                    </svg>
-                                    <strong>
-                                        TORNA AL SITO PRINCIPALE
-                                    </strong>
-                                </a>
-                            </div>
+                <div class="page-title-holder contentNotBlurred">
+                    <h3 class="entry-title">CALL GRATUITA</h3>
+                </div>
+                <div class="section-wrapper block content-1170 center-relative contentNotBlurred">
+                    <div class="content-wrapper center" style="padding: 10px; background: #0000000d; border-radius: 1em;">
+                        <h2 class="entry-title pb-1 doubt-on-coaching" style="color: #000000c7; text-shadow: 1px 1px 1px white;">
+                            HAI BISOGNO DI ALTRE INFORMAZIONI PRIMA DI DIVENTARE ALERUNNER<strong class="c_primary">?</strong>
+                        </h2>
+                        <div class="button-holder button-holder-calendly">
+                            <a href="#" class="button full-center" id="call-conoscitiva">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/>
+                                </svg>
+                                <strong>
+                                    PRENOTA UNA CALL CONOSCITIVA GRATUITA
+                                </strong>
+                            </a>
+                        </div>
+                        <div class="button-holder button-holder-calendly">
+                            <a href="#" class="button full-center navigateBack" id="back-to-main" style="padding: 6px 12px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                                </svg>
+                                <strong>
+                                    TORNA AL SITO PRINCIPALE
+                                </strong>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
             <!-- Footer -->
             <footer class="footer">
                 <div class="footer-content center-relative">
@@ -542,6 +555,10 @@
                 </div>
             </footer>
         </div>
+
+        <div id="copy-popup">
+            IBAN COPIATO NEGLI APPUNTI
+        </div>
         <!--Load JavaScript-->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-0N6L6NQ18B"></script>
         <script>
@@ -557,11 +574,6 @@
                 'analytics_storage': 'denied'
             });
         </script>
-        <script>
-            var textSlider_speed = "20000";
-            var textSlider_auto = "true";
-            var textSlider_hover = "true";
-        </script>
         <script type="text/javascript">
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -570,7 +582,6 @@
             })(window, document, "clarity", "script", "mxx6v0tuf3");
         </script>
         <script src="js/jquery.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
         <script src="js/sweetalert.js"></script>
         <script src="https://www.paypal.com/sdk/js?client-id=ATlDv0OhM00E5lLv-zNsv0bJgazbwS8RUg3k7tjEKemOi8OdAsXS0kWmPlGe51xdk80NPiMOnA-u1B5M&currency=EUR"></script>
         <script src="js/indexCarrello.js"></script>    
