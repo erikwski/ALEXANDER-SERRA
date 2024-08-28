@@ -116,15 +116,16 @@ html.loaded #home {
 html.loaded #opening {
   transform: scale(1) translateY(0);
 }
-#openingPercorso{
+#openingPercorso {
   transform: scale(0) translateY(0);
-  transition: 1s transform .3s;
+  transition: 1s transform 0.3s;
 }
-#openingPercorso.loaded{
+#openingPercorso.loaded {
   transform: scale(1) translateY(0);
 }
 @media screen and (max-width: 650px) {
-  html.loaded #opening, #opening.loaded {
+  html.loaded #opening,
+  #opening.loaded {
     transform: scale(1) translateY(100px);
   }
 }
@@ -375,22 +376,22 @@ html.loaded #opening {
   }
 }
 
-.site-wrapper{
-  transition: .5s ease-in-out;
+.site-wrapper {
+  transition: 0.5s ease-in-out;
 }
-.site-wrapper.navigationOut{
+.site-wrapper.navigationOut {
   transform: translateX(-100%);
-  opacity: .5;
+  opacity: 0.5;
 }
-.site-wrapper.navigationLoadedOut{
+.site-wrapper.navigationLoadedOut {
   transform: translateX(100%);
-  opacity: .5;
+  opacity: 0.5;
 }
-.site-wrapper.navigationLoadedOut.navigationIn{
+.site-wrapper.navigationLoadedOut.navigationIn {
   transform: translateX(0);
   opacity: 1;
 }
-.site-wrapper.navigationOut .menu-holder{
+.site-wrapper.navigationOut .menu-holder {
   display: none !important;
 }
 .site-wrapper img {
@@ -605,7 +606,7 @@ body .sm-clean li.current_page_item > a {
   .sm-clean ul {
     padding: 8px 0;
   }
-  .doubt-on-coaching{
+  .doubt-on-coaching {
     font-size: 50px;
     line-height: 40px;
   }
@@ -766,17 +767,18 @@ body .sm-clean li.current_page_item > a {
 .medium-text.pb-0 {
   padding-bottom: 0;
 }
-.medium-text.pb-1, .pb-1 {
-  padding-bottom: .25em;
+.medium-text.pb-1,
+.pb-1 {
+  padding-bottom: 0.25em;
 }
 
-.button-holder-calendly{
+.button-holder-calendly {
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-.button-holder-calendly .button{
+.button-holder-calendly .button {
   display: flex;
   width: fit-content;
   justify-content: center;
@@ -1246,7 +1248,7 @@ a.button-dot:hover:before {
   display: flex;
 }
 
-#homePercorso{
+#homePercorso {
   background-image: url(images/heroPercorso.jpg);
   background-position: top left;
   background-size: cover;
@@ -1260,9 +1262,10 @@ a.button-dot:hover:before {
   padding: 0;
 }
 
-.welcomePercorso{
+.welcomePercorso {
   font-size: 1.5em;
-  text-shadow: -1px -1px 1px rgb(255 255 255 / 10%), 2px 2px 1px rgb(0 0 0 / 50%);
+  text-shadow: -1px -1px 1px rgb(255 255 255 / 10%),
+    2px 2px 1px rgb(0 0 0 / 50%);
 }
 h1.big-text {
   font-size: 80px;
@@ -1285,10 +1288,10 @@ h1.big-text-percorso {
   color: #e9e9e9;
   text-shadow: -1px -1px 1px rgb(255 255 255 / 10%),
     2px 2px 1px rgb(0 0 0 / 50%);
-    padding: 0;
-    margin-bottom: .2em;
+  padding: 0;
+  margin-bottom: 0.2em;
 }
-.littlePresPercorso{
+.littlePresPercorso {
   font-size: 28px;
   color: #fff;
   margin-bottom: 1em;
@@ -1459,7 +1462,7 @@ h1.big-text-percorso {
   display: flex;
   gap: 8px;
 }
-.pricing-table-title img{
+.pricing-table-title img {
   width: 32px;
   height: 32px;
 }
@@ -1479,14 +1482,14 @@ h1.big-text-percorso {
   padding: 4px 10px;
 }
 
-.pricing-badge-container{
+.pricing-badge-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.pricing-badge-container .pricing-badge{
+.pricing-badge-container .pricing-badge {
   padding: 3px 6px;
   font-weight: 600;
   color: #fff;
@@ -1560,21 +1563,21 @@ h1.big-text-percorso {
 }
 
 /* CUSTOMIZING COACHING CARD */
-#start-coaching{
+#start-coaching {
   width: 100%;
   margin: 0;
 }
 
-#start-coaching .pricing-table{
+#start-coaching .pricing-table {
   max-width: 100%;
 }
 
-#start-coaching .pricing-wrapper{
+#start-coaching .pricing-wrapper {
   text-align: center;
   padding: 0 10%;
 }
 
-#start-coaching .pricing-table-content-holder ul{
+#start-coaching .pricing-table-content-holder ul {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -1582,112 +1585,114 @@ h1.big-text-percorso {
   justify-content: center;
 }
 
-#start-coaching .pricing-table-title{
+#start-coaching .pricing-table-title {
   padding-bottom: 0;
 }
 
-#start-coaching .pricing-table-price{
+#start-coaching .pricing-table-price {
   color: #111;
 }
 
-#start-coaching .button.buy_coaching{
+#start-coaching .button.buy_coaching {
   background: #111;
   border-color: #111;
 }
 
-#start-coaching .button.buy_coaching:hover{
+#start-coaching .button.buy_coaching:hover {
   color: #111;
   background: #fff;
 }
 
-#start-coaching .pricing-badge-container .pricing-badge{
+#start-coaching .pricing-badge-container .pricing-badge {
   background: linear-gradient(45deg, #111, #272727);
 }
 
-#pro-coaching .pricing-num{
-  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--secondary), 0px 4px 6px var(--secondary), 0 -1px var(--secondary);
+#pro-coaching .pricing-num {
+  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--secondary),
+    0px 4px 6px var(--secondary), 0 -1px var(--secondary);
 }
 
-#pro-coaching .fa-angle-double-right{
+#pro-coaching .fa-angle-double-right {
   color: var(--secondary);
 }
 
-#pro-coaching .pricing-table-price{
+#pro-coaching .pricing-table-price {
   color: var(--secondary);
 }
 
-#pro-coaching .button.buy_coaching{
+#pro-coaching .button.buy_coaching {
   background: var(--secondary);
   border-color: var(--secondary);
 }
 
-#pro-coaching .button.buy_coaching:hover{
+#pro-coaching .button.buy_coaching:hover {
   color: var(--secondary);
   background: #fff;
 }
 
-#pro-coaching .pricing-table{
+#pro-coaching .pricing-table {
   border: none;
   box-shadow: 0px 0px 3px 0px var(--secondary);
 }
 
-#pro-coaching .pricing-badge-container .pricing-badge{
+#pro-coaching .pricing-badge-container .pricing-badge {
   background: linear-gradient(45deg, var(--secondary), #ff6422);
 }
 
-#pro-coaching .pricing-badge-container, 
-#top-coaching .pricing-badge-container{
+#pro-coaching .pricing-badge-container,
+#top-coaching .pricing-badge-container {
   justify-content: start;
 }
 
-#top-coaching .pricing-num{
-  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--primary), 0px 4px 6px var(--primary), 0 -1px var(--primary);
+#top-coaching .pricing-num {
+  text-shadow: -1px 0 #b3b3b3, -4px 6px var(--primary),
+    0px 4px 6px var(--primary), 0 -1px var(--primary);
 }
 
-#top-coaching .pricing-table{
+#top-coaching .pricing-table {
   border: none;
   box-shadow: 0px 0px 3px 0px var(--primary);
 }
 
-.visibility-hidden-pc{
+.visibility-hidden-pc {
   visibility: hidden;
 }
 
-.divider-coaching{
-  margin: 1em .5em;
+.divider-coaching {
+  margin: 1em 0.5em;
   height: 3px;
   width: 100%;
   background: linear-gradient(1deg, #00000087, lightgrey);
   border-radius: 1em;
 }
 
-#extra-service{
+#extra-service {
   display: flex;
   justify-content: space-around;
   gap: 10px;
 }
 
-#extra-service .pricing-table{
- text-align: center;
+#extra-service .pricing-table {
+  text-align: center;
   width: 100%;
 }
 
-#extra-service .pricing-table-title{
- padding-bottom: 0;
- justify-content: center;
- align-items: center;
+#extra-service .pricing-table-title {
+  padding-bottom: 0;
+  justify-content: center;
+  align-items: center;
 }
 
-#extra-service .pricing-table-price{
+#extra-service .pricing-table-price {
   line-height: 110%;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 @media screen and (max-width: 800px) {
-  #extra-service{
+  #extra-service {
     flex-direction: column;
   }
-  #extra-service .pricing-table{
+  #extra-service .pricing-table {
     margin-bottom: 1em;
   }
 }
@@ -1696,7 +1701,9 @@ h1.big-text-percorso {
     12. Milestones Section CSS
 ====================================== */
 
-#millstones, #miaFilosofia, #calendly {
+#millstones,
+#miaFilosofia,
+#calendly {
   background-image: url(images/on_black_left.png);
   background-color: #000000;
   background-position: left bottom;
@@ -1704,11 +1711,17 @@ h1.big-text-percorso {
   background-size: auto;
 }
 
-#millstones .page-title-holder, #miaFilosofia .page-title-holder, #calendly .page-title-holder, #utils .page-title-holder{
+#millstones .page-title-holder,
+#miaFilosofia .page-title-holder,
+#calendly .page-title-holder,
+#utils .page-title-holder {
   background: #2292ca7f;
 }
 
-#millstones .page-title-holder:after, #miaFilosofia .page-title-holder:after, #calendly .page-title-holder:after, #utils .page-title-holder:after{
+#millstones .page-title-holder:after,
+#miaFilosofia .page-title-holder:after,
+#calendly .page-title-holder:after,
+#utils .page-title-holder:after {
   border-color: #2292ca7f transparent transparent transparent;
 }
 
@@ -2460,6 +2473,9 @@ body.blog {
   .utils-section.mono-card .card {
     min-height: 450px;
   }
+  .column-mobile-rev {
+    flex-direction: column-reverse;
+  }
 }
 #contact .button {
   display: flex;
@@ -2576,12 +2592,12 @@ footer .footer-social-divider:before {
   margin: 0;
 }
 
-.highlighted-menu{
+.highlighted-menu {
   display: flex !important;
   height: 47px;
 }
 
-.highlighted-menu a{ 
+.highlighted-menu a {
   background: var(--primary);
   padding: 2px 6px !important;
   color: #fff !important;
@@ -2754,31 +2770,29 @@ footer .footer-social-divider:before {
 }
 
 @media screen and (max-width: 1020px) {
-  #pricing .pricing-table{
+  #pricing .pricing-table {
     max-width: none;
   }
 
-  #pricing .pricing-table .pricing-wrapper{
+  #pricing .pricing-table .pricing-wrapper {
     text-align: center;
   }
 
-  #pricing .pricing-table ul{
+  #pricing .pricing-table ul {
     text-align: start;
   }
 
-  #pro-coaching .pricing-badge-container, 
-  #top-coaching .pricing-badge-container{
+  #pro-coaching .pricing-badge-container,
+  #top-coaching .pricing-badge-container {
     justify-content: center;
   }
 
-  
-  .visibility-hidden-pc{
+  .visibility-hidden-pc {
     visibility: visible;
     display: none !important;
   }
 
-  
-  .button-holder-calendly{
+  .button-holder-calendly {
     margin-top: 50px;
   }
 
@@ -2828,11 +2842,10 @@ footer .footer-social-divider:before {
     right: 0;
   }
 
-  .highlighted-menu{
+  .highlighted-menu {
     height: auto;
     padding: 6px 0 !important;
   }
-
 
   .sm-clean ul ul a,
   .sm-clean ul ul a:hover,
@@ -2859,11 +2872,11 @@ footer .footer-social-divider:before {
     font-size: 60px;
   }
 
-  h1.big-text-percorso{
+  h1.big-text-percorso {
     font-size: 60px;
   }
 
-  .littlePresPercorso{
+  .littlePresPercorso {
     font-size: 22px;
   }
 
@@ -3271,11 +3284,11 @@ footer .footer-social-divider:before {
     display: block;
   }
 
-  h1.big-text-percorso{
+  h1.big-text-percorso {
     font-size: 48px;
   }
 
-  .littlePresPercorso{
+  .littlePresPercorso {
     font-size: 20px;
   }
 }
@@ -3409,7 +3422,7 @@ footer .footer-social-divider:before {
   }
 }
 
-.alex-dialog-overlay{
+.alex-dialog-overlay {
   z-index: 1200;
   background: #000000b8;
   position: fixed;
@@ -3419,10 +3432,10 @@ footer .footer-social-divider:before {
   height: 120vh;
   transform: translateY(-150%);
   opacity: 0;
-  transition: .7s all ease-in-out;
+  transition: 0.7s all ease-in-out;
 }
 
-.alex-dialog{
+.alex-dialog {
   z-index: 1201;
   position: fixed;
   width: 80%;
@@ -3432,7 +3445,7 @@ footer .footer-social-divider:before {
   left: 10%;
   transform: scale(0);
   opacity: 0;
-  transition: .7s all ease-in-out;
+  transition: 0.7s all ease-in-out;
 }
 
 .alex-dialog.open {
@@ -3444,7 +3457,7 @@ footer .footer-social-divider:before {
   opacity: 1;
 }
 
-.alex-dialog-container{
+.alex-dialog-container {
   height: 100%;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   display: flex;
@@ -3452,13 +3465,13 @@ footer .footer-social-divider:before {
   border-radius: 8px;
 }
 
-.alex-dialog-iframe-container{
+.alex-dialog-iframe-container {
   height: 100%;
   width: 100%;
   background-color: #fff;
 }
 
-.alex-dialog-close{
+.alex-dialog-close {
   position: absolute;
   top: -6px;
   right: -6px;
@@ -3472,9 +3485,9 @@ footer .footer-social-divider:before {
   justify-content: center;
   font-weight: 600;
   cursor: pointer;
-  transition: .7s all ease-in-out;
+  transition: 0.7s all ease-in-out;
 }
-.alex-dialog-close:hover{
+.alex-dialog-close:hover {
   transform: scale(1.1);
 }
 
@@ -3538,6 +3551,13 @@ footer .footer-social-divider:before {
   width: 100%;
 }
 @media screen and (max-width: 450px) {
+  .alex-dialog {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    top: 5%;
+    left: 5%;
+  }
   .text-center-mobile {
     text-align: center !important;
   }
@@ -3622,6 +3642,12 @@ footer .footer-social-divider:before {
   align-items: center;
   width: 100%;
 }
+.full-center-now {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .certification {
   display: flex;
   align-items: center;
@@ -3633,7 +3659,7 @@ footer .footer-social-divider:before {
   width: 100%;
   line-height: 20px;
   color: #000;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .center-mobile {
@@ -3643,7 +3669,7 @@ footer .footer-social-divider:before {
 }
 
 @media screen and (max-width: 500px) {
-  #about .cut-img{
+  #about .cut-img {
     height: 450px;
   }
 }
@@ -3652,20 +3678,20 @@ footer .footer-social-divider:before {
     justify-content: center;
   }
 
-  .quote{
+  .quote {
     text-align: center;
   }
 
-  .text-center-mobile{
+  .text-center-mobile {
     text-align: center;
   }
 }
 
-.skipAnimation{
+.skipAnimation {
   transition: 0s !important;
 }
 
-.bodyPercorso{
+.bodyPercorso {
   background-color: rgb(5, 1, 41) 97.5%;
   background-image: radial-gradient(
     circle 610px at 5.2% 51.6%,
@@ -3674,6 +3700,6 @@ footer .footer-social-divider:before {
   );
 }
 
-.bodyPercorso .site-wrapper{
+.bodyPercorso .site-wrapper {
   background: #fff;
 }

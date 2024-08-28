@@ -6,8 +6,9 @@ $(function () {
     $(".site-wrapper").addClass("navigationIn");
     $("#openingPercorso").addClass("loaded");
     $("html").addClass("loaded enable_scroll");
+
+    $("#back-to-main").click(() => (window.location.href = "index.html"));
   
-    $(".navigateBack").on("click", navigateBack);
 
     $("#carousel-project").owlCarousel({
       loop: true,
@@ -21,14 +22,6 @@ $(function () {
 
     slowScroll();
   });
-
-  function navigateBack(e){
-    $("#openingPercorso").removeClass("loaded");
-    $(".site-wrapper").removeClass("navigationIn");
-    setTimeout(() => {
-      // window.history.back();
-    }, 500);
-  }
 
   function slowScroll() {
     $(

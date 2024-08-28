@@ -141,7 +141,7 @@ $(function () {
     $("#openingPercorso").removeClass("loaded");
     $(".site-wrapper").removeClass("navigationIn");
     setTimeout(() => {
-      // window.history.back();
+      window.history.back();
     }, 500);
   }
 
@@ -587,6 +587,8 @@ $(function () {
   }
 
   function gestioneCallConoscitiva() {
+    $("#back-to-main").click(()=> window.location.href = 'index.html');
+
     $("#call-conoscitiva").click(() => {
       if (!$(".alex-dialog").hasClass("open")) {
         $("html").addClass("disabled_scroll");

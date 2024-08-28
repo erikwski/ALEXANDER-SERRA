@@ -1184,6 +1184,146 @@
 #new-buy-form input.invalid_input {
   outline-color: red !important;
 }
-.invalid_input::placeholder {
-  /* color: red !important; */
+#calendlyFooter{
+  background: #F2F4FF;
+}
+
+#calendlyFooter h4{
+  position: relative;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.container-img{
+  padding: 2em;
+  width: 400px;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+}
+#footer-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+#calendlyFooter h4:before{
+  content: "CALL \A CONOSCITIVA";
+  white-space: pre;
+  font-size: 80px;
+  line-height: 50px;
+  color: #2292ca3a;
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  width: 100%;
+  font-weight: 600;
+}
+
+#calendlyFooter.risorsa-free h4:before{
+  content: "RISORSA \A GRATUITA";
+}
+
+
+
+.btn-outline-icon{
+  background: transparent;
+  border: 1px solid #666666;
+  padding: 4px;
+  min-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4em;
+  width: 100%;
+  cursor: pointer;
+  max-width: 400px;
+  position: relative;
+  transition: .5s ease-in;
+  overflow: hidden;
+}
+.btn-outline-icon > *{
+  z-index: 2;
+}
+
+.btn-outline-icon::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-110%) scale(0.2);
+  left: 0;
+  top: 0;
+  transition: .5s ease-in;
+  z-index: 1;
+  border-radius: 1em;
+  background: var(--primary);
+}
+
+.btn-outline-icon:hover{
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-outline-icon:hover::before{
+  transform: translateX(0) scale(1);
+}
+
+.btn-outline-icon .fa{
+  height: 52px;
+  width: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-outline-icon-sm{
+  background: transparent;
+  border: 1px solid #666666;
+  padding: 3px;
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4em;
+  width: 90%;
+  cursor: pointer;
+  max-width: 350px;
+}
+
+.btn-outline-icon-sm .fa{
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+}
+
+.text-center-mmm{
+  padding: 3em .5em;
+}
+
+@media screen and (max-width: 700px) {
+  .container-img{
+    padding: 1em;
+    width: 250px;
+    max-width: 250px;
+  }
+
+  .btn-outline-icon{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-center-mmm{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .text-center-mmm{
+    padding-top: 6em;
+  }
 }
