@@ -992,6 +992,10 @@
   outline-color: var(--primary);
 }
 
+.field input:focus ~ .input-icon{
+  color: var(--primary);
+}
+
 .field-checkbox input {
   width: 20px;
   height: 15px;
@@ -1035,6 +1039,9 @@
 
 #new-buy-form input.invalid_input {
   outline-color: red !important;
+}
+#new-buy-form input.invalid_input ~ .input-icon {
+  color: red !important;
 }
 #calendlyFooter{
   background: #F2F4FF;
