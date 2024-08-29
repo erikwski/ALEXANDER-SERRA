@@ -358,207 +358,152 @@
   flex-direction: column;
 }
 
-/* ================ The Timeline ================ */
 
+/* Timeline Container */
 .timeline {
+  background: var(--primary-color);
+  margin: 20px auto;
+  padding: 20px;
+}
+.timeline-title {
+  color: var(--primary);
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Card container */
+.card {
   position: relative;
-  width: 660px;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 1em 0;
-  list-style-type: none;
+  max-width: 400px;
 }
 
-.timeline:before {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  content: " ";
-  display: block;
-  width: 6px;
-  height: 100%;
-  margin-left: -3px;
-  background: rgb(80, 80, 80);
-  background: -moz-linear-gradient(
-    top,
-    rgba(80, 80, 80, 0) 0%,
-    rgb(80, 80, 80) 8%,
-    rgb(80, 80, 80) 92%,
-    rgba(80, 80, 80, 0) 100%
-  );
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0%, rgba(30, 87, 153, 1)),
-    color-stop(100%, rgba(125, 185, 232, 1))
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(80, 80, 80, 0) 0%,
-    rgb(80, 80, 80) 8%,
-    rgb(80, 80, 80) 92%,
-    rgba(80, 80, 80, 0) 100%
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(80, 80, 80, 0) 0%,
-    rgb(80, 80, 80) 8%,
-    rgb(80, 80, 80) 92%,
-    rgba(80, 80, 80, 0) 100%
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(80, 80, 80, 0) 0%,
-    rgb(80, 80, 80) 8%,
-    rgb(80, 80, 80) 92%,
-    rgba(80, 80, 80, 0) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(80, 80, 80, 0) 0%,
-    rgb(80, 80, 80) 8%,
-    rgb(80, 80, 80) 92%,
-    rgba(80, 80, 80, 0) 100%
-  );
-
-  z-index: 5;
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+  padding: 30px 0 30px 30px;
 }
-
-.timeline li {
-  padding: 1em 0;
+.card:nth-child(even) {
+  padding: 30px 30px 30px 0;
 }
-
-.timeline li:after {
+/* Global ::before */
+.card::before {
   content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+  position: absolute;
+  width: 50%;
+  border: solid var(--primary);
 }
 
-.direction-l {
-  position: relative;
-  width: 300px;
-  float: left;
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+  .card:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+  right: 0;
+  top: -0.5px;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+  border-color: var(--secondary);
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: -1px 0px 5px -2px var(--primary);
+}
+
+.year{
+  line-height: 12px;
+  margin-top: 6px;
+}
+
+.card:nth-child(even) .year{
   text-align: right;
 }
 
-.direction-r {
+
+.card:nth-child(even) .info{
+  box-shadow: 1px 0px 5px -2px var(--secondary);
+}
+
+/* Title of the card */
+.title {
+  color: var(--primary);
   position: relative;
-  width: 300px;
-  float: right;
+  padding: 0;
+  font-size: 20px;
+  line-height: 20px;
 }
 
-.flag-wrapper {
-  position: relative;
-  display: inline-block;
-  text-align: start;
-}
-.direction-l .flag-wrapper {
-  text-align: end;
-}
-
-.flag {
-  position: relative;
-  display: inline;
-  background: rgb(248, 248, 248);
-  padding: 6px 10px;
-  border-radius: 5px;
-  color: #505050;
-  font-weight: 600;
-  text-align: left;
-}
-
-.direction-l .flag {
-  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
-    0 0 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-.direction-r .flag {
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
-    0 0 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-.direction-l .flag:before,
-.direction-r .flag:before {
+/* Timeline dot  */
+.title::before {
   content: "";
   position: absolute;
-  top: 10%;
-  right: -15px;
-  right: -15px;
-  left: auto;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid var(--primary);
-  border-radius: 1em;
-  transform: rotate(180deg);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border: 3px solid var(--primary);
 }
 
-.direction-r .flag:before {
-  left: -15px;
-  transform: rotate(0);
+.card:nth-child(even) .title{
+  color: var(--secondary);
 }
 
-.time-wrapper {
-  display: inline;
-  line-height: 19px;
-  font-size: 14px;
-  background: linear-gradient(330deg, var(--primary), #229ecf);
-  background-color: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  vertical-align: middle;
-  padding: 3px 6px;
-  margin: 8px;
-  border-radius: 1em;
+.card:nth-child(even) .title::before{
+  border-color: var(--secondary);
 }
 
-.direction-l .time-wrapper {
-  float: right;
+/* text right if the card is even  */
+.card:nth-child(even) > .info > .title {
+  text-align: right;
 }
 
-.direction-r .time-wrapper {
-  float: left;
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .title::before {
+  left: -45px;
 }
 
-.desc {
-  margin: 1em 0.75em 0 0;
-  font-weight: 400;
-  font-size: 0.77777em;
-  line-height: 1.5em;
+/* setting dot to the right if the card is odd */
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
 }
 
-.direction-r .desc {
-  margin: 1em 0 0 0.75em;
-}
-
-.timeline-wrapper {
-  background: #f3f6fc;
-  box-shadow: 0 0 7px -4px black;
-  border-radius: 1em;
-  width: 95%;
-  margin: auto;
-  position: relative;
-  padding-top: 25px;
-  align-items: start;
-}
-
-.timeline-title {
-  color: #2293ca80;
-  position: absolute;
-  top: -75px;
-}
-
-.one_half_center {
-  margin: 0 auto;
-}
 
 /* BUY FORM */
 #dati_acquirente,
@@ -812,119 +757,6 @@
 
 /* ================  Media Queries ================ */
 
-@media screen and (max-width: 720px) {
-  .timeline {
-    width: 100%;
-    padding: 4em 0 1em 0;
-  }
-
-  .timeline li {
-    padding: 2em 0;
-  }
-
-  .direction-l,
-  .direction-r {
-    float: none;
-    width: 100%;
-
-    text-align: center;
-  }
-
-  .flag-wrapper {
-    text-align: center !important;
-  }
-
-  .flag {
-    background: rgb(255, 255, 255);
-    z-index: 15;
-  }
-
-  .direction-l .flag:before,
-  .direction-r .flag:before {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin-left: -9px;
-    background: #fff;
-    border-radius: 10px;
-    border: 4px solid var(--primary);
-    z-index: 10;
-  }
-
-  .direction-l .flag:after,
-  .direction-r .flag:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -8px;
-    height: 0;
-    width: 0;
-    margin-left: -8px;
-    border: solid transparent;
-    border-bottom-color: rgb(255, 255, 255);
-    border-width: 8px;
-    pointer-events: none;
-  }
-
-  .time-wrapper {
-    display: block;
-    position: relative;
-    margin: 4px 0 0 0;
-    z-index: 14;
-  }
-
-  .direction-l .time-wrapper {
-    float: none;
-  }
-
-  .direction-r .time-wrapper {
-    float: none;
-  }
-
-  .desc {
-    position: relative;
-    margin: 1em 0 0 0;
-    padding: 1em;
-    background: rgb(245, 245, 245);
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-
-    z-index: 15;
-  }
-
-  .direction-l .desc,
-  .direction-r .desc {
-    position: relative;
-    margin: 1em 1em 0 1em;
-    padding: 1em;
-
-    z-index: 15;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 720px) {
-  .direction-l .desc,
-  .direction-r .desc {
-    margin: 1em 4em 0 4em;
-  }
-}
-
-@media screen and (max-width: 1450px) {
-  .timeline-wrapper {
-    flex-wrap: wrap;
-    gap: 75px 0;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .timeline-title {
-    top: -55px;
-  }
-}
 
 @media screen and (max-width: 500px) {
   .switchCoachingCont .switchCoaching {
@@ -1270,6 +1102,22 @@
   transform: translateX(0) scale(1);
 }
 
+a.btn-outline-icon span:not(.fa){
+  color: #000;
+  line-height: 16px;
+  font-size: 16px;
+  transition: .5s ease-in;
+}
+
+a.btn-outline-icon:hover span:not(.fa){
+  color: #fff !important;
+}
+
+a.btn-outline-icon span.fa{
+  line-height: 24px;
+  font-size: 24px;
+}
+
 .btn-outline-icon .fa{
   height: 52px;
   width: 52px;
@@ -1310,6 +1158,7 @@
     padding: 1em;
     width: 250px;
     max-width: 250px;
+    margin-top: 1.5em;
   }
 
   .btn-outline-icon{
