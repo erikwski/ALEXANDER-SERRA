@@ -338,7 +338,7 @@ $(function () {
      $(".buy_coaching").click((e)=>{
       e.preventDefault();
       cartIdList = [];
-      $("#riepilogo-card").html("<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong>");
+      $("#riepilogo-card").html("<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>");
       $(".selected").each(function () {
         const id = +$(this).data("buyId");
         const name = $(this).parents(".coaching_avaiable").length
@@ -355,7 +355,7 @@ $(function () {
         });
                 
         if (id < 200) {
-          $("#riepilogo-card").append(`
+          $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected" id="mensile">
               <div class="price-tag">${price}</div>
               <img src="images/about_me.jpg" alt="Coaching" style="object-position: 0 30%;">
@@ -370,7 +370,7 @@ $(function () {
           `);
         }
         if (id == 200){
-          $("#riepilogo-card").append(`
+          $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected">
               <div class="price-tag">37€</div>
               <img src="images/serviceTecnica.jpeg" alt="Tecnica">
@@ -385,7 +385,7 @@ $(function () {
           `);
         }
         if (id == 201) {
-          $("#riepilogo-card").append(`
+          $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected" id="forza">
               <div class="price-tag">57€</div>
               <img src="images/serviceForza.jpeg" alt="Forza">
@@ -403,10 +403,12 @@ $(function () {
       let AMOUNT = 0;
       cartIdList.forEach((el) => (AMOUNT += el.price));
       $("#riepilogo-card").append(`
-          <div class="divider-cart"></div>
-          <strong>
-              TOTALE:<span class='small-badge'>${AMOUNT}€</span>
-          </strong>
+          <div class="riepilogo-finale">
+            <div class="divider-cart"></div>
+            <strong>
+                TOTALE:<span class='small-badge'>${AMOUNT}€</span>
+            </strong>
+          </div>
       `);
       cartIdList.sort((a, b)=> a.id < b.id);
       
@@ -448,9 +450,11 @@ $(function () {
       if (!invioMailutente) invioMailDatiUtente();
     });
 
-    // $("#trimestrale").click();
-    // $(".buy_coaching").click();
-    // $(".coaching_card").show();
+    $("#trimestrale").click();
+    $("#forza").click();
+    $("#tecnica").click();
+    $(".buy_coaching").click();
+    $(".coaching_card").show();
 
   }
 

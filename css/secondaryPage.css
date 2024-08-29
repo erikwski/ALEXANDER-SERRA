@@ -781,14 +781,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   pointer-events: none;
+}
+#riepilogo-card .labelFullLine{
+  margin: 2em 0;
+}
+#riepilogo-card .riepilogo-finale{
+  transform: translateY(-30px);
+  width: 100%;
+  padding: 0 1em;
+  text-align: center;
+  box-sizing: border-box;
 }
 #riepilogo-card.showRiepilogo {
   transform: translateX(0) translateX(0) scale(1);
   opacity: 1;
 }
+#riepilogo-card .coach-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
 #dati_acquirente {
   width: 70%;
 }
@@ -1174,5 +1192,89 @@ a.btn-outline-icon span.fa{
 @media screen and (max-width: 900px) {
   .text-center-mmm{
     padding-top: 6em;
+  }
+
+  #buy-form{
+    flex-direction: column;
+  }
+
+  #riepilogo-card{
+    width: 100%;
+  }
+
+  #riepilogo-card .coach-container{
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0 3em;
+    justify-content: center;
+  }
+
+  #riepilogo-card .coaching_card{
+    padding-bottom: 50px;
+    width: 200px;
+    height: 100px;
+    font-size: 14px;
+  }
+
+  #riepilogo-card .coaching_card .coaching-detail span{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #riepilogo-card .coaching_card .coaching-detail strong{
+    display: flex;
+    align-items: center;
+  }
+
+  #riepilogo-card .coaching_card .coaching-detail{
+    left: 10px;
+  }
+
+  #dati_acquirente{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .small-badge{
+    padding: 1px 6px;
+    margin-left: 6px;
+  }
+
+  .price-tag {
+    height: 32px;
+    line-height: 32px;
+    right: -18px;
+    width: 40px;
+  }
+  .price-tag::before {
+    left: -18px;
+    border-top: 16px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-right: 18px solid var(--primary);
+  }
+
+  #toggle_dati_bonifico {
+    font-size: 20px;
+    line-height: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #toggle_dati_bonifico > *{
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #riepilogo-card .coach-container{
+    flex-direction: column;
+    transform: translateX(-35px);
+  }
+
+  #riepilogo-card .labelFullLine{
+    transform: translateX(-35px);
   }
 }
