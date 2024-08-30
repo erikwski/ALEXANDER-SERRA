@@ -450,11 +450,11 @@ $(function () {
       if (!invioMailutente) invioMailDatiUtente();
     });
 
-    $("#trimestrale").click();
-    $("#forza").click();
-    $("#tecnica").click();
-    $(".buy_coaching").click();
-    $(".coaching_card").show();
+    // $("#trimestrale").click();
+    // $("#forza").click();
+    // $("#tecnica").click();
+    // $(".buy_coaching").click();
+    // $(".coaching_card").show();
 
   }
 
@@ -496,64 +496,73 @@ $(function () {
           return actions.order.capture().then(async function (orderData) {
             let payer = orderData.payer;
             await confermaPagamento({
-              paypal_name: payer.name.surname + " " + payer.name.given_name,
-              paypal_address: `${payer.address.address_line_1}, ${payer.address.admin_area_1} - ${payer.address.postal_code}`,
-              paypal_mail: payer.email_address,
-              order_id: data.orderID,
-              payer_id: data.payerID,
-              data_pagamento: new Date().toLocaleString(),
-              persona: $("#name_buyer").val(),
-              mail: $("#email_buyer").val(),
-              telefono: $("#telephone_buyer").val(),
-              cod_fisc: $("#cod_fisc_buyer").val(),
-              address: $("#address_buyer").val(),
-              city: $("#city_buyer").val(),
-              cap: $("#cap_buyer").val(),
-              prov: $("#prov_buyer").val(),
+              paypal_name: cutString(
+                payer.name.surname + " " + payer.name.given_name,
+                120
+              ),
+              paypal_address: cutString(
+                `${payer.address.address_line_1}, ${payer.address.admin_area_1} - ${payer.address.postal_code}`,
+                500
+              ),
+              paypal_mail: cutString(payer.email_address, 254),
+              order_id: cutString(data.orderID, 63),
+              payer_id: cutString(data.payerID, 63),
+              data_pagamento: cutString(new Date().toLocaleString(), 63),
+              persona: cutString($("#name_buyer").val(), 99),
+              mail: cutString($("#email_buyer").val(), 254),
+              telefono: cutString($("#telephone_buyer").val(), 62),
+              cod_fisc: cutString($("#cod_fisc_buyer").val(), 63),
+              address: cutString($("#address_buyer").val(), 254),
+              city: cutString($("#city_buyer").val(), 126),
+              cap: cutString($("#cap_buyer").val(), 9),
+              prov: cutString($("#prov_buyer").val(), 4),
               pacchetto: null,
               costo: null,
               pacchetto_desc: null,
             });
-            $("#close_modale").click();
-            Swal.fire({
-              icon: "success",
-              title:
-                "Pagamento inviato correttamente, ti contatterò per fissare il nostro appuntamento",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            }).then(() => {
-              //aggiungi data
-              $("#close_modale").click();
-            });
+            localStorage.setItem("buyConfirmed", "yes");
+            window.location.href = "confirm.html?coaching"+coachingGlobal;
           });
         },
       };
       paypal.Buttons(paypal_inizialize).render("#paypal_container");
     } catch (error) {
-      alert(
-        "ERRORE CRITICO: contattami per effettuare correttamente il pagamento"
-      );
+      Swal.fire({
+        icon: "error",
+        title:
+          "ERRORE CRITICO: contattami per effettuare correttamente il pagamento",
+        showConfirmButton: true,
+        confirmButtonText: "OK",
+      });
+    }
+  }
+
+  function cutString(string, length){
+    try {
+      return string.substring(0, length);
+    } catch (error) {
+      return string;
     }
   }
 
   async function confermaPagamento(dati) {
     try {
       localStorage.setItem("user", JSON.stringify(dati));
-      cartIdList.forEach(async(pacchetto)=>{
+      for (let pacchetto of cartIdList){
+        
         dati.pacchetto = pacchetto.id;
         dati.costo = pacchetto.price;
         dati.pacchetto_desc = pacchetto.name;
-        const j = await $.post("api/conferma_acquisto.php", dati)
+        const j = await $.post("api/conferma_acquisto.php", dati);
         if (j.length) {
           Swal.fire({
             icon: "error",
-            title:
-              "ERRORE CRITICO: contattami per confermare il pagamento",
+            title: "ERRORE CRITICO: contattami per confermare il pagamento",
             showConfirmButton: true,
             confirmButtonText: "OK",
           });
         }
-      })
+      }
     } catch (error) {
       Swal.fire({
         icon: "error",

@@ -263,7 +263,62 @@ if (!isset($_SESSION['user_logged'])) {
       id: 12,
       desc: "OFFERTA 22 DICEMBRE",
       costo: 157,
-    }
+    },
+    {
+      id: 100,
+      desc: "START - 1 MESE",
+      costo: 60,
+    },
+    {
+      id: 101,
+      desc: "START - 3 MESI",
+      costo: 157,
+    },
+    {
+      id: 102,
+      desc: "START - 6 MESI",
+      costo: 297,
+    },
+    {
+      id: 110,
+      desc: "PRO - 3 MESI",
+      costo: 197,
+    },
+    {
+      id: 111,
+      desc: "PRO - 6 MESI",
+      costo: 377,
+    },
+    {
+      id: 120,
+      desc: "TOP - 1 MESI",
+      costo: 110,
+    },
+    {
+      id: 121,
+      desc: "TOP - 3 MESE",
+      costo: 297,
+    },
+    {
+      id: 122,
+      desc: "TOP - 6 MESI",
+      costo: 567,
+    },
+    {
+      id: 123,
+      desc: "TOP - 12 MESI",
+      costo: 997,
+    },
+    {
+      id: 200,
+      desc: "ANALISI TECNICA DI CORSA",
+      costo: 37,
+    },
+    {
+      id: 201,
+      desc: "SCHEDA DI FORZA",
+      costo: 57,
+    },
   ];
 
   function templateOrdine(dati) {
