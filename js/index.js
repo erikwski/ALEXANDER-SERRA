@@ -1,6 +1,13 @@
 (function ($) {  
   window.$ = $;
   
+  let oggi = new Date(),
+    startPopup = new Date("01/02/2025 00:00"),
+    endPopup = new Date("08/04/2025 00:00"),
+    isPopupEnabled =
+      oggi > startPopup &&
+      oggi < endPopup &&
+      +localStorage.getItem("popupRaduni2025") < 3;
 
   gestionePrivacyPolicy();
   updateHtmlForYear();
@@ -38,7 +45,6 @@
     isotopeSetUp();
     setUpParallax();
     hashFix();
-    // skipAnimazioneIniziale("pricing");
     const scrollTo = localStorage.getItem("skipAndScrollTo");
     if (scrollTo) {
       localStorage.removeItem("skipAndScrollTo");
@@ -119,12 +125,90 @@
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
       $("html").addClass("loaded");
+      showPopupRaduni();
       //PIANO PIANO RENDERIZZO ELEMENTI
       setTimeout(() => {
         $("#loader, #cover_loader").remove();
-        $("html").addClass("loaded enable_scroll");
+        if (!isPopupEnabled) $("html").addClass("enable_scroll");
       }, 1200);
     }, 3000);
+  }
+
+  function showPopupRaduni() {
+    if (isPopupEnabled) {
+      $("#removeIfNoOffer").show();
+
+      const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+      let countDownPopup = endPopup.getTime();
+      let x3 = setInterval(function () {
+        const now = new Date().getTime(),
+          distance = countDownPopup - now;
+
+        let ggPopup = Math.floor(distance / day);
+        let hhPopup = (distance % day) / hour;
+        //   mmPopup = (distance % hour) / minute,
+        //   ssPopup = (distance % minute) / second;
+        $("#countdownPopup .counterPopup")[0].innerText =
+          (ggPopup < 10 && "0") + Math.floor(ggPopup);
+        $("#countdownPopup .counterPopup")[1].innerText =
+          (hhPopup < 10 && "0") + Math.floor(hhPopup);
+        // $("#countdownPopup .counterPopup")[1].innerText =
+        //   (mmPopup < 10 && "0") + Math.floor(mmPopup);
+        // $("#countdownPopup .counterPopup")[2].innerText =
+        //   (ssPopup < 10 && "0") + Math.floor(ssPopup);
+
+        if (distance < 0) {
+          //offerta scaduta
+          clearInterval(x3);
+          location.reload();
+        }
+        //seconds
+      }, 1000);
+
+      $("#popupButton").click(() => {
+        //setto a 5 cosí da non mostrare piú popup a chi lo clicca
+        localStorage.setItem("popupRaduni2025", 5);
+        try {
+          $.get("api/updateContatore.php", {
+            id: 3,
+          }).always(() => (window.location.href = "raduni2025"));
+        } catch (error) {
+          localStorage.setItem("popupRaduni2025", 2);
+          console.log("errore check popup");
+        }
+      });
+      $("#popup-overlay, #popupSkip").click(() => {
+        try {
+          let closedClick = +localStorage.getItem("popupRaduni2025");
+          localStorage.setItem("popupRaduni", closedClick++);
+          try {
+            $.get("api/updateContatore.php", {
+              id: 4,
+            }).always(() => console.log("raduni2024 declined"));
+          } catch (error) {
+            localStorage.setItem("popupRaduni2025", 2);
+            console.log("errore check popup");
+          }
+          $("html").addClass("enable_scroll");
+          $("#popup").addClass("toggleOut");
+          $("#popup-overlay").addClass("delay-0").removeClass("open");
+
+          setTimeout(() => {
+            $("#popup, #popup-overlay").remove();
+            clearInterval(x3);
+          }, 1700);
+        } catch (error) {
+          console.log(error, "ciao");
+        }
+      });
+      $("#popup, #popup-overlay").addClass("open");
+    } else {
+      $("#popup, #popup-overlay").remove();
+    }
   }
 
   function multiClickFunctionStop() {
@@ -146,55 +230,68 @@
   }
 
   function SendMail() {
+    $("#showFormContattami").click(()=>{
+      if($("#halfOnFormSubmit").hasClass("one_half")){
+        $("#formContattami").hide(500, () =>
+          $("#halfOnFormSubmit").removeClass("one_half")
+        );
+      }else{
+        $("#halfOnFormSubmit").addClass("one_half")
+        $("#formContattami").show(500);
+      }
+    });
+
     $("#invia_mail").click(() => {
+      $("#invia_mail").addClass("disabled");
       var emailVal = $("#contact-email").val();
       if (
         isValidEmailAddress(emailVal) ||
         $("#contact-telephone").val().length > 0
       ) {
         var params = {
-          action: "SendMessage",
-          name: $("#name").val(),
+          nome: $("#name").val(),
           email: $("#contact-email").val() || "mailnoncompilata@fakemail.com",
-          tel: $("#contact-telephone").val(),
-          subject: $("#subject").val(),
-          message: $("#message").val(),
+          telefono: $("#contact-telephone").val(),
+          soggetto: $("#subject").val(),
+          messaggio: $("#message").val(),
         };
-        $.post(
-          "https://getform.io/f/5584c108-b4a4-41cf-8219-164eac51d191",
-          params
-        )
-          .done(() => {
-            Swal.fire({
-              icon: "success",
-              title:
-                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            }).then(() => {
-              $(
+
+        // Serializzazione dei dati in formato URL-encoded
+        var formBody = Object.keys(params)
+          .map(
+            (key) =>
+              encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
+          )
+          .join("&");
+
+        // Invio della richiesta AJAX a FormKeep
+        $.ajax({
+          url: "https://formkeep.com/f/b262ef7e8af9",
+          method: "POST",
+          data: formBody,
+          contentType: "application/x-www-form-urlencoded",
+          success: function () {
+            $(".contact-submit-message").addClass("successSubmit").show().html("Richiesta inviata correttamente, ti ricontatteremo il prima possibile")
+            $(
                 ".contact-form input:not([type='submit']), .contact-form textarea"
               ).val("");
-            });
-          })
-          .fail(() => {
-            Swal.fire({
-              icon: "error",
-              title: "Errore nell'invio della richiesta, riprovare più tardi",
-              showConfirmButton: true,
-              confirmButtonText: "OK",
-            });
-          });
-      } else {
-        Swal.fire({
-          icon: "warning",
-          title: "Compila correttamente la mail oppure il numero di telefono",
-          showConfirmButton: true,
-          confirmButtonText: "OK",
+            $("#invia_mail").removeClass("disabled");
+          },
+          error: function () {
+            $(".contact-submit-message")
+              .addClass("errorSubmit")
+              .show()
+              .html("Errore nell'invio della richiesta, riprovare più tardi");
+            $("#invia_mail").removeClass("disabled");
+          }
         });
+      } else {
+        $(".contact-submit-message").addClass("warningSubmit").show().html("Compila correttamente la mail oppure il numero di telefono")
+        $("#invia_mail").removeClass("disabled");
       }
     });
   }
+
 
   function fixForFooterNoContent() {
     if (

@@ -3575,6 +3575,7 @@ html.disabled_scroll,
   left: 0;
   width: 100%;
 }
+
 @media screen and (max-width: 450px) {
   .countdown .counter {
     font-size: 30px;

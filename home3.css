@@ -2184,6 +2184,7 @@ body.blog {
   margin: 0 auto;
   font-size: 22px;
   color: #000;
+  text-align: center;
 }
 
 .contact-form p {
@@ -2482,6 +2483,7 @@ body.blog {
   align-items: center;
   justify-content: center;
 }
+
 #contact span.fa {
   font-size: 32px;
   margin-right: 1rem;
@@ -2603,6 +2605,9 @@ footer .footer-social-divider:before {
   color: #fff !important;
   font-weight: 600 !important;
   margin: auto;
+}
+.highlighted-menu a.raduni {
+  background: green;
 }
 
 /* ===================================
@@ -2769,7 +2774,7 @@ footer .footer-social-divider:before {
   }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1110px) {
   #pricing .pricing-table {
     max-width: none;
   }
@@ -3702,4 +3707,36 @@ footer .footer-social-divider:before {
 
 .bodyPercorso .site-wrapper {
   background: #fff;
+}
+
+.contact-submit-message{
+  padding: .5em 1.5em;
+  border-radius: 1em;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+  opacity: .7;
+}
+.contact-submit-message.successSubmit{
+  background: green;
+}
+.contact-submit-message.errorSubmit{
+  background: rgb(183, 8, 8);
+}
+.contact-submit-message.warningSubmit{
+  background: rgb(207, 197, 10);
+}
+.small-button-holder{
+  display: flex;
+  gap: 0 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.small-button-holder .button{
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  width: 300px;
 }

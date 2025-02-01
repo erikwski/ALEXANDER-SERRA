@@ -33,6 +33,7 @@
         <link rel="shortcut icon" href="images/logo/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,700i" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./css/popup.css">
         <link rel="stylesheet" type="text/css" href="home3.css">
         <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -79,8 +80,11 @@
                                 <li>
                                     <a href="#clients">Recensioni</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#utils">Link utili</a>
+                                </li> -->
+                                <li class="highlighted-menu">
+                                    <a href="raduni2025" class="raduni">RADUNI 2025</a>
                                 </li>
                                 <li>
                                     <a href="#contact">Contattami</a>
@@ -693,7 +697,7 @@
                                             raduni
                                         </h3>
                                         <p>Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ti aspetto ai miei raduni!</p>
-                                        <a href="/raduni2024" class="trigger_that">Visualizza tutti</a>
+                                        <a href="/raduni2025" class="trigger_that">Visualizza tutti</a>
                                     </div>
                                 </div>
                                 <a href="#" class="rounded_icon">
@@ -710,31 +714,35 @@
                     </div>
                     <div class="section-wrapper block content-1170 center-relative">
                         <div class="content-wrapper">
-                            <div class="one_half">
+                            <div class="" id="halfOnFormSubmit">
                                 <p class="title-description-up">RICHIEDI INFORMAZIONI</p>
                                 <h2 class="entry-title medium-text">
                                     RAGGIUNGIAMO INSIEME IL TUO OBIETTIVO
                                 </h2>
                                 <div class="button-holder center-text">
-                                    <a href="mailto:alexanderserrarunningcoach@outlook.com" class="button">
-                                        <span class="fa fa-commenting-o"></span>
-                                        <span class="truncate-mobile">SCRIVIMI ALLA MAIL ALEXANDERSERRARUNNINGCOACH@OUTLOOK.COM</span>
-                                    </a>
-                                </div>
-                                <div class="button-holder center-text">
                                     <a href="https://wa.link/lunpdl" class="button">
                                         <span class="fa fa-whatsapp"></span>
-                                        CONTATTAMI AL +39 3206349783
+                                        SCRIVIMI SU WHATSAPP
                                     </a>
                                 </div>
                                 <div class="button-holder center-text">
                                     <a href="https://www.instagram.com/runningcoach_/" class="button">
                                         <span class="fa fa-instagram"></span>
-                                        SCOPRIMI SU INSTAGRAM
+                                        SCRIVIMI SU INSTAGRAM
+                                    </a>
+                                </div>
+                                <div class="button-holder center-text small-button-holder">
+                                    <a href="mailto:alexanderserrarunningcoach@outlook.com" class="button">
+                                        <span class="fa fa-commenting-o"></span>
+                                        <span class="truncate-mobile">INVIAMI UNA MAIL</span>
+                                    </a>
+                                    <a href="#" class="button" id="showFormContattami">
+                                        <span class="fa fa-comments"></span>
+                                        <span class="truncate-mobile">COMPILA IL FORM</span>
                                     </a>
                                 </div>
                             </div>
-                            <div class="one_half last">
+                            <div class="one_half last" id="formContattami" style="display: none;">
                                 <div class="contact-form">
                                     <p>
                                         <input
@@ -774,6 +782,9 @@
                                             INVIA MESSAGGIO
                                             <span class="fa fa-envelope-square"></span>
                                         </a>
+                                    </p>
+                                    <p class="contact-submit-message" style="display: none;">
+
                                     </p>
                                 </div>
                             </div>
@@ -828,6 +839,26 @@
                     </svg>
                 </div>
                 <div class="alex-dialog-container"></div>
+            </div>
+
+            <div id="popup-overlay"></div>
+            <div id="popup">
+                <div class="titleContainer">
+                    <h3 style="margin: 0; padding: 0;">SAI GIÁ DEL MIO</h3>
+                    <h1 class="title" style="padding-top: 0;">
+                        <strong>RADUNO ESTIVO</strong>
+                        PER RUNNERS IN TRENTINO?
+                    </h1>
+                    <span class="prenotaOra">Solo 25 posti, prenota entro:</span>
+                    <div class="countDownContainer" id="countdownPopup">
+                        <div class="counterPopup doublePoint" data-underLabel="giorni">-</div>
+                        <div class="counterPopup" data-underLabel="ore">-</div>
+                    </div>
+                </div>
+                <div class="popupButton">
+                    <a href="#" class="button" id="popupButton">SCOPRI I DETTAGLI</a>
+                    <a href="#" id="popupSkip">CHIUDI</a>
+                </div>
             </div>
         </div>
         <!--Load JavaScript-->

@@ -91,6 +91,7 @@ $(function () {
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
   $(document).ready(function () {
+    localStorage.setItem("skipAndScrollTo", "home");
     $("#sidebarCollapse").on("click", function () {
       $("#sidebar").toggleClass("active");
       $(this).toggleClass("active");
