@@ -29,6 +29,9 @@
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
 
+  $(".preventDefault").click(function(e){
+    e.preventDefault();
+  })
   // $("#percorsoDett").on("click", (e) => {
   //   e.stopPropagation();
   //   e.preventDefault();
