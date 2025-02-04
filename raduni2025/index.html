@@ -72,22 +72,14 @@
                         </div>
                         <div class="col-md-5 offset-md-1 adaptMaxWidth">
                             <div class="titlepage text-center">
-                                <h2>Estate 2024, vieni a Correre in Altura!</h2>
+                                <h2>Estate 2025, vieni a Correre in Altura!</h2>
                                 <p style="padding: 10px 0;">
                                     Se sei un* Runner appassionat* e vuoi scoprire tutti i segreti per Correre al meglio ecco la data e la location dell'evento che ho organizzato:
                                 </p>
                                 <ul>
                                     <li>
-                                        Dal 21/07/24 al 02/08/24 a
-                                        <b>LIVIGNO</b>
-                                    </li>
-                                    <li>
-                                        Dal 04/08/24 al 10/08/24 a
+                                        Dal 17/08/25 al 23/08/25
                                         <b>PASSO OCLINI</b>
-                                    </li>
-                                    <li>
-                                        Dal 12/08/24 al 24/08/24 a
-                                        <b>LIVIGNO</b>
                                     </li>
                                 </ul>
                                 <p style="padding: 0 0 10px;">
@@ -117,12 +109,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="titlepage text_align_center">
-                                <h2>evento disponibile</h2>
+                                <h2>Evento disponibile</h2>
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-sm-12 col-md-6">
+                        <!-- <div class="col-sm-12 col-md-6">
                             <div class="cameras_text" data-raduno="aldino">
                                 <div class="cameras_img text_align_center">
                                     <figure>
@@ -141,15 +133,15 @@
                                 <h3>LIVIGNO</h3>
                                 <a class="read_more" href="livigno.html">INFO RADUNO</a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-sm-12 col-md-6">
                             <div class="cameras_text" data-raduno="aldino">
                                 <div class="cameras_img text_align_center">
                                     <figure>
-                                        <img src="img/carousel/8.jpg" alt="#" style="object-fit: cover;">
+                                        <img src="img/carousel/3.jpg" alt="#" style="object-fit: cover;">
                                     </figure>
                                 </div>
-                                <p>Dal 04/08/24 al 10/08/24</p>
+                                <p>Dal 17/08/25 al 23/08/25</p>
                                 <h3>PASSO OCLINI</h3>
                                 <a class="read_more" href="passoOclini.html">INFO RADUNO</a>
                             </div>
@@ -170,7 +162,7 @@
                             <h3>Legenda</h3>
                             <ul style="text-align: start;padding-left: 40%;">
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="index.html">Ritorna al sito principale</a>
                                 </li>
                                 <li>
                                     <a href="#about_raduno">Intro</a>
@@ -224,7 +216,7 @@
                     <div class="row">
                         <div class="col-md-10 offset-md-1">
                             <p>
-                                © 2024 Alexander Serra.
+                                © 2025 Alexander Serra.
                             </p>
                         </div>
                     </div>
@@ -244,7 +236,7 @@
         var appendHereDiv = document.getElementById("appenImage");
     
         // Numero totale di immagini da appendere
-        var numberOfImages = 8;
+        var numberOfImages = 10;
     
         // Percorso della cartella delle immagini
         var imagePath = "img/carousel/";
@@ -258,7 +250,8 @@
             // Crea un nuovo elemento img
             var newImg = document.createElement("img");
             newImg.src = imagePath + i + ".jpg";
-            newImg.alt = "homeImage";
+            newImg.alt = "homeImage" + i;
+            newImg.loading = 'lazy';
     
             // Appendi l'elemento img al div
             newDiv.appendChild(newImg);

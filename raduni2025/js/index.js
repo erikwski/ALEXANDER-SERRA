@@ -74,7 +74,9 @@ $(function () {
     loop: true,
     margin: 10,
     autoplay: true,
-    autoplayTimeout: 1000,
+    autoplayTimeout: 3000, // Aspetta 5 secondi prima di passare all'immagine successiva
+    autoplaySpeed: 1000, // L'animazione dura 1 secondo
+    smartSpeed: 1200, // Rende la transizione più fluida
     autoplayHoverPause: true,
   });
 

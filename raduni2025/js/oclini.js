@@ -56,7 +56,7 @@ $(function () {
 
   /* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-  let prossimo_raduno = new Date("07/14/2024");
+  let prossimo_raduno = new Date("06/08/2025");
 
   const second = 1000,
     minute = second * 60,
