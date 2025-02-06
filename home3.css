@@ -1318,6 +1318,9 @@ h1.big-text-percorso {
   .title_services:not(.visibleMobile) {
     display: none;
   }
+  .title_services {
+    font-size: 2em;
+  }
 }
 /* ===================================
     5. About Section CSS
