@@ -3,7 +3,7 @@
   
   let oggi = new Date(),
     startPopup = new Date("01/02/2025 00:00"),
-    endPopup = new Date("08/04/2025 00:00"),
+    endPopup = new Date("05/11/2025 00:00"),
     isPopupEnabled =
       oggi > startPopup &&
       oggi < endPopup &&
