@@ -1492,7 +1492,7 @@ h1.big-text-percorso {
   gap: 8px;
 }
 
-.pricing-badge-container .pricing-badge {
+.pricing-badge-container .pricing-badge, .secondary-badge {
   padding: 3px 6px;
   font-weight: 600;
   color: #fff;
@@ -1501,6 +1501,13 @@ h1.big-text-percorso {
   font-size: 12px;
   line-height: 12px;
   background: linear-gradient(45deg, var(--primary), #2196f3);
+}
+
+.secondary-badge {
+      width: fit-content;
+    margin: auto;
+    font-size: 16px;
+    padding: 8px;
 }
 
 .pricing-table-price {
@@ -1638,7 +1645,7 @@ h1.big-text-percorso {
   box-shadow: 0px 0px 3px 0px var(--secondary);
 }
 
-#pro-coaching .pricing-badge-container .pricing-badge {
+#pro-coaching .pricing-badge-container .pricing-badge, .secondary-badge {
   background: linear-gradient(45deg, var(--secondary), #ff6422);
 }
 

@@ -72,12 +72,17 @@ $(function () {
     {
       id: 101,
       desc: "START - 3 MESI",
-      costo: 157,
+      costo: 167,
     },
     {
       id: 102,
       desc: "START - 6 MESI",
-      costo: 297,
+      costo: 317,
+    },
+    {
+      id: 103,
+      desc: "START - 12 MESI",
+      costo: 597,
     },
     {
       id: 110,
@@ -90,6 +95,11 @@ $(function () {
       costo: 377,
     },
     {
+      id: 112,
+      desc: "PRO - 12 MESI",
+      costo: 717,
+    },
+    {
       id: 120,
       desc: "TOP - 1 MESI",
       costo: 110,
@@ -97,17 +107,17 @@ $(function () {
     {
       id: 121,
       desc: "TOP - 3 MESE",
-      costo: 297,
+      costo: 227,
     },
     {
       id: 122,
       desc: "TOP - 6 MESI",
-      costo: 567,
+      costo: 437,
     },
     {
       id: 123,
       desc: "TOP - 12 MESI",
-      costo: 997,
+      costo: 837,
     },
     {
       id: 200,
@@ -117,7 +127,7 @@ $(function () {
     {
       id: 201,
       desc: "SCHEDA DI FORZA",
-      costo: 57,
+      costo: 59,
     },
   ];
   let coachingGlobal = "";
@@ -180,7 +190,6 @@ $(function () {
     $("#cart")
       .removeClass("start pro top forza tecnica")
       .addClass(pacchettoRichiesto);
-    $(".coaching_card").hide();
     $("#tecnica, #forza").show();
     // CHANGE LABEL
     if (pacchettoRichiesto == "forza" || pacchettoRichiesto == "tecnica") {
@@ -197,34 +206,35 @@ $(function () {
         "active"
       );
       $(`#${pacchettoRichiesto}-coaching`).show();
+      $("#price-bank").html("");
+      $("#riepilogo-cont").hide();
+      $("#selectLabel").show();
+      $(".buy_coaching").addClass("disableBuy");
       switch (pacchettoRichiesto) {
         case "start":
           $(".colorChanging").addClass("c_start");
-          $("#mensile, #trimestrale, #semestrale").show();
-          $("#mensile .price-tag").html("60€");
-          $("#trimestrale .price-tag").html("157€");
-          $("#semestrale .price-tag").html("297€");
-          $("#mensile").data("buyId", "100");
+          $("#trimestrale .price-tag").html("167€");
+          $("#semestrale .price-tag").html("317€");
+          $("#annuale .price-tag").html("597€");
           $("#trimestrale").data("buyId", "101");
           $("#semestrale").data("buyId", "102");
+          $("#annuale").data("buyId", "103");
           break;
         case "pro":
           $(".colorChanging").addClass("c_secondary");
-          $("#trimestrale, #semestrale").show();
           $("#trimestrale .price-tag").html("197€");
           $("#semestrale .price-tag").html("377€");
+          $("#annuale .price-tag").html("717€");
           $("#trimestrale").data("buyId", "110");
           $("#semestrale").data("buyId", "111");
+          $("#annuale").data("buyId", "112");
           break;
         case "top":
-          $("#forza").hide();
+          $("#tecnica").hide();
           $(".colorChanging").addClass("c_primary");
-          $("#mensile, #trimestrale, #semestrale, #annuale").show();
-          $("#mensile .price-tag").html("110€");
-          $("#trimestrale .price-tag").html("297€");
-          $("#semestrale .price-tag").html("567€");
-          $("#annuale .price-tag").html("997€");
-          $("#mensile").data("buyId", "120");
+          $("#trimestrale .price-tag").html("227€");
+          $("#semestrale .price-tag").html("437€");
+          $("#annuale .price-tag").html("837€");
           $("#trimestrale").data("buyId", "121");
           $("#semestrale").data("buyId", "122");
           $("#annuale").data("buyId", "123");
@@ -387,7 +397,7 @@ $(function () {
         if (id == 201) {
           $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected" id="forza">
-              <div class="price-tag">57€</div>
+              <div class="price-tag">59€</div>
               <img src="images/serviceForza.jpeg" alt="Forza">
               
               <div class="coaching-detail">

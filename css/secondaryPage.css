@@ -69,11 +69,15 @@
 }
 
 .coachingBenefitCont {
-  max-width: 450px;
+  max-width: 650px;
   margin: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.text-italic {
+  font-style: italic;
 }
 
 .coachingBenefit {
