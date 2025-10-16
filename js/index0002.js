@@ -458,19 +458,27 @@
       } else {
         if ($(window).width() < 1024) {
           if (!$(e.target).is(".sub-arrow")) {
-            $("html, body").animate(
-              { scrollTop: $(this.hash).offset().top - 76 },
-              1500
-            );
+            try {
+              $("html, body").animate(
+                { scrollTop: $(this.hash).offset().top - 76 },
+                1500
+              );
+            }catch {
+              // skip animation
+            }
             $(".menu-holder").removeClass("show");
             $("#toggle").removeClass("on");
             return false;
           }
         } else {
-          $("html, body").animate(
-            { scrollTop: $(this.hash).offset().top - 76 },
-            1500
-          );
+          try {
+            $("html, body").animate(
+              { scrollTop: $(this.hash).offset().top - 76 },
+              1500
+            );
+          }catch {
+            // skip animation
+          }
           return false;
         }
       }
