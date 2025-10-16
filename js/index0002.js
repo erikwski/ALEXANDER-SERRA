@@ -372,10 +372,10 @@
 
     //TOGGLE VISUALIZZA TUTTA LA RECENSIONE
     $(".text-slide-btn a").click(function () {
-      let el = $(this).parents(".text-slide").find(".toggle_recensione");
+      let el = $(".text-slide").find(".toggle_recensione");
       el.is(":visible")
-        ? $(this).html("VISUALIZZA TUTTO")
-        : $(this).html("NASCONDI");
+        ? $(".text-slide-btn a").html("VISUALIZZA TUTTO")
+        : $(".text-slide-btn a").html("NASCONDI");
       el.toggle(500);
     });
   }
