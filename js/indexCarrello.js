@@ -122,7 +122,7 @@ $(function () {
     {
       id: 200,
       desc: "ANALISI TECNICA DI CORSA",
-      costo: 37,
+      costo: 59,
     },
     {
       id: 201,
@@ -382,7 +382,7 @@ $(function () {
         if (id == 200){
           $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected">
-              <div class="price-tag">37€</div>
+              <div class="price-tag">59€</div>
               <img src="images/serviceTecnica.jpeg" alt="Tecnica">
               
               <div class="coaching-detail">

@@ -272,12 +272,17 @@ if (!isset($_SESSION['user_logged'])) {
     {
       id: 101,
       desc: "START - 3 MESI",
-      costo: 157,
+      costo: 167,
     },
     {
       id: 102,
       desc: "START - 6 MESI",
-      costo: 297,
+      costo: 317,
+    },
+    {
+      id: 103,
+      desc: "START - 12 MESI",
+      costo: 597,
     },
     {
       id: 110,
@@ -290,6 +295,11 @@ if (!isset($_SESSION['user_logged'])) {
       costo: 377,
     },
     {
+      id: 112,
+      desc: "PRO - 12 MESI",
+      costo: 717,
+    },
+    {
       id: 120,
       desc: "TOP - 1 MESI",
       costo: 110,
@@ -297,27 +307,27 @@ if (!isset($_SESSION['user_logged'])) {
     {
       id: 121,
       desc: "TOP - 3 MESE",
-      costo: 297,
+      costo: 227,
     },
     {
       id: 122,
       desc: "TOP - 6 MESI",
-      costo: 567,
+      costo: 437,
     },
     {
       id: 123,
       desc: "TOP - 12 MESI",
-      costo: 997,
+      costo: 837,
     },
     {
       id: 200,
       desc: "ANALISI TECNICA DI CORSA",
-      costo: 37,
+      costo: 59,
     },
     {
       id: 201,
       desc: "SCHEDA DI FORZA",
-      costo: 57,
+      costo: 59,
     },
   ];
 
