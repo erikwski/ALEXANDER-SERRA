@@ -748,6 +748,10 @@ ul.email li {
   padding-top: 130px;
 }
 
+.less-pad-top {
+  padding-top: 4rem !important;
+}
+
 .logo_footer {
   font-size: 50px;
   line-height: 50px;
@@ -1188,6 +1192,13 @@ body::-webkit-scrollbar-thumb:hover {
   color: #fff;
   padding: 5px;
   border-radius: 5px;
+}
+.comingSoon{
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+
 }
 .truncate {
   display: block;

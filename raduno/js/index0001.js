@@ -105,7 +105,7 @@ $(function () {
   let raduni = [
     {
       radunoDate: new Date("08/17/2026"),
-      showDate: new Date("10/01/2025"),
+      showDate: new Date("01/10/2025"),
       removeComingSoon: new Date("01/01/2026"),
       intervalDate: "Dal 17/08/26 al 23/08/26",
       radunoPrice: "350€",
@@ -128,10 +128,73 @@ $(function () {
       ],
     },
   ];
-    
-  const prossimoRaduno = raduni.find((r) => r.showDate <= new Date()) ?? raduni[0];
+
+  const prossimoRaduno =
+    raduni.find((r) => r.showDate <= new Date()) ?? raduni[0];
   const annoProssimoRaduno = prossimoRaduno.radunoDate.getFullYear();
   $(".dinamic-year").text(annoProssimoRaduno);
+
+  //coming soon manage
+  if(prossimoRaduno.removeComingSoon >= new Date()){
+    $(".full_bf").html(`
+      <div class="col-sm-12 text-center mb-4">
+        <i class="offertaLancio comingSoon">AL LANCIO DEL RADUNO ${annoProssimoRaduno} MANCANO:</i>
+        <div id="countdownLaunch" class="countdown">
+            <div class="counter">
+                <span></span>
+                <b>Giorni</b>
+            </div>
+            <div class="counter">
+                <span></span>
+                <b>Ore</b>
+            </div>
+            <div class="counter">
+                <span></span>
+                <b>Min</b>
+            </div>
+            <div class="counter">
+                <span></span>
+                <b>Sec</b>
+            </div>
+        </div>
+      </div>
+    `);
+    $("#contatti").addClass("col-sm-12");
+    $("#legenda").remove();
+    $(".footer").addClass("less-pad-top");
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let countDownLaunch = prossimoRaduno.removeComingSoon.getTime();
+    let x1 = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDownLaunch - now;
+
+      ($("#countdownLaunch span")[0].innerText = Math.floor(distance / day)),
+        ($("#countdownLaunch span")[1].innerText = Math.floor(
+          (distance % day) / hour
+        )),
+        ($("#countdownLaunch span")[2].innerText = Math.floor(
+          (distance % hour) / minute
+        )),
+        ($("#countdownLaunch span")[3].innerText = Math.floor(
+          (distance % minute) / second
+        ));
+
+      if (distance < 0) {
+        //offerta scaduta
+        $("#countdown1").html(
+          "<h3 class='offerta_scaduta'>ISCRIZIONI CHIUSE</h3>"
+        );
+        clearInterval(x1);
+      }
+      //seconds
+    }, 1000);
+    return;
+  }
+
   $("#interval-text").html(prossimoRaduno.intervalDate);
   const priceTable = $("#price-table");
   prossimoRaduno.hotelPrices.forEach((p) => {
@@ -142,8 +205,8 @@ $(function () {
         <td>${p.totalPrice}</td>
     </tr>
       `);
-    });
-  // Countdown 
+  });
+  // Countdown
   const second = 1000,
     minute = second * 60,
     hour = minute * 60,
