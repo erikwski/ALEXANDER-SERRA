@@ -1303,7 +1303,7 @@ h1.big-text-percorso {
   font-size: 3rem;
   line-height: 4rem;
   text-transform: uppercase;
-  opacity: 0.45;
+  opacity: 0.8;
   cursor: default;
   text-align: center;
   transition: 1s opacity;
@@ -1312,7 +1312,7 @@ h1.big-text-percorso {
   opacity: 1;
 }
 .title_services.black-text {
-  color: #000;
+  color: #fff;
 }
 @media screen and (max-width: 800px) {
   .title_services:not(.visibleMobile) {
