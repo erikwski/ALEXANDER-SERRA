@@ -1,13 +1,5 @@
 (function ($) {  
   window.$ = $;
-  
-  let oggi = new Date(),
-    startPopup = new Date("01/02/2025 00:00"),
-    endPopup = new Date("05/11/2025 00:00"),
-    isPopupEnabled =
-      oggi > startPopup &&
-      oggi < endPopup &&
-      +localStorage.getItem("popupRaduni2025") < 3;
 
   gestionePrivacyPolicy();
   updateHtmlForYear();
@@ -128,90 +120,12 @@
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
       $("html").addClass("loaded");
-      showPopupRaduni();
       //PIANO PIANO RENDERIZZO ELEMENTI
       setTimeout(() => {
         $("#loader, #cover_loader").remove();
-        if (!isPopupEnabled) $("html").addClass("enable_scroll");
+        $("html").addClass("enable_scroll");
       }, 1200);
     }, 3000);
-  }
-
-  function showPopupRaduni() {
-    if (isPopupEnabled) {
-      $("#removeIfNoOffer").show();
-
-      const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
-
-      let countDownPopup = endPopup.getTime();
-      let x3 = setInterval(function () {
-        const now = new Date().getTime(),
-          distance = countDownPopup - now;
-
-        let ggPopup = Math.floor(distance / day);
-        let hhPopup = (distance % day) / hour;
-        //   mmPopup = (distance % hour) / minute,
-        //   ssPopup = (distance % minute) / second;
-        $("#countdownPopup .counterPopup")[0].innerText =
-          (ggPopup < 10 && "0") + Math.floor(ggPopup);
-        $("#countdownPopup .counterPopup")[1].innerText =
-          (hhPopup < 10 && "0") + Math.floor(hhPopup);
-        // $("#countdownPopup .counterPopup")[1].innerText =
-        //   (mmPopup < 10 && "0") + Math.floor(mmPopup);
-        // $("#countdownPopup .counterPopup")[2].innerText =
-        //   (ssPopup < 10 && "0") + Math.floor(ssPopup);
-
-        if (distance < 0) {
-          //offerta scaduta
-          clearInterval(x3);
-          location.reload();
-        }
-        //seconds
-      }, 1000);
-
-      $("#popupButton").click(() => {
-        //setto a 5 cosí da non mostrare piú popup a chi lo clicca
-        localStorage.setItem("popupRaduni2025", 5);
-        try {
-          $.get("api/updateContatore.php", {
-            id: 3,
-          }).always(() => (window.location.href = "raduni2025"));
-        } catch (error) {
-          localStorage.setItem("popupRaduni2025", 2);
-          console.log("errore check popup");
-        }
-      });
-      $("#popup-overlay, #popupSkip").click(() => {
-        try {
-          let closedClick = +localStorage.getItem("popupRaduni2025");
-          localStorage.setItem("popupRaduni", closedClick++);
-          try {
-            $.get("api/updateContatore.php", {
-              id: 4,
-            }).always(() => console.log("raduni2024 declined"));
-          } catch (error) {
-            localStorage.setItem("popupRaduni2025", 2);
-            console.log("errore check popup");
-          }
-          $("html").addClass("enable_scroll");
-          $("#popup").addClass("toggleOut");
-          $("#popup-overlay").addClass("delay-0").removeClass("open");
-
-          setTimeout(() => {
-            $("#popup, #popup-overlay").remove();
-            clearInterval(x3);
-          }, 1700);
-        } catch (error) {
-          console.log(error, "ciao");
-        }
-      });
-      $("#popup, #popup-overlay").addClass("open");
-    } else {
-      $("#popup, #popup-overlay").remove();
-    }
   }
 
   function multiClickFunctionStop() {
