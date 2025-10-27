@@ -367,7 +367,10 @@
     $(
       '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale, #back_to_normal_buy'
     ).on("click", function (e) {
-      if ($(this).attr("href") === "#") {
+      if($(this).hasClass("no-scroll")){
+        return;
+      }
+      if ($(this).attr("href") === "#") {        
         e.preventDefault();
       } else {
         if ($(window).width() < 1024) {
