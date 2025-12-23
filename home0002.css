@@ -1492,7 +1492,8 @@ h1.big-text-percorso {
   gap: 8px;
 }
 
-.pricing-badge-container .pricing-badge, .secondary-badge {
+.pricing-badge-container .pricing-badge,
+.secondary-badge {
   padding: 3px 6px;
   font-weight: 600;
   color: #fff;
@@ -1504,10 +1505,10 @@ h1.big-text-percorso {
 }
 
 .secondary-badge {
-      width: fit-content;
-    margin: auto;
-    font-size: 16px;
-    padding: 8px;
+  width: fit-content;
+  margin: auto;
+  font-size: 16px;
+  padding: 8px;
 }
 
 .pricing-table-price {
@@ -1645,7 +1646,8 @@ h1.big-text-percorso {
   box-shadow: 0px 0px 3px 0px var(--secondary);
 }
 
-#pro-coaching .pricing-badge-container .pricing-badge, .secondary-badge {
+#pro-coaching .pricing-badge-container .pricing-badge,
+.secondary-badge {
   background: linear-gradient(45deg, var(--secondary), #ff6422);
 }
 
@@ -3719,8 +3721,8 @@ footer .footer-social-divider:before {
   background: #fff;
 }
 
-.contact-submit-message{
-  padding: .5em 1.5em;
+.contact-submit-message {
+  padding: 0.5em 1.5em;
   border-radius: 1em;
   display: inline-block;
   color: #fff;
@@ -3728,29 +3730,28 @@ footer .footer-social-divider:before {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 12px;
-  opacity: .7;
+  opacity: 0.7;
 }
-.contact-submit-message.successSubmit{
+.contact-submit-message.successSubmit {
   background: green;
 }
-.contact-submit-message.errorSubmit{
+.contact-submit-message.errorSubmit {
   background: rgb(183, 8, 8);
 }
-.contact-submit-message.warningSubmit{
+.contact-submit-message.warningSubmit {
   background: rgb(207, 197, 10);
 }
-.small-button-holder{
+.small-button-holder {
   display: flex;
   gap: 0 1em;
   justify-content: center;
   flex-wrap: wrap;
 }
-.small-button-holder .button{
+.small-button-holder .button {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   width: 300px;
 }
-
 
 .clients {
   display: flex;
@@ -3784,7 +3785,7 @@ footer .footer-social-divider:before {
   }
 }
 
-a.clients__slide{
+a.clients__slide {
   cursor: default;
 }
 
@@ -3801,8 +3802,8 @@ a.clients__slide{
   transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.clients__slide.philips img{
-  opacity: .75;
+.clients__slide.philips img {
+  opacity: 0.75;
 }
 
 .clients__slide:focus img,
@@ -3810,4 +3811,8 @@ a.clients__slide{
   transform: scale(1);
   filter: grayscale(0);
   opacity: 1;
+}
+
+body.maintenance_mode {
+  padding: 1rem;
 }

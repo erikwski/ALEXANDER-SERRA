@@ -1,4 +1,4 @@
-(function ($) {  
+(function ($) {
   window.$ = $;
 
   gestionePrivacyPolicy();
@@ -21,9 +21,9 @@
   //Show-Hide header sidebar
   $("#toggle").on("click", multiClickFunctionStop);
 
-  $(".preventDefault").click(function(e){
+  $(".preventDefault").click(function (e) {
     e.preventDefault();
-  })
+  });
   // $("#percorsoDett").on("click", (e) => {
   //   e.stopPropagation();
   //   e.preventDefault();
@@ -73,15 +73,15 @@
       acceptCookie();
     });
   }
-  
-  function acceptCookie(){
+
+  function acceptCookie() {
     $("#cookie_policy").addClass("already_accepted");
-    
-    gtag('consent', 'update', {
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'ad_storage': 'granted',
-      'analytics_storage': 'granted'
+
+    gtag("consent", "update", {
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
     });
   }
 
@@ -116,6 +116,25 @@
   }
 
   function animazioneIniziale() {
+    var now = new Date();
+    var targetDate = new Date("2026-01-01T00:00:00");
+
+    if (now < targetDate) {
+      $("body").html(`
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background-color: #fff; font-family: 'Rubik', sans-serif; padding: 20px;">
+              <img src="images/logo.png" alt="Logo" style="max-width: 150px; margin-bottom: 30px;">
+              <h1 style="color: #2293ca; margin-bottom: 20px; font-size: 2em;">IL SITO TORNA OPERATIVO IL 1 GENNAIO 2026!</h1>
+              <h2 style="color: #f07f00; margin-bottom: 30px; font-size: 1.5em;">INTANTO VI AUGURO BUONE FESTE!</h2>
+              <p style="font-size: 1.2em; color: #333;">PER INFORMAZIONI <a href="tel:3206349783" style="color: #2293ca; text-decoration: none; font-weight: bold;">3206349783</a></p>
+            </div>
+          `);
+      $("#loader").addClass("runner_animation");
+      $("html").addClass("loaded");
+      $("#loader, #cover_loader").remove();
+      $("html").addClass("enable_scroll");
+      $("body").addClass("maintenance_mode");
+      return;
+    }
     $("#loader").addClass("runner_animation");
     setTimeout(() => {
       //BACKGROUND ESCE DALLO SCHERMO
@@ -147,13 +166,13 @@
   }
 
   function SendMail() {
-    $("#showFormContattami").click(()=>{
-      if($("#halfOnFormSubmit").hasClass("one_half")){
+    $("#showFormContattami").click(() => {
+      if ($("#halfOnFormSubmit").hasClass("one_half")) {
         $("#formContattami").hide(500, () =>
           $("#halfOnFormSubmit").removeClass("one_half")
         );
-      }else{
-        $("#halfOnFormSubmit").addClass("one_half")
+      } else {
+        $("#halfOnFormSubmit").addClass("one_half");
         $("#formContattami").show(500);
       }
     });
@@ -188,10 +207,15 @@
           data: formBody,
           contentType: "application/x-www-form-urlencoded",
           success: function () {
-            $(".contact-submit-message").addClass("successSubmit").show().html("Richiesta inviata correttamente, ti ricontatteremo il prima possibile")
+            $(".contact-submit-message")
+              .addClass("successSubmit")
+              .show()
+              .html(
+                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile"
+              );
             $(
-                ".contact-form input:not([type='submit']), .contact-form textarea"
-              ).val("");
+              ".contact-form input:not([type='submit']), .contact-form textarea"
+            ).val("");
             $("#invia_mail").removeClass("disabled");
           },
           error: function () {
@@ -200,15 +224,17 @@
               .show()
               .html("Errore nell'invio della richiesta, riprovare più tardi");
             $("#invia_mail").removeClass("disabled");
-          }
+          },
         });
       } else {
-        $(".contact-submit-message").addClass("warningSubmit").show().html("Compila correttamente la mail oppure il numero di telefono")
+        $(".contact-submit-message")
+          .addClass("warningSubmit")
+          .show()
+          .html("Compila correttamente la mail oppure il numero di telefono");
         $("#invia_mail").removeClass("disabled");
       }
     });
   }
-
 
   function fixForFooterNoContent() {
     if (
@@ -367,10 +393,10 @@
     $(
       '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale, #back_to_normal_buy'
     ).on("click", function (e) {
-      if($(this).hasClass("no-scroll")){
+      if ($(this).hasClass("no-scroll")) {
         return;
       }
-      if ($(this).attr("href") === "#") {        
+      if ($(this).attr("href") === "#") {
         e.preventDefault();
       } else {
         if ($(window).width() < 1024) {
@@ -380,7 +406,7 @@
                 { scrollTop: $(this.hash).offset().top - 76 },
                 1500
               );
-            }catch {
+            } catch {
               // skip animation
             }
             $(".menu-holder").removeClass("show");
@@ -393,7 +419,7 @@
               { scrollTop: $(this.hash).offset().top - 76 },
               1500
             );
-          }catch {
+          } catch {
             // skip animation
           }
           return false;
@@ -474,8 +500,8 @@
   }
 
   function gestioneCallConoscitiva() {
-    $("#call-conoscitiva").click(()=>{
-      if (!$(".alex-dialog").hasClass("open")){
+    $("#call-conoscitiva").click(() => {
+      if (!$(".alex-dialog").hasClass("open")) {
         $("html").addClass("disabled_scroll");
         $(".alex-dialog, .alex-dialog-overlay").addClass("open");
         $(".alex-dialog .alex-dialog-container").append(`
