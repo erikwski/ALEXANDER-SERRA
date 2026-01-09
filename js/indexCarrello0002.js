@@ -141,6 +141,26 @@ $(function () {
     $("#tecnica").data("buyId", "200");
     $("#forza").data("buyId", "201");
 
+    var now = new Date();
+    var targetDate = new Date("2026-01-01T00:00:00");
+
+    if (now < targetDate) {
+      $("body").html(`
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background-color: #fff; font-family: 'Rubik', sans-serif; padding: 20px;">
+              <img src="images/logo.png" alt="Logo" style="max-width: 150px; margin-bottom: 30px;">
+              <h1 style="color: #2293ca; margin-bottom: 20px; font-size: 2em;">IL SITO TORNA OPERATIVO IL <br><span style="color: #c0392b;">1 GENNAIO 2026!</span></h1>
+              <h2 style="color: #f07f00; margin-bottom: 30px; font-size: 1.5em;">INTANTO VI AUGURO BUONE FESTE!</h2>
+              <p style="font-size: 1.2em; color: #333;">PER INFORMAZIONI <a href="tel:3206349783" style="color: #2293ca; text-decoration: none; font-weight: bold;">3206349783</a></p>
+            </div>
+          `);
+      $("#loader").addClass("runner_animation");
+      $("html").addClass("loaded");
+      $("#loader, #cover_loader").remove();
+      $("html").addClass("enable_scroll");
+      $("body").addClass("maintenance_mode");
+      return;
+    }
+
     $(".navigateBack").on("click", navigateBack);
 
     gestioneCallConoscitiva();
@@ -160,7 +180,7 @@ $(function () {
     $("#dati_acquirente input:not([type='checkbox'])").each(function () {
       if ($(this).val() === "") {
         valid_input = false;
-        if($(this).hasClass("dirty")) $(this).addClass("invalid_input");
+        if ($(this).hasClass("dirty")) $(this).addClass("invalid_input");
       } else {
         $(this).removeClass("invalid_input");
       }
@@ -176,7 +196,8 @@ $(function () {
   function changedCoaching(pacchettoRichiesto) {
     if (
       typeof pacchettoRichiesto != "string" ||
-      ["start", "pro", "top", "forza", "tecnica"].indexOf(pacchettoRichiesto) == -1
+      ["start", "pro", "top", "forza", "tecnica"].indexOf(pacchettoRichiesto) ==
+        -1
     )
       pacchettoRichiesto = "start";
     coachingGlobal = pacchettoRichiesto;
@@ -263,7 +284,7 @@ $(function () {
     } catch (error) {
       console.log("L'utente non ha mai acquistato un pacchetto");
     }
-    
+
     $(".switchCoaching").click(function () {
       if (!$(this).hasClass("active"))
         changedCoaching($(this).data("coaching"));
@@ -324,31 +345,33 @@ $(function () {
         $("#price-bank").html(`${total}€`);
         $("#riepilogo-cont").show();
         $("#selectLabel").hide();
-        $(".buy_coaching").removeClass("disableBuy")
+        $(".buy_coaching").removeClass("disableBuy");
       } else {
         $("#price-bank").html("");
         $("#riepilogo-cont").hide();
         $("#selectLabel").show();
-        $(".buy_coaching").addClass("disableBuy")
+        $(".buy_coaching").addClass("disableBuy");
       }
     });
 
-     changedCoaching(
-       new URLSearchParams(window.location.search).get("coaching")
-     );
+    changedCoaching(
+      new URLSearchParams(window.location.search).get("coaching")
+    );
 
-     $(".fa-copy").click(()=>{
+    $(".fa-copy").click(() => {
       navigator.clipboard.writeText("IT30W0538766690000003286021");
       $("#copy-popup").addClass("shown");
       setTimeout(() => {
         $("#copy-popup").removeClass("shown");
       }, 3000);
-     });
-     
-     $(".buy_coaching").click((e)=>{
+    });
+
+    $(".buy_coaching").click((e) => {
       e.preventDefault();
       cartIdList = [];
-      $("#riepilogo-card").html("<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>");
+      $("#riepilogo-card").html(
+        "<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>"
+      );
       $(".selected").each(function () {
         const id = +$(this).data("buyId");
         const name = $(this).parents(".coaching_avaiable").length
@@ -361,9 +384,9 @@ $(function () {
         cartIdList.push({
           id: id,
           name: name,
-          price: parseFloat(price)
+          price: parseFloat(price),
         });
-                
+
         if (id < 200) {
           $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected" id="mensile">
@@ -379,7 +402,7 @@ $(function () {
             </div>
           `);
         }
-        if (id == 200){
+        if (id == 200) {
           $("#riepilogo-card .coach-container").append(`
             <div class="coaching_card selected">
               <div class="price-tag">59€</div>
@@ -420,8 +443,8 @@ $(function () {
             </strong>
           </div>
       `);
-      cartIdList.sort((a, b)=> a.id < b.id);
-      
+      cartIdList.sort((a, b) => a.id < b.id);
+
       $("#cart").hide();
       $("#buy-form").show();
       $("#dati_acquirente").addClass("show_acquirente");
@@ -432,11 +455,10 @@ $(function () {
         //PRONTO AD ACQUISTARE
         inizializzaPaypal();
       }
-      
-     });
+    });
 
-     // OLD PAYMENT METHODS
-    $("#dati_acquirente input").on("change keyup", function() {
+    // OLD PAYMENT METHODS
+    $("#dati_acquirente input").on("change keyup", function () {
       $(this).addClass("dirty");
       if (checkAcquistabile()) {
         //PRONTO AD ACQUISTARE
@@ -453,7 +475,6 @@ $(function () {
       }
     });
 
-
     $("#show_dati_bonifico").click((e) => {
       e.preventDefault();
       $("#toggle_dati_bonifico").toggle(500);
@@ -465,7 +486,6 @@ $(function () {
     // $("#tecnica").click();
     // $(".buy_coaching").click();
     // $(".coaching_card").show();
-
   }
 
   function inizializzaPaypal() {
@@ -475,7 +495,7 @@ $(function () {
     $("#fake_paypal_btn, #fake_bonifico").fadeOut(500);
     paypal.FUNDING.SOFORT = "disallowed";
     let AMOUNT = 0;
-    cartIdList.forEach(el=> AMOUNT += el.price);
+    cartIdList.forEach((el) => (AMOUNT += el.price));
     try {
       let paypal_inizialize = {
         style: {
@@ -531,7 +551,7 @@ $(function () {
               pacchetto_desc: null,
             });
             localStorage.setItem("buyConfirmed", "yes");
-            window.location.href = "confirm.html?coaching"+coachingGlobal;
+            window.location.href = "confirm.html?coaching" + coachingGlobal;
           });
         },
       };
@@ -547,7 +567,7 @@ $(function () {
     }
   }
 
-  function cutString(string, length){
+  function cutString(string, length) {
     try {
       return string.substring(0, length);
     } catch (error) {
@@ -558,8 +578,7 @@ $(function () {
   async function confermaPagamento(dati) {
     try {
       localStorage.setItem("user", JSON.stringify(dati));
-      for (let pacchetto of cartIdList){
-        
+      for (let pacchetto of cartIdList) {
         dati.pacchetto = pacchetto.id;
         dati.costo = pacchetto.price;
         dati.pacchetto_desc = pacchetto.name;
@@ -576,8 +595,7 @@ $(function () {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title:
-          "ERRORE CRITICO: contattami per confermare il pagamento",
+        title: "ERRORE CRITICO: contattami per confermare il pagamento",
         showConfirmButton: true,
         confirmButtonText: "OK",
       });
@@ -595,7 +613,7 @@ $(function () {
       city: $("#city_buyer").val(),
       cap: $("#cap_buyer").val(),
       prov: $("#prov_buyer").val(),
-      pacchetto_desc: cartIdList.map(pacchetto=> pacchetto.name).join(", "),
+      pacchetto_desc: cartIdList.map((pacchetto) => pacchetto.name).join(", "),
     };
     try {
       localStorage.setItem("user", JSON.stringify(dati));
@@ -610,7 +628,7 @@ $(function () {
   }
 
   function gestioneCallConoscitiva() {
-    $("#back-to-main").click(()=> window.location.href = 'index.html');
+    $("#back-to-main").click(() => (window.location.href = "index.html"));
 
     $("#call-conoscitiva").click(() => {
       if (!$(".alex-dialog").hasClass("open")) {

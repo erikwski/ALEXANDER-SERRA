@@ -123,7 +123,7 @@
       $("body").html(`
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background-color: #fff; font-family: 'Rubik', sans-serif; padding: 20px;">
               <img src="images/logo.png" alt="Logo" style="max-width: 150px; margin-bottom: 30px;">
-              <h1 style="color: #2293ca; margin-bottom: 20px; font-size: 2em;">IL SITO TORNA OPERATIVO <br><span style="color: #c0392b;">1 GENNAIO 2026!</span></h1>
+              <h1 style="color: #2293ca; margin-bottom: 20px; font-size: 2em;">IL SITO TORNA OPERATIVO IL <br><span style="color: #c0392b;">1 GENNAIO 2026!</span></h1>
               <h2 style="color: #f07f00; margin-bottom: 30px; font-size: 1.5em;">INTANTO VI AUGURO BUONE FESTE!</h2>
               <p style="font-size: 1.2em; color: #333;">PER INFORMAZIONI <a href="tel:3206349783" style="color: #2293ca; text-decoration: none; font-weight: bold;">3206349783</a></p>
             </div>
