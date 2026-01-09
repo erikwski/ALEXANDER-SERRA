@@ -291,6 +291,7 @@ $(function () {
     });
 
     $("#cart .coaching_card").click(function (e) {
+      if ($(this).hasClass("coaching_card--external")) return;
       e.preventDefault();
       $("#riepilogo tbody").html("");
       if ($(this).hasClass("selected")) {

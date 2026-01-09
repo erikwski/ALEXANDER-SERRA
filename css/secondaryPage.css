@@ -208,10 +208,10 @@
 #riepilogo-card {
   color: #000;
 }
-#riepilogo-card .coaching_card{
+#riepilogo-card .coaching_card {
   padding-bottom: 50px;
 }
-#riepilogo-card .coaching_card .coaching-detail{
+#riepilogo-card .coaching_card .coaching-detail {
   bottom: 20px;
 }
 
@@ -240,16 +240,17 @@
   transition: 0.7s ease-in-out;
 }
 
-.coaching_card img, .coaching_card .coaching-detail{
-  transition: .7s ease-in-out;
+.coaching_card img,
+.coaching_card .coaching-detail {
+  transition: 0.7s ease-in-out;
 }
 
 .coaching_card:hover,
 .coaching_card.selected {
   transform: scale(1.05);
 }
-.coaching_card:not(.selected):hover img, 
-.coaching_card:not(.selected):hover .coaching-detail{
+.coaching_card:not(.selected):hover img,
+.coaching_card:not(.selected):hover .coaching-detail {
   filter: drop-shadow(0px 0px 3px var(--primary));
 }
 
@@ -278,8 +279,8 @@
   background: #111;
 }
 
-#cart.start .coaching_card:not(.selected):hover img, 
-#cart.start .coaching_card:not(.selected):hover .coaching-detail{
+#cart.start .coaching_card:not(.selected):hover img,
+#cart.start .coaching_card:not(.selected):hover .coaching-detail {
   filter: drop-shadow(0px 0px 3px #111);
 }
 
@@ -293,8 +294,8 @@
   background: var(--secondary);
 }
 
-#cart.pro .coaching_card:not(.selected):hover img, 
-#cart.pro .coaching_card:not(.selected):hover .coaching-detail{
+#cart.pro .coaching_card:not(.selected):hover img,
+#cart.pro .coaching_card:not(.selected):hover .coaching-detail {
   filter: drop-shadow(0px 0px 3px var(--secondary));
 }
 
@@ -356,6 +357,38 @@
   top: -30px;
 }
 
+/* External card variant */
+.coaching_card--external {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 1em;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  overflow: visible;
+}
+
+.external-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--primary);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .cartTitle {
   z-index: 2;
   position: relative;
@@ -384,7 +417,6 @@
 .column {
   flex-direction: column;
 }
-
 
 /* Timeline Container */
 .timeline {
@@ -426,7 +458,6 @@
   border-width: 5px 0 5px 5px;
   border-radius: 50px 0 0 50px;
 }
-
 
 /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
 @media only screen and (max-width: 400px) {
@@ -474,17 +505,16 @@
   box-shadow: -1px 0px 5px -2px var(--primary);
 }
 
-.year{
+.year {
   line-height: 12px;
   margin-top: 6px;
 }
 
-.card:nth-child(even) .year{
+.card:nth-child(even) .year {
   text-align: right;
 }
 
-
-.card:nth-child(even) .info{
+.card:nth-child(even) .info {
   box-shadow: 1px 0px 5px -2px var(--secondary);
 }
 
@@ -508,11 +538,11 @@
   border: 3px solid var(--primary);
 }
 
-.card:nth-child(even) .title{
+.card:nth-child(even) .title {
   color: var(--secondary);
 }
 
-.card:nth-child(even) .title::before{
+.card:nth-child(even) .title::before {
   border-color: var(--secondary);
 }
 
@@ -530,7 +560,6 @@
 .card:nth-child(even) > .info > .title::before {
   right: -45px;
 }
-
 
 /* BUY FORM */
 #dati_acquirente,
@@ -771,7 +800,8 @@
 .contact-submit-holder {
   margin-bottom: 0;
 }
-#payLabel, .labelFullLine {
+#payLabel,
+.labelFullLine {
   font-size: 16px;
   line-height: 16px;
   margin-bottom: 1em;
@@ -783,7 +813,6 @@
 }
 
 /* ================  Media Queries ================ */
-
 
 @media screen and (max-width: 500px) {
   .switchCoachingCont .switchCoaching {
@@ -812,10 +841,10 @@
   gap: 10px;
   pointer-events: none;
 }
-#riepilogo-card .labelFullLine{
+#riepilogo-card .labelFullLine {
   margin: 2em 0;
 }
-#riepilogo-card .riepilogo-finale{
+#riepilogo-card .riepilogo-finale {
   transform: translateY(-30px);
   width: 100%;
   padding: 0 1em;
@@ -826,7 +855,7 @@
   transform: translateX(0) translateX(0) scale(1);
   opacity: 1;
 }
-#riepilogo-card .coach-container{
+#riepilogo-card .coach-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1019,7 +1048,7 @@
   outline-color: var(--primary);
 }
 
-.field input:focus ~ .input-icon{
+.field input:focus ~ .input-icon {
   color: var(--primary);
 }
 
@@ -1070,31 +1099,30 @@
 #new-buy-form input.invalid_input ~ .input-icon {
   color: red !important;
 }
-#calendlyFooter{
-  background: #F2F4FF;
+#calendlyFooter {
+  background: #f2f4ff;
 }
 
-#calendlyFooter h4{
+#calendlyFooter h4 {
   position: relative;
   font-weight: 600;
   color: var(--primary);
 }
 
-.container-img{
+.container-img {
   padding: 2em;
   width: 400px;
   max-width: 400px;
   aspect-ratio: 1 / 1;
 }
-#footer-image{
+#footer-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-
 }
 
-#calendlyFooter h4:before{
+#calendlyFooter h4:before {
   content: "CALL \A CONOSCITIVA";
   white-space: pre;
   font-size: 80px;
@@ -1107,13 +1135,11 @@
   font-weight: 600;
 }
 
-#calendlyFooter.risorsa-free h4:before{
+#calendlyFooter.risorsa-free h4:before {
   content: "RISORSA \A GRATUITA";
 }
 
-
-
-.btn-outline-icon{
+.btn-outline-icon {
   background: transparent;
   border: 1px solid #666666;
   padding: 4px;
@@ -1126,14 +1152,14 @@
   cursor: pointer;
   max-width: 400px;
   position: relative;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   overflow: hidden;
 }
-.btn-outline-icon > *{
+.btn-outline-icon > * {
   z-index: 2;
 }
 
-.btn-outline-icon::before{
+.btn-outline-icon::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1141,38 +1167,38 @@
   transform: translateX(-110%) scale(0.2);
   left: 0;
   top: 0;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   z-index: 1;
   border-radius: 1em;
   background: var(--primary);
 }
 
-.btn-outline-icon:hover{
+.btn-outline-icon:hover {
   color: #fff;
   border-color: var(--primary);
 }
 
-.btn-outline-icon:hover::before{
+.btn-outline-icon:hover::before {
   transform: translateX(0) scale(1);
 }
 
-a.btn-outline-icon span:not(.fa){
+a.btn-outline-icon span:not(.fa) {
   color: #000;
   line-height: 16px;
   font-size: 16px;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
 }
 
-a.btn-outline-icon:hover span:not(.fa){
+a.btn-outline-icon:hover span:not(.fa) {
   color: #fff !important;
 }
 
-a.btn-outline-icon span.fa{
+a.btn-outline-icon span.fa {
   line-height: 24px;
   font-size: 24px;
 }
 
-.btn-outline-icon .fa{
+.btn-outline-icon .fa {
   height: 52px;
   width: 52px;
   min-width: 52px;
@@ -1183,7 +1209,7 @@ a.btn-outline-icon span.fa{
   color: #fff;
 }
 
-.btn-outline-icon-sm{
+.btn-outline-icon-sm {
   background: transparent;
   border: 1px solid #666666;
   padding: 3px;
@@ -1197,17 +1223,17 @@ a.btn-outline-icon span.fa{
   max-width: 350px;
 }
 
-.btn-outline-icon-sm .fa{
+.btn-outline-icon-sm .fa {
   height: 30px;
   width: 30px;
   min-width: 30px;
 }
 
-.text-center-mmm{
-  padding: 3em .5em;
+.text-center-mmm {
+  padding: 3em 0.5em;
 }
 
-.confirm-buy{
+.confirm-buy {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1217,72 +1243,72 @@ a.btn-outline-icon span.fa{
 }
 
 @media screen and (max-width: 700px) {
-  .container-img{
+  .container-img {
     padding: 1em;
     width: 250px;
     max-width: 250px;
     margin-top: 1.5em;
   }
 
-  .btn-outline-icon{
+  .btn-outline-icon {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .text-center-mmm{
+  .text-center-mmm {
     text-align: center;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .text-center-mmm{
+  .text-center-mmm {
     padding-top: 6em;
   }
 
-  #buy-form{
+  #buy-form {
     flex-direction: column;
   }
 
-  #riepilogo-card{
+  #riepilogo-card {
     width: 100%;
   }
 
-  #riepilogo-card .coach-container{
+  #riepilogo-card .coach-container {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 0 3em;
     justify-content: center;
   }
 
-  #riepilogo-card .coaching_card{
+  #riepilogo-card .coaching_card {
     padding-bottom: 50px;
     width: 200px;
     height: 100px;
     font-size: 14px;
   }
 
-  #riepilogo-card .coaching_card .coaching-detail span{
+  #riepilogo-card .coaching_card .coaching-detail span {
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  #riepilogo-card .coaching_card .coaching-detail strong{
+  #riepilogo-card .coaching_card .coaching-detail strong {
     display: flex;
     align-items: center;
   }
 
-  #riepilogo-card .coaching_card .coaching-detail{
+  #riepilogo-card .coaching_card .coaching-detail {
     left: 10px;
   }
 
-  #dati_acquirente{
+  #dati_acquirente {
     width: 100%;
     box-sizing: border-box;
   }
 
-  .small-badge{
+  .small-badge {
     padding: 1px 6px;
     margin-left: 6px;
   }
@@ -1308,18 +1334,18 @@ a.btn-outline-icon span.fa{
     gap: 8px;
   }
 
-  #toggle_dati_bonifico > *{
+  #toggle_dati_bonifico > * {
     max-width: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #riepilogo-card .coach-container{
+  #riepilogo-card .coach-container {
     flex-direction: column;
     transform: translateX(-35px);
   }
 
-  #riepilogo-card .labelFullLine{
+  #riepilogo-card .labelFullLine {
     transform: translateX(-35px);
   }
 }

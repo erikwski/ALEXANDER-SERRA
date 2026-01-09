@@ -257,6 +257,56 @@
                                 Da saldare tramite bonifico bancario
                             </label>
                             <span class="caratteristiche priceCaratt" style="margin-bottom: 1em;">350€</span>
+                            
+                            <div style="
+                                border-radius: 12px;
+                                padding: 20px;
+                                margin: 1rem auto;
+                                max-width: 450px;
+                                color: #fff;
+                                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                                border: 2px solid #48a6d2;
+                            ">
+                                <h5 style="color: #48a6d2; margin-bottom: 15px; font-size: 16px; font-weight: 600; text-align: left;">
+                                    <i class="fa fa-bank" style="margin-right: 8px;"></i>
+                                    DATI PER BONIFICO BANCARIO
+                                </h5>
+                                <div style="text-align: left; font-size: 14px; line-height: 1.8;">
+                                    <p style="margin-bottom: 10px; padding: 0;">
+                                        <strong style="color: #48a6d2;">Beneficiario:</strong><br>
+                                        <span style="font-size: 15px;">Giulia Vettor</span>
+                                    </p>
+                                    <p style="margin-bottom: 10px; padding: 0;">
+                                        <strong style="color: #48a6d2;">IBAN:</strong><br>
+                                        <span style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                                            <span id="iban-text" style="font-family: monospace; font-size: 13px; letter-spacing: 1px;">IT22 B053 8766 6900 0000 2913 240</span>
+                                            <button onclick="copyIban()" style="
+                                                background: #48a6d2;
+                                                border: none;
+                                                border-radius: 4px;
+                                                padding: 4px 8px;
+                                                cursor: pointer;
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 4px;
+                                                color: #fff;
+                                                font-size: 11px;
+                                                transition: background 0.3s;
+                                            " onmouseover="this.style.background='#3a8db3'" onmouseout="this.style.background='#48a6d2'">
+                                                <i class="fa fa-copy"></i> 
+                                            </button>
+                                        </span>
+                                        <span id="copy-feedback" style="display: none; color: #4CAF50; font-size: 12px; margin-top: 4px;">
+                                            <i class="fa fa-check"></i> IBAN copiato!
+                                        </span>
+                                    </p>
+                                    <p style="margin-bottom: 0; padding: 0;">
+                                        <strong style="color: #48a6d2;">Causale:</strong><br>
+                                        <span style="font-size: 15px;">RADUNO PASSO OCLINI</span>
+                                    </p>
+                                </div>
+                            </div>
+
                             <p style="padding-bottom: 10px; min-height: 64px">
                                 <span>
                                     <b style="
@@ -863,6 +913,18 @@
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/index0001.js"></script>
+    <script>
+        function copyIban() {
+            const iban = document.getElementById('iban-text').textContent.replace(/\s/g, '');
+            navigator.clipboard.writeText(iban).then(function() {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.style.display = 'block';
+                setTimeout(function() {
+                    feedback.style.display = 'none';
+                }, 2000);
+            });
+        }
+    </script>
     <script>
         // Ottieni il riferimento alla div in cui appendere gli elementi
         var appendHereDiv = document.getElementById("appenImage");
