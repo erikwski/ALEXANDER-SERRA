@@ -116,15 +116,15 @@ $(function () {
       ],
     },
     {
-      radunoDate: new Date("08/17/2025"),
+      radunoDate: new Date("08/16/2025"),
       showDate: new Date("01/01/2025"),
       removeComingSoon: new Date("08/18/2024"),
-      intervalDate: "Dal 17/08/25 al 23/08/25",
+      intervalDate: "Dal 16/08/25 al 22/08/25",
       radunoPrice: "350€",
       hotelPrices: [
-        { peopleRooms: "1", price: "531€", totalPrice: "881€" },
-        { peopleRooms: "2", price: "447€", totalPrice: "797€" },
-        { peopleRooms: "3+", price: "345€", totalPrice: "695€" },
+        { peopleRooms: "1", price: "560€", totalPrice: "910€" },
+        { peopleRooms: "2", price: "475€", totalPrice: "825€" },
+        { peopleRooms: "3+", price: "370€", totalPrice: "720€" },
       ],
     },
   ];
@@ -135,7 +135,7 @@ $(function () {
   $(".dinamic-year").text(annoProssimoRaduno);
 
   //coming soon manage
-  if(prossimoRaduno.removeComingSoon >= new Date()){
+  if (prossimoRaduno.removeComingSoon >= new Date()) {
     $(".full_bf").html(`
       <div class="col-sm-12 text-center mb-4">
         <i class="offertaLancio comingSoon">AL LANCIO DEL RADUNO ${annoProssimoRaduno} MANCANO:</i>
