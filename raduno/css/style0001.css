@@ -1163,7 +1163,7 @@ body::-webkit-scrollbar-thumb:hover {
 .review p {
   margin-bottom: 5px;
   font-size: 15px;
-  line-height: 22px;
+  line-height: 18px;
 }
 .bi-star-fill {
   fill: #e3c100;
@@ -1193,12 +1193,11 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 5px;
   border-radius: 5px;
 }
-.comingSoon{
+.comingSoon {
   width: 100%;
   padding: 1rem;
   display: block;
   margin-bottom: 1rem;
-
 }
 .truncate {
   display: block;

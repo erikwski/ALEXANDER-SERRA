@@ -254,4 +254,102 @@ $(function () {
     e.stopPropagation();
     window.location.href = $(this).data("raduno") + ".html";
   });
+
+  // Reviews data array
+  const reviews = [
+    {
+      name: "CARLO",
+      stars: 5,
+      text: `Al primo posto ho amato l'atmosfera del Raduno: un gruppo eterogeneo composto da persone educate ed equilibrate che hanno reso la settimana speciale.<br><br>
+      Ovviamente l'indirizzo e lo stile dato al raduno da Alexander e Giulia ha contribuito in maniera determinante.<br>
+      Allenamenti, camminate e ambiente sono stati molto piacevoli.<br>
+      L'organizzazione perfetta. Il programma puntuale, gli orari rispettati ed una giusta flessibilità in base al meteo.<br>
+      Le attività di mobilità, forza e rinforzo del core sono state molto utili in quanto meno svolte a casa nella quotidianità.<br>
+      Personalmente mi è piaciuta molto la presentazione di Giulia sulla gestione "pedagogica" di allenamenti e gare e poi ho trovato molto divertenti i momenti in pista insieme.<br><br>
+      <strong>Consiglio il raduno:</strong><br>
+      - per preparare la stagione podistica autunnale e al tempo stesso fare una settimana di vacanza in gruppo<br>
+      - Per apprendere un corretto metodo di allenamento<br>
+      - Per condividere e scambiare esperienze con altri runner<br>
+      - Perché il posto si presta bene sia alla vacanza che all'allenamento<br><br>
+      P.s. il prossimo anno saremo ancora qui!`,
+    },
+    {
+      name: "MARCO",
+      stars: 5,
+      text: `Grazie Alexander e Giulia perché per una settimana mi avete fatto respirare la vita di un vero runner professionista con sedute di esercizi "fisici" (in pista di atletica e non solo) e sedute di esercizi più di "aula" (respirazione, motivazione, core, forza, ecc) che normalmente a casa non farei ma che riconosco essere altrettanto importanti (questi momenti sono quelli che ho apprezzato di più).<br><br>
+      L'alternanza di questi momenti ha fatto sì che non mi sentissi mai "veramente" stanco.<br><br>
+      Il posto è magnifico così come la struttura che ci ha accolto e si sente tutta la passione che voi mettete nel vostro lavoro.`,
+    },
+    {
+      name: "OTTAVIA",
+      stars: 5,
+      text: `Il raduno è stato davvero perfetto, l'organizzazione, gli orari, tutto...<br><br>
+      Una delle attività che ho trovato più interessanti è la lezione che abbiamo fatto su respirazione e motivazione che sono due tematiche a volte trascurate in ambito sportivo ma che personalmente sono più importanti di tanti altri temi.<br><br>
+      Veramente una settimana super produttiva e ricca di nuove esperienze!<br><br>
+      Grazie di tutto e complimenti per aver organizzato questo magnifico raduno.`,
+    },
+    {
+      name: "MABEL",
+      stars: 5,
+      text: `Del raduno ho apprezzato soprattutto gli allenamenti e le persone che ho conosciuto.<br><br>
+      Perfetto il programma e la capacità di adattarlo al meteo, così come le comunicazioni sempre puntuali e complete.<br><br>
+      Finalmente ho imparato a svolgere la mobilità articolare e ho capito la sua importanza.<br><br>
+      Il raduno è motivante senza essere "pesante".<br><br>
+      Lo consiglierei in particolare ad una persona che vuole apprendere tutto ciò che ruota attorno alla corsa, dalla preparazione alla prevenzione.`,
+    },
+    {
+      name: "LORENZO",
+      stars: 5,
+      text: `Raduno 2025, un'esperienza fantastica con un'organizzazione top!<br>
+      Mi é piaciuta la grande varietà negli allenamenti, così come l'inserimento di momenti didattici con Giulia Vettor e Sara Creola!<br><br>
+      Dal punto di vista dei tempi si riesce sempre a riposare e recuperare, nonostante i tanti allenamenti!<br><br>
+      Avrei una proposta...organizzare il raduno su 10 giorni, perché una settimana passa troppo in fretta!`,
+    },
+    {
+      name: "CHIARA",
+      stars: 5,
+      text: `Mi è piaciuta molto l'atmosfera che si è creata durante il raduno, oltre agli allenamenti e alle varie attività proposte.<br><br>
+      La corsa in gruppo mi ha dato sicuramente motivazione per allenarmi.<br><br>
+      Ho amato la mobilità e lo stretching, perché tendo ad abbandonarli un po' durante l'anno o comunque a non essere molto costante negli esercizi.<br><br>
+      Consiglierei ad ogni Runner di partecipare, perché è un ambiente sano dove ognuno può correre secondo i propri ritmi senza dover dimostrare niente a nessuno, ma rimanendo se stesso!`,
+    },
+    {
+      name: "CINZIA",
+      stars: 5,
+      text: `IL raduno è stato impeccabile.<br>
+      Mi sono trovata benissimo con il gruppo, così vario e ben assortito, mi sono piaciuti gli allenamenti, le lezioni "teoriche", i "dopo cena", l'albergo…<br><br>
+      Sono tornata a casa con un regalo per il cuore e per il fisico, davvero!<br><br>
+      Ora non resta che continuare a percorrere la mia strada sempre accanto a voi, e raggiungere ogni giorno un piccolo obiettivo in più!`,
+    },
+  ];
+
+  // Function to generate star SVGs
+  function generateStars(count) {
+    const starSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path></svg>`;
+    return starSvg.repeat(count);
+  }
+
+  // Render reviews
+  function renderReviews() {
+    const container = $("#reviewContainer");
+    if (container.length === 0) return;
+
+    container.empty();
+
+    reviews.forEach((review, index) => {
+      const reviewHtml = `
+        <div class="review" id="review-${index}">
+          <h4>${review.name}</h4>
+          <div class="starContainer">
+            ${generateStars(review.stars)}
+          </div>
+          <p>${review.text}</p>
+        </div>
+      `;
+      container.append(reviewHtml);
+    });
+  }
+
+  // Initialize reviews
+  renderReviews();
 });
