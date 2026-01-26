@@ -24,15 +24,15 @@
   $(".preventDefault").click(function (e) {
     e.preventDefault();
   });
-  // $("#percorsoDett").on("click", (e) => {
-  //   e.stopPropagation();
-  //   e.preventDefault();
-  //   $(".site-wrapper").addClass("navigationOut");
-  //   localStorage.setItem("skipAndScrollTo", "about");
-  //   setTimeout(() => {
-  //     window.location.href = "percorso.html";
-  //   }, 500);
-  // });
+  $("#percorsoDett").on("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    $(".site-wrapper").addClass("navigationOut");
+    localStorage.setItem("skipAndScrollTo", "about");
+    setTimeout(() => {
+      window.location.href = "percorso.html";
+    }, 500);
+  });
 
   $(window).on("load", function () {
     $(".loader").remove();
@@ -169,7 +169,7 @@
     $("#showFormContattami").click(() => {
       if ($("#halfOnFormSubmit").hasClass("one_half")) {
         $("#formContattami").hide(500, () =>
-          $("#halfOnFormSubmit").removeClass("one_half")
+          $("#halfOnFormSubmit").removeClass("one_half"),
         );
       } else {
         $("#halfOnFormSubmit").addClass("one_half");
@@ -196,7 +196,7 @@
         var formBody = Object.keys(params)
           .map(
             (key) =>
-              encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
+              encodeURIComponent(key) + "=" + encodeURIComponent(params[key]),
           )
           .join("&");
 
@@ -211,10 +211,10 @@
               .addClass("successSubmit")
               .show()
               .html(
-                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile"
+                "Richiesta inviata correttamente, ti ricontatteremo il prima possibile",
               );
             $(
-              ".contact-form input:not([type='submit']), .contact-form textarea"
+              ".contact-form input:not([type='submit']), .contact-form textarea",
             ).val("");
             $("#invia_mail").removeClass("disabled");
           },
@@ -384,14 +384,14 @@
     $(".latest-posts-background-featured-image-holder").each(function () {
       $(this).css(
         "background-image",
-        "url(" + ($(this).data("background-image") + ")")
+        "url(" + ($(this).data("background-image") + ")"),
       );
     });
   }
 
   function slowScroll() {
     $(
-      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale, #back_to_normal_buy'
+      '#header-main-menu ul li a[href^="#"], a.button, a.button-dot, .slow-scroll, #confirm_cookie, #close_modale, #back_to_normal_buy',
     ).on("click", function (e) {
       if ($(this).hasClass("no-scroll")) {
         return;
@@ -399,12 +399,15 @@
       if ($(this).attr("href") === "#") {
         e.preventDefault();
       } else {
+        debugger;
+        console.log(this.hash);
+
         if ($(window).width() < 1024) {
           if (!$(e.target).is(".sub-arrow")) {
             try {
               $("html, body").animate(
                 { scrollTop: $(this.hash).offset().top - 76 },
-                1500
+                1500,
               );
             } catch {
               // skip animation
@@ -417,7 +420,7 @@
           try {
             $("html, body").animate(
               { scrollTop: $(this.hash).offset().top - 76 },
-              1500
+              1500,
             );
           } catch {
             // skip animation
