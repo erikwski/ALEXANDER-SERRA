@@ -52,29 +52,35 @@ $pacchetto = $_POST["pacchetto"];
 $pacchetto_desc = $_POST["pacchetto_desc"];
 $costo = $_POST["costo"];
 
-$sql = "INSERT INTO contatti (persona,mail,telefono,paypal_nome,paypal_indirizzo,paypal_mail,order_id,payer_id,codice_fiscale,indirizzo,localita,cap,provincia,data_acquisto,prezzo_pagato,flag_contattato,pacchetto";
-$sql .= ") VALUES (";
-$sql .= toString($persona).",";   //persona
-$sql .= toString($mail).",";   //mail
-$sql .= toString($telefono).",";   //telefono
-$sql .= toString($paypal_name).",";   //paypal_nome
-$sql .= toString($paypal_address).",";   //paypal_indirizzo
-$sql .= toString($paypal_mail).",";   //paypal_mail
-$sql .= toString($order_id).",";   //order_id
-$sql .= toString($payer_id).",";   //payer_id
-$sql .= toString($cod_fisc).",";   //codice_fiscale
-$sql .= toString($address).",";   //indirizzo
-$sql .= toString($city).",";   //localita
-$sql .= toString($cap).",";   //cap
-$sql .= toString($prov).",";   //provincia
-$sql .= toString($data_pagamento).",";   //data_acquisto
-$sql .= $costo.","; //prezzo_pagato
-$sql .= "'N',";   //flag_contattato
-$sql .= $pacchetto.")";   //pacchetto
-$result = $mysqli->query($sql);
-if(!$result) {
-  printf("Errore durante il salvataggio dei dati: se hai acquistato il pacchetto contattami in privato %s\n", $mysqli->error);
+// Prepared statement per sicurezza
+$sql = "INSERT INTO contatti (persona, mail, telefono, paypal_nome, paypal_indirizzo, paypal_mail, order_id, payer_id, codice_fiscale, indirizzo, localita, cap, provincia, data_acquisto, prezzo_pagato, flag_contattato, pacchetto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'N', ?)";
+
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param(
+  "ssssssssssssssdi",
+  $persona,
+  $mail,
+  $telefono,
+  $paypal_name,
+  $paypal_address,
+  $paypal_mail,
+  $order_id,
+  $payer_id,
+  $cod_fisc,
+  $address,
+  $city,
+  $cap,
+  $prov,
+  $data_pagamento,
+  $costo,
+  $pacchetto
+);
+
+if (!$stmt->execute()) {
+  echo "Errore durante il salvataggio dei dati: se hai acquistato il pacchetto contattami in privato " . $mysqli->error;
 }
+
+$stmt->close();
 $mysqli->close();
 
 if(!$sviluppo) {
@@ -93,13 +99,8 @@ if(!$sviluppo) {
       Cap: ".$cap."
       Provincia: ".$prov."
     ";
-  $headers .= "From: pacchetti@alexrunningcoach.it";
+  $headers = "From: pacchetti@alexrunningcoach.it";
 
   mail($to, $subject, $message, $headers);
-
-}
-
-function toString($string) {
-  return "'".str_replace("'", '"', $string)."'";
 }
 ?>

@@ -30,7 +30,7 @@ $prov = $_POST["prov"];
 $pacchetto_desc = $_POST["pacchetto_desc"];
 
 $to = "radunirunningcoach@outlook.it";
-// $to = "erikwski.spam@gmail.com"; //updDtEff
+//$to = "erikwski.spam@gmail.com"; //updDtEff
 $subject = $persona . " ha visualizzato dati bonifico !!!";
 $message = "
         Un utente ha visualizzato i dati bonifico per " . $pacchetto_desc . "
@@ -44,7 +44,7 @@ $message = "
         Cap: " . $cap . "
         Provincia: " . $prov . "
       ";
-$headers .= "From: pacchetti@alexrunningcoach.it";
+$headers = "From: pacchetti@alexrunningcoach.it";
 
 mail($to, $subject, $message, $headers);
 ?>

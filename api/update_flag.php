@@ -35,17 +35,25 @@
     exit();
   }
 
-  $id = $_GET["id"];
-  $flag = $_GET["flag"];
-
-  $sql = "UPDATE vendite SET flag_contattato = '".$flag."' WHERE id = ".$id;
-  $result = $mysqli->query($sql);
-  if (!$result) {
-    printf("Errore durante il salvataggio dei dati: %s\n", $mysqli->error);
+  // Input validation
+  $id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
+  $flag = isset($_GET["flag"]) ? $_GET["flag"] : '';
+  
+  if ($id <= 0 || !in_array($flag, ['S', 'N'])) {
+    echo json_encode(['error' => 'Parametri non validi']);
+    exit();
   }
+
+  // Prepared statement per sicurezza
+  $stmt = $mysqli->prepare("UPDATE vendite SET flag_contattato = ? WHERE id = ?");
+  $stmt->bind_param("si", $flag, $id);
+  
+  if (!$stmt->execute()) {
+    echo json_encode(['error' => 'Errore durante il salvataggio dei dati: ' . $mysqli->error]);
+  } else {
+    echo json_encode(['success' => true]);
+  }
+  
+  $stmt->close();
   $mysqli->close();
-
-  function toString($string){
-    return "'".str_replace("'", '"', $string)."'"; 
-  }
 ?>

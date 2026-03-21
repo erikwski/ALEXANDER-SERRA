@@ -399,9 +399,6 @@
       if ($(this).attr("href") === "#") {
         e.preventDefault();
       } else {
-        debugger;
-        console.log(this.hash);
-
         if ($(window).width() < 1024) {
           if (!$(e.target).is(".sub-arrow")) {
             try {

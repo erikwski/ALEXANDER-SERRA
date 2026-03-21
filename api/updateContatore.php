@@ -30,17 +30,24 @@
     exit();
   }
 
-  $idContatore = $_GET["id"];
-
-  $sql = "UPDATE contatori SET contatore = contatore + 1 WHERE id = $idContatore";
-  $result = $mysqli->query($sql);
-  if (!$result) {
-    printf($sql);
-    printf("Errore durante il salvataggio dei dati: %s\n", $mysqli->error);
+  // Input validation
+  $idContatore = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
+  
+  if ($idContatore <= 0) {
+    echo json_encode(['error' => 'ID contatore non valido']);
+    exit();
   }
+
+  // Prepared statement per sicurezza
+  $stmt = $mysqli->prepare("UPDATE contatori SET contatore = contatore + 1 WHERE id = ?");
+  $stmt->bind_param("i", $idContatore);
+  
+  if (!$stmt->execute()) {
+    echo json_encode(['error' => 'Errore durante il salvataggio dei dati: ' . $mysqli->error]);
+  } else {
+    echo json_encode(['success' => true]);
+  }
+  
+  $stmt->close();
   $mysqli->close();
-
-  function toString($string){
-    return "'".str_replace("'", '"', $string)."'"; 
-  }
 ?>
