@@ -101,22 +101,22 @@ $(function () {
     },
     {
       id: 120,
-      desc: "TOP - 1 MESI",
+      desc: "ONE.TO.ONE - 1 MESI",
       costo: 110,
     },
     {
       id: 121,
-      desc: "TOP - 3 MESE",
+      desc: "ONE.TO.ONE - 3 MESE",
       costo: 227,
     },
     {
       id: 122,
-      desc: "TOP - 6 MESI",
+      desc: "ONE.TO.ONE - 6 MESI",
       costo: 437,
     },
     {
       id: 123,
-      desc: "TOP - 12 MESI",
+      desc: "ONE.TO.ONE - 12 MESI",
       costo: 837,
     },
     {
@@ -219,12 +219,16 @@ $(function () {
       $("#" + pacchettoRichiesto).click();
     } else {
       //coaching
-      $("#coaching_name").html(pacchettoRichiesto.toUpperCase());
+      $("#coaching_name").html(
+        pacchettoRichiesto === "top"
+          ? "ONE.TO.ONE"
+          : pacchettoRichiesto.toUpperCase(),
+      );
       $(".coachingBenefit").hide();
       $(`.switchCoaching`).removeClass("active");
       $(".colorChanging").removeClass("c_primary c_secondary c_start");
       $(`.switchCoaching[data-coaching='${pacchettoRichiesto}']`).addClass(
-        "active"
+        "active",
       );
       $(`#${pacchettoRichiesto}-coaching`).show();
       $("#price-bank").html("");
@@ -325,8 +329,8 @@ $(function () {
           let name = $(this).parents(".coaching_avaiable").length
             ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
             : $(this).attr("id") == "forza"
-            ? "SCHEDA DI FORZA"
-            : "ANALISI TECNICA DI CORSA";
+              ? "SCHEDA DI FORZA"
+              : "ANALISI TECNICA DI CORSA";
 
           let price = $(this).find(".price-tag").html();
           total += parseInt(price);
@@ -356,7 +360,7 @@ $(function () {
     });
 
     changedCoaching(
-      new URLSearchParams(window.location.search).get("coaching")
+      new URLSearchParams(window.location.search).get("coaching"),
     );
 
     $(".fa-copy").click(() => {
@@ -371,15 +375,15 @@ $(function () {
       e.preventDefault();
       cartIdList = [];
       $("#riepilogo-card").html(
-        "<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>"
+        "<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>",
       );
       $(".selected").each(function () {
         const id = +$(this).data("buyId");
         const name = $(this).parents(".coaching_avaiable").length
           ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
           : $(this).attr("id") == "forza"
-          ? "SCHEDA DI FORZA"
-          : "ANALISI TECNICA DI CORSA";
+            ? "SCHEDA DI FORZA"
+            : "ANALISI TECNICA DI CORSA";
 
         const price = $(this).find(".price-tag").html();
         cartIdList.push({
@@ -529,11 +533,11 @@ $(function () {
             await confermaPagamento({
               paypal_name: cutString(
                 payer.name.surname + " " + payer.name.given_name,
-                120
+                120,
               ),
               paypal_address: cutString(
                 `${payer.address.address_line_1}, ${payer.address.admin_area_1} - ${payer.address.postal_code}`,
-                500
+                500,
               ),
               paypal_mail: cutString(payer.email_address, 254),
               order_id: cutString(data.orderID, 63),

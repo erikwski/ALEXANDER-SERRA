@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <!--- basic page needs
+      ================================================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ - ALEX RUNNING COACH</title>
+    <!-- SEO TAG
+      ================================================== -->
+    <meta
+      name="description"
+      content="Domande frequenti sul coaching di Alexander Serra Running Coach. Trova le risposte alle tue domande sui percorsi BASE, PRO e ONE.TO.ONE."
+    />
+    <meta
+      name="keywords"
+      content="faq running coach domande frequenti coaching corsa alex alexander serra alerunner"
+    />
+    <meta name="author" content="erikwski" />
+    <!-- icon of website
+      ================================================== -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/logo/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/logo/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/logo/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="images/logo/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#2293ca" />
+    <link rel="shortcut icon" href="images/logo/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,700,700i"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="home0002.css" />
+    <link rel="stylesheet" type="text/css" href="./css/secondaryPage0001.css" />
+    <style>
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .faq-search {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 16px;
+        border: 2px solid #2293ca;
+        border-radius: 30px;
+        margin-bottom: 30px;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .faq-search:focus {
+        border-color: #f07f00;
+        box-shadow: 0 0 10px rgba(240, 127, 0, 0.3);
+      }
+      .faq-section-title {
+        color: #2293ca;
+        font-size: 1.5em;
+        margin: 40px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #f07f00;
+      }
+      .faq-item {
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .faq-item:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+      .faq-item.hidden {
+        display: none;
+      }
+      .faq-question {
+        background: linear-gradient(135deg, #2293ca 0%, #1a7aa8 100%);
+        color: white;
+        padding: 18px 50px 18px 20px;
+        cursor: pointer;
+        position: relative;
+        font-weight: 600;
+        font-size: 1.05em;
+        transition: all 0.3s ease;
+      }
+      .faq-question:hover {
+        background: linear-gradient(135deg, #1a7aa8 0%, #156289 100%);
+      }
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .faq-item.active .faq-question {
+        background: linear-gradient(135deg, #f07f00 0%, #d96d00 100%);
+      }
+      .faq-answer {
+        background: #f8f9fa;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.4s ease,
+          padding 0.4s ease;
+        line-height: 1.7;
+        color: #333;
+      }
+      .faq-item.active .faq-answer {
+        padding: 20px;
+        max-height: 500px;
+      }
+      .faq-answer strong {
+        color: #2293ca;
+      }
+      .faq-cta {
+        text-align: center;
+        margin-top: 50px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+      }
+      .faq-cta h3 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+      .faq-cta p {
+        margin-bottom: 20px;
+        color: #666;
+      }
+      .faq-cta .button {
+        margin: 5px;
+      }
+      .no-results {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        display: none;
+      }
+      .no-results.show {
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .faq-question {
+          padding: 15px 45px 15px 15px;
+          font-size: 0.95em;
+        }
+        .faq-section-title {
+          font-size: 1.3em;
+        }
+      }
+    </style>
+  </head>
+  <body class="page-template-onepage bodyPercorso">
+    <div class="site-wrapper navigationLoadedOut">
+      <header class="header-holder">
+        <div class="menu-wrapper center-relative relative full-center">
+          <div class="header-logo">
+            <a href="index.html">
+              <img src="images/logo_completo.png" alt="logo" />
+            </a>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </header>
+      <div id="content" class="site-content center-relative">
+        <div id="homeFaq" class="section no-page-title">
+          <div
+            class="section-wrapper block content-960"
+            style="padding: 150px 0 50px"
+          >
+            <div class="content-wrapper" id="openingPercorso">
+              <strong class="c_primary welcomePercorso"
+                >HAI QUALCHE DUBBIO?</strong
+              >
+              <h1 class="big-text-percorso">DOMANDE FREQUENTI</h1>
+              <a
+                href="index.html#pricing"
+                class="button hero_section"
+                style="margin-left: 6px; margin-right: 6px"
+                >I COACHING</a
+              >
+              <a
+                href="percorso.html"
+                class="button hero_section"
+                style="margin-left: 6px; margin-right: 6px"
+                >IL MIO PERCORSO</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="faq-container">
+            <input
+              type="text"
+              class="faq-search"
+              placeholder="🔍 Cerca una domanda..."
+              id="faqSearch"
+            />
+
+            <h2 class="faq-section-title">
+              LE DOMANDE CHE MI FANNO PIÙ SPESSO
+            </h2>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Corro la mezza in 2h20, sono troppo lent* per te?
+              </div>
+              <div class="faq-answer">
+                <strong>No.</strong> Alleno Runner di ogni livello, il mio
+                lavoro non cambia: studio il tuo punto di partenza e costruisco
+                il tuo percorso. Il cronometro non decide se puoi essere
+                seguito, dice solo qual è il punto di partenza. L'aspetto
+                fondamentale è la tua <strong>motivazione</strong>.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Quante volte a settimana devo allenarmi?
+              </div>
+              <div class="faq-answer">
+                Dalle <strong>due sedute in poi</strong> si può iniziare e
+                lavorare insieme! Organizzo gli allenamenti sul tempo che hai
+                davvero.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Non ho mai avuto un allenatore. Da dove comincio?
+              </div>
+              <div class="faq-answer">
+                Dalla <strong>call conoscitiva gratuita</strong> e senza
+                impegno. Sono 15 minuti in cui analizziamo insieme la tua
+                settimana tipo, i tuoi obiettivi e come raggiungerli. Puoi
+                prenotarla dal mio sito
+                <a href="index.html#calendlyFooter" style="color: #f07f00"
+                  >alexrunningcoach.it</a
+                >
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Che differenza c'è tra START, PRO e ONE.TO.ONE?
+              </div>
+              <div class="faq-answer">
+                Nel <strong class="c_start">START</strong> hai il programma
+                scritto su di te e ci sentiamo una volta al mese.<br /><br />
+                Nel <strong class="c_secondary">PRO</strong> ti seguo durante la
+                settimana: guardo i tuoi allenamenti e li correggo.<br /><br />
+                Nel <strong class="c_primary">ONE.TO.ONE</strong> lavoriamo
+                anche su tecnica, nutrizione e strategia di gara e, se
+                possibile, ci vediamo.<br /><br />
+                Nel sito trovi tutto, voce per voce.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Mi serve per forza un orologio GPS?
+              </div>
+              <div class="faq-answer">
+                <strong>Sì.</strong> Non deve essere costoso, basta che registri
+                l'allenamento. Senza i tuoi dati lavorerei alla cieca ed il mio
+                lavoro non avrebbe senso.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Devo per forza usare TrainingPeaks?
+              </div>
+              <div class="faq-answer">
+                Nel <strong>PRO</strong> puoi usare anche Garmin Connect se hai
+                un orologio Garmin. Nel <strong>ONE.TO.ONE</strong> uso
+                TrainingPeaks perché ti assegno direttamente gli allenamenti.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">Ogni quanto cambia il programma?</div>
+              <div class="faq-answer">
+                <strong>Ogni 4 settimane.</strong> Quando manca poco alla
+                scadenza ti contatto io: facciamo il punto su come è andata e
+                costruiamo il blocco successivo.
+              </div>
+            </div>
+
+            <h2 class="faq-section-title">DOMANDE FREQUENTI</h2>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Come funzionano i pagamenti? C'è un rinnovo automatico?
+              </div>
+              <div class="faq-answer">
+                <strong>No, nessun rinnovo automatico.</strong> Paghi il periodo
+                di coaching che scegli e basta. Quando finisce decidi tu se
+                proseguire o fermarti: non devi disdire niente e non ti trovi
+                addebiti a sorpresa.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">In quanto tempo vedo i risultati?</div>
+              <div class="faq-answer">
+                Le prime nuove sensazioni arrivano in
+                <strong>3 o 4 settimane</strong>. Sui tempi e sulle distanze in
+                gara ragioniamo su <strong>3-6 mesi</strong>. Chi ti promette
+                risultati veloci ti sta prendendo in giro.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">E se mi infortuno?</div>
+              <div class="faq-answer">
+                Ci fermiamo e poi riprendiamo,
+                <strong>il programma si adatta e non lo perdi</strong>. Se c'è
+                un problema serio ti dico di andare dallo specialista: il mio
+                lavoro comincia dopo il suo.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Posso cambiare percorso strada facendo?
+              </div>
+              <div class="faq-answer">
+                <strong>Sì, quando vuoi.</strong> Se parti dal START e ti
+                accorgi che ti serve più confronto si sale, e vale anche il
+                contrario. Non ti lascio dentro un Coaching che non ti serve.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Perché dovrei pagare, se online trovo tabelle gratis?
+              </div>
+              <div class="faq-answer">
+                Perché una tabella gratis non sa se hai dormito quattro ore, se
+                hai il polpaccio dolorante da tre giorni, se sei stanc* dal
+                lavoro ecc...
+                <strong>Io sì, e adatto il programma di conseguenza.</strong>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Dove ci vediamo per l'analisi tecnica di corsa?
+              </div>
+              <div class="faq-answer">
+                Nel <strong>ONE.TO.ONE</strong> ci vediamo di persona se sei in
+                zona, altrimenti mi mandi i video e la svolgiamo a distanza. Il
+                lavoro successivo che svolgerai è lo stesso.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                Serve davvero la visita medico-sportiva?
+              </div>
+              <div class="faq-answer">
+                <strong>Sì, sempre</strong>, la tua salute vale oro.
+              </div>
+            </div>
+
+            <div class="no-results" id="noResults">
+              <h3>Nessun risultato trovato</h3>
+              <p>Prova con altre parole chiave o contattami direttamente!</p>
+            </div>
+
+            <div class="faq-cta">
+              <h3>Non hai trovato la tua domanda?</h3>
+              <p>
+                Scrivimi o prenota la call conoscitiva gratuita: analizziamo
+                insieme la tua settimana tipo, i tuoi obiettivi e come
+                raggiungerli.
+              </p>
+              <a href="tel:3206349783" class="button">📞 320 634 9783</a>
+              <a href="index.html#calendlyFooter" class="button"
+                >📅 PRENOTA CALL</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content center-relative">
+          <div class="footer-logo">
+            <img src="images/logo_completo.png" alt="Seppo" />
+          </div>
+          <div class="footer-social-divider"></div>
+          <div class="full_center_column_mobile">
+            <div class="copyright-holder">
+              ©
+              <span id="year"></span>
+              , Coded by
+              <strong class="c_primary">Erikwski</strong>
+            </div>
+            <div class="copyright-holder">
+              <a href="policy.html"
+                >Visualizza la nostra Privacy Policy Cookie</a
+              >
+            </div>
+            <div class="copyright-holder">
+              <a href="pdf/TERMINI_CONDIZIONI.pdf"
+                >Termini e condizioni di vendita</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!--Load JavaScript-->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0N6L6NQ18B"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-0N6L6NQ18B");
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+    </script>
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "mxx6v0tuf3");
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Set year
+        $("#year").text(new Date().getFullYear());
+
+        // Animation on load
+        $(".site-wrapper").addClass("navigationIn");
+        $("#openingPercorso").addClass("loaded");
+        $("html").addClass("loaded enable_scroll");
+
+        // FAQ Accordion
+        $(".faq-question").click(function () {
+          const item = $(this).parent();
+          if (item.hasClass("active")) {
+            item.removeClass("active");
+          } else {
+            // Close others (optional - comment out for multi-open)
+            // $('.faq-item').removeClass('active');
+            item.addClass("active");
+          }
+        });
+
+        // FAQ Search
+        $("#faqSearch").on("input", function () {
+          const searchTerm = $(this).val().toLowerCase();
+          let hasResults = false;
+
+          $(".faq-item").each(function () {
+            const question = $(this).find(".faq-question").text().toLowerCase();
+            const answer = $(this).find(".faq-answer").text().toLowerCase();
+
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              $(this).removeClass("hidden");
+              hasResults = true;
+            } else {
+              $(this).addClass("hidden");
+            }
+          });
+
+          if (hasResults || searchTerm === "") {
+            $("#noResults").removeClass("show");
+          } else {
+            $("#noResults").addClass("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
