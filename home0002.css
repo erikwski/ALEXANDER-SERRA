@@ -1547,12 +1547,13 @@ h1.big-text-percorso {
   padding: 10px 0;
   color: #000;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .pricing-list span.fa {
   color: var(--primary);
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .pricing-list.included-no,
@@ -3377,87 +3378,76 @@ footer .footer-social-divider:before {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  max-width: 50%;
+  max-width: 480px;
   min-width: 280px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   background-color: #121212;
-  padding: 1rem 3rem;
-  border-radius: 10rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
   z-index: 105;
-  opacity: 0.75;
-  transform: scale(0.5) translateY(200px);
-  transition: 1s;
-}
-#cookie_policy:hover {
-  opacity: 1;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: 0.6s;
+  pointer-events: none;
 }
 .enable_scroll #cookie_policy:not(.already_accepted) {
-  transform: scale(1) translateY(0) !important;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
 #policy_text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color: #fff;
-  padding-right: 2rem;
   z-index: 9999999999;
 }
 #policy_text h5 {
   padding: 5px 0;
+  font-style: italic;
 }
-#confirm_cookie {
-  width: 64px;
-  min-width: 64px;
-  height: 64px;
-  border: 1px solid #fff;
-  font-size: 32px;
+#policy_text .cookie-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  opacity: 0.85;
+}
+#cookie_buttons {
   display: flex;
-  align-items: center;
-  border-radius: 50%;
-  justify-content: center;
-  transition: 0.7s all;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
-#confirm_cookie:hover {
-  transform: scale(1.05);
-  background-color: var(--primary);
+#cookie_buttons .button {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+#reject_cookie_btn {
+  background: transparent;
+  border: 1px solid #fff;
   color: #fff;
 }
-#confirm_cookie_btn {
-  display: none;
+#reject_cookie_btn:hover {
+  background: #fff;
+  color: #121212;
 }
-@media screen and (min-width: 451px) and (max-width: 1100px) {
-  #cookie_policy {
-    max-width: 80%;
-    transform: scale(0.5) translateY(400px);
-  }
+#confirm_cookie {
+  display: none;
 }
 @media screen and (max-width: 450px) {
   #cookie_policy {
     bottom: 0;
     left: 0;
-    width: calc(100% - 2rem);
-    border-radius: 0;
+    right: 0;
     max-width: none;
     min-width: none;
-    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  #cookie_buttons {
     flex-direction: column;
-    transform: scale(0.5) translateY(600px);
-  }
-  #policy_text {
-    text-align: center;
-    padding: 0;
-  }
-  #policy_text a {
-    width: 100%;
-  }
-  #confirm_cookie {
-    display: none;
-  }
-  #confirm_cookie_btn {
-    display: block;
-    margin-top: 1rem;
   }
 }
 
@@ -3592,6 +3582,9 @@ footer .footer-social-divider:before {
   width: 100%;
 }
 @media screen and (max-width: 450px) {
+  #one_to_one_switch {
+    font-size: 14px;
+  }
   .alex-dialog {
     width: 90%;
     height: 90%;

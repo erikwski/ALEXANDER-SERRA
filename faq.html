@@ -430,20 +430,21 @@
           <div class="footer-social-divider"></div>
           <div class="full_center_column_mobile">
             <div class="copyright-holder">
+              <strong>Serra Alexander</strong> — P.IVA 03972190361<br />
+              Via Savioli 9, Riolo (MO) - 41013 —
+              alexanderserrarunningcoach@outlook.com
+            </div>
+            <div class="copyright-holder">
               ©
               <span id="year"></span>
               , Coded by
               <strong class="c_primary">Erikwski</strong>
             </div>
             <div class="copyright-holder">
-              <a href="policy.html"
-                >Visualizza la nostra Privacy Policy Cookie</a
-              >
+              <a href="policy.html">Privacy Policy e Cookie</a>
             </div>
             <div class="copyright-holder">
-              <a href="pdf/TERMINI_CONDIZIONI.pdf"
-                >Termini e condizioni di vendita</a
-              >
+              <a href="terms.html">Termini e condizioni di vendita</a>
             </div>
           </div>
         </div>
@@ -468,20 +469,30 @@
         ad_personalization: "denied",
         analytics_storage: "denied",
       });
-    </script>
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "mxx6v0tuf3");
+      // Apply stored consent
+      try {
+        var c = JSON.parse(localStorage.getItem("cookie_consent"));
+        if (c && c.analytics) {
+          gtag("consent", "update", {
+            ad_user_data: "granted",
+            ad_personalization: "granted",
+            ad_storage: "granted",
+            analytics_storage: "granted",
+          });
+          (function (c, l, a, r, i, t, y) {
+            c[a] =
+              c[a] ||
+              function () {
+                (c[a].q = c[a].q || []).push(arguments);
+              };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+          })(window, document, "clarity", "script", "mxx6v0tuf3");
+        }
+      } catch (e) {}
     </script>
     <script src="js/jquery.min.js"></script>
     <script>

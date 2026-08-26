@@ -67,22 +67,65 @@
   //------------------------------------------------------------------------
 
   function gestionePrivacyPolicy() {
-    if (localStorage.getItem("accepted")) acceptCookie();
-    $("#confirm_cookie,#confirm_cookie_btn").click(() => {
-      localStorage.setItem("accepted", "yes");
-      acceptCookie();
+    var consent = getConsent();
+    if (consent) {
+      hideBanner();
+      if (consent.analytics) enableAnalytics();
+    }
+    $("#confirm_cookie_btn").click(function (e) {
+      e.preventDefault();
+      saveConsent({ analytics: true });
+      hideBanner();
+      enableAnalytics();
+    });
+    $("#reject_cookie_btn").click(function (e) {
+      e.preventDefault();
+      saveConsent({ analytics: false });
+      hideBanner();
     });
   }
 
-  function acceptCookie() {
-    $("#cookie_policy").addClass("already_accepted");
+  function getConsent() {
+    try {
+      var raw = localStorage.getItem("cookie_consent");
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
 
+  function saveConsent(prefs) {
+    prefs.timestamp = Date.now();
+    localStorage.setItem("cookie_consent", JSON.stringify(prefs));
+    localStorage.removeItem("accepted");
+  }
+
+  function hideBanner() {
+    $("#cookie_policy").addClass("already_accepted");
+  }
+
+  function enableAnalytics() {
     gtag("consent", "update", {
       ad_user_data: "granted",
       ad_personalization: "granted",
       ad_storage: "granted",
       analytics_storage: "granted",
     });
+    // Load Clarity only after consent
+    if (!window.clarity) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "mxx6v0tuf3");
+    }
   }
 
   function scrollToTopOfPage() {

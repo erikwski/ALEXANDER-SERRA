@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://www.alexrunningcoach.it</loc>
+		<loc>https://www.alexrunningcoach.it/</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/percorso.html</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/carrello.html</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/faq.html</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/policy.html</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/terms.html</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>https://www.alexrunningcoach.it/raduni2025/</loc>
+		<lastmod>2026-08-26</lastmod>
+		<priority>0.5</priority>
 	</url>
 </urlset>

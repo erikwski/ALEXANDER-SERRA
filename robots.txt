@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.alexrunningcoach.it/sitemap.xml
+
+Disallow: /api/
+Disallow: /oldPage/
+Disallow: /pdf/

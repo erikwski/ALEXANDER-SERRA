@@ -267,7 +267,7 @@ $(function () {
   }
 
   function gestionePagamenti() {
-    if (localStorage.getItem("accepted")) {
+    if (localStorage.getItem("cookie_consent")) {
       $("#privacy_policy").prop("checked", true);
     }
     try {
