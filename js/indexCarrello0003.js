@@ -66,22 +66,22 @@ $(function () {
     },
     {
       id: 100,
-      desc: "START - 1 MESE",
+      desc: "BASE - 1 MESE",
       costo: 60,
     },
     {
       id: 101,
-      desc: "START - 3 MESI",
+      desc: "BASE - 3 MESI",
       costo: 167,
     },
     {
       id: 102,
-      desc: "START - 6 MESI",
+      desc: "BASE - 6 MESI",
       costo: 317,
     },
     {
       id: 103,
-      desc: "START - 12 MESI",
+      desc: "BASE - 12 MESI",
       costo: 597,
     },
     {
@@ -106,28 +106,23 @@ $(function () {
     },
     {
       id: 121,
-      desc: "ONE.TO.ONE - 3 MESE",
-      costo: 227,
+      desc: "ONE.TO.ONE - 3 MESI",
+      costo: 287,
     },
     {
       id: 122,
       desc: "ONE.TO.ONE - 6 MESI",
-      costo: 437,
-    },
-    {
-      id: 123,
-      desc: "ONE.TO.ONE - 12 MESI",
-      costo: 837,
+      costo: 497,
     },
     {
       id: 200,
       desc: "ANALISI TECNICA DI CORSA",
-      costo: 59,
+      costo: 89,
     },
     {
       id: 201,
-      desc: "SCHEDA DI FORZA",
-      costo: 59,
+      desc: "POTENZIAMENTO MUSCOLARE",
+      costo: 89,
     },
   ];
   let coachingGlobal = "";
@@ -222,7 +217,9 @@ $(function () {
       $("#coaching_name").html(
         pacchettoRichiesto === "top"
           ? "ONE.TO.ONE"
-          : pacchettoRichiesto.toUpperCase(),
+          : pacchettoRichiesto === "start"
+            ? "BASE"
+            : pacchettoRichiesto.toUpperCase(),
       );
       $(".coachingBenefit").hide();
       $(`.switchCoaching`).removeClass("active");
@@ -240,32 +237,32 @@ $(function () {
           $(".colorChanging").addClass("c_start");
           $("#trimestrale .price-tag").html("167€");
           $("#semestrale .price-tag").html("317€");
-          $("#annuale .price-tag").html("597€");
+          $("#annuale").hide();
           $("#trimestrale").data("buyId", "101");
           $("#semestrale").data("buyId", "102");
-          $("#annuale").data("buyId", "103");
           break;
         case "pro":
           $(".colorChanging").addClass("c_secondary");
           $("#trimestrale .price-tag").html("197€");
           $("#semestrale .price-tag").html("377€");
-          $("#annuale .price-tag").html("717€");
+          $("#annuale").hide();
           $("#trimestrale").data("buyId", "110");
           $("#semestrale").data("buyId", "111");
-          $("#annuale").data("buyId", "112");
           break;
         case "top":
           $("#tecnica").hide();
           $(".colorChanging").addClass("c_primary");
-          $("#trimestrale .price-tag").html("227€");
-          $("#semestrale .price-tag").html("437€");
-          $("#annuale .price-tag").html("837€");
+          $("#trimestrale .price-tag").html("287€");
+          $("#semestrale .price-tag").html("497€");
+          $("#annuale").hide();
           $("#trimestrale").data("buyId", "121");
           $("#semestrale").data("buyId", "122");
-          $("#annuale").data("buyId", "123");
           break;
         default:
       }
+      // Update visible fa-per-te card
+      $(".fa-per-te-card").hide();
+      $(`.fa-per-te-card[data-coaching='${pacchettoRichiesto}']`).show();
     }
   }
 
@@ -292,6 +289,11 @@ $(function () {
     $(".switchCoaching").click(function () {
       if (!$(this).hasClass("active"))
         changedCoaching($(this).data("coaching"));
+    });
+
+    // Click on "Fa per te" cards to change coaching
+    $(".fa-per-te-card").click(function () {
+      changedCoaching($(this).data("coaching"));
     });
 
     $("#cart .coaching_card").click(function (e) {
@@ -325,9 +327,15 @@ $(function () {
       }
       if ($(".selected").length) {
         let total = 0;
+        const coachingDisplayName =
+          coachingGlobal === "top"
+            ? "ONE.TO.ONE"
+            : coachingGlobal === "start"
+              ? "BASE"
+              : coachingGlobal.toUpperCase();
         $(".selected").each(function () {
           let name = $(this).parents(".coaching_avaiable").length
-            ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
+            ? `ALERUNNER ${coachingDisplayName} - ${coachingMesi}`
             : $(this).attr("id") == "forza"
               ? "SCHEDA DI FORZA"
               : "ANALISI TECNICA DI CORSA";
@@ -377,10 +385,16 @@ $(function () {
       $("#riepilogo-card").html(
         "<strong class='labelFullLine'>RIEPILOGO CARRELLO</strong><div class='coach-container'></div>",
       );
+      const coachingDisplayName =
+        coachingGlobal === "top"
+          ? "ONE.TO.ONE"
+          : coachingGlobal === "start"
+            ? "BASE"
+            : coachingGlobal.toUpperCase();
       $(".selected").each(function () {
         const id = +$(this).data("buyId");
         const name = $(this).parents(".coaching_avaiable").length
-          ? `ALERUNNER ${coachingGlobal} - ${coachingMesi}`
+          ? `ALERUNNER ${coachingDisplayName} - ${coachingMesi}`
           : $(this).attr("id") == "forza"
             ? "SCHEDA DI FORZA"
             : "ANALISI TECNICA DI CORSA";
@@ -400,7 +414,7 @@ $(function () {
               
               <div class="coaching-detail">
                   <div class="full-center column">
-                      <strong>ALERUNNER <span class='small-badge'>${coachingGlobal.toUpperCase()}</span></strong>
+                      <strong>ALERUNNER <span class='small-badge'>${coachingDisplayName}</span></strong>
                       <span>${coachingMesi.toUpperCase()}</span>
                   </div>
               </div>

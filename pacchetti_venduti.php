@@ -266,22 +266,22 @@ if (!isset($_SESSION['user_logged'])) {
     },
     {
       id: 100,
-      desc: "START - 1 MESE",
+      desc: "BASE - 1 MESE",
       costo: 60,
     },
     {
       id: 101,
-      desc: "START - 3 MESI",
+      desc: "BASE - 3 MESI",
       costo: 167,
     },
     {
       id: 102,
-      desc: "START - 6 MESI",
+      desc: "BASE - 6 MESI",
       costo: 317,
     },
     {
       id: 103,
-      desc: "START - 12 MESI",
+      desc: "BASE - 12 MESI",
       costo: 597,
     },
     {
@@ -301,22 +301,22 @@ if (!isset($_SESSION['user_logged'])) {
     },
     {
       id: 120,
-      desc: "TOP - 1 MESI",
+      desc: "ONE.TO.ONE - 1 MESI",
       costo: 110,
     },
     {
       id: 121,
-      desc: "TOP - 3 MESE",
-      costo: 227,
+      desc: "ONE.TO.ONE - 3 MESI",
+      costo: 287,
     },
     {
       id: 122,
-      desc: "TOP - 6 MESI",
-      costo: 437,
+      desc: "ONE.TO.ONE - 6 MESI",
+      costo: 497,
     },
     {
       id: 123,
-      desc: "TOP - 12 MESI",
+      desc: "ONE.TO.ONE - 12 MESI",
       costo: 837,
     },
     {

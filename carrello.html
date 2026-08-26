@@ -35,6 +35,24 @@
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="home0002.css">
         <link rel="stylesheet" type="text/css" href="./css/secondaryPage0001.css">
+        <style>
+            .fa-per-te-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            }
+            .fa-per-te-cards {
+                margin-bottom: 15px;
+            }
+            .fa-per-te-card {
+                max-width: 400px !important;
+            }
+            @media (max-width: 768px) {
+                .fa-per-te-card {
+                    min-width: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+        </style>
         <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -61,13 +79,44 @@
 
                             <div class="switchCoachingCont">
                                 <div class="switchCoaching" data-coaching="start">
-                                    START
+                                    BASE
                                 </div>
                                 <div class="switchCoaching" data-coaching="pro">
                                     PRO
                                 </div>
                                 <div class="switchCoaching" data-coaching="top">
                                     ONE.TO.ONE
+                                </div>
+                            </div>
+
+                            <!-- Quale piano fa per te cards -->
+                            <div class="fa-per-te-cards" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; padding: 0 10px;">
+                                <!-- BASE -->
+                                <div class="fa-per-te-card" data-coaching="start" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">BASE fa per te se:</h5>
+                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Sei un runner principiante o intermedio</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Vuoi una programmazione strutturata</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Ti alleni 3-4 volte a settimana</li>
+                                    </ul>
+                                </div>
+                                <!-- PRO -->
+                                <div class="fa-per-te-card" data-coaching="pro" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #f07f00 0%, #d96d00 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">PRO fa per te se:</h5>
+                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi migliorare le tue performance</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Hai obiettivi specifici (10K, mezza, maratona)</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi feedback più frequenti</li>
+                                    </ul>
+                                </div>
+                                <!-- ONE.TO.ONE -->
+                                <div class="fa-per-te-card" data-coaching="top" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #2293ca 0%, #1a7aa8 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">ONE.TO.ONE fa per te se:</h5>
+                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi il massimo supporto personalizzato</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Punti a obiettivi ambiziosi</li>
+                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi comunicazione illimitata col coach</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +132,7 @@
                             <ul id="start-coaching" class="coachingBenefit">
                                 <li class="pricing-list included-yes">
                                     <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    Incontro ONLINE di 30 minuti
+                                    Telefonata di 30 minuti ogni 4 settimane
                                 </li>
                                 <li class="pricing-list included-yes">
                                     <span class="fa fa-angle-double-right" aria-hidden="true"></span>
@@ -91,7 +140,7 @@
                                 </li>
                                 <li class="pricing-list included-yes">
                                     <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                                    <span class="truncate">1 feedback settimanale</span>
+                                    <span class="truncate">1 feedback settimanale su WhatsApp</span>
                                 </li>
                             </ul>
     
@@ -149,7 +198,7 @@
                                 <li class="pricing-list included-yes">
                                     <span class="fa fa-angle-double-right" aria-hidden="true"></span>
                                     <span>
-                                      <b class="c_primary">GUIDA PDF “NUTRZIONE DEL RUNNER”</b> a cura della Dott.ssa Creola Sara
+                                      <b class="c_primary">GUIDA PDF "NUTRIZIONE DEL RUNNER"</b> a cura della Dott.ssa Creola Sara
                                     </span>
                                 </li>
                                 <li class="pricing-list included-yes">
@@ -232,7 +281,7 @@
                         <strong class="cartTitle">Scopri i miei nuovissimi <strong class="colorChanging">SERVIZI EXTRA</strong></strong>
                         <div class="coaching_list" style="margin-bottom: 1rem;">
                             <div class="coaching_card" id="tecnica">
-                                <div class="price-tag">59€</div>
+                                <div class="price-tag">89€</div>
                                 <img src="images/serviceTecnica.jpeg" alt="Tecnica">
                                 
                                 <div class="coaching-detail">
@@ -249,7 +298,7 @@
                                 <div class="external-badge">
                                     <span class="fa fa-external-link"></span> LINK ESTERNO
                                 </div>
-                                <div class="price-tag">59€</div>
+                                <div class="price-tag">89€</div>
                                 <img src="images/serviceForza.jpg" alt="Forza">
                                 
                                 <div class="coaching-detail">
