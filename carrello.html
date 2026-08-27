@@ -36,16 +36,6 @@
         <link rel="stylesheet" type="text/css" href="home0002.css">
         <link rel="stylesheet" type="text/css" href="./css/secondaryPage0001.css">
         <style>
-            .fa-per-te-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            }
-            .fa-per-te-cards {
-                margin-bottom: 15px;
-            }
-            .fa-per-te-card {
-                max-width: 400px !important;
-            }
             @media (max-width: 768px) {
                 .fa-per-te-card {
                     min-width: 100% !important;
@@ -85,34 +75,108 @@
                                 </div>
                             </div>
 
-                            <!-- Quale piano fa per te cards -->
-                            <div class="fa-per-te-cards" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; padding: 0 10px;">
+                            <!-- Accordion "Fa per te se" -->
+                            <div class="fa-per-te-cards" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: flex-start; margin-top: 20px; padding: 0 10px;">
                                 <!-- BASE -->
-                                <div class="fa-per-te-card" data-coaching="start" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">BASE fa per te se:</h5>
-                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Sei un runner principiante o intermedio</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Vuoi una programmazione strutturata</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #4CAF50; margin-right: 8px;">✓</span> Ti alleni 3-4 volte a settimana</li>
-                                    </ul>
+                                <div class="fa-per-te-card" data-coaching="start" style="flex: 1; min-width: 250px; max-width: 400px; background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); border-radius: 1rem; padding: 15px; cursor: default;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px; padding: 0; text-align: start;">BASE fa per te se:</h5>
+                                    <div class="fpt-accordion fpt-accordion--base" data-fpt-coaching="start">
+                                        <div class="fpt-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                                            <div class="fpt-tags">
+                                                <span class="fpt-tag">Piano personalizzato</span>
+                                                <span class="fpt-tag">2-3x / settimana</span>
+                                                <span class="fpt-tag">Feedback mensile</span>
+                                                <span class="fpt-tag">Obiettivo a medio termine</span>
+                                            </div>
+                                            <span class="fpt-chevron">▼</span>
+                                        </div>
+                                        <div class="fpt-accordion-body">
+                                            <div class="fpt-accordion-body-inner">
+                                                <div class="fpt-section-title">✅ Fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon yes">✓</span> Corri già con costanza almeno 2/3 volte a settimana</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Non vuoi più seguire tabelle scaricate e finalmente avere un piano personalizzato</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Hai un obiettivo da raggiungere nei prossimi mesi</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Ti basta sentirci una volta al mese e avere un feedback settimanale</li>
+                                                </ul>
+                                                <div class="fpt-section-title">❌ Non fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon no">✗</span> Hai bisogno di essere seguito da vicino per rimanere costante → ti serve il <b>PRO</b> o il <b>ONE.TO.ONE</b></li>
+                                                    <li><span class="fpt-icon no">✗</span> Vuoi lavorare anche su tecnica di corsa, prevenzione e nutrizione → <b>PRO</b> o <b>ONE.TO.ONE</b></li>
+                                                    <li><span class="fpt-icon no">✗</span> Non registri gli allenamenti con un orologio GPS</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- PRO -->
-                                <div class="fa-per-te-card" data-coaching="pro" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #f07f00 0%, #d96d00 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">PRO fa per te se:</h5>
-                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi migliorare le tue performance</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Hai obiettivi specifici (10K, mezza, maratona)</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi feedback più frequenti</li>
-                                    </ul>
+                                <div class="fa-per-te-card" data-coaching="pro" style="flex: 1; min-width: 250px; max-width: 400px; background: linear-gradient(135deg, #f07f00 0%, #d96d00 100%); border-radius: 1rem; padding: 15px; cursor: default;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px; padding: 0; text-align: start;">PRO fa per te se:</h5>
+                                    <div class="fpt-accordion fpt-accordion--pro" data-fpt-coaching="pro">
+                                        <div class="fpt-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                                            <div class="fpt-tags">
+                                                <span class="fpt-tag">Obiettivo in calendario</span>
+                                                <span class="fpt-tag">3-5x / settimana</span>
+                                                <span class="fpt-tag">Velocità critica</span>
+                                                <span class="fpt-tag">Supporto settimanale</span>
+                                            </div>
+                                            <span class="fpt-chevron">▼</span>
+                                        </div>
+                                        <div class="fpt-accordion-body">
+                                            <div class="fpt-accordion-body-inner">
+                                                <div class="fpt-section-title">✅ Fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon yes">✓</span> Hai un obiettivo preciso da raggiungere in calendario</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Ti alleni almeno 3/5 volte a settimana e vuoi che ogni singola seduta sia finalizzata al tuo obiettivo</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Sei ferm* sullo stesso tempo da almeno un anno e non capisci perché</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Vuoi conoscere i tuoi ritmi reali con il test della velocità critica</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Ti è utile potermi scrivere durante la settimana quando hai un dubbio</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Carichi i tuoi allenamenti su Garmin Connect o altre piattaforme</li>
+                                                </ul>
+                                                <div class="fpt-section-title">❌ Non fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon no">✗</span> Ti basta ricevere una tabella e non ti interessa allenarti con metodo</li>
+                                                    <li><span class="fpt-icon no">✗</span> Non sei disposto a modificare i tuoi ritmi di corsa</li>
+                                                    <li><span class="fpt-icon no">✗</span> Vuoi vedermi di persona, lavorare sulla nutrizione e avere un check tecnico ogni mese → <b>ONE.TO.ONE</b></li>
+                                                    <li><span class="fpt-icon no">✗</span> Cerchi una risposta immediata a qualsiasi ora: abbiamo 3 finestre di confronto a settimana</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- ONE.TO.ONE -->
-                                <div class="fa-per-te-card" data-coaching="top" style="flex: 1; min-width: 250px; max-width: 300px; background: linear-gradient(135deg, #2293ca 0%, #1a7aa8 100%); border-radius: 1rem; padding: 15px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;">
-                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 10px; padding: 0; text-align: start;">ONE.TO.ONE fa per te se:</h5>
-                                    <ul style="color: #fff; list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi il massimo supporto personalizzato</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Punti a obiettivi ambiziosi</li>
-                                        <li style="padding: 5px 0; display: flex; align-items: flex-start;"><span style="color: #fff; margin-right: 8px;">✓</span> Vuoi comunicazione illimitata col coach</li>
-                                    </ul>
+                                <div class="fa-per-te-card" data-coaching="top" style="flex: 1; min-width: 250px; max-width: 400px; background: linear-gradient(135deg, #2293ca 0%, #1a7aa8 100%); border-radius: 1rem; padding: 15px; cursor: default;">
+                                    <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 6px; padding: 0; text-align: start;">ONE.TO.ONE fa per te se:</h5>
+                                    <div class="fpt-accordion fpt-accordion--top" data-fpt-coaching="top">
+                                        <div class="fpt-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                                            <div class="fpt-tags">
+                                                <span class="fpt-tag">Gara obiettivo</span>
+                                                <span class="fpt-tag">Tecnica di corsa</span>
+                                                <span class="fpt-tag">Prevenzione infortuni</span>
+                                                <span class="fpt-tag">Max 10 atleti/mese</span>
+                                            </div>
+                                            <span class="fpt-chevron">▼</span>
+                                        </div>
+                                        <div class="fpt-accordion-body">
+                                            <div class="fpt-accordion-body-inner">
+                                                <div class="fpt-section-title">✅ Fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon yes">✓</span> Hai una gara obiettivo a cui tieni e vuoi arrivarci senza alcun dubbio sulla preparazione</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Vuoi lavorare su tutto: corsa, tecnica, strategia di gara…</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Ti sei già infortunato almeno una volta e l'idea di rifermarti ti spaventa</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Vuoi un confronto continuo e la possibilità di vederci, eventualmente, anche in presenza</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Sei pront* a correggere la tua tecnica</li>
+                                                    <li><span class="fpt-icon yes">✓</span> Hai piacere di entrare in un gruppo ristretto: seguo massimo 10 nuovi atleti al mese su questo percorso</li>
+                                                </ul>
+                                                <div class="fpt-section-title">❌ Non fa per te se:</div>
+                                                <ul class="fpt-list">
+                                                    <li><span class="fpt-icon no">✗</span> Non hai ancora un obiettivo definito</li>
+                                                    <li><span class="fpt-icon no">✗</span> Cerchi "solo" una programmazione fatta bene → prendi il <b>BASE</b></li>
+                                                    <li><span class="fpt-icon no">✗</span> Mancano meno di 3 mesi alla tua gara: non c'è il tempo necessario per fare il lavoro che merita questo percorso</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
