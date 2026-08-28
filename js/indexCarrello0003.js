@@ -292,7 +292,14 @@ $(function () {
     });
 
     // Click on "Fa per te" cards to change coaching
-    $(".fa-per-te-card").click(function () {
+    $(".fa-per-te-card").click(function (e) {
+      if ($(e.target).hasClass("fpt-switch")) return;
+      changedCoaching($(this).data("coaching"));
+    });
+
+    // Click on bold coaching name in "Non fa per te se" to switch tab
+    $(".fpt-switch").click(function (e) {
+      e.stopPropagation();
       changedCoaching($(this).data("coaching"));
     });
 

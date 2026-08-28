@@ -377,8 +377,6 @@ sub {
 .fpt-list li {
   padding: 4px 0;
   font-size: 0.82rem;
-  display: flex;
-  align-items: flex-start;
   line-height: 1.4;
   text-align: left;
 }
@@ -440,7 +438,16 @@ sub {
   .fpt-accordion-header {
     padding: 10px 12px;
   }
-  .comparison-section {
-    display: none;
+  .comparison-section .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comparison-section .comparison-table {
+    min-width: 500px;
+    font-size: 0.85rem;
+  }
+  .comparison-section .comparison-table th,
+  .comparison-section .comparison-table td {
+    padding: 10px 8px !important;
   }
 }
