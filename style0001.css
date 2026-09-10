@@ -1297,6 +1297,8 @@ h1.big-text {
 
 #clients {
   background-image: url(images/storie_bg.jpg);
+  background-image: -webkit-image-set(url(images/storie_bg.webp) 1x, url(images/storie_bg.jpg) 1x);
+  background-image: image-set(url(images/storie_bg.webp) 1x, url(images/storie_bg.jpg) 1x);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

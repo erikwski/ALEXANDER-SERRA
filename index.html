@@ -54,7 +54,7 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="home0003.css" />
+    <link rel="stylesheet" type="text/css" href="home0004.css" />
   </head>
   <body class="page-template-onepage">
     <div id="loader">
@@ -72,7 +72,13 @@
         <div class="menu-wrapper center-relative relative">
           <div class="header-logo">
             <a href="index.html">
-              <img src="images/logo_completo.png" alt="Alex Running Coach" />
+              <img
+                src="images/logo_completo.png"
+                alt="Alex Running Coach"
+                width="132"
+                height="50"
+                fetchpriority="high"
+              />
             </a>
           </div>
           <div class="toggle-holder">
@@ -181,6 +187,8 @@
                       src="images/unipr.png"
                       style="width: 70px; height: 50px; margin: 3px"
                       alt="unipr"
+                      width="70"
+                      height="50"
                     />
                     <span>LAUREA MAGISTRALE IN SCIENZE MOTORIE</span>
                   </div>
@@ -189,6 +197,8 @@
                       src="images/fidal.svg"
                       style="width: 60px; height: 30px; margin: 5px"
                       alt="fidal"
+                      width="60"
+                      height="30"
                     />
                     <span>ALLENATORE FIDAL</span>
                   </div>
@@ -201,6 +211,8 @@
                         height: 36px;
                         padding: 2px 15px;
                       "
+                      width="154"
+                      height="36"
                     />
                   </div>
                 </div>
@@ -234,12 +246,16 @@
                 data-threshold="0 0"
                 data-jarallax-element="60 0"
               >
-                <img
-                  src="images/about.jpg"
-                  class="cut-img"
-                  alt="chi sono"
-                  style="object-fit: cover; height: 500px"
-                />
+                <picture>
+                  <source srcset="images/about.webp" type="image/webp" />
+                  <img
+                    src="images/about.jpg"
+                    class="cut-img"
+                    alt="chi sono"
+                    style="object-fit: cover; height: 500px"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
 
               <div class="clear"></div>
@@ -305,8 +321,9 @@
                         <img
                           src="images/logo.png"
                           alt="logo_counter"
-                          height="32px"
-                          width="32px"
+                          loading="lazy"
+                          height="32"
+                          width="32"
                           style="margin-right: 8px"
                         />
                         <span>ALERUNNER</span>
@@ -367,8 +384,9 @@
                         <img
                           src="images/logo.png"
                           alt="logo_counter"
-                          height="32px"
-                          width="32px"
+                          loading="lazy"
+                          height="32"
+                          width="32"
                           style="margin-right: 8px"
                         />
                         <span>ALERUNNER</span>
@@ -456,7 +474,13 @@
                   <div class="pricing-wrapper">
                     <div class="pricing-table-header">
                       <div class="pricing-table-title">
-                        <img src="images/logo.png" alt="logo_counter" />
+                        <img
+                          src="images/logo.png"
+                          alt="logo_counter"
+                          width="32"
+                          height="32"
+                          loading="lazy"
+                        />
                         <span>ALERUNNER</span>
                       </div>
                     </div>
@@ -613,8 +637,9 @@
                         <img
                           src="images/logo.png"
                           alt="logo_counter"
-                          height="32px"
-                          width="32px"
+                          loading="lazy"
+                          height="32"
+                          width="32"
                           style="margin-right: 8px"
                         />
                         <span>ANALISI TECNICA DI CORSA</span>
@@ -660,8 +685,9 @@
                         <img
                           src="images/logo.png"
                           alt="logo_counter"
-                          height="32px"
-                          width="32px"
+                          loading="lazy"
+                          height="32"
+                          width="32"
                           style="margin-right: 8px"
                         />
                         <span>POTENZIAMENTO MUSCOLARE</span>
@@ -2160,35 +2186,47 @@
                     title="ASICS FRONTRUNNER"
                     class="clients__slide preventDefault"
                   >
-                    <img src="images/collaborazioni/asics.svg" />
+                    <img src="images/collaborazioni/asics.svg" loading="lazy" />
                   </a>
                   <a
                     href="#"
                     title="RUNNER'S WORLD"
                     class="clients__slide preventDefault"
                   >
-                    <img src="images/collaborazioni/runners.svg" />
+                    <img
+                      src="images/collaborazioni/runners.svg"
+                      loading="lazy"
+                    />
                   </a>
                   <a
                     href="#"
                     title="NOVAFON"
                     class="clients__slide preventDefault"
                   >
-                    <img src="images/collaborazioni/novafon.svg" />
+                    <img
+                      src="images/collaborazioni/novafon.svg"
+                      loading="lazy"
+                    />
                   </a>
                   <a
                     href="#"
                     title="OMEGOR"
                     class="clients__slide preventDefault"
                   >
-                    <img src="images/collaborazioni/omegor.avif" />
+                    <img
+                      src="images/collaborazioni/omegor.avif"
+                      loading="lazy"
+                    />
                   </a>
                   <a
                     href="#"
                     title="PHILIPS"
                     class="clients__slide philips preventDefault"
                   >
-                    <img src="images/collaborazioni/philips.svg" />
+                    <img
+                      src="images/collaborazioni/philips.svg"
+                      loading="lazy"
+                    />
                   </a>
                 </div>
               </div>
@@ -2301,7 +2339,13 @@
       <footer class="footer">
         <div class="footer-content center-relative">
           <div class="footer-logo">
-            <img src="images/logo_completo.png" alt="Seppo" />
+            <img
+              src="images/logo_completo.png"
+              alt="Seppo"
+              width="250"
+              height="95"
+              loading="lazy"
+            />
           </div>
           <div class="footer-social-divider"></div>
           <div class="full_center_column_mobile">
