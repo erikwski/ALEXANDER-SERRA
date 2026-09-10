@@ -23,17 +23,38 @@
         --line: #d7e1e5;
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
         color: var(--ink);
-        background: linear-gradient(135deg, rgba(34, 147, 202, 0.08) 0 24%, transparent 24%), var(--canvas);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(34, 147, 202, 0.08) 0 24%,
+            transparent 24%
+          ),
+          var(--canvas);
         font-family: "Source Serif 4", Georgia, serif;
       }
-      a { color: var(--blue-dark); }
-      a:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
-      h1, h2, h3, .eyebrow, .button, .updated, .brand span {
+      a {
+        color: var(--blue-dark);
+      }
+      a:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3,
+      .eyebrow,
+      .button,
+      .updated,
+      .brand span {
         font-family: "Barlow Condensed", sans-serif;
       }
       .site-header {
@@ -47,65 +68,290 @@
         background: var(--blue);
         border-bottom: 6px solid var(--orange);
       }
-      .brand { display: flex; align-items: center; gap: 1rem; color: inherit; text-decoration: none; }
-      .brand img { width: 150px; height: 60px; object-fit: contain; background: #fff; }
-      .brand span { font-size: 1.35rem; font-weight: 700; text-transform: uppercase; }
-      .back-link { color: #fff; font-weight: 600; text-underline-offset: 0.25em; }
-      .hero { padding: clamp(2.5rem, 7vw, 6rem) clamp(1rem, 5vw, 4.5rem) 3rem; background: #fff; }
-      .hero-inner { max-width: 1180px; margin: 0 auto; }
-      .eyebrow { margin: 0 0 0.5rem; color: var(--orange); font-weight: 700; text-transform: uppercase; }
-      h1 { max-width: 850px; margin: 0; font-size: clamp(2.7rem, 7vw, 5.6rem); line-height: 0.95; text-transform: uppercase; }
-      .intro { max-width: 760px; margin: 1.5rem 0 0; color: var(--muted); font-size: 1.1rem; line-height: 1.65; }
-      .updated { display: inline-block; margin-top: 1.25rem; padding: 0.35rem 0.65rem; color: var(--blue-dark); background: #e7f5fb; border-left: 4px solid var(--blue); font-weight: 700; text-transform: uppercase; }
-      .layout { display: grid; grid-template-columns: minmax(250px, 330px) minmax(0, 1fr); gap: 2rem; width: min(1320px, calc(100% - 2rem)); margin: 2rem auto 4rem; align-items: start; }
-      .sidebar, .document-panel { background: var(--paper); border: 1px solid var(--line); box-shadow: 0 14px 45px rgba(31, 61, 76, 0.09); }
-      .sidebar { position: sticky; top: 1rem; padding: 1.5rem; }
-      .sidebar h2, .document-panel h2 { margin: 0 0 1rem; font-size: 1.65rem; text-transform: uppercase; }
-      .seller { padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); line-height: 1.55; }
-      .seller strong { display: block; font-size: 1.08rem; }
-      .seller address { margin-top: 0.5rem; font-style: normal; overflow-wrap: anywhere; }
-      .index { margin: 1.25rem 0; padding: 0; list-style: none; }
-      .index li + li { margin-top: 0.45rem; }
-      .index a { display: block; color: var(--ink); line-height: 1.3; text-decoration-color: #b9c8ce; text-underline-offset: 0.2em; }
-      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; width: 100%; padding: 0.75rem 1rem; color: #fff; background: var(--blue-dark); border: 2px solid var(--blue-dark); font-size: 1.05rem; font-weight: 700; text-align: center; text-decoration: none; text-transform: uppercase; }
-      .button:hover { color: var(--blue-dark); background: #fff; }
-      .button.secondary { margin-top: 0.65rem; color: var(--ink); background: #fff; border-color: var(--line); }
-      .document-panel { min-width: 0; padding: 1.5rem; }
-      .document-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
-      .document-heading h2, .document-heading p { margin: 0; }
-      .document-heading p { color: var(--muted); font-size: 0.9rem; }
-      .pdf-viewer { display: block; width: 100%; height: min(82vh, 960px); min-height: 680px; border: 1px solid var(--line); background: #f4f6f7; }
-      .mobile-document { display: none; padding: 1.25rem; background: #f5f8f9; border-left: 4px solid var(--orange); }
-      .mobile-document p { margin-top: 0; line-height: 1.55; }
-      .summary { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-      .summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-      .summary article { padding: 1.35rem; background: #fff; }
-      .summary h3 { margin: 0 0 0.5rem; color: var(--blue-dark); font-size: 1.3rem; text-transform: uppercase; }
-      .summary p { margin: 0; line-height: 1.6; }
-      .notice { margin: 1.5rem 0 0; padding: 1rem 1.25rem; color: #573009; background: #fff4e5; border-left: 4px solid var(--orange); line-height: 1.55; }
-      footer { padding: 2rem 1rem; color: #fff; background: #152d39; text-align: center; }
-      footer p { margin: 0.35rem 0; }
-      footer a { color: #fff; }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: inherit;
+        text-decoration: none;
+      }
+      .brand img {
+        width: 150px;
+        height: 60px;
+        object-fit: contain;
+        background: #fff;
+      }
+      .brand span {
+        font-size: 1.35rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .back-link {
+        color: #fff;
+        font-weight: 600;
+        text-underline-offset: 0.25em;
+      }
+      .hero {
+        padding: clamp(2.5rem, 7vw, 6rem) clamp(1rem, 5vw, 4.5rem) 3rem;
+        background: #fff;
+      }
+      .hero-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .eyebrow {
+        margin: 0 0 0.5rem;
+        color: var(--orange);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(2.7rem, 7vw, 5.6rem);
+        line-height: 0.95;
+        text-transform: uppercase;
+      }
+      .intro {
+        max-width: 760px;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.65;
+      }
+      .updated {
+        display: inline-block;
+        margin-top: 1.25rem;
+        padding: 0.35rem 0.65rem;
+        color: var(--blue-dark);
+        background: #e7f5fb;
+        border-left: 4px solid var(--blue);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+        gap: 2rem;
+        width: min(1320px, calc(100% - 2rem));
+        margin: 2rem auto 4rem;
+        align-items: start;
+      }
+      .sidebar,
+      .document-panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        box-shadow: 0 14px 45px rgba(31, 61, 76, 0.09);
+      }
+      .sidebar {
+        position: sticky;
+        top: 1rem;
+        padding: 1.5rem;
+      }
+      .sidebar h2,
+      .document-panel h2 {
+        margin: 0 0 1rem;
+        font-size: 1.65rem;
+        text-transform: uppercase;
+      }
+      .seller {
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--line);
+        line-height: 1.55;
+      }
+      .seller strong {
+        display: block;
+        font-size: 1.08rem;
+      }
+      .seller address {
+        margin-top: 0.5rem;
+        font-style: normal;
+        overflow-wrap: anywhere;
+      }
+      .index {
+        margin: 1.25rem 0;
+        padding: 0;
+        list-style: none;
+      }
+      .index li + li {
+        margin-top: 0.45rem;
+      }
+      .index a {
+        display: block;
+        color: var(--ink);
+        line-height: 1.3;
+        text-decoration-color: #b9c8ce;
+        text-underline-offset: 0.2em;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        color: #fff;
+        background: var(--blue-dark);
+        border: 2px solid var(--blue-dark);
+        font-size: 1.05rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .button:hover {
+        color: var(--blue-dark);
+        background: #fff;
+      }
+      .button.secondary {
+        margin-top: 0.65rem;
+        color: var(--ink);
+        background: #fff;
+        border-color: var(--line);
+      }
+      .document-panel {
+        min-width: 0;
+        padding: 1.5rem;
+      }
+      .document-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      .document-heading h2,
+      .document-heading p {
+        margin: 0;
+      }
+      .document-heading p {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .pdf-viewer {
+        display: block;
+        width: 100%;
+        height: min(82vh, 960px);
+        min-height: 680px;
+        border: 1px solid var(--line);
+        background: #f4f6f7;
+      }
+      .mobile-document {
+        display: none;
+        padding: 1.25rem;
+        background: #f5f8f9;
+        border-left: 4px solid var(--orange);
+      }
+      .mobile-document p {
+        margin-top: 0;
+        line-height: 1.55;
+      }
+      .summary {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--line);
+      }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .summary article {
+        padding: 1.35rem;
+        background: #fff;
+      }
+      .summary h3 {
+        margin: 0 0 0.5rem;
+        color: var(--blue-dark);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+      }
+      .summary p {
+        margin: 0;
+        line-height: 1.6;
+      }
+      .notice {
+        margin: 1.5rem 0 0;
+        padding: 1rem 1.25rem;
+        color: #573009;
+        background: #fff4e5;
+        border-left: 4px solid var(--orange);
+        line-height: 1.55;
+      }
+      footer {
+        padding: 2rem 1rem;
+        color: #fff;
+        background: #152d39;
+        text-align: center;
+      }
+      footer p {
+        margin: 0.35rem 0;
+      }
+      footer a {
+        color: #fff;
+      }
       @media (max-width: 850px) {
-        .brand span { display: none; }
-        .layout { grid-template-columns: 1fr; }
-        .sidebar { position: static; }
-        .index { columns: 2; column-gap: 2rem; }
-        .pdf-viewer { height: 72vh; min-height: 560px; }
+        .brand span {
+          display: none;
+        }
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+        }
+        .index {
+          columns: 2;
+          column-gap: 2rem;
+        }
+        .pdf-viewer {
+          height: 72vh;
+          min-height: 560px;
+        }
       }
       @media (max-width: 600px) {
-        .site-header { min-height: 74px; align-items: flex-start; }
-        .brand img { width: 112px; height: 45px; }
-        .back-link { font-size: 0.9rem; }
-        .hero { padding-top: 2.5rem; }
-        .layout { width: min(100% - 1rem, 1320px); margin-top: 0.5rem; }
-        .sidebar, .document-panel { padding: 1.1rem; }
-        .index { columns: 1; }
-        .document-heading { display: block; }
-        .document-heading p { margin-top: 0.35rem; }
-        .pdf-viewer { display: none; }
-        .mobile-document { display: block; }
-        .summary-grid { grid-template-columns: 1fr; }
+        .site-header {
+          min-height: 74px;
+          align-items: flex-start;
+        }
+        .brand img {
+          width: 112px;
+          height: 45px;
+        }
+        .back-link {
+          font-size: 0.9rem;
+        }
+        .hero {
+          padding-top: 2.5rem;
+        }
+        .layout {
+          width: min(100% - 1rem, 1320px);
+          margin-top: 0.5rem;
+        }
+        .sidebar,
+        .document-panel {
+          padding: 1.1rem;
+        }
+        .index {
+          columns: 1;
+        }
+        .document-heading {
+          display: block;
+        }
+        .document-heading p {
+          margin-top: 0.35rem;
+        }
+        .pdf-viewer {
+          display: none;
+        }
+        .mobile-document {
+          display: block;
+        }
+        .summary-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
     <link
@@ -175,7 +421,9 @@
 
           <h2>Indice</h2>
           <ol class="index">
-            <li><a href="#documento">Disposizioni generali e definizioni</a></li>
+            <li>
+              <a href="#documento">Disposizioni generali e definizioni</a>
+            </li>
             <li><a href="#documento">1. Oggetto del contratto</a></li>
             <li><a href="#documento">2. Conclusione del contratto</a></li>
             <li><a href="#documento">3. Informazioni e fruizione</a></li>
@@ -198,13 +446,18 @@
             href="pdf/TERMINI_CONDIZIONI.pdf"
             target="_blank"
             rel="noopener"
-          >Apri il PDF</a>
+            >Apri il PDF</a
+          >
           <a class="button secondary" href="pdf/TERMINI_CONDIZIONI.pdf" download
             >Scarica il documento</a
           >
         </aside>
 
-        <section class="document-panel" id="documento" aria-labelledby="document-title">
+        <section
+          class="document-panel"
+          id="documento"
+          aria-labelledby="document-title"
+        >
           <div class="document-heading">
             <h2 id="document-title">Documento completo</h2>
             <p>10 pagine · formato PDF</p>
@@ -218,7 +471,8 @@
           >
             <p>
               Il browser non supporta la visualizzazione del PDF.
-              <a href="pdf/TERMINI_CONDIZIONI.pdf">Apri il documento completo</a>.
+              <a href="pdf/TERMINI_CONDIZIONI.pdf">Apri il documento completo</a
+              >.
             </p>
           </object>
 
@@ -252,23 +506,24 @@
                 <p>
                   Il primo incontro deve svolgersi entro quattro mesi
                   dall'acquisto. Per gravi e comprovati motivi può essere
-                  richiesta una sospensione, una sola volta, fino a quattro mesi.
+                  richiesta una sospensione, una sola volta, fino a quattro
+                  mesi.
                 </p>
               </article>
               <article>
                 <h3>Pagamento</h3>
                 <p>
-                  Il prezzo è corrisposto anticipatamente e integralmente tramite
-                  PayPal o bonifico bancario, secondo le istruzioni mostrate al
-                  check-out.
+                  Il prezzo è corrisposto anticipatamente e integralmente
+                  tramite PayPal o bonifico bancario, secondo le istruzioni
+                  mostrate al check-out.
                 </p>
               </article>
               <article>
                 <h3>Diritto di recesso</h3>
                 <p>
-                  Il consumatore può recedere entro 14 giorni dall'acquisto se il
-                  coaching non è iniziato. Dopo l'inizio, il recesso è escluso
-                  nei termini indicati all'articolo 8.2 del documento.
+                  Il consumatore può recedere entro 14 giorni dall'acquisto se
+                  il coaching non è iniziato. Dopo l'inizio, il recesso è
+                  escluso nei termini indicati all'articolo 8.2 del documento.
                 </p>
               </article>
               <article>
