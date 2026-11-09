@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SERTOR Running Camp · Passo Oclini 8–14 agosto 2027</title>
+<meta name="description" content="SERTOR Running Camp: una settimana di corsa, trekking e serate insieme a Passo Oclini (BZ), a 2.000 metri. Dall'8 al 14 agosto 2027, Hotel Schwarzhorn. Programma, tariffe e iscrizione.">
+<link rel="canonical" href="https://www.alexrunningcoach.it/running-camp/">
+<link rel="icon" type="image/png" href="assets/mark.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SERTOR Running Camp · Passo Oclini 2027">
+<meta property="og:description" content="8–14 agosto 2027 · Hotel Schwarzhorn · 2.000 m. 7 allenamenti, 3 trekking, 6 notti in pensione completa.">
+<meta property="og:url" content="https://www.alexrunningcoach.it/running-camp/">
+<meta property="og:image" content="https://www.alexrunningcoach.it/running-camp/assets/logo.png">
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js');history.scrollRestoration='manual';}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Event","name":"SERTOR Running Camp · Passo Oclini 2027","startDate":"2027-08-08","endDate":"2027-08-14","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","location":{"@type":"Place","name":"Hotel Schwarzhorn","address":{"@type":"PostalAddress","addressLocality":"Passo Oclini","addressRegion":"BZ","addressCountry":"IT"}},"organizer":{"@type":"Person","name":"Alexander Serra","url":"https://www.alexrunningcoach.it/"},"image":"https://www.alexrunningcoach.it/running-camp/assets/logo.png","description":"Una settimana di corsa, trekking e serate insieme a 2.000 metri: 7 allenamenti, 3 trekking, 6 notti in pensione completa.","offers":[{"@type":"Offer","name":"Camera 3/5 persone","price":"760","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alexrunningcoach.it/running-camp/#tariffe"},{"@type":"Offer","name":"Camera doppia","price":"880","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alexrunningcoach.it/running-camp/#tariffe"},{"@type":"Offer","name":"Camera singola","price":"970","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alexrunningcoach.it/running-camp/#tariffe"}]}
+</script>
+<style>
+/* Concept: "Verso il Passo". Same grammar as the Il Tracciato showcase, but the page is one climb to the pass: a dot travels the rail while an altimeter counts 0 to 2.000 m. Palette comes from the SERTOR rebrand: lake blue, mountain purple, sunrise magenta-to-orange. */
+:root{
+  --purple:#553483; --purple-2:#3F2565; --ink:#1F2B45; --blue:#2192CA; --blue-ink:#14709F; --magenta:#BC438A; --magenta-ink:#9A2F6E; --orange:#F07F00;
+  --chalk:#F6F8FB; --chalk-2:#DCEAF6; --cream:#FFF3E6;
+  --soft:#54607A; --on-dark:#F6F8FB; --soft-d:#CDBFE3; --rule:rgba(31,43,69,.16); --rule-d:rgba(246,248,251,.22);
+  --grad:linear-gradient(100deg,#2192CA 0%,#553483 55%,#BC438A 100%); --sun:linear-gradient(90deg,#F07F00,#BC438A);
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Hanken Grotesk',system-ui,sans-serif; --mono:'Fragment Mono',ui-monospace,monospace;
+  --pad:clamp(18px,4vw,64px); --r:28px; --r-in:20px; --p-in:8px;
+  --out:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:auto;}
+html.lenis,html.lenis body{height:auto;}
+.lenis.lenis-smooth{scroll-behavior:auto!important;}
+.lenis.lenis-stopped{overflow:hidden;}
+body{margin:0;background:var(--chalk);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:clip;}
+h1,h2,h3,h4{font-family:var(--display);margin:0;font-weight:800;font-stretch:78%;line-height:.92;letter-spacing:-.015em;text-wrap:balance;}
+p{margin:0;text-wrap:pretty;}
+a{color:inherit;}
+img{display:block;max-width:100%;}
+.mono{font:400 12px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+:focus-visible{outline:2px solid var(--blue-ink);outline-offset:3px;border-radius:4px;}
+.dk :focus-visible,.dk:focus-visible{outline-color:var(--orange);}
+.skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:var(--ink);padding:12px 16px;z-index:200;font-weight:700;border-radius:10px;}
+.skip:focus{left:8px;}
+.dk{background:var(--purple);color:var(--on-dark);--soft:var(--soft-d);--rule:var(--rule-d);}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border:0;border-radius:999px;background:var(--orange);color:var(--ink);font:700 15px/1 var(--body);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:background-color .2s ease,color .2s ease,box-shadow .2s ease,scale .16s var(--out);}
+.btn::after{content:"";position:absolute;inset:-4px;border-radius:999px;}
+.btn:active{scale:.96;}
+.btn svg{width:16px;height:16px;transition:translate .25s var(--out);}
+.btn:hover svg{translate:3px 0;}
+.btn:hover{background:#FF9A33;}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor;}
+.btn.ghost:hover{background:var(--chalk);color:var(--ink);}
+.btn.ink{background:var(--ink);color:var(--chalk);}
+.btn.ink:hover{background:var(--purple);}
+.btn.sm{min-height:40px;padding:0 18px;font-size:14px;}
+
+/* header */
+.bar{position:fixed;z-index:60;top:14px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:center;gap:12px;pointer-events:none;}
+.bar>*{pointer-events:auto;}
+.logo{display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:6px 16px 6px 12px;text-decoration:none;box-shadow:0 1px 2px rgba(31,43,69,.12),0 8px 24px -8px rgba(31,43,69,.4);}
+.logo img{height:36px;width:auto;}
+.logo b{font:800 22px/1 var(--display);font-stretch:78%;letter-spacing:.01em;color:var(--blue);}
+.logo b i{font-style:normal;color:var(--purple);}
+.nav{display:flex;align-items:center;gap:2px;background:rgba(31,43,69,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--chalk);border-radius:999px;padding:5px;box-shadow:0 8px 24px -8px rgba(31,43,69,.5);}
+.nav a{position:relative;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:background-color .2s ease,color .2s ease;}
+.nav a:hover{background:rgba(246,248,251,.14);}
+.nav a[aria-current="true"]{background:var(--chalk);color:var(--ink);}
+.nav a.cta{background:var(--orange);color:var(--ink);}
+.menu{display:none;position:relative;}
+.menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--chalk);font-weight:700;font-size:14px;box-shadow:0 8px 24px -8px rgba(31,43,69,.5);}
+.menu summary::-webkit-details-marker{display:none;}
+.menu div{position:absolute;right:0;top:54px;min-width:210px;background:var(--chalk);border-radius:20px;padding:8px;display:grid;box-shadow:0 20px 50px -12px rgba(31,43,69,.5);}
+.menu a{padding:13px 14px;border-radius:12px;font-weight:600;text-decoration:none;}
+.menu a:hover{background:var(--chalk-2);}
+@media (max-width:980px){.nav{display:none;}.menu{display:block;}}
+.prog{position:fixed;z-index:70;left:0;top:0;height:3px;width:100%;background:var(--sun);transform-origin:left;transform:scaleX(0);pointer-events:none;}
+
+/* rail: the climb */
+.rail{position:fixed;z-index:40;right:10px;top:14vh;height:min(600px,72vh);width:36px;pointer-events:none;display:none;}
+.rail svg{width:100%;height:100%;overflow:visible;}
+.rail .km{position:absolute;right:46px;bottom:-8px;font:400 11px var(--mono);letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--ink);background:var(--chalk);padding:4px 8px;border-radius:8px;box-shadow:0 0 0 1px var(--rule);white-space:nowrap;}
+@media (min-width:1100px){.rail{display:block;}}
+
+/* preloader */
+.pre{position:fixed;inset:0;z-index:300;background:var(--ink);color:var(--chalk);display:none;align-content:end;padding:var(--pad);overflow:hidden;}
+.js .pre{display:grid;}
+.pre .sun{position:absolute;left:50%;top:38%;width:min(46vw,320px);aspect-ratio:1;border-radius:50%;background:var(--sun);translate:-50% 0;opacity:.95;}
+.pre .n{position:relative;font:800 clamp(5rem,22vw,19rem)/.8 var(--display);font-stretch:78%;font-variant-numeric:tabular-nums;letter-spacing:-.03em;}
+.pre .n small{font-size:.22em;color:var(--orange);margin-left:.1em;letter-spacing:0;}
+.pre .meta{position:relative;display:flex;justify-content:space-between;gap:16px;margin-bottom:24px;color:var(--soft-d);}
+.pre .lane{position:relative;height:3px;background:rgba(246,248,251,.15);margin-bottom:20px;border-radius:3px;overflow:hidden;}
+.pre .lane i{display:block;height:100%;background:var(--sun);transform-origin:left;transform:scaleX(0);}
+
+/* hero */
+.hero{position:relative;min-height:100svh;padding:clamp(96px,14vh,140px) var(--pad) 0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto;overflow:hidden;isolation:isolate;background:var(--grad);}
+.ridge{position:absolute;inset:0;width:100%;height:100%;z-index:-1;}
+.ridge path{fill:none;stroke:#F6F8FB;stroke-width:2;opacity:.28;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.9fr);gap:clamp(20px,4vw,64px);align-items:end;padding-bottom:clamp(24px,5vh,56px);}
+.hero .date{display:block;color:#FFD9A8;margin-bottom:18px;}
+.hero h1{font-size:clamp(3.3rem,10.2vw,10.4rem);line-height:.96;font-weight:800;}
+.hero h1 em{font-style:normal;color:#FFB766;}
+.hf{padding:var(--p-in);background:rgba(246,248,251,.14);border-radius:var(--r);align-self:stretch;max-height:68vh;min-height:360px;position:relative;}
+.hf .clip{position:absolute;inset:var(--p-in);border-radius:var(--r-in);overflow:hidden;background:#fff;display:grid;place-items:center;padding:clamp(10px,1.6vw,22px);}
+.hf img{width:auto;height:100%;max-width:100%;object-fit:contain;}
+.hf .badge{position:absolute;left:18px;bottom:18px;background:var(--ink);color:var(--chalk);border-radius:12px;padding:8px 12px;z-index:2;}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:end;padding-bottom:22px;}
+.hero-foot p{max-width:48ch;color:#EDE6F7;font-size:18px;}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;}
+.mq{border-top:1px solid var(--rule-d);margin:0 calc(var(--pad)*-1);overflow:hidden;padding:14px 0;}
+.mq-in{display:flex;width:max-content;white-space:nowrap;}
+.mq span{font:700 clamp(1rem,2vw,1.4rem)/1 var(--display);font-stretch:78%;text-transform:uppercase;letter-spacing:.02em;padding-right:2rem;color:var(--chalk);}
+.mq span b{color:#FFB766;font-weight:800;padding-left:2rem;}
+@media (max-width:820px){
+  .hero{padding-top:92px;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hf{min-height:0;aspect-ratio:804/900;max-height:none;align-self:auto;max-width:340px;}
+  .hero-foot{grid-template-columns:1fr;}
+  .hero h1{font-size:clamp(3.2rem,16vw,6rem);}
+  .ridge{opacity:.6;}
+}
+
+/* sections */
+section{position:relative;padding:clamp(80px,11vw,160px) var(--pad);}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--soft);margin-bottom:22px;}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--sun);}
+.h2{font-size:clamp(2.6rem,7.4vw,7rem);line-height:.98;}
+.h2 em{font-style:normal;color:var(--magenta-ink);}
+.dk .h2 em{color:#FFB766;}
+.head{margin-bottom:clamp(36px,6vw,80px);max-width:1100px;}
+.lead{font-size:19px;color:var(--soft);max-width:54ch;margin-top:20px;}
+
+/* numbers */
+.numbers{background:var(--blue-ink);color:#fff;overflow:hidden;}
+.numbers .eyebrow{color:#fff;}
+.numbers .eyebrow::before{background:#fff;}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid #fff;}
+.nums>div{padding:28px 20px 0 0;}
+.nums>div+div{padding-left:20px;border-left:2px solid rgba(255,255,255,.28);}
+.nums .n{font:800 clamp(4.4rem,11vw,10rem)/.85 var(--display);font-stretch:78%;font-variant-numeric:tabular-nums;letter-spacing:-.04em;}
+.nums h3{font-size:clamp(1.2rem,2vw,1.7rem);margin:14px 0 0;line-height:1;}
+.nums p{max-width:22ch;font-weight:500;margin-top:8px;}
+@media (max-width:900px){.nums{grid-template-columns:repeat(2,minmax(0,1fr));}.nums>div:nth-child(3){padding-left:0;border-left:0;}.nums>div:nth-child(n+3){border-top:2px solid rgba(255,255,255,.28);margin-top:28px;}}
+
+/* week: horizontal scroll */
+.week{background:var(--chalk-2);padding:0;overflow:clip;}
+.hs{padding:clamp(72px,9vw,120px) 0;}
+.hs-track{display:flex;gap:20px;padding:0 var(--pad);align-items:stretch;}
+.hs-intro{flex:0 0 min(520px,86vw);display:grid;align-content:space-between;gap:24px;padding-right:20px;}
+.hs-intro .h2{font-size:clamp(2.6rem,6vw,5.8rem);}
+.hs-intro p{color:var(--soft);max-width:34ch;}
+.hint{display:none;align-items:center;gap:10px;color:var(--soft);}
+.day{flex:0 0 min(86vw,420px);position:relative;display:flex;flex-direction:column;gap:14px;padding:30px;border-radius:var(--r);background:var(--chalk);box-shadow:0 1px 2px rgba(31,43,69,.06),0 18px 40px -22px rgba(31,43,69,.3);}
+.day .pn{font:800 clamp(4.5rem,9vw,7rem)/.8 var(--display);font-stretch:78%;letter-spacing:-.04em;color:var(--c,var(--blue));}
+.day h3{font-size:clamp(2rem,3.4vw,3rem);color:var(--c,var(--blue));}
+.day .where{color:var(--soft);}
+.day p.t{font-size:17px;color:var(--ink);margin-top:auto;}
+.day:nth-of-type(1){--c:var(--blue-ink);}
+.day:nth-of-type(2){--c:var(--purple);}
+.day:nth-of-type(3){--c:var(--magenta-ink);}
+.day:nth-of-type(4){--c:var(--purple);}
+.day:nth-of-type(5){--c:var(--blue-ink);}
+.day:nth-of-type(6){--c:var(--magenta-ink);}
+.hs-end{flex:0 0 min(360px,80vw);display:grid;align-content:center;color:var(--soft);font-size:18px;padding-left:10px;}
+.hs-end p{max-width:28ch;}
+.hs-bar{margin:28px var(--pad) 0;height:3px;background:var(--rule);border-radius:3px;overflow:hidden;display:none;}
+.hs-bar i{display:block;height:100%;background:var(--sun);transform-origin:left;transform:scaleX(0);}
+.week.is-hs .hs{height:100svh;min-height:660px;padding-block:70px 40px;display:flex;flex-direction:column;justify-content:center;}
+.week.is-hs .hs-track{width:max-content;}
+.week.is-hs .day{height:min(66svh,560px);flex-basis:min(30vw,420px);}
+.week.is-hs .hs-intro{flex-basis:min(34vw,520px);}
+.week.is-hs .hint{display:flex;}
+.week.is-hs .hs-bar{display:block;}
+@media (max-width:899px){
+  .hs-track{flex-direction:column;}
+  .hs-intro,.day,.hs-end{flex-basis:auto;}
+  .hs-end{padding:10px 0;}
+  .hs-intro{padding-right:0;}
+}
+
+/* program table */
+.prog-s{background:var(--chalk);}
+.ptable{border-top:2px solid var(--ink);}
+.prow{display:grid;grid-template-columns:minmax(0,.7fr) repeat(3,minmax(0,1fr));gap:20px;padding:22px 4px;border-bottom:1px solid var(--rule);align-items:start;}
+.prow.hd{font:400 12px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);padding:14px 4px;}
+.prow .d{font:800 clamp(1.4rem,2.4vw,2rem)/1 var(--display);font-stretch:78%;color:var(--purple);}
+.prow .d small{display:block;font:400 12px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);margin-bottom:6px;}
+.prow .c span{display:none;}
+.prow .c{color:var(--ink);}
+.prow .c.no{color:#8A93A8;}
+@media (max-width:820px){
+  .prow.hd{display:none;}
+  .prow{grid-template-columns:1fr;gap:8px;padding:22px 0;}
+  .prow .c{display:grid;grid-template-columns:90px 1fr;gap:12px;}
+  .prow .c span{display:block;font:400 11px/1.6 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--soft);}
+  .prow .c.no{display:none;}
+}
+.note{margin-top:28px;color:var(--soft);font-size:15px;max-width:72ch;}
+
+/* evenings + typical day */
+.eve{background:var(--purple);}
+.eve-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);}
+.card{display:flex;flex-direction:column;gap:14px;padding:30px;background:rgba(246,248,251,.1);border-radius:var(--r);box-shadow:inset 0 0 0 1px var(--rule-d);}
+.card .k{color:#FFB766;}
+.card h3{font-size:clamp(1.8rem,3vw,2.6rem);}
+.card p{color:#EDE6F7;}
+@media (max-width:860px){.eve-g{grid-template-columns:1fr;}}
+.tl{margin-top:clamp(56px,8vw,110px);}
+.tl h3{font-size:clamp(1.8rem,3.4vw,3rem);margin-bottom:28px;}
+.tl-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;}
+.tl-g div{border-radius:20px;background:var(--chalk);color:var(--ink);padding:18px 14px;text-align:center;}
+.tl-g b{display:block;font:800 clamp(1.7rem,3vw,2.6rem)/1 var(--display);font-stretch:78%;color:var(--purple);font-variant-numeric:tabular-nums;}
+.tl-g span{display:block;margin-top:8px;color:var(--soft);}
+@media (max-width:760px){.tl-g{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* hotel */
+.hotel{background:var(--chalk);}
+.hotel-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,6vw,100px);align-items:start;}
+.hotel figure{margin:0;border-radius:var(--r);background:var(--chalk-2);padding:var(--p-in);position:sticky;top:90px;}
+.hotel figure .clip{border-radius:var(--r-in);overflow:hidden;outline:1px solid rgba(31,43,69,.1);outline-offset:-1px;}
+.hotel figure img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.hotel figcaption{padding:12px 10px 6px;color:var(--soft);}
+.facts{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);}
+.facts li{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);}
+.facts li b{font:800 clamp(1.2rem,1.8vw,1.5rem)/1.05 var(--display);font-stretch:80%;color:var(--purple);}
+.facts li span{color:var(--soft);}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.stats span{border-radius:999px;padding:9px 16px;background:var(--ink);color:var(--chalk);}
+@media (max-width:860px){.hotel-g{grid-template-columns:1fr;}.hotel figure{position:relative;top:0;}.facts li{grid-template-columns:1fr;gap:4px;}}
+
+/* gallery strip */
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-top:clamp(40px,6vw,80px);}
+.strip figure{margin:0;border-radius:var(--r);background:var(--chalk-2);padding:var(--p-in);}
+.strip .clip{border-radius:var(--r-in);overflow:hidden;}
+.strip img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:scale .9s var(--out);}
+.strip figure:hover img{scale:1.05;}
+.strip figcaption{padding:10px 8px 4px;color:var(--soft);}
+@media (max-width:700px){.strip{grid-template-columns:1fr;}}
+
+/* prices */
+.price-s{background:var(--chalk-2);}
+.pg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);}
+.pc{display:flex;flex-direction:column;gap:14px;padding:42px 30px 30px;border-radius:var(--r);background:var(--chalk);box-shadow:inset 0 10px 0 var(--c),0 1px 2px rgba(31,43,69,.06),0 18px 40px -22px rgba(31,43,69,.3);}
+.pc:nth-child(1){--c:var(--purple);}
+.pc:nth-child(2){--c:var(--blue);}
+.pc:nth-child(3){--c:var(--magenta);}
+.pc h3{font-size:clamp(1.8rem,3vw,2.6rem);}
+.pc .amt{font:800 clamp(4rem,7vw,6.2rem)/.85 var(--display);font-stretch:78%;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--ink);display:flex;align-items:baseline;gap:6px;margin-top:6px;}
+.pc .amt small{font:800 .4em var(--display);color:var(--soft);}
+.pc .sub{color:var(--soft);}
+.pc dl{margin:6px 0 0;display:grid;gap:0;border-top:1px solid var(--rule);}
+.pc dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums;}
+.pc dt{color:var(--soft);}
+.pc dd{margin:0;font-weight:700;}
+.pc .btn{margin-top:auto;}
+@media (max-width:860px){.pg{grid-template-columns:1fr;}}
+.price-note{margin-top:28px;display:grid;gap:10px;max-width:84ch;color:var(--soft);font-size:16px;}
+.price-note b{color:var(--ink);}
+
+/* signup */
+.sign{background:var(--chalk);}
+.steps{display:grid;}
+.step{display:grid;grid-template-columns:minmax(90px,.25fr) 1fr;gap:clamp(16px,4vw,60px);padding:30px 0;border-top:1px solid var(--rule);align-items:start;}
+.step .num{font:800 clamp(4rem,10vw,8rem)/.8 var(--display);font-stretch:78%;color:var(--orange);font-variant-numeric:tabular-nums;letter-spacing:-.04em;}
+.step h3{font-size:clamp(1.6rem,3vw,2.6rem);margin-bottom:10px;}
+.step p{color:var(--soft);max-width:56ch;font-size:18px;}
+.bank{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px);margin-top:clamp(36px,5vw,64px);}
+.bk{padding:30px;border-radius:var(--r);background:var(--purple);color:var(--chalk);display:grid;gap:6px;align-content:start;}
+.bk:nth-child(2){background:var(--blue-ink);}
+.bk h3{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:14px;}
+.bk .amt{font:800 clamp(3rem,5vw,4.4rem)/1 var(--display);font-stretch:78%;font-variant-numeric:tabular-nums;color:#FFD9A8;}
+.bk .amt small{font:400 12px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#fff;margin-left:8px;}
+.bk dl{margin:10px 0 0;display:grid;gap:0;}
+.bk dl div{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.28);align-items:baseline;}
+.bk dt{font:400 11px var(--mono);letter-spacing:.09em;text-transform:uppercase;opacity:.85;}
+.bk dd{margin:0;font-weight:600;overflow-wrap:anywhere;}
+.iban{font-family:var(--mono);font-size:15px;letter-spacing:.04em;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.copy{min-height:34px;padding:0 14px;border-radius:999px;border:0;background:rgba(255,255,255,.18);color:#fff;font:600 12px var(--body);cursor:pointer;transition:background-color .2s ease,scale .16s var(--out);}
+.copy:hover{background:rgba(255,255,255,.3);}
+.copy:active{scale:.96;}
+@media (max-width:860px){.bank{grid-template-columns:1fr;}.step{grid-template-columns:70px 1fr;}}
+.second{margin-top:20px;color:var(--soft);}
+
+/* cancel */
+.cancel{background:var(--cream);}
+.cn-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px);}
+.cn{padding:30px;border-radius:var(--r);background:var(--chalk);}
+.cn h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:18px;}
+.cn ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);}
+.cn li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+.cn li b{font:800 1.5rem/1 var(--display);font-stretch:78%;color:var(--purple);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.cn li b.z{color:var(--blue-ink);}
+.cn li b.x{color:var(--magenta-ink);}
+.cn p.alt{margin-top:16px;color:var(--soft);}
+@media (max-width:760px){.cn-g{grid-template-columns:1fr;}}
+
+/* faq */
+.voices{background:var(--chalk);}
+.faq{border-top:2px solid var(--ink);max-width:1000px;margin-left:auto;}
+.faq details{border-bottom:1px solid var(--rule);}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:44px;padding:24px 0;font:700 clamp(1.4rem,2.6vw,2.1rem)/1.05 var(--display);font-stretch:80%;transition:color .2s ease;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary:hover{color:var(--purple);}
+.faq summary::after{content:"";flex:none;width:34px;height:34px;border-radius:50%;background:var(--purple) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23F6F8FB' stroke-width='2'%3E%3Cpath d='M8 3v10M3 8h10'/%3E%3C/svg%3E") center/14px no-repeat;transition:rotate .3s var(--out),background-color .2s ease;}
+.faq details[open] summary::after{rotate:45deg;background-color:var(--magenta-ink);}
+.faq details p{padding:0 0 26px;max-width:60ch;color:var(--soft);overflow:hidden;}
+
+/* contact */
+.contact{padding-bottom:clamp(60px,8vw,110px);background:var(--grad);}
+.contact .h2{font-size:clamp(2.6rem,8.4vw,8.4rem);max-width:12ch;}
+.contact-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,100px);margin-top:clamp(36px,5vw,70px);align-items:start;}
+.chan{display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:64px;padding:18px 0;border-bottom:1px solid var(--rule-d);font-weight:600;font-size:18px;text-decoration:none;transition:color .2s ease,padding .35s var(--out);}
+.chan:first-child{border-top:1.5px solid var(--chalk);}
+.chan:hover{color:#FFD9A8;padding-left:12px;}
+.chan span:last-child{font:400 14px var(--mono);font-variant-numeric:tabular-nums;color:#EDE6F7;overflow-wrap:anywhere;text-align:right;}
+.deadline{padding:30px;border-radius:var(--r);background:rgba(31,43,69,.55);display:grid;gap:14px;}
+.deadline h3{font-size:clamp(1.8rem,3vw,2.6rem);}
+.deadline p{color:#EDE6F7;}
+.big-tel{font:800 clamp(2.4rem,4.4vw,3.6rem)/1 var(--display);font-stretch:78%;font-variant-numeric:tabular-nums;color:#FFD9A8;text-decoration:none;}
+footer{padding:26px var(--pad);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--ink);color:#B6BFD3;border-top:1px solid var(--rule-d);}
+footer a{color:inherit;}
+@media (max-width:820px){.contact-g{grid-template-columns:1fr;}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation:none!important;}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Vai ai contenuti</a>
+
+<div class="pre dk" id="pre" aria-hidden="true">
+  <div class="sun" id="preSun"></div>
+  <div class="meta mono"><span>SERTOR Running Camp · Passo Oclini 2027</span><span>Salita</span></div>
+  <div class="lane"><i id="preBar"></i></div>
+  <div class="n"><span id="preN">0</span><small>m</small></div>
+</div>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<div class="rail" aria-hidden="true">
+  <svg viewBox="0 0 36 600">
+    <path id="trk" d="M18 598 C2 520 34 440 18 360 S2 200 18 120 S28 40 18 2" fill="none" stroke="#1F2B45" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+    <path id="trkOn" d="M18 598 C2 520 34 440 18 360 S2 200 18 120 S28 40 18 2" fill="none" stroke="#BC438A" stroke-width="4" stroke-linecap="round"/>
+    <circle id="dot" cx="18" cy="598" r="8" fill="#F07F00" stroke="#F6F8FB" stroke-width="3"/>
+  </svg>
+  <span class="km" id="km">0 m</span>
+</div>
+
+<header class="bar" id="bar">
+  <a class="logo" href="#top" aria-label="SERTOR Running Camp, inizio pagina"><img src="assets/mark.png" alt="" width="63" height="36"><b>SER<i>TOR</i></b></a>
+  <nav class="nav" aria-label="Principale">
+    <a href="#settimana">Settimana</a><a href="#programma">Programma</a><a href="#hotel">Hotel</a><a href="#tariffe">Tariffe</a><a href="#iscrizione">Iscrizione</a><a class="cta" href="#contatti">Prenota</a>
+  </nav>
+  <details class="menu"><summary>Menu</summary><div><a href="#settimana">Settimana</a><a href="#programma">Programma</a><a href="#hotel">Hotel</a><a href="#tariffe">Tariffe</a><a href="#iscrizione">Iscrizione</a><a href="#contatti">Prenota</a></div></details>
+</header>
+
+<main id="main">
+<div class="hero dk" id="top">
+  <svg class="ridge" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M-20 760 L240 470 L420 640 L720 250 L1010 620 L1180 480 L1460 760"/>
+    <path d="M-20 810 L180 600 L400 730 L700 380 L980 700 L1200 580 L1460 810"/>
+    <path d="M-20 860 L300 700 L560 800 L760 560 L1020 790 L1240 690 L1460 860"/>
+  </svg>
+  <div class="hero-grid">
+    <div>
+      <span class="date mono">Hotel Schwarzhorn · Passo Oclini (BZ) · 2.000 m</span>
+      <h1 id="h1">8–14 agosto 2027. <em>Running Camp.</em></h1>
+    </div>
+    <div class="hf" id="hf">
+      <div class="clip"><img src="assets/logo.png" alt="SERTOR Running Camp, Passo Oclini 2027" width="804" height="900" fetchpriority="high"></div>
+    </div>
+  </div>
+  <div>
+    <div class="hero-foot" id="heroFoot">
+      <p>Una settimana di corsa, trekking e serate insieme, a 2.000 metri di altitudine nelle Dolomiti. Sei notti in pensione completa, sette sedute di allenamento guidate.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contatti">Prenota il tuo posto <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+        <a class="btn ghost" href="#programma">Vedi il programma</a>
+      </div>
+    </div>
+    <div class="mq" aria-hidden="true"><div class="mq-in" id="mq">
+      <span>Running Camp<b>Passo Oclini 2027</b><b>6 notti in pensione completa</b><b>7 sedute di allenamento</b><b>3 trekking</b><b>Corno Bianco</b><b>&nbsp;</b></span><span>Running Camp<b>Passo Oclini 2027</b><b>6 notti in pensione completa</b><b>7 sedute di allenamento</b><b>3 trekking</b><b>Corno Bianco</b><b>&nbsp;</b></span>
+    </div></div>
+  </div>
+</div>
+
+<section class="numbers" aria-label="La settimana in numeri">
+  <p class="eyebrow mono">La settimana in numeri</p>
+  <div class="nums">
+    <div><div class="n"><span data-count="6">6</span></div><h3>Notti</h3><p>In pensione completa.</p></div>
+    <div><div class="n"><span data-count="7">7</span></div><h3>Sedute di allenamento</h3><p>Guidate dai coach.</p></div>
+    <div><div class="n"><span data-count="3">3</span></div><h3>Trekking</h3><p>Tra boschi, malghe e santuario.</p></div>
+    <div><div class="n"><span data-count="365">365</span></div><h3>Giorni</h3><p>Quelli che conterai per tornare.</p></div>
+  </div>
+</section>
+
+<section class="week" id="settimana">
+  <div class="hs" id="hs">
+    <div class="hs-track" id="hsTrack">
+      <div class="hs-intro">
+        <div><p class="eyebrow mono">La settimana</p><h2 class="h2">Giorno per <em>giorno</em></h2></div>
+        <div><p>Sei appuntamenti che non dimenticherai, tra pista, sentieri e rifugi.</p><p class="hint mono" style="margin-top:20px">Scorri <svg width="28" height="10" viewBox="0 0 28 10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 5h26M22 1l4 4-4 4"/></svg></p></div>
+      </div>
+      <article class="day"><div class="pn" aria-hidden="true">01</div><div><h3>Alba al Corno Bianco</h3><p class="mono where">Passo Oclini</p></div><p class="t">Salita al Corno Bianco per ammirare l'alba e gustarci la colazione al rientro in hotel.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">02</div><div><h3>Test della Velocità Critica</h3><p class="mono where">Pista di Cavalese</p></div><p class="t">In pista a Cavalese. Da lì elaboriamo i tuoi ritmi personali per tutta la settimana.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">03</div><div><h3>Long Run a Malga Ora</h3><p class="mono where">Nei boschi</p></div><p class="t">Il lungo della settimana nei boschi.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">04</div><div><h3>Ripetute e staffetta</h3><p class="mono where">Cavalese · Biolago di Predazzo</p></div><p class="t">Mattina in pista a Cavalese e staffetta finale a squadre. Pomeriggio al Biolago di Predazzo.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">05</div><div><h3>Escursione a Pietralba</h3><p class="mono where">Santuario di Pietralba</p></div><p class="t">Giornata intera in cammino verso il Santuario, con pranzo al sacco.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">06</div><div><h3>Tecnica, core e respirazione</h3><p class="mono where">Palestra e aperto</p></div><p class="t">Esercitazioni con elastici, potenziamento in palestra e lavoro sul respiro.</p></article>
+      <div class="hs-end"><p>Tutte le attività sono facoltative: ognuno partecipa a quanto è nel suo interesse.</p></div>
+    </div>
+    <div class="hs-bar" aria-hidden="true"><i id="hsBar"></i></div>
+  </div>
+</section>
+
+<section class="prog-s" id="programma">
+  <div class="head"><p class="eyebrow mono">Il programma completo</p><h2 class="h2">Passo Oclini, <em>8–14 agosto</em></h2></div>
+  <div class="ptable">
+    <div class="prow hd"><span>Giorno</span><span>Mattina</span><span>Pomeriggio</span><span>Sera</span></div>
+    <div class="prow" data-r><div class="d"><small>8 agosto</small>Domenica</div><div class="c no"><span>Mattina</span>–</div><div class="c"><span>Pomeriggio</span>Arrivo e sistemazione, check-in entro le 16. Presentazioni e consegna kit. Corsa lenta di adattamento al laghetto di Passo Oclini.</div><div class="c"><span>Sera</span>Creazione della bacheca degli obiettivi.</div></div>
+    <div class="prow" data-r><div class="d"><small>9 agosto</small>Lunedì</div><div class="c"><span>Mattina</span>Test della Velocità Critica in pista a Cavalese: a ognuno il suo ritmo, per personalizzare gli allenamenti.</div><div class="c"><span>Pomeriggio</span>Trekking.</div><div class="c"><span>Sera</span>Incontro: analisi del test della Velocità Critica e come scegliere la scarpa giusta.</div></div>
+    <div class="prow" data-r><div class="d"><small>10 agosto</small>Martedì</div><div class="c"><span>Mattina</span>Alba al Corno Bianco. Respirazione.</div><div class="c"><span>Pomeriggio</span>Tecnica di corsa con elastici. Corsa lenta.</div><div class="c"><span>Sera</span>Incontro su nutrizione e integrazione sportiva.</div></div>
+    <div class="prow" data-r><div class="d"><small>11 agosto</small>Mercoledì</div><div class="c"><span>Mattina</span>Long Run a Malga Ora.</div><div class="c"><span>Pomeriggio</span>Potenziamento muscolare in palestra.</div><div class="c"><span>Sera</span>Tombola con ricchi premi.</div></div>
+    <div class="prow" data-r><div class="d"><small>12 agosto</small>Giovedì</div><div class="c"><span>Mattina</span>Escursione al Santuario di Pietralba, giornata intera con pranzo al sacco.</div><div class="c"><span>Pomeriggio</span>Escursione al Santuario di Pietralba. Merenda in malga.</div><div class="c"><span>Sera</span>Incontro a sorpresa.</div></div>
+    <div class="prow" data-r><div class="d"><small>13 agosto</small>Venerdì</div><div class="c"><span>Mattina</span>Allenamento di ripetute a Cavalese e staffetta finale.</div><div class="c"><span>Pomeriggio</span>Biolago di Predazzo.</div><div class="c"><span>Sera</span>Premiazioni di fine Running Camp e karaoke.</div></div>
+    <div class="prow" data-r><div class="d"><small>14 agosto</small>Sabato</div><div class="c"><span>Mattina</span>Core. Fartlek. Rilettura degli obiettivi (camere libere entro le 9:30).</div><div class="c no"><span>Pomeriggio</span>–</div><div class="c no"><span>Sera</span>–</div></div>
+  </div>
+  <p class="note">Il programma può variare per meteo, esigenze del gruppo o motivi organizzativi degli impianti. Tutte le attività sono facoltative: ognuno partecipa a quanto è nel suo interesse, fermo restando la quota del Running Camp.</p>
+  <p style="margin-top:24px" data-r><a class="btn ink" href="SERTOR-Running-Camp-2027.pdf" download>Scarica il PDF <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M3 14h10"/></svg></a></p>
+</section>
+
+<section class="eve dk" id="serate">
+  <div class="head"><p class="eyebrow mono" style="color:var(--soft-d)">Le serate</p><h2 class="h2">Le serate <em>insieme</em></h2></div>
+  <div class="eve-g">
+    <article class="card" data-r><p class="k mono">Domenica</p><h3>Bacheca degli obiettivi</h3><p>Ti guidiamo a scegliere l'obiettivo giusto per te: realistico ma stimolante. Il confronto con i coach lo rende anche sostenibile.</p></article>
+    <article class="card" data-r><p class="k mono">Lunedì · Martedì · Giovedì</p><h3>Tre incontri a tema</h3><p>Analizziamo il test svolto e valutiamo la scarpa migliore per te. Talk di approfondimento su integrazione e nutrizione: una risposta a tutte le tue curiosità. Talk con un ospite a sorpresa.</p></article>
+    <article class="card" data-r><p class="k mono">Mercoledì · Venerdì</p><h3>Tombola e karaoke</h3><p>Serata di gioco e divertimento che si concluderà con canti e musica.</p></article>
+  </div>
+  <div class="tl" id="giornata">
+    <h3 data-r>La giornata tipo</h3>
+    <div class="tl-g">
+      <div data-r><b>8:00</b><span class="mono">Colazione</span></div>
+      <div data-r><b>9:30</b><span class="mono">Allenamento</span></div>
+      <div data-r><b>12:30</b><span class="mono">Pranzo</span></div>
+      <div data-r><b>16:00</b><span class="mono">Attività</span></div>
+      <div data-r><b>19:30</b><span class="mono">Cena</span></div>
+      <div data-r><b>21:00</b><span class="mono">Serata</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="hotel" id="hotel">
+  <div class="hotel-g">
+    <figure data-r><div class="clip"><img src="assets/hotel.jpg" alt="Veduta aerea dell'Hotel Schwarzhorn a Passo Oclini" loading="lazy" width="1100" height="408"></div><figcaption class="mono">Hotel Schwarzhorn · 2.000 m</figcaption></figure>
+    <div>
+      <p class="eyebrow mono">L'hotel e cosa comprende</p>
+      <h2 class="h2" style="margin-bottom:clamp(24px,4vw,48px)">Alloggiare <em>a 2.000 metri</em></h2>
+      <p class="lead" style="margin-top:0;margin-bottom:28px">Albergo alpino a Passo Oclini, immerso nelle Dolomiti. I sentieri partono direttamente dall'albergo: Corno Bianco, Corno Nero e altri.</p>
+      <ul class="facts">
+        <li data-r><b>Quota Running Camp €400</b><span>Allenamenti collettivi guidati da noi e kit del Running Camp. Non comprende extra come spostamenti, autobus, ingressi agli impianti e guide turistiche.</span></li>
+        <li data-r><b>Quota hotel</b><span>Pensione completa (colazione, pranzo e cena) con acqua e vino inclusi, per sei notti.</span></li>
+        <li data-r><b>Check-in e check-out</b><span>Check-in entro le 16:00 di domenica. Camere da liberare entro le 9:30 di sabato.</span></li>
+        <li data-r><b>Servizio camere</b><span>Pulizia ogni due giorni, cambio asciugamani due volte a settimana. Uso della sauna non compreso.</span></li>
+        <li data-r><b>Massaggio di scarico</b><span>Servizio extra in loco, con figura dedicata, su prenotazione e con costo a parte.</span></li>
+      </ul>
+      <div class="stats mono" data-r><span>3 punti di partenza</span><span>9 percorsi</span><span>4 percorsi speciali</span><span>3 varianti</span></div>
+    </div>
+  </div>
+  <div class="strip">
+    <figure data-r><div class="clip"><img src="assets/hero-1.jpg" alt="Il gruppo del Running Camp sulla pista di Cavalese" loading="lazy" width="1100" height="408"></div><figcaption class="mono">Pista di Cavalese</figcaption></figure>
+    <figure data-r><div class="clip"><img src="assets/gruppo.jpg" alt="Il gruppo del Running Camp in vetta" loading="lazy" width="1100" height="408"></div><figcaption class="mono">In vetta</figcaption></figure>
+    <figure data-r><div class="clip"><img src="assets/hero-2.jpg" alt="Runner che ridono dopo l'allenamento" loading="lazy" width="1100" height="408"></div><figcaption class="mono">Dopo l'allenamento</figcaption></figure>
+  </div>
+</section>
+
+<section class="price-s" id="tariffe">
+  <div class="head"><p class="eyebrow mono">Tariffe</p><h2 class="h2">Scegli <em>la tua camera</em></h2><p class="lead">Il numero di persone per camera lo scegli tu e va indicato al momento dell'iscrizione.</p></div>
+  <div class="pg">
+    <article class="pc" data-r>
+      <h3>Camera 3/5 persone</h3>
+      <div class="amt">760<small>€</small></div>
+      <p class="sub">6 notti in pensione completa e quota Running Camp, a persona.</p>
+      <dl><div><dt>Hotel · 6 notti</dt><dd>€360</dd></div><div><dt>Quota Running Camp</dt><dd>€400</dd></div></dl>
+      <a class="btn" href="#contatti">Prenota</a>
+    </article>
+    <article class="pc" data-r>
+      <h3>Camera doppia</h3>
+      <div class="amt">880<small>€</small></div>
+      <p class="sub">6 notti in pensione completa e quota Running Camp, a persona.</p>
+      <dl><div><dt>Hotel · 6 notti</dt><dd>€480</dd></div><div><dt>Quota Running Camp</dt><dd>€400</dd></div></dl>
+      <a class="btn" href="#contatti">Prenota</a>
+    </article>
+    <article class="pc" data-r>
+      <h3>Camera singola</h3>
+      <div class="amt">970<small>€</small></div>
+      <p class="sub">6 notti in pensione completa e quota Running Camp.</p>
+      <dl><div><dt>Hotel · 6 notti</dt><dd>€570</dd></div><div><dt>Quota Running Camp</dt><dd>€400</dd></div></dl>
+      <a class="btn" href="#contatti">Prenota</a>
+    </article>
+  </div>
+  <div class="price-note" data-r>
+    <p><b>Pensione completa</b> con acqua e vino inclusi. La quota Running Camp di €400 comprende tutti gli allenamenti guidati e il kit. Tassa di soggiorno di €3 al giorno a persona non inclusa.</p>
+    <p><b>Accompagnatori.</b> Chi non corre alloggia (previa disponibilità) alle stesse condizioni, senza quota Running Camp.</p>
+    <p><b>Massaggio di scarico.</b> In loco sarà disponibile, come servizio extra, con figura dedicata.</p>
+  </div>
+</section>
+
+<section class="sign" id="iscrizione">
+  <div class="head"><p class="eyebrow mono">Come iscriversi</p><h2 class="h2">Tre passi per <em>il tuo posto</em></h2></div>
+  <div class="steps">
+    <article class="step" data-r><div class="num" aria-hidden="true">01</div><div><h3>Scrivimi</h3><p>Scrivimi al <a href="https://wa.me/393206349783">320 634 9783</a> dicendomi che vuoi partecipare e come preferisci alloggiare. Ti aggiungo al gruppo WhatsApp dedicato al Running Camp.</p></div></article>
+    <article class="step" data-r><div class="num" aria-hidden="true">02</div><div><h3>Versa le due caparre</h3><p>Entro il 30 aprile 2027, con i due bonifici qui sotto: uno per il Running Camp e uno per l'hotel.</p></div></article>
+    <article class="step" data-r><div class="num" aria-hidden="true">03</div><div><h3>Invia le copie</h3><p>Manda copia di entrambi i bonifici a <a href="mailto:radunirunningcoach@outlook.it">radunirunningcoach@outlook.it</a>. Ti confermo l'iscrizione e il posto è tuo.</p></div></article>
+  </div>
+  <div class="bank">
+    <article class="bk" data-r>
+      <h3>Bonifico 1 · Quota Running Camp</h3>
+      <div class="amt">€250<small>di caparra, entro il 30/04/2027</small></div>
+      <p class="mono" style="opacity:.85">Quota Running Camp totale €400</p>
+      <dl>
+        <div><dt>Intestato a</dt><dd>VETTOR GIULIA</dd></div>
+        <div><dt>IBAN</dt><dd class="iban"><span id="ib1">IT22B0538766690000002913240</span><button class="copy" type="button" data-copy="ib1">Copia</button></dd></div>
+        <div><dt>Causale</dt><dd>RUNNING CAMP 2027 · PASSO OCLINI</dd></div>
+        <div><dt>Copia a</dt><dd>radunirunningcoach@outlook.it</dd></div>
+      </dl>
+    </article>
+    <article class="bk" data-r>
+      <h3>Bonifico 2 · Caparra hotel</h3>
+      <div class="amt">€200<small>di caparra, entro il 30/04/2027</small></div>
+      <p class="mono" style="opacity:.85">Il resto si salda in struttura</p>
+      <dl>
+        <div><dt>Intestato a</dt><dd>Jochgrimm GmbH</dd></div>
+        <div><dt>IBAN</dt><dd class="iban"><span id="ib2">IT56F0604558670000000078600</span><button class="copy" type="button" data-copy="ib2">Copia</button></dd></div>
+        <div><dt>Causale</dt><dd>Gruppo RunningCoach Cognome Nome · 8/08 – 14/08</dd></div>
+        <div><dt>Copia a</dt><dd>radunirunningcoach@outlook.it</dd></div>
+      </dl>
+    </article>
+  </div>
+  <p class="second" data-r>La seconda rata di €150 si salda più avanti: comunicherò sul gruppo WhatsApp quando sarà il momento.</p>
+  <div class="head" style="margin:clamp(48px,7vw,90px) 0 24px;max-width:none" data-r><h3 style="font-size:clamp(1.8rem,3vw,2.6rem)">Camere e accompagnatori</h3><p class="lead" style="margin-top:14px">Al momento dell'iscrizione scrivimi e dimmi in che stanza vorresti stare: singola, doppia, tripla o più. Se vuoi condividere la camera con altri runner partecipanti mandami un messaggio e troviamo la soluzione migliore. Gli accompagnatori che non partecipano al Running Camp alloggiano (previa disponibilità) alle stesse condizioni e senza quota Running Camp.</p></div>
+</section>
+
+<section class="cancel" id="cancellazione">
+  <div class="head"><p class="eyebrow mono">Cancellazione</p><h2 class="h2">Se devi <em>rinunciare</em></h2><p class="lead">Cancellazione gratuita fino al 6 giugno 2027.</p></div>
+  <div class="cn-g">
+    <article class="cn" data-r>
+      <h3>Quota Running Camp</h3>
+      <ul>
+        <li><span>Fino al 6 giugno 2027</span><b class="z">Nessuna spesa</b></li>
+        <li><span>Dal 7 giugno al 18 luglio 2027</span><b>30% · €120</b></li>
+        <li><span>Dal 19 luglio 2027</span><b class="x">70% · €280</b></li>
+      </ul>
+      <p class="alt">In alternativa potrai sempre usare il 100% della quota per i servizi di coaching per il running.</p>
+    </article>
+    <article class="cn" data-r>
+      <h3>Hotel</h3>
+      <ul>
+        <li><span>Fino al 6 giugno 2027</span><b class="z">Nessuna spesa</b></li>
+        <li><span>Dal 7 giugno al 18 luglio 2027</span><b>30% del soggiorno</b></li>
+        <li><span>Dal 19 luglio al 5 agosto 2027</span><b>70% del soggiorno</b></li>
+        <li><span>Dal 6 agosto 2027, o in caso di arrivo ritardato o partenza anticipata</span><b class="x">100% del soggiorno</b></li>
+      </ul>
+    </article>
+  </div>
+  <p class="note" data-r>Ai sensi del Codice del Consumo non è contemplato il diritto di recesso: l'hotel accorda tale diritto alle condizioni di storno indicate, ai sensi dell'art. 1382 del Codice Civile.</p>
+</section>
+
+<section class="voices" id="faq">
+  <div class="head"><p class="eyebrow mono">FAQ</p><h2 class="h2">Domande <em>frequenti</em></h2></div>
+  <div class="faq">
+    <details open><summary>Devo partecipare a tutte le attività?</summary><p>No. Tutte le attività sono facoltative: ognuno partecipa a quanto è nel suo interesse, fermo restando la quota del Running Camp.</p></details>
+    <details><summary>Cosa comprende la quota di €400?</summary><p>Tutti gli allenamenti collettivi guidati e il kit del Running Camp. Non comprende extra come spostamenti, autobus, ingressi agli impianti e guide turistiche.</p></details>
+    <details><summary>Posso condividere la camera con altri runner?</summary><p>Sì. Il numero di persone per camera lo scegli tu e va indicato all'iscrizione. Se vuoi condividere la camera con altri partecipanti scrivimi e troviamo la soluzione migliore.</p></details>
+    <details><summary>Può venire anche chi non corre?</summary><p>Gli accompagnatori che non corrono alloggiano, previa disponibilità, alle stesse condizioni e senza quota Running Camp.</p></details>
+    <details><summary>Fino a quando posso iscrivermi?</summary><p>Le iscrizioni sono aperte fino al 30 aprile 2027 o fino a esaurimento dei posti disponibili in hotel.</p></details>
+    <details><summary>Il programma può cambiare?</summary><p>Sì, per meteo, esigenze del gruppo o motivi organizzativi degli impianti.</p></details>
+  </div>
+</section>
+
+<section class="contact dk" id="contatti">
+  <p class="eyebrow mono" style="color:#EDE6F7">Prenota il tuo posto</p>
+  <h2 class="h2">Ci vediamo <em>a 2.000 metri</em></h2>
+  <div class="contact-g">
+    <div data-r>
+      <a class="chan" href="https://wa.me/393206349783"><span>WhatsApp</span><span>320 634 9783</span></a>
+      <a class="chan" href="tel:+393206349783"><span>Telefono</span><span>320 634 9783</span></a>
+      <a class="chan" href="mailto:radunirunningcoach@outlook.it"><span>Email</span><span>radunirunningcoach@outlook.it</span></a>
+    </div>
+    <div class="deadline" data-r>
+      <h3>Iscrizioni aperte</h3>
+      <p>Fino al 30 aprile 2027 o fino a esaurimento dei posti disponibili in hotel. Cancellazione gratuita fino al 6 giugno.</p>
+      <a class="big-tel" href="tel:+393206349783">320 634 9783</a>
+      <div class="cta-row"><a class="btn" href="https://wa.me/393206349783">Scrivimi su WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><span>SERTOR Running Camp · Passo Oclini 2027 · <a href="/">alexrunningcoach.it</a></span><span class="mono">Il programma può variare per meteo o esigenze del gruppo</span></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+  var root=document.documentElement;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ok=!!(window.gsap&&window.ScrollTrigger&&window.SplitText&&window.Observer&&window.MotionPathPlugin&&window.DrawSVGPlugin&&window.ScrollToPlugin&&window.CustomEase);
+
+  /* progressive enhancement: if anything is missing, drop the preloader and show everything */
+  function bail(){root.classList.remove('js');var p=$('#pre');if(p)p.style.display='none';}
+  setTimeout(function(){if(!window.__ready)bail();},8000);
+
+  /* close mobile menu on pick */
+  $$('.menu a').forEach(function(a){a.addEventListener('click',function(){$('.menu').removeAttribute('open');});});
+
+  /* IBAN copy (works without GSAP) */
+  $$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var t=document.getElementById(b.getAttribute('data-copy')).textContent.trim();
+    var done=function(){var o=b.textContent;b.textContent='Copiato';setTimeout(function(){b.textContent=o;},1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+    else{var r=document.createRange();r.selectNodeContents(document.getElementById(b.getAttribute('data-copy')));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  });});
+
+  if(!ok||reduce){if(!ok)bail();window.__ready=1;root.classList.remove('js');var pp=$('#pre');if(pp)pp.style.display='none';return;}
+
+  gsap.registerPlugin(ScrollTrigger,SplitText,Observer,MotionPathPlugin,DrawSVGPlugin,ScrollToPlugin,CustomEase);
+  CustomEase.create('hop','.9,0,.1,1');
+  ScrollTrigger.config({ignoreMobileResize:true});
+  window.scrollTo(0,0);
+  var mm=gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)',function(){
+    var introDone=false,heroLines=null,lenis=null,cleanups=[];
+    window.__ready=1;
+
+    /* smooth scroll: Lenis driven by the GSAP ticker */
+    if(window.Lenis){
+      lenis=new Lenis({lerp:.1});
+      lenis.on('scroll',ScrollTrigger.update);
+      var tick=function(t){lenis.raf(t*1000);};
+      gsap.ticker.add(tick);gsap.ticker.lagSmoothing(0);
+      cleanups.push(function(){gsap.ticker.remove(tick);lenis.destroy();lenis=null;});
+      lenis.stop();
+    }
+    $$('a[href^="#"]').forEach(function(a){
+      var h=function(e){var id=a.getAttribute('href');var t=id==='#top'?0:$(id);if(t===null)return;e.preventDefault();
+        if(lenis)lenis.scrollTo(t,{offset:0,duration:1.4});else gsap.to(window,{scrollTo:t,duration:1.2,ease:'power3.inOut'});};
+      a.addEventListener('click',h);cleanups.push(function(){a.removeEventListener('click',h);});
+    });
+
+    /* hero */
+    SplitText.create('#h1',{type:'lines',mask:'lines',linesClass:'ln',autoSplit:true,onSplit:function(self){
+      var t=gsap.from(self.lines,{yPercent:115,duration:1.2,ease:'expo.out',stagger:.1,paused:true});
+      heroLines=t;if(introDone)t.progress(1);
+      return t;
+    }});
+    gsap.set('.ridge path',{drawSVG:'0%'});
+    gsap.set('#hf .clip',{clipPath:'inset(100% 0% 0% 0% round 20px)'});
+    gsap.set('#hf img',{scale:.8});
+    gsap.set('.hero .date',{autoAlpha:0,y:12});
+    gsap.set('#heroFoot > *',{autoAlpha:0,y:24});
+    gsap.set('.bar',{autoAlpha:0,y:-20});
+
+    var intro=gsap.timeline({paused:true,defaults:{ease:'expo.out'},onComplete:function(){introDone=true;}});
+    intro.call(function(){if(heroLines)heroLines.play();},null,.05)
+      .to('.ridge path',{drawSVG:'100%',duration:2.4,stagger:.18,ease:'power2.inOut'},0)
+      .to('#hf .clip',{clipPath:'inset(0% 0% 0% 0% round 20px)',duration:1.5,ease:'hop'},.1)
+      .to('#hf img',{scale:1,duration:1.8,ease:'power3.out'},.1)
+      .to('.hero .date',{autoAlpha:1,y:0,duration:.8},.2)
+      .to('#heroFoot > *',{autoAlpha:1,y:0,duration:1,stagger:.12},.6)
+      .to('.bar',{autoAlpha:1,y:0,duration:.9},.7)
+      .call(function(){if(lenis)lenis.start();ScrollTrigger.refresh();},null,1.2);
+
+    /* preloader: altimeter 0 to 2000 m, sun rises, curtain lifts */
+    var n=$('#preN'),pre=$('#pre'),c={v:0};
+    gsap.set('#preSun',{yPercent:60,autoAlpha:.2});
+    var pl=gsap.timeline({onComplete:function(){pre.style.display='none';root.classList.remove('js');}});
+    pl.to(c,{v:2000,duration:1.9,ease:'power2.inOut',onUpdate:function(){n.textContent=Math.round(c.v).toLocaleString('it-IT');}},0)
+      .to('#preBar',{scaleX:1,duration:1.9,ease:'power2.inOut'},0)
+      .to('#preSun',{yPercent:0,autoAlpha:.95,duration:1.9,ease:'power2.out'},0)
+      .to('#pre .n,#pre .meta,#pre .lane,#preSun',{autoAlpha:0,y:-30,duration:.5,ease:'power2.in'},'>.1')
+      .to(pre,{yPercent:-100,duration:1.1,ease:'hop'},'>-.1')
+      .add(function(){intro.play();},'<.35');
+
+    /* rail: dot climbs, trail draws, altimeter counts */
+    var km=$('#km');
+    var railST={trigger:document.documentElement,start:'top top',end:'max',scrub:.6};
+    gsap.to('#dot',{motionPath:{path:'#trk',align:'#trk',alignOrigin:[.5,.5]},ease:'none',scrollTrigger:railST});
+    gsap.fromTo('#trkOn',{drawSVG:'0% 0%'},{drawSVG:'0% 100%',ease:'none',scrollTrigger:railST});
+    gsap.to('#prog',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.documentElement,start:'top top',end:'max',scrub:true,onUpdate:function(s){km.textContent=Math.round(s.progress*2000).toLocaleString('it-IT')+' m';}}});
+
+    /* hero: logo card parallax, marquee that speeds up with scroll */
+    gsap.to('#hf',{yPercent:-6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    var mq=gsap.to('#mq',{xPercent:-50,duration:34,ease:'none',repeat:-1});
+    var boost=gsap.quickTo(mq,'timeScale',{duration:.8,ease:'power3.out'});
+    Observer.create({type:'wheel,touch,scroll',tolerance:4,onChangeY:function(s){boost(Math.min(7,1+Math.abs(s.velocityY)/250));},onStop:function(){boost(1);}});
+
+    /* section titles */
+    $$('.h2').forEach(function(h){
+      SplitText.create(h,{type:'lines',mask:'lines',linesClass:'ln',autoSplit:true,onSplit:function(self){
+        return gsap.from(self.lines,{yPercent:115,duration:1.1,ease:'expo.out',stagger:.09,scrollTrigger:{trigger:h,start:'top 88%',once:true}});
+      }});
+    });
+    gsap.from('.hotel figure .clip',{clipPath:'inset(0% 0% 100% 0% round 20px)',duration:1.4,ease:'hop',scrollTrigger:{trigger:'.hotel figure',start:'top 82%',once:true}});
+    gsap.fromTo('.hotel figure img',{scale:1.2},{scale:1,ease:'none',scrollTrigger:{trigger:'.hotel figure',start:'top bottom',end:'bottom top',scrub:true}});
+
+    /* generic reveals, batched */
+    gsap.set('[data-r]',{autoAlpha:0,y:34});
+    ScrollTrigger.batch('[data-r]',{start:'top 90%',once:true,onEnter:function(b){gsap.to(b,{autoAlpha:1,y:0,duration:.9,stagger:.12,ease:'power3.out',overwrite:true});}});
+
+    /* count up */
+    $$('[data-count]').forEach(function(el){
+      var end=+el.getAttribute('data-count'),o={v:0};el.textContent='0';
+      ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:function(){
+        gsap.to(o,{v:end,duration:2.2,ease:'power3.out',onUpdate:function(){el.textContent=Math.round(o.v);},onComplete:function(){el.textContent=end;}});
+      }});
+    });
+
+    /* nav state */
+    var links=$$('.nav a');
+    links.forEach(function(a){var t=$(a.getAttribute('href'));if(!t)return;
+      ScrollTrigger.create({trigger:t,start:'top 50%',end:'bottom 50%',onToggle:function(s){if(s.isActive){links.forEach(function(x){x.removeAttribute('aria-current');});a.setAttribute('aria-current','true');}else a.removeAttribute('aria-current');}});});
+
+    /* faq: height tween */
+    $$('.faq details').forEach(function(d){
+      var h=function(){if(!d.open)return;var p=$('p',d);gsap.fromTo(p,{height:0,autoAlpha:0},{height:'auto',autoAlpha:1,duration:.5,ease:'power3.out',onComplete:function(){p.style.height='';ScrollTrigger.refresh();}});};
+      d.addEventListener('toggle',h);cleanups.push(function(){d.removeEventListener('toggle',h);});
+    });
+
+    /* magnetic buttons */
+    if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+      $$('.btn').forEach(function(b){
+        var xt=gsap.quickTo(b,'x',{duration:.7,ease:'elastic.out(1,.55)'}),yt=gsap.quickTo(b,'y',{duration:.7,ease:'elastic.out(1,.55)'});
+        var mv=function(e){var r=b.getBoundingClientRect();xt((e.clientX-r.left-r.width/2)*.28);yt((e.clientY-r.top-r.height/2)*.4);};
+        var lv=function(){xt(0);yt(0);};
+        b.addEventListener('pointermove',mv);b.addEventListener('pointerleave',lv);
+        cleanups.push(function(){b.removeEventListener('pointermove',mv);b.removeEventListener('pointerleave',lv);});
+      });
+    }
+
+    /* desktop only: horizontal week */
+    var desk=gsap.matchMedia();
+    desk.add('(min-width: 900px) and (min-height: 600px)',function(){
+      var sec=$('#settimana'),tr=$('#hsTrack'),hs=$('#hs');
+      sec.classList.add('is-hs');
+      var dist=function(){return Math.max(0,tr.scrollWidth-hs.clientWidth);};
+      var tw=gsap.to(tr,{x:function(){return -dist();},ease:'none',scrollTrigger:{trigger:hs,pin:true,scrub:1,start:'top top',end:function(){return '+='+dist();},invalidateOnRefresh:true,anticipatePin:1}});
+      gsap.to('#hsBar',{scaleX:1,ease:'none',scrollTrigger:{trigger:hs,start:'top top',end:function(){return '+='+dist();},scrub:true,invalidateOnRefresh:true}});
+      $$('.day').forEach(function(p){
+        gsap.from($$('.pn,h3,.where,.t',p),{autoAlpha:0,y:40,duration:.8,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:p,containerAnimation:tw,start:'left 90%',toggleActions:'play none none reverse'}});
+      });
+      return function(){sec.classList.remove('is-hs');};
+    });
+    cleanups.push(function(){desk.revert();});
+
+    /* mobile: days reveal in the flow */
+    gsap.matchMedia().add('(max-width: 899px)',function(){
+      $$('.day').forEach(function(s){gsap.from(s,{autoAlpha:0,y:30,duration:.8,scrollTrigger:{trigger:s,start:'top 90%',once:true}});});
+    });
+    $$('.step').forEach(function(s){ s.removeAttribute('data-r'); gsap.set(s,{autoAlpha:0,y:30}); ScrollTrigger.create({trigger:s,start:'top 90%',once:true,onEnter:function(){gsap.to(s,{autoAlpha:1,y:0,duration:.8,ease:'power3.out'});}}); });
+
+    var rf=function(){ScrollTrigger.refresh();};
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(rf);
+    addEventListener('load',rf);
+
+    return function(){cleanups.forEach(function(f){f();});};
+  });
+})();
+</script>
+</body>
+</html>
