@@ -166,6 +166,7 @@ section{position:relative;padding:clamp(80px,11vw,160px) var(--pad);}
 .day:nth-of-type(4){--c:var(--purple);}
 .day:nth-of-type(5){--c:var(--blue-ink);}
 .day:nth-of-type(6){--c:var(--magenta-ink);}
+.day:nth-of-type(7){--c:var(--purple);}
 .hs-end{flex:0 0 min(360px,80vw);display:grid;align-content:center;color:var(--soft);font-size:18px;padding-left:10px;}
 .hs-end p{max-width:28ch;}
 .hs-bar{margin:28px var(--pad) 0;height:3px;background:var(--rule);border-radius:3px;overflow:hidden;display:none;}
@@ -229,18 +230,19 @@ section{position:relative;padding:clamp(80px,11vw,160px) var(--pad);}
 .facts li{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--rule);}
 .facts li b{font:800 clamp(1.2rem,1.8vw,1.5rem)/1.05 var(--display);font-stretch:80%;color:var(--purple);}
 .facts li span{color:var(--soft);}
-.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.stats span{border-radius:999px;padding:9px 16px;background:var(--ink);color:var(--chalk);}
 @media (max-width:860px){.hotel-g{grid-template-columns:1fr;}.hotel figure{position:relative;top:0;}.facts li{grid-template-columns:1fr;gap:4px;}}
 
-/* gallery strip */
-.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-top:clamp(40px,6vw,80px);}
-.strip figure{margin:0;border-radius:var(--r);background:var(--chalk-2);padding:var(--p-in);}
-.strip .clip{border-radius:var(--r-in);overflow:hidden;}
-.strip img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:scale .9s var(--out);}
-.strip figure:hover img{scale:1.05;}
-.strip figcaption{padding:10px 8px 4px;color:var(--soft);}
-@media (max-width:700px){.strip{grid-template-columns:1fr;}}
+/* photo carousels: auto-scrolling, pause on hover */
+.gal{overflow:hidden;padding:clamp(20px,3vw,40px) 0;background:var(--chalk);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.gal-in{display:flex;gap:clamp(12px,1.6vw,20px);width:max-content;animation:gal 70s linear infinite;}
+.gal.rev .gal-in{animation-direction:reverse;animation-duration:80s;}
+.gal:hover .gal-in{animation-play-state:paused;}
+.gal figure{margin:0;flex:none;height:clamp(260px,36vw,420px);border-radius:var(--r-in);overflow:hidden;background:var(--chalk-2);}
+.gal img{height:100%;width:auto;max-width:none;}
+@keyframes gal{to{transform:translateX(calc(-50% - clamp(6px,.8vw,10px)));}}
+.gal-wrap{background:var(--chalk);padding:0;}
+.gal-wrap .eyebrow{padding:clamp(48px,6vw,80px) var(--pad) 0;margin-bottom:0;color:var(--soft);}
+@media (prefers-reduced-motion:reduce){.gal{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}.gal-in{animation:none;}.gal figure[aria-hidden]{display:none;}}
 
 /* prices */
 .price-s{background:var(--chalk-2);}
@@ -284,7 +286,7 @@ section{position:relative;padding:clamp(80px,11vw,160px) var(--pad);}
 .copy:hover{background:rgba(255,255,255,.3);}
 .copy:active{scale:.96;}
 @media (max-width:860px){.bank{grid-template-columns:1fr;}.step{grid-template-columns:70px 1fr;}}
-.second{margin-top:20px;color:var(--soft);}
+.bk .rata{margin-top:10px;color:#EDE6F7;font-size:15px;max-width:44ch;}
 
 /* cancel */
 .cancel{background:var(--cream);}
@@ -397,19 +399,22 @@ footer a{color:inherit;}
   </div>
 </section>
 
+<section class="gal-wrap" aria-label="Foto dei raduni passati"><p class="eyebrow mono">Dai nostri raduni</p><div class="gal" role="region" aria-label="Foto dei raduni passati"><div class="gal-in"><figure><img src="assets/gallery/a1.jpg" alt="Il gruppo del Running Camp in maglia arancione" width="600" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a2.jpg" alt="Gruppo sulla pista rossa" width="374" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a3.jpg" alt="Foto di gruppo in pista" width="450" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a4.jpg" alt="Gruppo di runner sul prato" width="801" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a5.jpg" alt="Salita in gruppo sul sentiero" width="600" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a6.jpg" alt="Il gruppo in maglia azzurra" width="800" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a7.jpg" alt="Cinque alla fine dell'allenamento" width="600" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/a8.jpg" alt="Corsa in gruppo lungo la strada" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a1.jpg" alt="" width="600" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a2.jpg" alt="" width="374" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a3.jpg" alt="" width="450" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a4.jpg" alt="" width="801" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a5.jpg" alt="" width="600" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a6.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a7.jpg" alt="" width="600" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/a8.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure></div></div></section>
+
 <section class="week" id="settimana">
   <div class="hs" id="hs">
     <div class="hs-track" id="hsTrack">
       <div class="hs-intro">
         <div><p class="eyebrow mono">La settimana</p><h2 class="h2">Giorno per <em>giorno</em></h2></div>
-        <div><p>Sei appuntamenti che non dimenticherai, tra pista, sentieri e rifugi.</p><p class="hint mono" style="margin-top:20px">Scorri <svg width="28" height="10" viewBox="0 0 28 10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 5h26M22 1l4 4-4 4"/></svg></p></div>
+        <div><p>Sette giorni che non dimenticherai, tra pista, sentieri e rifugi.</p><p class="hint mono" style="margin-top:20px">Scorri <svg width="28" height="10" viewBox="0 0 28 10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 5h26M22 1l4 4-4 4"/></svg></p></div>
       </div>
       <article class="day"><div class="pn" aria-hidden="true">01</div><div><h3>Alba al Corno Bianco</h3><p class="mono where">Passo Oclini</p></div><p class="t">Salita al Corno Bianco per ammirare l'alba e gustarci la colazione al rientro in hotel.</p></article>
       <article class="day"><div class="pn" aria-hidden="true">02</div><div><h3>Test della Velocità Critica</h3><p class="mono where">Pista di Cavalese</p></div><p class="t">In pista a Cavalese. Da lì elaboriamo i tuoi ritmi personali per tutta la settimana.</p></article>
       <article class="day"><div class="pn" aria-hidden="true">03</div><div><h3>Long Run a Malga Ora</h3><p class="mono where">Nei boschi</p></div><p class="t">Il lungo della settimana nei boschi.</p></article>
       <article class="day"><div class="pn" aria-hidden="true">04</div><div><h3>Ripetute e staffetta</h3><p class="mono where">Cavalese · Biolago di Predazzo</p></div><p class="t">Mattina in pista a Cavalese e staffetta finale a squadre. Pomeriggio al Biolago di Predazzo.</p></article>
       <article class="day"><div class="pn" aria-hidden="true">05</div><div><h3>Escursione a Pietralba</h3><p class="mono where">Santuario di Pietralba</p></div><p class="t">Giornata intera in cammino verso il Santuario, con pranzo al sacco.</p></article>
-      <article class="day"><div class="pn" aria-hidden="true">06</div><div><h3>Tecnica, core e respirazione</h3><p class="mono where">Palestra e aperto</p></div><p class="t">Esercitazioni con elastici, potenziamento in palestra e lavoro sul respiro.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">06</div><div><h3>Tecnica e respirazione</h3><p class="mono where">Palestra e aperto</p></div><p class="t">Esercitazioni con elastici, potenziamento in palestra e lavoro sul respiro.</p></article>
+      <article class="day"><div class="pn" aria-hidden="true">07</div><div><h3>Fartlek e Core</h3><p class="mono where">Passo Oclini</p></div><p class="t">Chiudiamo il Running Camp in bellezza.</p></article>
       <div class="hs-end"><p>Tutte le attività sono facoltative: ognuno partecipa a quanto è nel suo interesse.</p></div>
     </div>
     <div class="hs-bar" aria-hidden="true"><i id="hsBar"></i></div>
@@ -466,15 +471,11 @@ footer a{color:inherit;}
         <li data-r><b>Servizio camere</b><span>Pulizia ogni due giorni, cambio asciugamani due volte a settimana. Uso della sauna non compreso.</span></li>
         <li data-r><b>Massaggio di scarico</b><span>Servizio extra in loco, con figura dedicata, su prenotazione e con costo a parte.</span></li>
       </ul>
-      <div class="stats mono" data-r><span>3 punti di partenza</span><span>9 percorsi</span><span>4 percorsi speciali</span><span>3 varianti</span></div>
     </div>
   </div>
-  <div class="strip">
-    <figure data-r><div class="clip"><img src="assets/hero-1.jpg" alt="Il gruppo del Running Camp sulla pista di Cavalese" loading="lazy" width="1100" height="408"></div><figcaption class="mono">Pista di Cavalese</figcaption></figure>
-    <figure data-r><div class="clip"><img src="assets/gruppo.jpg" alt="Il gruppo del Running Camp in vetta" loading="lazy" width="1100" height="408"></div><figcaption class="mono">In vetta</figcaption></figure>
-    <figure data-r><div class="clip"><img src="assets/hero-2.jpg" alt="Runner che ridono dopo l'allenamento" loading="lazy" width="1100" height="408"></div><figcaption class="mono">Dopo l'allenamento</figcaption></figure>
-  </div>
 </section>
+
+<section class="gal-wrap" aria-label="Altre foto dei raduni"><div class="gal rev" role="region" aria-label="Altre foto dei raduni"><div class="gal-in"><figure><img src="assets/gallery/b1.jpg" alt="Allenamento in pista sotto le nuvole" width="600" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b2.jpg" alt="Esercizi a bordo lago" width="800" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b3.jpg" alt="Salita sul sentiero" width="374" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b4.jpg" alt="Gruppo sulla pista blu" width="600" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b5.jpg" alt="Esercizi di mobilità al lago" width="800" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b6.jpg" alt="Stretching sul ponte di legno" width="800" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b7.jpg" alt="Allenamento in pista" width="450" height="800" loading="lazy" decoding="async"></figure><figure><img src="assets/gallery/b8.jpg" alt="Corsa in gruppo in valle" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b1.jpg" alt="" width="600" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b2.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b3.jpg" alt="" width="374" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b4.jpg" alt="" width="600" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b5.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b6.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b7.jpg" alt="" width="450" height="800" loading="lazy" decoding="async"></figure><figure aria-hidden="true"><img src="assets/gallery/b8.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></figure></div></div></section>
 
 <section class="price-s" id="tariffe">
   <div class="head"><p class="eyebrow mono">Tariffe</p><h2 class="h2">Scegli <em>la tua camera</em></h2><p class="lead">Il numero di persone per camera lo scegli tu e va indicato al momento dell'iscrizione.</p></div>
@@ -520,6 +521,7 @@ footer a{color:inherit;}
       <h3>Bonifico 1 · Quota Running Camp</h3>
       <div class="amt">€250<small>di caparra, entro il 30/04/2027</small></div>
       <p class="mono" style="opacity:.85">Quota Running Camp totale €400</p>
+      <p class="rata">La seconda rata di €150 si salda più avanti: comunicherò sul gruppo WhatsApp quando sarà il momento.</p>
       <dl>
         <div><dt>Intestato a</dt><dd>VETTOR GIULIA</dd></div>
         <div><dt>IBAN</dt><dd class="iban"><span id="ib1">IT22B0538766690000002913240</span><button class="copy" type="button" data-copy="ib1">Copia</button></dd></div>
@@ -539,7 +541,6 @@ footer a{color:inherit;}
       </dl>
     </article>
   </div>
-  <p class="second" data-r>La seconda rata di €150 si salda più avanti: comunicherò sul gruppo WhatsApp quando sarà il momento.</p>
   <div class="head" style="margin:clamp(48px,7vw,90px) 0 24px;max-width:none" data-r><h3 style="font-size:clamp(1.8rem,3vw,2.6rem)">Camere e accompagnatori</h3><p class="lead" style="margin-top:14px">Al momento dell'iscrizione scrivimi e dimmi in che stanza vorresti stare: singola, doppia, tripla o più. Se vuoi condividere la camera con altri runner partecipanti mandami un messaggio e troviamo la soluzione migliore. Gli accompagnatori che non partecipano al Running Camp alloggiano (previa disponibilità) alle stesse condizioni e senza quota Running Camp.</p></div>
 </section>
 
@@ -593,7 +594,7 @@ footer a{color:inherit;}
       <h3>Iscrizioni aperte</h3>
       <p>Fino al 30 aprile 2027 o fino a esaurimento dei posti disponibili in hotel. Cancellazione gratuita fino al 6 giugno.</p>
       <a class="big-tel" href="tel:+393206349783">320 634 9783</a>
-      <div class="cta-row"><a class="btn" href="https://wa.me/393206349783">Scrivimi su WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+      <div class="cta-row"><a class="btn" href="https://wa.me/393206349783">Scrivimi per prenotare il tuo posto <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </div>
 </section>
